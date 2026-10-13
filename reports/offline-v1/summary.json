@@ -1,0 +1,150 @@
+{
+  "created_at": "2026-10-07T17:53:42.526169+00:00",
+  "corpus": {
+    "documents": 6,
+    "issuers": 3,
+    "eligible_comparisons": 3
+  },
+  "synthetic_controls": 9,
+  "methods": {
+    "A": "executed deterministic rules",
+    "B": "not_run_no_live_model",
+    "C": "not_run_no_live_model"
+  },
+  "metrics": [
+    {
+      "method": "A",
+      "split": "development",
+      "case_count": 1,
+      "provisional": true,
+      "label_status": "ai_draft",
+      "extraction_true_positive": 2,
+      "extraction_false_positive": 0,
+      "extraction_false_negative": 0,
+      "extraction_precision": 1.0,
+      "extraction_recall": 1.0,
+      "emitted_numerical_comparisons": 1,
+      "numerical_comparison_errors": 0,
+      "literal_evidence_errors": 0,
+      "automated_semantic_screen_failures": 0,
+      "human_evidence_support_errors": null,
+      "human_reviewed_observations": 0,
+      "explanation_candidates_pending_review": 3,
+      "abstentions": 0,
+      "expected_abstention_cases": 0,
+      "appropriate_abstentions": 0,
+      "status_correct": 1,
+      "calls": 0,
+      "total_tokens": null,
+      "latency_ms_sum": 1.82
+    },
+    {
+      "method": "A",
+      "split": "heldout",
+      "case_count": 2,
+      "provisional": true,
+      "label_status": "ai_draft",
+      "extraction_true_positive": 2,
+      "extraction_false_positive": 0,
+      "extraction_false_negative": 2,
+      "extraction_precision": 1.0,
+      "extraction_recall": 0.5,
+      "emitted_numerical_comparisons": 1,
+      "numerical_comparison_errors": 0,
+      "literal_evidence_errors": 0,
+      "automated_semantic_screen_failures": 0,
+      "human_evidence_support_errors": null,
+      "human_reviewed_observations": 0,
+      "explanation_candidates_pending_review": 2,
+      "abstentions": 1,
+      "expected_abstention_cases": 0,
+      "appropriate_abstentions": 0,
+      "status_correct": 1,
+      "calls": 0,
+      "total_tokens": null,
+      "latency_ms_sum": 5.188000000000001
+    },
+    {
+      "method": "A",
+      "split": "synthetic_development",
+      "case_count": 9,
+      "provisional": true,
+      "label_status": "ai_draft",
+      "extraction_true_positive": null,
+      "extraction_false_positive": null,
+      "extraction_false_negative": null,
+      "extraction_precision": null,
+      "extraction_recall": null,
+      "emitted_numerical_comparisons": 0,
+      "numerical_comparison_errors": null,
+      "literal_evidence_errors": 0,
+      "automated_semantic_screen_failures": 0,
+      "human_evidence_support_errors": null,
+      "human_reviewed_observations": 0,
+      "explanation_candidates_pending_review": 23,
+      "abstentions": 6,
+      "expected_abstention_cases": 6,
+      "appropriate_abstentions": 6,
+      "status_correct": 9,
+      "calls": 0,
+      "total_tokens": null,
+      "latency_ms_sum": 10.148
+    }
+  ],
+  "failures": [
+    {
+      "case_id": "CRM-FY2024-Q1-Q2",
+      "method": "A",
+      "status": "insufficient_evidence",
+      "reason": "missing_guidance"
+    },
+    {
+      "case_id": "ADBE-FY2025-Q2-Q3~missing_table",
+      "method": "A",
+      "status": "insufficient_evidence",
+      "reason": "missing_guidance"
+    },
+    {
+      "case_id": "ADBE-FY2025-Q2-Q3~mismatched_units",
+      "method": "A",
+      "status": "insufficient_evidence",
+      "reason": "missing_guidance"
+    },
+    {
+      "case_id": "ADBE-FY2025-Q2-Q3~unknown_units",
+      "method": "A",
+      "status": "insufficient_evidence",
+      "reason": "missing_guidance"
+    },
+    {
+      "case_id": "ADBE-FY2025-Q2-Q3~incompatible_horizon",
+      "method": "A",
+      "status": "insufficient_evidence",
+      "reason": "missing_guidance"
+    },
+    {
+      "case_id": "ADBE-FY2025-Q2-Q3~contradictory_explanations",
+      "method": "A",
+      "status": "conflicting",
+      "reason": "opposing_explicit_demand_statements"
+    },
+    {
+      "case_id": "ADBE-FY2025-Q2-Q3~conflicting_ranges",
+      "method": "A",
+      "status": "conflicting",
+      "reason": "semantic_review_required"
+    },
+    {
+      "case_id": "ADBE-FY2025-Q2-Q3~stale_disclosure",
+      "method": "A",
+      "status": "insufficient_evidence",
+      "reason": "stale_or_reversed_disclosure_pair"
+    },
+    {
+      "case_id": "ADBE-FY2025-Q2-Q3~early_cutoff",
+      "method": "A",
+      "status": "insufficient_evidence",
+      "reason": "source_after_cutoff"
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "run_id": "3b82f3b5-0e6f-457e-b361-c16cad02d1f8",
+  "created_at": "2026-10-07T17:53:42.507275+00:00",
+  "case": {
+    "case_id": "ADBE-FY2025-Q2-Q3~unknown_units",
+    "issuer": "ADBE",
+    "old": "ADBE-2025-Q2",
+    "new": "ADBE-2025-Q3~unknown_units",
+    "horizon": "FY2025",
+    "metric": "revenue",
+    "cutoff": "2025-09-12T00:00:00-04:00",
+    "split": "synthetic_development",
+    "synthetic": true,
+    "parent_case_id": "ADBE-FY2025-Q2-Q3",
+    "transformation": "Replace billion with unknown unit widgets in the annual row.",
+    "expected_status": "insufficient_evidence",
+    "parent_source_hash": "e504dd9473b01c3a3a8b7a5c481a4e54b5f0cd91bbee7ed9300d168f72b4fc2c",
+    "derived_source_hash": "285bf022a0978f715d5942c939806153d125232a7f73633ba80d9e0d15d27d91"
+  },
+  "method": "A",
+  "config": {
+    "model": "SET_MODEL_ID",
+    "max_calls": 6,
+    "max_tool_calls": 5,
+    "max_output_tokens_per_call": 1800,
+    "max_input_characters": 80000
+  },
+  "cutoff_mode": "disclosure",
+  "trace": [
+    {
+      "stage": "rule_extraction",
+      "source_id": "ADBE-2025-Q2",
+      "issues": []
+    },
+    {
+      "stage": "rule_extraction",
+      "source_id": "ADBE-2025-Q3~unknown_units",
+      "issues": [
+        "no_unambiguous_annual_revenue_range"
+      ]
+    },
+    {
+      "stage": "deterministic_comparison",
+      "result": {
+        "status": "insufficient_evidence",
+        "reason": "missing_guidance",
+        "calculation": null
+      }
+    }
+  ],
+  "extractions": [
+    {
+      "metric": {
+        "source_id": "ADBE-2025-Q2",
+        "issuer": "ADBE",
+        "metric": "revenue",
+        "currency": "USD",
+        "unit": "billion",
+        "basis": "reported",
+        "horizon": "FY2025",
+        "calendar": "fiscal",
+        "definition": "total_revenue_as_reported",
+        "status": "provided",
+        "lower": "23.50",
+        "upper": "23.60",
+        "evidence": "Total revenue  | $23.50 billion to $23.60 billion",
+        "horizon_evidence": "The following updated table summarizes Adobe’s fiscal year 2025 targets, which assumes current macroeconomic conditions2:\n |  |  |  |  |  |  |  |\nTotal revenue  | $23.50 billion to $23.60 billion"
+      },
+      "validation": {
+        "literal_valid": true,
+        "semantic_screen": "pass",
+        "errors": [],
+        "human_semantic_review": "pending",
+        "observation_id": "1a9ca561784322750239b3c43c55764cdbe898cb76b9a7ac821daa09788693dd"
+      }
+    }
+  ],
+  "explanations": [
+    {
+      "source_id": "ADBE-2025-Q2",
+      "quote": "“As a result of us driving strong performance in the first half of the year, we are pleased to raise Adobe’s FY25 total revenue and EPS targets,” said Dan Durn, executive vice president and CFO, Adobe. “We continue to invest in AI innovation across our customer groups to enhance value realization and expand the universe of customers we serve.”",
+      "type": "management_statement_candidate",
+      "semantic_review": "pending"
+    },
+    {
+      "source_id": "ADBE-2025-Q3~unknown_units",
+      "quote": "“Adobe is the leader in the AI creative applications category with AI-influenced ARR surpassing $5 billion and AI-first ARR already exceeding our $250 million year-end target,” said Shantanu Narayen, chair and CEO, Adobe. “Given our customer strategy, AI product innovation and strong go-to-market execution, we’re pleased to once again raise our FY25 total revenue and EPS targets.”",
+      "type": "management_statement_candidate",
+      "semantic_review": "pending"
+    },
+    {
+      "source_id": "ADBE-2025-Q3~unknown_units",
+      "quote": "“Adobe delivered record Q3 revenue, with strength in subscription revenue across both Digital Media and Digital Experience segments,” said Dan Durn, executive vice president and CFO, Adobe. “We’re raising our FY25 total revenue and EPS targets as we execute against our growth strategy to deliver category leading and AI-infused solutions to meet the diverse needs of our customers.”",
+      "type": "management_statement_candidate",
+      "semantic_review": "pending"
+    }
+  ],
+  "errors": [],
+  "calls": 0,
+  "tokens": null,
+  "label_status": "not_used_by_system",
+  "human_semantic_review": "pending",
+  "source_hashes": {
+    "ADBE-2025-Q2": "99e83a21cac144ba1d31481534ba6658a0f4bf7016b842510b5a36b4c0e5a24b",
+    "ADBE-2025-Q3~unknown_units": "285bf022a0978f715d5942c939806153d125232a7f73633ba80d9e0d15d27d91"
+  },
+  "input_hash": "a89a3226a9f3ff126838b8a0aefc19cf119a42fb443522adb785bbc575cc78ed",
+  "model": null,
+  "execution_kind": "deterministic",
+  "context_characters": 48759,
+  "comparison": {
+    "status": "insufficient_evidence",
+    "reason": "missing_guidance",
+    "calculation": null
+  },
+  "explanation_conclusion": {
+    "status": "insufficient_evidence",
+    "reason": "semantic_review_required"
+  },
+  "conclusion": "insufficient_evidence",
+  "latency_ms": 1.258
+}

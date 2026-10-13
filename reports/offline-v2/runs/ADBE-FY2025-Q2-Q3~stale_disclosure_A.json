@@ -1,0 +1,61 @@
+{
+  "run_id": "644ef8fd-5e03-4e0c-b504-cb9e59b85cd0",
+  "created_at": "2026-10-07T17:59:02.116205+00:00",
+  "case": {
+    "case_id": "ADBE-FY2025-Q2-Q3~stale_disclosure",
+    "issuer": "ADBE",
+    "old": "ADBE-2025-Q2",
+    "new": "ADBE-2025-Q2",
+    "horizon": "FY2025",
+    "metric": "revenue",
+    "cutoff": "2025-09-12T00:00:00-04:00",
+    "split": "synthetic_development",
+    "synthetic": true,
+    "parent_case_id": "ADBE-FY2025-Q2-Q3",
+    "transformation": "Substitute the old release for the current release.",
+    "expected_status": "insufficient_evidence"
+  },
+  "method": "A",
+  "config": {
+    "model": "SET_MODEL_ID",
+    "max_calls": 6,
+    "max_tool_calls": 5,
+    "max_output_tokens_per_call": 1800,
+    "max_input_characters": 80000
+  },
+  "cutoff_mode": "disclosure",
+  "trace": [
+    {
+      "stage": "deterministic_comparison",
+      "result": {
+        "status": "insufficient_evidence",
+        "reason": "stale_or_reversed_disclosure_pair",
+        "calculation": null
+      }
+    }
+  ],
+  "extractions": [],
+  "explanations": [],
+  "errors": [
+    "stale_or_reversed_disclosure_pair"
+  ],
+  "calls": 0,
+  "tokens": null,
+  "label_status": "not_used_by_system",
+  "human_semantic_review": "pending",
+  "source_hashes": {
+    "ADBE-2025-Q2": "99e83a21cac144ba1d31481534ba6658a0f4bf7016b842510b5a36b4c0e5a24b"
+  },
+  "input_hash": "33098244ae8b681479cfd907ee1c55bc7785bc953371bedec75d599dd378d02f",
+  "comparison": {
+    "status": "insufficient_evidence",
+    "reason": "stale_or_reversed_disclosure_pair",
+    "calculation": null
+  },
+  "explanation_conclusion": {
+    "status": "insufficient_evidence",
+    "reason": "no_explicit_explanation_found"
+  },
+  "conclusion": "insufficient_evidence",
+  "latency_ms": 0.081
+}

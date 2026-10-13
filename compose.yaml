@@ -1,0 +1,43 @@
+x-runtime: &runtime
+  image: eventlens:0.4.0
+  build: .
+  env_file: .env
+  environment:
+    EVENTLENS_STATE_DIR: /var/lib/eventlens
+  volumes:
+    - eventlens-data:/var/lib/eventlens
+  restart: unless-stopped
+  read_only: true
+  tmpfs:
+    - /tmp:size=32m
+  security_opt:
+    - no-new-privileges:true
+  cap_drop:
+    - ALL
+  mem_limit: 768m
+  cpus: 1.0
+  stop_grace_period: 120s
+
+services:
+  api:
+    <<: *runtime
+    ports:
+      - "127.0.0.1:${EVENTLENS_PORT:-8000}:8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "from urllib.request import urlopen; urlopen('http://127.0.0.1:8000/health/ready', timeout=3)"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+  worker:
+    <<: *runtime
+    command: ["eventlens-service", "worker"]
+    healthcheck:
+      test: ["CMD", "eventlens-service", "check"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  eventlens-data:

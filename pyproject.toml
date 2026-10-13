@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools==80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "eventlens"
+version = "0.4.0"
+description = "A tool-using research agent for evidence-linked macro-event briefs"
+requires-python = ">=3.11"
+authors = [{name = "Xiangyi (Nick) Zhu"}]
+dependencies = []
+
+[project.optional-dependencies]
+service = ["fastapi==0.142.4", "uvicorn==0.54.0"]
+test = ["httpx==0.28.1"]
+
+[project.scripts]
+eventlens = "eventlens.cli:main"
+eventlens-service = "eventlens.service.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,12 @@
+{
+  "question": "Does tool-assisted investigation improve accuracy and evidence support in a concise macro-event brief over a single-pass LLM?",
+  "methods": ["rules", "single", "agent"],
+  "development_cases": ["july-2025-fomc"],
+  "temporal_check_cases": ["september-2025-fomc"],
+  "independent_blinded_holdout": false,
+  "label_status": "AI-draft; human review pending",
+  "shared_controls": ["source corpus", "case", "cutoff", "model for single and agent", "claim schema", "validator"],
+  "different_controls": ["context supplied", "model calls", "tool calls", "output-token budget"],
+  "unmeasured": ["live model performance", "semantic support accuracy", "analyst editing time", "market impact"],
+  "scope": "FOMC meeting briefs from saved public Federal Reserve documents"
+}

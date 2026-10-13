@@ -1,0 +1,126 @@
+{
+  "created_at": "2026-10-07T18:02:12.384816+00:00",
+  "success": true,
+  "fresh_directory": "/Users/nickzhu/Desktop/Projects/EventLens/work/fresh-check-8bju6tdb",
+  "python": "3.14.6 (main, Jun 10 2026, 10:03:53) [Clang 21.0.0 (clang-2100.0.123.102)]",
+  "commands": [
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-m",
+        "venv",
+        "/Users/nickzhu/Desktop/Projects/EventLens/work/fresh-check-8bju6tdb/venv"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/nickzhu/Desktop/Projects/EventLens/work/fresh-check-8bju6tdb/venv/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "."
+      ],
+      "returncode": 0,
+      "stdout": "Processing ./.\n  Installing build dependencies: started\n  Installing build dependencies: finished with status 'done'\n  Getting requirements to build wheel: started\n  Getting requirements to build wheel: finished with status 'done'\n  Preparing metadata (pyproject.toml): started\n  Preparing metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: eventlens\n  Building wheel for eventlens (pyproject.toml): started\n  Building wheel for eventlens (pyproject.toml): finished with status 'done'\n  Created wheel for eventlens: filename=eventlens-0.1.0-py3-none-any.whl size=23430 sha256=d76fe28761eff468ede1de387b4235ac120e3b510197c328f8018d0a3dd5edaf\n  Stored in directory: /private/var/folders/01/dh9x_5l91kn7lc3ldh1jvh7c0000gn/T/pip-ephem-wheel-cache-vgr_y5ta/wheels/35/ff/9c/fb3cbffe800fac439b59ec30da5a3f164c7450fb473603dfcb\nSuccessfully built eventlens\nInstalling collected packages: eventlens\nSuccessfully installed eventlens-0.1.0\n",
+      "stderr": "\n[notice] A new release of pip is available: 26.1.2 -> 26.2.1\n[notice] To update, run: /Users/nickzhu/Desktop/Projects/EventLens/work/fresh-check-8bju6tdb/venv/bin/python -m pip install --upgrade pip\n"
+    },
+    {
+      "command": [
+        "/Users/nickzhu/Desktop/Projects/EventLens/work/fresh-check-8bju6tdb/venv/bin/python",
+        "-c",
+        "import eventlens; print(eventlens.__file__)"
+      ],
+      "returncode": 0,
+      "stdout": "/Users/nickzhu/Desktop/Projects/EventLens/work/fresh-check-8bju6tdb/venv/lib/python3.14/site-packages/eventlens/__init__.py\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/nickzhu/Desktop/Projects/EventLens/work/fresh-check-8bju6tdb/venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_conflicting_ranges (test_core.CoreTests.test_conflicting_ranges) ... ok\ntest_contradictory_explanations (test_core.CoreTests.test_contradictory_explanations) ... ok\ntest_controller_budget (test_core.CoreTests.test_controller_budget) ... ok\ntest_controller_cannot_cite_unseen_text (test_core.CoreTests.test_controller_cannot_cite_unseen_text) ... ok\ntest_cutoff_consistency (test_core.CoreTests.test_cutoff_consistency) ... ok\ntest_decimal_arithmetic (test_core.CoreTests.test_decimal_arithmetic) ... ok\ntest_duplicate_json_key_rejected (test_core.CoreTests.test_duplicate_json_key_rejected) ... ok\ntest_evidence_literal_and_semantic (test_core.CoreTests.test_evidence_literal_and_semantic) ... ok\ntest_fiscal_calendar_mismatch (test_core.CoreTests.test_fiscal_calendar_mismatch) ... ok\ntest_hash_and_dates (test_core.CoreTests.test_hash_and_dates) ... ok\ntest_idempotence_and_collision (test_core.CoreTests.test_idempotence_and_collision) ... ok\ntest_incompatible_fields (test_core.CoreTests.test_incompatible_fields) ... ok\ntest_invalid_model_output_preserved (test_core.CoreTests.test_invalid_model_output_preserved) ... ok\ntest_malformed_values (test_core.CoreTests.test_malformed_values) ... ok\ntest_margin_is_percentage_points (test_core.CoreTests.test_margin_is_percentage_points) ... ok\ntest_million_billion_normalization (test_core.CoreTests.test_million_billion_normalization) ... ok\ntest_missing_is_not_zero (test_core.CoreTests.test_missing_is_not_zero) ... ok\ntest_missing_table (test_core.CoreTests.test_missing_table) ... ok\ntest_mixed_range_not_mislabeled_raise (test_core.CoreTests.test_mixed_range_not_mislabeled_raise) ... ok\ntest_mock_controller_uses_real_tools (test_core.CoreTests.test_mock_controller_uses_real_tools) ... ok\ntest_mock_single_pass_not_live (test_core.CoreTests.test_mock_single_pass_not_live) ... ok\ntest_point_estimates (test_core.CoreTests.test_point_estimates) ... ok\ntest_quarterly_guidance_is_not_annual (test_core.CoreTests.test_quarterly_guidance_is_not_annual) ... ok\ntest_read_only_tool_validation (test_core.CoreTests.test_read_only_tool_validation) ... ok\ntest_stale_reversed_pair (test_core.CoreTests.test_stale_reversed_pair) ... ok\ntest_unknown_basis (test_core.CoreTests.test_unknown_basis) ... ok\ntest_withdrawn (test_core.CoreTests.test_withdrawn) ... ok\ntest_zero_denominator (test_core.CoreTests.test_zero_denominator) ... ok\ntest_development_controls (test_core.EndToEndChallengeTests.test_development_controls) ... ok\ntest_every_real_pair_fits_single_pass_context_budget (test_evaluation.ConfiguredContextTests.test_every_real_pair_fits_single_pass_context_budget) ... ok\ntest_false_values_count_as_error_not_just_literal_success (test_evaluation.EvaluationTests.test_false_values_count_as_error_not_just_literal_success) ... ok\ntest_human_label_status_requires_provenance (test_evaluation.EvaluationTests.test_human_label_status_requires_provenance) ... ok\ntest_live_requires_model_and_key (test_evaluation.EvaluationTests.test_live_requires_model_and_key) ... ok\ntest_path_traversal_and_tampered_source_rejected (test_evaluation.EvaluationTests.test_path_traversal_and_tampered_source_rejected) ... ok\ntest_real_draft_denominators (test_evaluation.EvaluationTests.test_real_draft_denominators) ... ok\ntest_synthetic_emissions_are_counted_but_not_falsely_scored (test_evaluation.EvaluationTests.test_synthetic_emissions_are_counted_but_not_falsely_scored) ... ok\ntest_validate_cli (test_evaluation.EvaluationTests.test_validate_cli) ... ok\n\n----------------------------------------------------------------------\nRan 37 tests in 0.047s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/Users/nickzhu/Desktop/Projects/EventLens/work/fresh-check-8bju6tdb/venv/bin/eventlens",
+        "validate"
+      ],
+      "returncode": 0,
+      "stdout": "{\"documents\": 6, \"issuers\": 3, \"eligible_comparisons\": 3, \"development_pairs\": 1, \"heldout_pairs\": 2, \"source_hashes\": \"verified\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/nickzhu/Desktop/Projects/EventLens/work/fresh-check-8bju6tdb/venv/bin/eventlens",
+        "ingest"
+      ],
+      "returncode": 0,
+      "stdout": "{\"added\": 6, \"total_sources\": 6}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/nickzhu/Desktop/Projects/EventLens/work/fresh-check-8bju6tdb/venv/bin/eventlens",
+        "ingest"
+      ],
+      "returncode": 0,
+      "stdout": "{\"added\": 0, \"total_sources\": 6}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/nickzhu/Desktop/Projects/EventLens/work/fresh-check-8bju6tdb/venv/bin/eventlens",
+        "demo"
+      ],
+      "returncode": 0,
+      "stdout": "A = deterministic rules. B/C live results: not part of this offline demo. Labels: AI-draft.\nADBE-FY2025-Q2-Q3 | A | supported | raised\n  ADBE-2025-Q2 FY2025: 23.50..23.60 USD billion\n  Evidence: Total revenue  | $23.50 billion to $23.60 billion\n  ADBE-2025-Q3 FY2025: 23.65..23.70 USD billion\n  Evidence: Total revenue  | $23.65 billion to $23.70 billion\n  Python: (23650000000.00 + 23700000000.00)/2 - (23500000000.00 + 23600000000.00)/2 = 125000000.00 USD\n  Explanation: insufficient_evidence ; semantic_review_required\n  Human semantic review: pending\n  Trace: /Users/nickzhu/Desktop/Projects/EventLens/work/fresh-check-8bju6tdb/project/reports/runs/ac03247c-dcde-49b5-9fb4-f5c1582d5bc6.json\nADBE-FY2025-Q2-Q3~missing_table | A | insufficient_evidence | missing_guidance\n  ADBE-2025-Q2 FY2025: 23.50..23.60 USD billion\n  Evidence: Total revenue  | $23.50 billion to $23.60 billion\n  Explanation: insufficient_evidence ; semantic_review_required\n  Human semantic review: pending\n  Trace: /Users/nickzhu/Desktop/Projects/EventLens/work/fresh-check-8bju6tdb/project/reports/runs/9df3d4cf-69b1-4429-811b-ed6db4fc799b.json\nADBE-FY2025-Q2-Q3~contradictory_explanations | A | conflicting | raised\n  ADBE-2025-Q2 FY2025: 23.50..23.60 USD billion\n  Evidence: Total revenue  | $23.50 billion to $23.60 billion\n  ADBE-2025-Q3~contradictory_explanations FY2025: 23.65..23.70 USD billion\n  Evidence: Total revenue  | $23.65 billion to $23.70 billion\n  Python: (23650000000.00 + 23700000000.00)/2 - (23500000000.00 + 23600000000.00)/2 = 125000000.00 USD\n  Explanation: conflicting ; opposing_explicit_demand_statements\n  Human semantic review: pending\n  Trace: /Users/nickzhu/Desktop/Projects/EventLens/work/fresh-check-8bju6tdb/project/reports/runs/0190eabd-f78d-464f-b1ba-a0f3e75ab244.json\nCRM-FY2024-Q1-Q2 | A | insufficient_evidence | missing_guidance\n  Explanation: insufficient_evidence ; semantic_review_required\n  Human semantic review: pending\n  Trace: /Users/nickzhu/Desktop/Projects/EventLens/work/fresh-check-8bju6tdb/project/reports/runs/200734c7-b5c6-4ae0-bcb5-c1480743adb9.json\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/nickzhu/Desktop/Projects/EventLens/work/fresh-check-8bju6tdb/venv/bin/eventlens",
+        "mock-demo"
+      ],
+      "returncode": 0,
+      "stdout": "MOCK ENGINEERING DEMO \u2014 NOT AN LLM RESULT\nADBE-FY2025-Q2-Q3 | C | supported | raised\n  ADBE-2025-Q2 FY2025: 23.50..23.60 USD billion\n  Evidence: Total revenue  | $23.50 billion to $23.60 billion\n  ADBE-2025-Q3 FY2025: 23.65..23.70 USD billion\n  Evidence: Total revenue  | $23.65 billion to $23.70 billion\n  Python: (23650000000.00 + 23700000000.00)/2 - (23500000000.00 + 23600000000.00)/2 = 125000000.00 USD\n  Explanation: insufficient_evidence ; no_explicit_explanation_found\n  Human semantic review: pending\nSaved: /Users/nickzhu/Desktop/Projects/EventLens/work/fresh-check-8bju6tdb/project/reports/runs/a62a1b5a-c56e-4a6b-aba7-6511c5c019a9.json\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/nickzhu/Desktop/Projects/EventLens/work/fresh-check-8bju6tdb/venv/bin/eventlens",
+        "evaluate",
+        "--out",
+        "reports/fresh-offline"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"created_at\": \"2026-10-07T18:02:12.363204+00:00\",\n  \"corpus\": {\n    \"documents\": 6,\n    \"issuers\": 3,\n    \"eligible_comparisons\": 3\n  },\n  \"synthetic_controls\": 9,\n  \"methods\": {\n    \"A\": \"executed deterministic rules\",\n    \"B\": \"not_run_no_live_model\",\n    \"C\": \"not_run_no_live_model\"\n  },\n  \"metrics\": [\n    {\n      \"method\": \"A\",\n      \"split\": \"development\",\n      \"case_count\": 1,\n      \"provisional\": true,\n      \"label_status\": \"ai_draft\",\n      \"extraction_true_positive\": 2,\n      \"extraction_false_positive\": 0,\n      \"extraction_false_negative\": 0,\n      \"extraction_precision\": 1.0,\n      \"extraction_recall\": 1.0,\n      \"emitted_numerical_comparisons\": 1,\n      \"numerically_scored_comparisons\": 1,\n      \"numerical_comparison_errors\": 0,\n      \"literal_evidence_errors\": 0,\n      \"automated_semantic_screen_failures\": 0,\n      \"human_evidence_support_errors\": null,\n      \"human_reviewed_observations\": 0,\n      \"explanation_candidates_pending_review\": 3,\n      \"abstentions\": 0,\n      \"expected_abstention_cases\": 0,\n      \"appropriate_abstentions\": 0,\n      \"status_correct\": 1,\n      \"calls\": 0,\n      \"total_tokens\": null,\n      \"latency_ms_sum\": 1.712\n    },\n    {\n      \"method\": \"A\",\n      \"split\": \"heldout\",\n      \"case_count\": 2,\n      \"provisional\": true,\n      \"label_status\": \"ai_draft\",\n      \"extraction_true_positive\": 2,\n      \"extraction_false_positive\": 0,\n      \"extraction_false_negative\": 2,\n      \"extraction_precision\": 1.0,\n      \"extraction_recall\": 0.5,\n      \"emitted_numerical_comparisons\": 1,\n      \"numerically_scored_comparisons\": 1,\n      \"numerical_comparison_errors\": 0,\n      \"literal_evidence_errors\": 0,\n      \"automated_semantic_screen_failures\": 0,\n      \"human_evidence_support_errors\": null,\n      \"human_reviewed_observations\": 0,\n      \"explanation_candidates_pending_review\": 2,\n      \"abstentions\": 1,\n      \"expected_abstention_cases\": 0,\n      \"appropriate_abstentions\": 0,\n      \"status_correct\": 1,\n      \"calls\": 0,\n      \"total_tokens\": null,\n      \"latency_ms_sum\": 3.434\n    },\n    {\n      \"method\": \"A\",\n      \"split\": \"synthetic_development\",\n      \"case_count\": 9,\n      \"provisional\": true,\n      \"label_status\": \"ai_draft\",\n      \"extraction_true_positive\": null,\n      \"extraction_false_positive\": null,\n      \"extraction_false_negative\": null,\n      \"extraction_precision\": null,\n      \"extraction_recall\": null,\n      \"emitted_numerical_comparisons\": 2,\n      \"numerically_scored_comparisons\": 0,\n      \"numerical_comparison_errors\": null,\n      \"literal_evidence_errors\": 0,\n      \"automated_semantic_screen_failures\": 0,\n      \"human_evidence_support_errors\": null,\n      \"human_reviewed_observations\": 0,\n      \"explanation_candidates_pending_review\": 23,\n      \"abstentions\": 6,\n      \"expected_abstention_cases\": 6,\n      \"appropriate_abstentions\": 6,\n      \"status_correct\": 9,\n      \"calls\": 0,\n      \"total_tokens\": null,\n      \"latency_ms_sum\": 9.058\n    }\n  ],\n  \"failures\": [\n    {\n      \"case_id\": \"CRM-FY2024-Q1-Q2\",\n      \"method\": \"A\",\n      \"status\": \"insufficient_evidence\",\n      \"reason\": \"missing_guidance\"\n    },\n    {\n      \"case_id\": \"ADBE-FY2025-Q2-Q3~missing_table\",\n      \"method\": \"A\",\n      \"status\": \"insufficient_evidence\",\n      \"reason\": \"missing_guidance\"\n    },\n    {\n      \"case_id\": \"ADBE-FY2025-Q2-Q3~mismatched_units\",\n      \"method\": \"A\",\n      \"status\": \"insufficient_evidence\",\n      \"reason\": \"missing_guidance\"\n    },\n    {\n      \"case_id\": \"ADBE-FY2025-Q2-Q3~unknown_units\",\n      \"method\": \"A\",\n      \"status\": \"insufficient_evidence\",\n      \"reason\": \"missing_guidance\"\n    },\n    {\n      \"case_id\": \"ADBE-FY2025-Q2-Q3~incompatible_horizon\",\n      \"method\": \"A\",\n      \"status\": \"insufficient_evidence\",\n      \"reason\": \"missing_guidance\"\n    },\n    {\n      \"case_id\": \"ADBE-FY2025-Q2-Q3~contradictory_explanations\",\n      \"method\": \"A\",\n      \"status\": \"conflicting\",\n      \"reason\": \"opposing_explicit_demand_statements\"\n    },\n    {\n      \"case_id\": \"ADBE-FY2025-Q2-Q3~conflicting_ranges\",\n      \"method\": \"A\",\n      \"status\": \"conflicting\",\n      \"reason\": \"conflicting_guidance_ranges\"\n    },\n    {\n      \"case_id\": \"ADBE-FY2025-Q2-Q3~stale_disclosure\",\n      \"method\": \"A\",\n      \"status\": \"insufficient_evidence\",\n      \"reason\": \"stale_or_reversed_disclosure_pair\"\n    },\n    {\n      \"case_id\": \"ADBE-FY2025-Q2-Q3~early_cutoff\",\n      \"method\": \"A\",\n      \"status\": \"insufficient_evidence\",\n      \"reason\": \"source_after_cutoff\"\n    }\n  ]\n}\nSaved: /Users/nickzhu/Desktop/Projects/EventLens/work/fresh-check-8bju6tdb/project/reports/fresh-offline\n",
+      "stderr": ""
+    }
+  ],
+  "replicated_run_files": [
+    "ADBE-FY2025-Q2-Q3_A.json",
+    "ADBE-FY2025-Q2-Q3~conflicting_ranges_A.json",
+    "ADBE-FY2025-Q2-Q3~contradictory_explanations_A.json",
+    "ADBE-FY2025-Q2-Q3~early_cutoff_A.json",
+    "ADBE-FY2025-Q2-Q3~incompatible_horizon_A.json",
+    "ADBE-FY2025-Q2-Q3~mismatched_units_A.json",
+    "ADBE-FY2025-Q2-Q3~missing_table_A.json",
+    "ADBE-FY2025-Q2-Q3~prompt_injection_A.json",
+    "ADBE-FY2025-Q2-Q3~stale_disclosure_A.json",
+    "ADBE-FY2025-Q2-Q3~unknown_units_A.json",
+    "ADSK-FY2026-Q1-Q2_A.json",
+    "CRM-FY2024-Q1-Q2_A.json"
+  ],
+  "comparison_excludes": "run UUIDs, wall-clock timestamps and latency; compares all evidence and conclusions"
+}

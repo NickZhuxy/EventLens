@@ -1,0 +1,86 @@
+{
+  "run_id": "8edee419-add0-424d-9c77-f1605865af73",
+  "created_at": "2026-10-07T20:58:17.322608+00:00",
+  "workflow": "macro",
+  "case": {
+    "case_id": "july-2025-fomc",
+    "as_of": "2025-07-25T23:59:59Z",
+    "start_date": "2025-07-28",
+    "end_date": "2025-08-01",
+    "markets": [
+      "US"
+    ],
+    "split": "development",
+    "question": "Prepare a short briefing for the next FOMC meeting. State known policy context, sourced expectations, risk channels, and gaps."
+  },
+  "method": "rules",
+  "cutoff_mode": "snapshot",
+  "execution_kind": "deterministic",
+  "model": null,
+  "config": {
+    "model": "SET_MODEL_ID",
+    "max_calls": 10,
+    "max_tool_calls": 8,
+    "max_output_tokens_per_call": 3200,
+    "max_input_characters": 160000,
+    "max_brief_words": 450,
+    "freshness_days": 45
+  },
+  "prompt_version": "macro-brief-v1",
+  "source_hashes": {
+    "fed-2025-06-statement": "2909bf1c5b6944d6f99c438212f0a05ba944ef6be0d8766a5e9096407de7aedb",
+    "fed-2025-06-minutes": "5630888e466996e75f353ff8b3bf07e20f1e0dae9f0b8d1707c83c515f3a1043",
+    "fed-2025-07-statement": "e6c8be86d68c99dbc5377800857665108748101ed5bee61912f6baf70909491f",
+    "fed-2025-07-minutes": "ea2cec497a229debef5ea78c6d7e3e3eef8cbe0149f804daf0e994a4fc2a3014",
+    "fed-2025-09-statement": "b06457630baccfa83fc44d49b6ac16963626ad2924bc7e41f8e01e749028f3d7"
+  },
+  "eligible_source_ids": [],
+  "excluded_source_ids": [
+    "fed-2025-06-minutes",
+    "fed-2025-06-statement",
+    "fed-2025-07-minutes",
+    "fed-2025-07-statement",
+    "fed-2025-09-statement"
+  ],
+  "calendar": [],
+  "brief": {
+    "items": [],
+    "omissions": []
+  },
+  "status": "insufficient_evidence",
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "narrative_words": 0,
+    "claims": 0,
+    "citations": 0,
+    "semantic_review": "not_applicable"
+  },
+  "calls": 0,
+  "tool_calls": 0,
+  "tokens": null,
+  "trace": [
+    {
+      "stage": "baseline",
+      "algorithm": "latest eligible statement policy sentence; no interpretation"
+    }
+  ],
+  "errors": [],
+  "latency_ms": 0.141,
+  "input_hash": "74aec05a7aec9d9694727b96f36ac8aa5e7fd445b2acc8ab14083807d581633c",
+  "code_hashes": {
+    "macro/__init__.py": "3113b3f27be78c73fddef6c1391651802565b77a3b37e024fef3382839dc1116",
+    "macro/agent.py": "17d5f869ef6ee2488f5165bb48a943bc6a5811f7e907c0091d47806896a2f2dd",
+    "macro/baseline.py": "2460cedc7b11a3a257d43983ea6f35a5a595dd8dc1b712fd7a709b7013012fa8",
+    "macro/cli.py": "fbbf0619ac5f514bd7a6cc466edc93b1cf2b2d08a0b9bab164b27d358610a1bf",
+    "macro/demo.py": "a845d573c4788b5020e424ffc4dd20c4ec2745606aeae5bece505971c264adcd",
+    "macro/evaluation.py": "1fbbb03a71212aedf0c586538cf3593bec5c7eb8ce05a02002a4545149fb6024",
+    "macro/prompts.py": "baf4e7be8f60c86f8365775bee45196ce53e7b26916be2f32f2e650fb1fd265f",
+    "macro/records.py": "322c8324575ddfa5dba7818d448e237ebdf6295cc704423effa4e4465f712aa7",
+    "macro/report.py": "a151c3d4fafbe56713a4f6b48d25fdae439b84626b3c13976da8bc16f1f905c9",
+    "macro/tools.py": "59b376f9bdb2860eb6040b7d453471d4000d17bf2e9946fed62d2560e5a7afef",
+    "macro/validation.py": "70c4bfc82fc6ba3630d1fd520d52e8b382f850346d1413c1fc65125b0c637910",
+    "core.py": "1cbbf25054b80b7e4ae58e213dacece45816133f05d5ea7cada198627c02f59e",
+    "llm.py": "b093c4719235549089410225fc9168f5211e9a52d591a8289969788a582e7657"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "run_id": "3d19df09-ecc3-4695-8dcc-2c13b8d4f72a",
+  "created_at": "2026-10-07T17:59:02.220386+00:00",
+  "case": {
+    "case_id": "CRM-FY2024-Q1-Q2",
+    "issuer": "CRM",
+    "old": "CRM-2024-Q1",
+    "new": "CRM-2024-Q2",
+    "horizon": "FY2024",
+    "metric": "revenue",
+    "cutoff": "2023-08-31T00:00:00-04:00",
+    "split": "heldout",
+    "synthetic": false
+  },
+  "method": "A",
+  "config": {},
+  "cutoff_mode": "disclosure",
+  "trace": [
+    {
+      "stage": "rule_extraction",
+      "source_id": "CRM-2024-Q1",
+      "issues": [
+        "no_unambiguous_annual_revenue_range"
+      ]
+    },
+    {
+      "stage": "rule_extraction",
+      "source_id": "CRM-2024-Q2",
+      "issues": [
+        "no_unambiguous_annual_revenue_range"
+      ]
+    },
+    {
+      "stage": "deterministic_comparison",
+      "result": {
+        "status": "insufficient_evidence",
+        "reason": "missing_guidance",
+        "calculation": null
+      }
+    }
+  ],
+  "extractions": [],
+  "explanations": [
+    {
+      "source_id": "CRM-2024-Q2",
+      "quote": "“Our transformation drove our strong second quarter results, delivering revenue of $8.6 billion and record GAAP and non-GAAP operating margins,” said Marc Benioff, Chair and CEO of Salesforce. “Based on our performance and what we see in the back half of the year, we’re raising our fiscal year ‘24 revenue, operating margin, and operating cash flow growth guidance.",
+      "type": "management_statement_candidate",
+      "semantic_review": "pending"
+    }
+  ],
+  "errors": [],
+  "calls": 0,
+  "tokens": null,
+  "label_status": "not_used_by_system",
+  "human_semantic_review": "pending",
+  "source_hashes": {
+    "CRM-2024-Q1": "ce3ef55515214a97a91294454551acca8e9a411e428c7458d1848a5d90e81ad3",
+    "CRM-2024-Q2": "5e6ac8f74d23e2ebef90b574e091cab1a323933bce89bb1299b6a0c7b05e5d73"
+  },
+  "input_hash": "bb9fe2aba01b5666c3ed90f48d911e3de31a21efa7887d03e8e9283cc36ba60e",
+  "model": null,
+  "execution_kind": "deterministic",
+  "context_characters": 103682,
+  "comparison": {
+    "status": "insufficient_evidence",
+    "reason": "missing_guidance",
+    "calculation": null
+  },
+  "explanation_conclusion": {
+    "status": "insufficient_evidence",
+    "reason": "semantic_review_required"
+  },
+  "conclusion": "insufficient_evidence",
+  "latency_ms": 2.168
+}

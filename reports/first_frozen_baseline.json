@@ -1,0 +1,378 @@
+[
+  {
+    "run_id": "c1f941d3-a60e-4ef8-91cc-0b153bbb0086",
+    "created_at": "2026-10-07T17:50:32.683958+00:00",
+    "case": {
+      "case_id": "ADBE-FY2025-Q2-Q3",
+      "issuer": "ADBE",
+      "old": "ADBE-2025-Q2",
+      "new": "ADBE-2025-Q3",
+      "horizon": "FY2025",
+      "metric": "revenue",
+      "cutoff": "2025-09-12T00:00:00-04:00",
+      "split": "development",
+      "synthetic": false
+    },
+    "method": "A",
+    "config": {},
+    "cutoff_mode": "disclosure",
+    "trace": [
+      {
+        "stage": "rule_extraction",
+        "source_id": "ADBE-2025-Q2",
+        "issues": []
+      },
+      {
+        "stage": "rule_extraction",
+        "source_id": "ADBE-2025-Q3",
+        "issues": []
+      },
+      {
+        "stage": "deterministic_comparison",
+        "result": {
+          "status": "supported",
+          "reason": "raised",
+          "calculation": {
+            "old_lower": "23500000000.00",
+            "old_upper": "23600000000.00",
+            "new_lower": "23650000000.00",
+            "new_upper": "23700000000.00",
+            "old_midpoint": "23550000000.00",
+            "new_midpoint": "23675000000.00",
+            "midpoint_delta": "125000000.00",
+            "lower_delta": "150000000.00",
+            "upper_delta": "100000000.00",
+            "relative_midpoint_change_percent": "0.5307855626326963906581740977",
+            "delta_unit": "USD",
+            "range_change": "raised"
+          }
+        }
+      }
+    ],
+    "extractions": [
+      {
+        "metric": {
+          "source_id": "ADBE-2025-Q2",
+          "issuer": "ADBE",
+          "metric": "revenue",
+          "currency": "USD",
+          "unit": "billion",
+          "basis": "reported",
+          "horizon": "FY2025",
+          "calendar": "fiscal",
+          "definition": "total_revenue_as_reported",
+          "status": "provided",
+          "lower": "23.50",
+          "upper": "23.60",
+          "evidence": "Total revenue  | $23.50 billion to $23.60 billion",
+          "horizon_evidence": "The following updated table summarizes Adobe\u2019s fiscal year 2025 targets, which assumes current macroeconomic conditions2:\n |  |  |  |  |  |  |  |\nTotal revenue  | $23.50 billion to $23.60 billion"
+        },
+        "validation": {
+          "literal_valid": true,
+          "semantic_screen": "pass",
+          "errors": [],
+          "human_semantic_review": "pending",
+          "observation_id": "1a9ca561784322750239b3c43c55764cdbe898cb76b9a7ac821daa09788693dd"
+        }
+      },
+      {
+        "metric": {
+          "source_id": "ADBE-2025-Q3",
+          "issuer": "ADBE",
+          "metric": "revenue",
+          "currency": "USD",
+          "unit": "billion",
+          "basis": "reported",
+          "horizon": "FY2025",
+          "calendar": "fiscal",
+          "definition": "total_revenue_as_reported",
+          "status": "provided",
+          "lower": "23.65",
+          "upper": "23.70",
+          "evidence": "Total revenue  | $23.65 billion to $23.70 billion",
+          "horizon_evidence": "The following updated table summarizes Adobe\u2019s fiscal year 2025 targets, which assumes current macroeconomic conditions2:\n |  |  |  |  |  |  |  |\nTotal revenue  | $23.65 billion to $23.70 billion"
+        },
+        "validation": {
+          "literal_valid": true,
+          "semantic_screen": "pass",
+          "errors": [],
+          "human_semantic_review": "pending",
+          "observation_id": "91a1a1dd688bf8407dc9a6262258e1530f3c698fadf2067f0e411eaa6e72469c"
+        }
+      }
+    ],
+    "explanations": [
+      {
+        "source_id": "ADBE-2025-Q2",
+        "quote": "\u201cAs a result of us driving strong performance in the first half of the year, we are pleased to raise Adobe\u2019s FY25 total revenue and EPS targets,\u201d said Dan Durn, executive vice president and CFO, Adobe. \u201cWe continue to invest in AI innovation across our customer groups to enhance value realization and expand the universe of customers we serve.\u201d",
+        "type": "management_statement_candidate",
+        "semantic_review": "pending"
+      },
+      {
+        "source_id": "ADBE-2025-Q3",
+        "quote": "\u201cAdobe is the leader in the AI creative applications category with AI-influenced ARR surpassing $5 billion and AI-first ARR already exceeding our $250 million year-end target,\u201d said Shantanu Narayen, chair and CEO, Adobe. \u201cGiven our customer strategy, AI product innovation and strong go-to-market execution, we\u2019re pleased to once again raise our FY25 total revenue and EPS targets.\u201d",
+        "type": "management_statement_candidate",
+        "semantic_review": "pending"
+      },
+      {
+        "source_id": "ADBE-2025-Q3",
+        "quote": "\u201cAdobe delivered record Q3 revenue, with strength in subscription revenue across both Digital Media and Digital Experience segments,\u201d said Dan Durn, executive vice president and CFO, Adobe. \u201cWe\u2019re raising our FY25 total revenue and EPS targets as we execute against our growth strategy to deliver category leading and AI-infused solutions to meet the diverse needs of our customers.\u201d",
+        "type": "management_statement_candidate",
+        "semantic_review": "pending"
+      }
+    ],
+    "errors": [],
+    "calls": 0,
+    "tokens": null,
+    "label_status": "not_used_by_system",
+    "human_semantic_review": "pending",
+    "source_hashes": {
+      "ADBE-2025-Q2": "99e83a21cac144ba1d31481534ba6658a0f4bf7016b842510b5a36b4c0e5a24b",
+      "ADBE-2025-Q3": "e504dd9473b01c3a3a8b7a5c481a4e54b5f0cd91bbee7ed9300d168f72b4fc2c"
+    },
+    "input_hash": "f82cad110d012a6fa8f828b94b0b45099ea9dbd76b6122904183181ab1343ba7",
+    "model": null,
+    "execution_kind": "deterministic",
+    "context_characters": 48759,
+    "comparison": {
+      "status": "supported",
+      "reason": "raised",
+      "calculation": {
+        "old_lower": "23500000000.00",
+        "old_upper": "23600000000.00",
+        "new_lower": "23650000000.00",
+        "new_upper": "23700000000.00",
+        "old_midpoint": "23550000000.00",
+        "new_midpoint": "23675000000.00",
+        "midpoint_delta": "125000000.00",
+        "lower_delta": "150000000.00",
+        "upper_delta": "100000000.00",
+        "relative_midpoint_change_percent": "0.5307855626326963906581740977",
+        "delta_unit": "USD",
+        "range_change": "raised"
+      }
+    },
+    "explanation_conclusion": {
+      "status": "insufficient_evidence",
+      "reason": "semantic_review_required"
+    },
+    "conclusion": "supported",
+    "latency_ms": 2.468
+  },
+  {
+    "run_id": "692a498a-6854-443d-9092-3210a4604678",
+    "created_at": "2026-10-07T17:50:32.686419+00:00",
+    "case": {
+      "case_id": "CRM-FY2024-Q1-Q2",
+      "issuer": "CRM",
+      "old": "CRM-2024-Q1",
+      "new": "CRM-2024-Q2",
+      "horizon": "FY2024",
+      "metric": "revenue",
+      "cutoff": "2023-08-31T00:00:00-04:00",
+      "split": "heldout",
+      "synthetic": false
+    },
+    "method": "A",
+    "config": {},
+    "cutoff_mode": "disclosure",
+    "trace": [
+      {
+        "stage": "rule_extraction",
+        "source_id": "CRM-2024-Q1",
+        "issues": [
+          "no_unambiguous_annual_revenue_range"
+        ]
+      },
+      {
+        "stage": "rule_extraction",
+        "source_id": "CRM-2024-Q2",
+        "issues": [
+          "no_unambiguous_annual_revenue_range"
+        ]
+      },
+      {
+        "stage": "deterministic_comparison",
+        "result": {
+          "status": "insufficient_evidence",
+          "reason": "missing_guidance",
+          "calculation": null
+        }
+      }
+    ],
+    "extractions": [],
+    "explanations": [],
+    "errors": [],
+    "calls": 0,
+    "tokens": null,
+    "label_status": "not_used_by_system",
+    "human_semantic_review": "pending",
+    "source_hashes": {
+      "CRM-2024-Q1": "ce3ef55515214a97a91294454551acca8e9a411e428c7458d1848a5d90e81ad3",
+      "CRM-2024-Q2": "5e6ac8f74d23e2ebef90b574e091cab1a323933bce89bb1299b6a0c7b05e5d73"
+    },
+    "input_hash": "bb9fe2aba01b5666c3ed90f48d911e3de31a21efa7887d03e8e9283cc36ba60e",
+    "model": null,
+    "execution_kind": "deterministic",
+    "context_characters": 103682,
+    "comparison": {
+      "status": "insufficient_evidence",
+      "reason": "missing_guidance",
+      "calculation": null
+    },
+    "explanation_conclusion": {
+      "status": "insufficient_evidence",
+      "reason": "no_explicit_explanation_found"
+    },
+    "conclusion": "insufficient_evidence",
+    "latency_ms": 2.391
+  },
+  {
+    "run_id": "8130337f-f5b0-4de3-85b2-b2ba4fdfe946",
+    "created_at": "2026-10-07T17:50:32.688807+00:00",
+    "case": {
+      "case_id": "ADSK-FY2026-Q1-Q2",
+      "issuer": "ADSK",
+      "old": "ADSK-2026-Q1",
+      "new": "ADSK-2026-Q2",
+      "horizon": "FY2026",
+      "metric": "revenue",
+      "cutoff": "2025-08-29T00:00:00-04:00",
+      "split": "heldout",
+      "synthetic": false
+    },
+    "method": "A",
+    "config": {},
+    "cutoff_mode": "disclosure",
+    "trace": [
+      {
+        "stage": "rule_extraction",
+        "source_id": "ADSK-2026-Q1",
+        "issues": []
+      },
+      {
+        "stage": "rule_extraction",
+        "source_id": "ADSK-2026-Q2",
+        "issues": []
+      },
+      {
+        "stage": "deterministic_comparison",
+        "result": {
+          "status": "supported",
+          "reason": "raised",
+          "calculation": {
+            "old_lower": "6925000000",
+            "old_upper": "6995000000",
+            "new_lower": "7025000000",
+            "new_upper": "7075000000",
+            "old_midpoint": "6960000000",
+            "new_midpoint": "7050000000",
+            "midpoint_delta": "90000000",
+            "lower_delta": "100000000",
+            "upper_delta": "80000000",
+            "relative_midpoint_change_percent": "1.293103448275862068965517241",
+            "delta_unit": "USD",
+            "range_change": "raised"
+          }
+        }
+      }
+    ],
+    "extractions": [
+      {
+        "metric": {
+          "source_id": "ADSK-2026-Q1",
+          "issuer": "ADSK",
+          "metric": "revenue",
+          "currency": "USD",
+          "unit": "million",
+          "basis": "reported",
+          "horizon": "FY2026",
+          "calendar": "fiscal",
+          "definition": "total_revenue_as_reported",
+          "status": "provided",
+          "lower": "6925",
+          "upper": "6995",
+          "evidence": "Revenue (in millions) (1)  | $6,925 - $6,995",
+          "horizon_evidence": "FY26 Guidance Metrics  | FY26\n(ending January 31, 2026)\nBillings (in millions) (1)  | $7,160 - $7,310\nRevenue (in millions) (1)  | $6,925 - $6,995"
+        },
+        "validation": {
+          "literal_valid": true,
+          "semantic_screen": "pass",
+          "errors": [],
+          "human_semantic_review": "pending",
+          "observation_id": "b615fc87c92a106d890a572322f3df0c51e384b0b8213af423a92fa7f4e2daaa"
+        }
+      },
+      {
+        "metric": {
+          "source_id": "ADSK-2026-Q2",
+          "issuer": "ADSK",
+          "metric": "revenue",
+          "currency": "USD",
+          "unit": "million",
+          "basis": "reported",
+          "horizon": "FY2026",
+          "calendar": "fiscal",
+          "definition": "total_revenue_as_reported",
+          "status": "provided",
+          "lower": "7025",
+          "upper": "7075",
+          "evidence": "Revenue (in millions) (1)  | $7,025 - $7,075",
+          "horizon_evidence": "FY26 Guidance Metrics  | FY26\n(ending January 31, 2026)\nBillings (in millions) (1)  | $7,355 - $7,445\nRevenue (in millions) (1)  | $7,025 - $7,075"
+        },
+        "validation": {
+          "literal_valid": true,
+          "semantic_screen": "pass",
+          "errors": [],
+          "human_semantic_review": "pending",
+          "observation_id": "0ec0e7977c4a9c8cf25f8e1fe484f54e84bd08c59738e767adf291b954778361"
+        }
+      }
+    ],
+    "explanations": [
+      {
+        "source_id": "ADSK-2026-Q2",
+        "quote": "\"While our full year\u00a0 macroeconomic assumptions are unchanged, we have raised our full year guidance to reflect the underlying strength of the business in the first half of the year and additional foreign exchange tailwinds.\"",
+        "type": "management_statement_candidate",
+        "semantic_review": "pending"
+      }
+    ],
+    "errors": [],
+    "calls": 0,
+    "tokens": null,
+    "label_status": "not_used_by_system",
+    "human_semantic_review": "pending",
+    "source_hashes": {
+      "ADSK-2026-Q1": "a5ad3c7b77962f06198c39e38ae47091a3ac9a95852518182ec346a96a50e8e2",
+      "ADSK-2026-Q2": "daecdbc0dcef88ccd8b0157d05f1968215c7173d0531f61b0f9f95e38325e6dc"
+    },
+    "input_hash": "42becabca069977b52fcbda78849625f59939a056d5fc1d30c348aa0b4158f64",
+    "model": null,
+    "execution_kind": "deterministic",
+    "context_characters": 57969,
+    "comparison": {
+      "status": "supported",
+      "reason": "raised",
+      "calculation": {
+        "old_lower": "6925000000",
+        "old_upper": "6995000000",
+        "new_lower": "7025000000",
+        "new_upper": "7075000000",
+        "old_midpoint": "6960000000",
+        "new_midpoint": "7050000000",
+        "midpoint_delta": "90000000",
+        "lower_delta": "100000000",
+        "upper_delta": "80000000",
+        "relative_midpoint_change_percent": "1.293103448275862068965517241",
+        "delta_unit": "USD",
+        "range_change": "raised"
+      }
+    },
+    "explanation_conclusion": {
+      "status": "insufficient_evidence",
+      "reason": "semantic_review_required"
+    },
+    "conclusion": "supported",
+    "latency_ms": 1.401
+  }
+]

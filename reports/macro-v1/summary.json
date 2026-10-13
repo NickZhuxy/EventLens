@@ -1,0 +1,56 @@
+{
+  "created_at": "2026-10-07T20:58:17.140057+00:00",
+  "label_status": "AI-draft; Nick review pending",
+  "sources": 5,
+  "cases": 2,
+  "method_status": {
+    "rules": "executed",
+    "single": "not_run",
+    "agent": "not_run"
+  },
+  "metrics": [
+    {
+      "case_id": "july-2025-fomc",
+      "method": "rules",
+      "status": "ready_for_review",
+      "included_events": 1,
+      "expected_events": 1,
+      "event_precision": 1.0,
+      "event_recall": 1.0,
+      "mechanical_validation_pass": true,
+      "claims": 1,
+      "narrative_words": 41,
+      "semantic_support_accuracy": null,
+      "analyst_editing_time": null,
+      "calls": 0,
+      "tool_calls": 0,
+      "tokens": null,
+      "latency_ms": 0.567
+    },
+    {
+      "case_id": "september-2025-fomc",
+      "method": "rules",
+      "status": "ready_for_review",
+      "included_events": 1,
+      "expected_events": 1,
+      "event_precision": 1.0,
+      "event_recall": 1.0,
+      "mechanical_validation_pass": true,
+      "claims": 1,
+      "narrative_words": 41,
+      "semantic_support_accuracy": null,
+      "analyst_editing_time": null,
+      "calls": 0,
+      "tool_calls": 0,
+      "tokens": null,
+      "latency_ms": 0.099
+    }
+  ],
+  "limitations": [
+    "Two related FOMC cases do not establish broad generalization.",
+    "September is a temporal check, not a blinded holdout; its sources were inspected during development.",
+    "Draft calendar labels have not been reviewed by Nick.",
+    "Mechanical validation does not measure semantic support.",
+    "Sources were captured retrospectively; publication-time replay is not a point-in-time archive."
+  ]
+}

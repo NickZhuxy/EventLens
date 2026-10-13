@@ -1,0 +1,53 @@
+{
+  "test": "service-http-acceptance",
+  "created_at": "2026-10-08T01:19:51.054522+00:00",
+  "model_execution": "deterministic",
+  "source_input": "live-fed-rss",
+  "success": true,
+  "refresh": {
+    "added": 0,
+    "errors": [],
+    "feed": "https://www.federalreserve.gov/feeds/press_monetary.xml",
+    "retrieved_at": "2026-10-08T01:19:51.816081+00:00",
+    "unchanged": 4
+  },
+  "job_id": "4e994453-a630-46fc-90a5-4db021bcfe6b",
+  "run_status": "ready_for_review",
+  "source_count": 4,
+  "events": [
+    {
+      "id": "fomc-2026-10-28",
+      "start": "2026-10-27",
+      "end": "2026-10-28"
+    }
+  ],
+  "model_calls": 0,
+  "tool_calls": 0,
+  "tokens": null,
+  "checks": [
+    "authentication",
+    "OpenAPI",
+    "source ingestion",
+    "durable job execution",
+    "idempotency",
+    "evidence validation",
+    "brief download",
+    "review persistence",
+    "prior job and review retained after container rebuild"
+  ],
+  "deployment": {
+    "runtime": "Docker Compose",
+    "port": "127.0.0.1:8000",
+    "persistent_volume": true,
+    "run_as_root": false
+  },
+  "previous_restart_check": {
+    "job_id": "87769e54-3243-4d4c-8fbd-ef588afec26e",
+    "checks": [
+      "job and review persistence after container restart",
+      "SQLite online backup",
+      "non-root UID 10001"
+    ]
+  },
+  "container_image_id": "sha256:88d7272d261cb583bed3ed0fdf105718a0c16d3afe5fe7a3007a85122ddb30de"
+}
