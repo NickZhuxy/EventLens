@@ -1,0 +1,811 @@
+{
+  "run_id": "a2d21ca9-7573-461d-81f2-86198060dc29",
+  "created_at": "2026-10-16T02:07:28.204017+00:00",
+  "case": {
+    "case_id": "INTU-FY2025-Q2-Q3",
+    "issuer": "INTU",
+    "old": "INTU-2025-Q2",
+    "new": "INTU-2025-Q3",
+    "horizon": "FY2025",
+    "metric": "revenue",
+    "cutoff": "2025-05-23T00:00:00-04:00",
+    "split": "development",
+    "synthetic": false
+  },
+  "method": "D",
+  "config": {
+    "version": "earnings-v8-point-target-regression",
+    "model": "deepseek-flash",
+    "base_url": "https://api.deepseek.com/beta",
+    "reasoning_effort": "none",
+    "max_calls": 8,
+    "max_tool_calls": 7,
+    "max_validation_repairs": 2,
+    "max_output_tokens_per_call": 6000,
+    "max_input_bytes": 128000,
+    "transport_retries": 0,
+    "selection": "Same 36 corpus pairs and 36 table-row derivatives as v7; frozen v8 point-target screen excludes monetary impacts/deltas discovered on Adobe development data. All previously exposed heldout results are regression only. No tuning on v7 heldout outputs. Retain the v7 uncertain request reservation and never resend an identical wire request; record a blocked outcome instead.",
+    "methods": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "pricing": {
+      "currency": "USD",
+      "input_per_million": "0.30",
+      "output_per_million": "1.20",
+      "assumption": "Peak rates, all input charged as cache miss; ignore all discounts.",
+      "reference": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "checked_on": "2026-10-15"
+    },
+    "proposed_budget_usd": "1.50",
+    "approval_status": "pending_new_experiment_approval",
+    "planning_cost_per_BC_pair_usd": "0.01639565",
+    "budget_authorization": "reports/earnings-budget-2026-10-15/authorization.json",
+    "budget_authorization_sha256": "56b79a004195ffa2feb1e9ba73157b090290af79cdb3bd30c25aeda27b42849d",
+    "prior_paid_bundles": [
+      "reports/earnings-v3-preflight-2026-10-14",
+      "reports/earnings-v4-preflight-2026-10-15",
+      "reports/earnings-v5-preflight-2026-10-15",
+      "reports/earnings-v6-preflight-2026-10-15",
+      "reports/earnings-v7-2026-10-15"
+    ],
+    "retained_uncertain_requests": {
+      "reports/earnings-v7-2026-10-15/requests/HUBS-FY2025-Q1-Q2_B.01.json": "0917fd175f3e454ed26ab508d0bb77cd3d6758f0c429e0be80377378ae941456"
+    }
+  },
+  "cutoff_mode": "disclosure",
+  "trace": [
+    {
+      "stage": "document_diff",
+      "algorithm": "difflib.SequenceMatcher sentence-level; autojunk=False",
+      "sentence_counts": [
+        549,
+        557
+      ],
+      "changed_guidance_candidates": [
+        {
+          "operation": "replace",
+          "old_sentences": [
+            9,
+            13
+          ],
+          "new_sentences": [
+            9,
+            14
+          ],
+          "spans": [
+            {
+              "source_id": "INTU-2025-Q2",
+              "sentence": 10,
+              "start": 442,
+              "end": 497,
+              "quote": "Global Business Solutions Group Revenue Grew 19 percent"
+            },
+            {
+              "source_id": "INTU-2025-Q3",
+              "sentence": 10,
+              "start": 436,
+              "end": 531,
+              "quote": "Consumer Group Revenue Grew 11 percent; Global Business Solutions Group Revenue Grew 19 percent"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            14,
+            23
+          ],
+          "new_sentences": [
+            15,
+            25
+          ],
+          "spans": [
+            {
+              "source_id": "INTU-2025-Q2",
+              "sentence": 15,
+              "start": 1206,
+              "end": 1257,
+              "quote": "•Grew total revenue to $4.0 billion, up 17 percent."
+            },
+            {
+              "source_id": "INTU-2025-Q2",
+              "sentence": 16,
+              "start": 1258,
+              "end": 1402,
+              "quote": "•Increased Global Business Solutions Group revenue to $2.7 billion, up 19 percent; grew Online Ecosystem revenue to $2.0 billion, up 21 percent."
+            },
+            {
+              "source_id": "INTU-2025-Q2",
+              "sentence": 17,
+              "start": 1404,
+              "end": 1462,
+              "quote": "•Grew Credit Karma revenue to $511 million, up 36 percent."
+            },
+            {
+              "source_id": "INTU-2025-Q2",
+              "sentence": 18,
+              "start": 1464,
+              "end": 1585,
+              "quote": "•Reported Consumer Group revenue of $509 million, up 3 percent, and ProTax Group revenue of $272 million, down 1 percent."
+            },
+            {
+              "source_id": "INTU-2025-Q3",
+              "sentence": 16,
+              "start": 1316,
+              "end": 1367,
+              "quote": "•Grew total revenue to $7.8 billion, up 15 percent."
+            },
+            {
+              "source_id": "INTU-2025-Q3",
+              "sentence": 17,
+              "start": 1369,
+              "end": 1434,
+              "quote": "•Increased Consumer Group revenue to $4.0 billion, up 11 percent."
+            },
+            {
+              "source_id": "INTU-2025-Q3",
+              "sentence": 18,
+              "start": 1436,
+              "end": 1575,
+              "quote": "•Grew Global Business Solutions Group revenue to $2.8 billion, up 19 percent; grew Online Ecosystem revenue to $2.1 billion, up 20 percent."
+            },
+            {
+              "source_id": "INTU-2025-Q3",
+              "sentence": 19,
+              "start": 1577,
+              "end": 1640,
+              "quote": "•Increased Credit Karma revenue to $579 million, up 31 percent."
+            },
+            {
+              "source_id": "INTU-2025-Q3",
+              "sentence": 20,
+              "start": 1642,
+              "end": 1699,
+              "quote": "•Grew ProTax Group revenue to $278 million, up 9 percent."
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            34,
+            37
+          ],
+          "new_sentences": [
+            36,
+            39
+          ],
+          "spans": [
+            {
+              "source_id": "INTU-2025-Q2",
+              "sentence": 34,
+              "start": 2244,
+              "end": 2305,
+              "quote": "Revenue  | $3,963  | $3,386  | 17%  | $3,963  | $3,386  | 17%"
+            },
+            {
+              "source_id": "INTU-2025-Q3",
+              "sentence": 36,
+              "start": 2359,
+              "end": 2420,
+              "quote": "Revenue  | $7,754  | $6,737  | 15%  | $7,754  | $6,737  | 15%"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            39,
+            40
+          ],
+          "new_sentences": [
+            41,
+            42
+          ],
+          "spans": [
+            {
+              "source_id": "INTU-2025-Q2",
+              "sentence": 39,
+              "start": 2671,
+              "end": 3061,
+              "quote": "\"We delivered very strong second quarter fiscal 2025 results as we leverage AI to deliver breakthrough experiences for our customers and increase productivity across our platform,\" said Sandeep Aujla, Intuit's chief financial officer. \"We are confident in delivering double-digit revenue growth and expanding margin this year, and we are reiterating our full year guidance for fiscal 2025.\""
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            41,
+            48
+          ],
+          "new_sentences": [
+            43,
+            50
+          ],
+          "spans": [
+            {
+              "source_id": "INTU-2025-Q2",
+              "sentence": 42,
+              "start": 3121,
+              "end": 3268,
+              "quote": "Global Business Solutions Group revenue grew to $2.7 billion, up 19 percent, and Online Ecosystem revenue increased to $2.0 billion, up 21 percent."
+            },
+            {
+              "source_id": "INTU-2025-Q2",
+              "sentence": 43,
+              "start": 3270,
+              "end": 3372,
+              "quote": "•Online Services revenue grew 19 percent, driven by growth in money, payroll, and Mailchimp offerings."
+            },
+            {
+              "source_id": "INTU-2025-Q2",
+              "sentence": 44,
+              "start": 3374,
+              "end": 3510,
+              "quote": "•QuickBooks Online Accounting revenue grew 22 percent in the quarter, driven by higher effective prices, customer growth, and mix-shift."
+            },
+            {
+              "source_id": "INTU-2025-Q2",
+              "sentence": 45,
+              "start": 3512,
+              "end": 3602,
+              "quote": "•Total international Online Ecosystem revenue grew 9 percent on a constant currency basis."
+            },
+            {
+              "source_id": "INTU-2025-Q2",
+              "sentence": 47,
+              "start": 3617,
+              "end": 3757,
+              "quote": "Credit Karma revenue grew 36 percent to $511 million in the quarter, driven by strength in credit cards, personal loans, and auto insurance."
+            },
+            {
+              "source_id": "INTU-2025-Q3",
+              "sentence": 44,
+              "start": 3195,
+              "end": 3267,
+              "quote": "Consumer Group revenue of $4.0 billion was up 11 percent in the quarter."
+            },
+            {
+              "source_id": "INTU-2025-Q3",
+              "sentence": 46,
+              "start": 3311,
+              "end": 3484,
+              "quote": "•TurboTax Live revenue to grow 47 percent to $2.0 billion, representing approximately 40 percent of total Consumer Group revenue, and TurboTax Live units to grow 24 percent."
+            },
+            {
+              "source_id": "INTU-2025-Q3",
+              "sentence": 47,
+              "start": 3486,
+              "end": 3736,
+              "quote": "•TurboTax Online paying units to grow approximately 6 percent on share gains from higher average revenue per return (ARPR) filers, and ARPR to increase approximately 13 percent, as more customers chose assisted offerings and faster access to refunds."
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            50,
+            52
+          ],
+          "new_sentences": [
+            52,
+            61
+          ],
+          "spans": [
+            {
+              "source_id": "INTU-2025-Q2",
+              "sentence": 51,
+              "start": 3785,
+              "end": 3856,
+              "quote": "Consumer Group revenue of $509 million was up 3 percent in the quarter."
+            },
+            {
+              "source_id": "INTU-2025-Q3",
+              "sentence": 55,
+              "start": 4356,
+              "end": 4503,
+              "quote": "Global Business Solutions Group revenue grew to $2.8 billion, up 19 percent, and Online Ecosystem revenue increased to $2.1 billion, up 20 percent."
+            },
+            {
+              "source_id": "INTU-2025-Q3",
+              "sentence": 56,
+              "start": 4505,
+              "end": 4595,
+              "quote": "•Online Services revenue grew 18 percent, driven by growth in money and payroll offerings."
+            },
+            {
+              "source_id": "INTU-2025-Q3",
+              "sentence": 57,
+              "start": 4596,
+              "end": 4732,
+              "quote": "•QuickBooks Online Accounting revenue grew 21 percent in the quarter, driven by higher effective prices, customer growth, and mix-shift."
+            },
+            {
+              "source_id": "INTU-2025-Q3",
+              "sentence": 58,
+              "start": 4734,
+              "end": 4824,
+              "quote": "•Total international Online Ecosystem revenue grew 8 percent on a constant currency basis."
+            },
+            {
+              "source_id": "INTU-2025-Q3",
+              "sentence": 60,
+              "start": 4840,
+              "end": 4980,
+              "quote": "Credit Karma revenue grew 31 percent to $579 million in the quarter, driven by strength in credit cards, personal loans, and auto insurance."
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            63,
+            74
+          ],
+          "new_sentences": [
+            70,
+            71
+          ],
+          "spans": [
+            {
+              "source_id": "INTU-2025-Q2",
+              "sentence": 63,
+              "start": 4632,
+              "end": 4721,
+              "quote": "•Revenue of $18.160 billion to $18.347 billion, growth of approximately 12 to 13 percent."
+            },
+            {
+              "source_id": "INTU-2025-Q2",
+              "sentence": 68,
+              "start": 5130,
+              "end": 5205,
+              "quote": "The company also reiterated full fiscal year 2025 segment revenue guidance:"
+            },
+            {
+              "source_id": "INTU-2025-Q2",
+              "sentence": 70,
+              "start": 5268,
+              "end": 5405,
+              "quote": "This includes Online Ecosystem revenue growth of approximately 20 percent, and Desktop Ecosystem revenue growth in the low single digits."
+            },
+            {
+              "source_id": "INTU-2025-Q3",
+              "sentence": 70,
+              "start": 5577,
+              "end": 5732,
+              "quote": "•Revenue of $18.723 billion to $18.760 billion, growth of approximately 15 percent, up from previous guidance for growth of approximately 12 to 13 percent."
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            76,
+            77
+          ],
+          "new_sentences": [
+            73,
+            84
+          ],
+          "spans": [
+            {
+              "source_id": "INTU-2025-Q3",
+              "sentence": 77,
+              "start": 6426,
+              "end": 6498,
+              "quote": "The company also updated full fiscal year 2025 segment revenue guidance:"
+            },
+            {
+              "source_id": "INTU-2025-Q3",
+              "sentence": 79,
+              "start": 6570,
+              "end": 6707,
+              "quote": "This includes Online Ecosystem revenue growth of approximately 20 percent, and Desktop Ecosystem revenue growth in the mid single digits."
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            78,
+            81
+          ],
+          "new_sentences": [
+            85,
+            89
+          ],
+          "spans": [
+            {
+              "source_id": "INTU-2025-Q2",
+              "sentence": 78,
+              "start": 5656,
+              "end": 5743,
+              "quote": "•Revenue of $7.550 billion to $7.600 billion, growth of approximately 12 to 13 percent."
+            },
+            {
+              "source_id": "INTU-2025-Q3",
+              "sentence": 85,
+              "start": 7093,
+              "end": 7180,
+              "quote": "•Revenue of $3.723 billion to $3.760 billion, growth of approximately 17 to 18 percent."
+            },
+            {
+              "source_id": "INTU-2025-Q3",
+              "sentence": 86,
+              "start": 7181,
+              "end": 7287,
+              "quote": "This includes Global Business Solutions Group Online Ecosystem revenue growth of approximately 21 percent."
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            103,
+            104
+          ],
+          "new_sentences": [
+            110,
+            111
+          ],
+          "spans": [
+            {
+              "source_id": "INTU-2025-Q2",
+              "sentence": 103,
+              "start": 7689,
+              "end": 8234,
+              "quote": "This press release contains forward-looking statements, including expectations regarding: forecasts and timing of growth and future financial results of Intuit and its reporting segments; Intuit’s prospects for the business in fiscal 2025; timing and growth of revenue from current or future products and services; Intuit's corporate tax rate; the amount and timing of any future dividends or share repurchases; and the impact of strategic decisions on our business; as well as all of the statements under the heading “Forward-looking Guidance.”"
+            },
+            {
+              "source_id": "INTU-2025-Q3",
+              "sentence": 110,
+              "start": 9225,
+              "end": 9990,
+              "quote": "This press release contains forward-looking statements, including expectations regarding: the size, components and our share of the tax preparation space; the timing of when individuals will file their tax returns; forecasts and timing of growth and future financial results of Intuit and its reporting segments; Intuit’s prospects for the business in fiscal 2025 and beyond; timing and growth of revenue from current or future products and services; demand for our products; customer growth and retention; average revenue per return; Intuit's corporate tax rate; the amount and timing of any future dividends or share repurchases; and the impact of strategic decisions on our business; as well as all of the statements under the heading “Forward-looking Guidance.”"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            131,
+            134
+          ],
+          "new_sentences": [
+            140,
+            143
+          ],
+          "spans": [
+            {
+              "source_id": "INTU-2025-Q2",
+              "sentence": 133,
+              "start": 12617,
+              "end": 12695,
+              "quote": "Total net revenue  | 3,963   |  |  | 3,386   |  |  | 7,246   |  |  | 6,364   |"
+            },
+            {
+              "source_id": "INTU-2025-Q3",
+              "sentence": 142,
+              "start": 14380,
+              "end": 14460,
+              "quote": "Total net revenue  | 7,754   |  |  | 6,737   |  |  | 15,000   |  |  | 13,101   |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            136,
+            144
+          ],
+          "new_sentences": [
+            145,
+            153
+          ],
+          "spans": [
+            {
+              "source_id": "INTU-2025-Q2",
+              "sentence": 136,
+              "start": 12775,
+              "end": 12855,
+              "quote": "Cost of service revenue  | 880   |  |  | 796   |  |  | 1,652   |  |  | 1,503   |"
+            },
+            {
+              "source_id": "INTU-2025-Q2",
+              "sentence": 137,
+              "start": 12856,
+              "end": 12938,
+              "quote": "Cost of product and other revenue  | 20   |  |  | 23   |  |  | 34   |  |  | 38   |"
+            },
+            {
+              "source_id": "INTU-2025-Q3",
+              "sentence": 145,
+              "start": 14540,
+              "end": 14624,
+              "quote": "Cost of service revenue  | 1,138   |  |  | 1,014   |  |  | 2,790   |  |  | 2,517   |"
+            },
+            {
+              "source_id": "INTU-2025-Q3",
+              "sentence": 146,
+              "start": 14625,
+              "end": 14707,
+              "quote": "Cost of product and other revenue  | 18   |  |  | 17   |  |  | 52   |  |  | 55   |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            173,
+            177
+          ],
+          "new_sentences": [
+            182,
+            186
+          ],
+          "spans": [
+            {
+              "source_id": "INTU-2025-Q2",
+              "sentence": 173,
+              "start": 14917,
+              "end": 15005,
+              "quote": "Cost of revenue  | $  | 110   |  |  | $  | 101   |  |  | $  | 221   |  |  | $  | 202   |"
+            },
+            {
+              "source_id": "INTU-2025-Q3",
+              "sentence": 182,
+              "start": 16719,
+              "end": 16806,
+              "quote": "Cost of revenue  | $  | 101   |  |  | $  | 98   |  |  | $  | 322   |  |  | $  | 300   |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            348,
+            351
+          ],
+          "new_sentences": [
+            356,
+            361
+          ],
+          "spans": [
+            {
+              "source_id": "INTU-2025-Q2",
+              "sentence": 350,
+              "start": 28881,
+              "end": 28924,
+              "quote": "Deferred revenue  | 1,025   |  |  | 872   |"
+            },
+            {
+              "source_id": "INTU-2025-Q3",
+              "sentence": 358,
+              "start": 30911,
+              "end": 30952,
+              "quote": "Deferred revenue  | 957   |  |  | 872   |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            396,
+            407
+          ],
+          "new_sentences": [
+            404,
+            415
+          ],
+          "spans": [
+            {
+              "source_id": "INTU-2025-Q2",
+              "sentence": 401,
+              "start": 30831,
+              "end": 30872,
+              "quote": "Deferred revenue  | 154   |  |  | (37)  |"
+            },
+            {
+              "source_id": "INTU-2025-Q3",
+              "sentence": 409,
+              "start": 32896,
+              "end": 32936,
+              "quote": "Deferred revenue  | 84   |  |  | (79)  |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            466,
+            470
+          ],
+          "new_sentences": [
+            474,
+            478
+          ],
+          "spans": [
+            {
+              "source_id": "INTU-2025-Q2",
+              "sentence": 467,
+              "start": 34852,
+              "end": 34957,
+              "quote": "Revenue  | $  | 7,550   |  |  | $  | 7,600   |  |  | $  | —   |  |  | $  | 7,550   |  |  | $  | 7,600   |"
+            },
+            {
+              "source_id": "INTU-2025-Q3",
+              "sentence": 475,
+              "start": 36904,
+              "end": 37009,
+              "quote": "Revenue  | $  | 3,723   |  |  | $  | 3,760   |  |  | $  | —   |  |  | $  | 3,723   |  |  | $  | 3,760   |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            472,
+            475
+          ],
+          "new_sentences": [
+            480,
+            483
+          ],
+          "spans": [
+            {
+              "source_id": "INTU-2025-Q2",
+              "sentence": 472,
+              "start": 35300,
+              "end": 35409,
+              "quote": "Revenue  | $  | 18,160   |  |  | $  | 18,347   |  |  | $  | —   |  |  | $  | 18,160   |  |  | $  | 18,347   |"
+            },
+            {
+              "source_id": "INTU-2025-Q3",
+              "sentence": 480,
+              "start": 37344,
+              "end": 37453,
+              "quote": "Revenue  | $  | 18,723   |  |  | $  | 18,760   |  |  | $  | —   |  |  | $  | 18,723   |  |  | $  | 18,760   |"
+            }
+          ]
+        }
+      ],
+      "annual_candidate_counts": [
+        1,
+        1
+      ],
+      "issues": [
+        "changed_guidance_pair"
+      ],
+      "selected_alignment": "replace",
+      "selected_sentence_indices": [
+        63,
+        70
+      ]
+    },
+    {
+      "stage": "deterministic_comparison",
+      "result": {
+        "status": "supported",
+        "reason": "raised",
+        "calculation": {
+          "old_lower": "18160000000.000",
+          "old_upper": "18347000000.000",
+          "new_lower": "18723000000.000",
+          "new_upper": "18760000000.000",
+          "old_midpoint": "18253500000.000",
+          "new_midpoint": "18741500000.000",
+          "midpoint_delta": "488000000.000",
+          "lower_delta": "563000000.000",
+          "upper_delta": "413000000.000",
+          "relative_midpoint_change_percent": "2.673459884405730407866984414",
+          "delta_unit": "USD",
+          "range_change": "raised"
+        }
+      }
+    }
+  ],
+  "extractions": [
+    {
+      "metric": {
+        "source_id": "INTU-2025-Q2",
+        "issuer": "INTU",
+        "metric": "revenue",
+        "currency": "USD",
+        "unit": "billion",
+        "basis": "reported",
+        "horizon": "FY2025",
+        "calendar": "fiscal",
+        "definition": "total_revenue_as_reported",
+        "status": "provided",
+        "lower": "18.160",
+        "upper": "18.347",
+        "evidence": "•Revenue of $18.160 billion to $18.347 billion, growth of approximately 12 to 13 percent.",
+        "horizon_evidence": "Intuit reiterated guidance for the full fiscal year 2025. The company expects:\n\n•Revenue of $18.160 billion to $18.347 billion, growth of approximately 12 to 13 percent."
+      },
+      "validation": {
+        "literal_valid": true,
+        "semantic_screen": "pass",
+        "errors": [],
+        "human_semantic_review": "pending",
+        "observation_id": "ed2c9bd3629d03f60792424ae534f658b0ca985272fea623710aa6edb05df8e8"
+      }
+    },
+    {
+      "metric": {
+        "source_id": "INTU-2025-Q3",
+        "issuer": "INTU",
+        "metric": "revenue",
+        "currency": "USD",
+        "unit": "billion",
+        "basis": "reported",
+        "horizon": "FY2025",
+        "calendar": "fiscal",
+        "definition": "total_revenue_as_reported",
+        "status": "provided",
+        "lower": "18.723",
+        "upper": "18.760",
+        "evidence": "•Revenue of $18.723 billion to $18.760 billion, growth of approximately 15 percent, up from previous guidance for growth of approximately 12 to 13 percent.",
+        "horizon_evidence": "Intuit raised total company guidance for the full fiscal year 2025. The company expects:\n\n•Revenue of $18.723 billion to $18.760 billion, growth of approximately 15 percent, up from previous guidance for growth of approximately 12 to 13 percent."
+      },
+      "validation": {
+        "literal_valid": true,
+        "semantic_screen": "pass",
+        "errors": [],
+        "human_semantic_review": "pending",
+        "observation_id": "caeff339906472bf14bd34e89648e6e88c7912a8fec71836afeac0bc19817a91"
+      }
+    }
+  ],
+  "explanations": [
+    {
+      "source_id": "INTU-2025-Q3",
+      "quote": "\"We delivered a strong third quarter of fiscal 2025, driven by an outstanding tax season and continued momentum in our Global Business Solutions Group and Credit Karma,\" said Sandeep Aujla, Intuit's chief financial officer. \"Reflecting this strength across our platform, we are raising our full-year guidance across all total company metrics for fiscal 2025.\"",
+      "type": "management_statement_candidate",
+      "semantic_review": "pending"
+    }
+  ],
+  "errors": [],
+  "calls": 0,
+  "tokens": null,
+  "label_status": "not_used_by_system",
+  "human_semantic_review": "pending",
+  "source_hashes": {
+    "INTU-2025-Q2": "ebaf2ea827f9ecbf284c76035fa88b23634cbdea4120ed04e25e3125dd05d4c5",
+    "INTU-2025-Q3": "9b7b8394f81e2296c8fa3bcd178460f013136a747aada5b8bdeebb1509dc486a"
+  },
+  "input_hash": "7f2c7d85f3360e1131ea146c3853d5ddf7346eea8c3a8c95a729c4977f9c4d64",
+  "model": null,
+  "execution_kind": "deterministic",
+  "context_characters": 91802,
+  "comparison": {
+    "status": "supported",
+    "reason": "raised",
+    "calculation": {
+      "old_lower": "18160000000.000",
+      "old_upper": "18347000000.000",
+      "new_lower": "18723000000.000",
+      "new_upper": "18760000000.000",
+      "old_midpoint": "18253500000.000",
+      "new_midpoint": "18741500000.000",
+      "midpoint_delta": "488000000.000",
+      "lower_delta": "563000000.000",
+      "upper_delta": "413000000.000",
+      "relative_midpoint_change_percent": "2.673459884405730407866984414",
+      "delta_unit": "USD",
+      "range_change": "raised"
+    }
+  },
+  "explanation_conclusion": {
+    "status": "insufficient_evidence",
+    "reason": "semantic_review_required"
+  },
+  "conclusion": "supported",
+  "latency_ms": 11.043,
+  "conflicts": [],
+  "comparability": null,
+  "investigation_version": "earnings-investigation-v2",
+  "validation_failures": []
+}

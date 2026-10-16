@@ -1,0 +1,74 @@
+{
+  "run_id": "73b8d8c2-f640-4e10-8a36-6bc8657633ac",
+  "created_at": "2026-10-13T19:47:07.315590+00:00",
+  "case": {
+    "case_id": "INTU-FY2025-priorQ4-Q1",
+    "issuer": "INTU",
+    "old": "INTU-2024-Q4",
+    "new": "INTU-2025-Q1",
+    "horizon": "FY2025",
+    "metric": "revenue",
+    "cutoff": "2024-11-22T00:00:00-05:00",
+    "split": "development",
+    "synthetic": false
+  },
+  "method": "A",
+  "config": {
+    "model": "SET_MODEL_ID",
+    "max_calls": 6,
+    "max_tool_calls": 5,
+    "max_output_tokens_per_call": 1800,
+    "max_input_characters": 160000
+  },
+  "cutoff_mode": "disclosure",
+  "trace": [
+    {
+      "stage": "rule_extraction",
+      "source_id": "INTU-2024-Q4",
+      "issues": [
+        "no_unambiguous_annual_revenue_range"
+      ]
+    },
+    {
+      "stage": "rule_extraction",
+      "source_id": "INTU-2025-Q1",
+      "issues": [
+        "no_unambiguous_annual_revenue_range"
+      ]
+    },
+    {
+      "stage": "deterministic_comparison",
+      "result": {
+        "status": "insufficient_evidence",
+        "reason": "missing_guidance",
+        "calculation": null
+      }
+    }
+  ],
+  "extractions": [],
+  "explanations": [],
+  "errors": [],
+  "calls": 0,
+  "tokens": null,
+  "label_status": "not_used_by_system",
+  "human_semantic_review": "pending",
+  "source_hashes": {
+    "INTU-2024-Q4": "823114abc9cf38ba8018bb761a7efa6da543fe01c9839b09fb8416d4d409a44d",
+    "INTU-2025-Q1": "f5a2545e3616b337d42cf7e56b0790dc559cc814fc8c56c2d567101698c56bfc"
+  },
+  "input_hash": "37a5ceb794580012ff201cd0422ff8c43e00f347f8eb4ff75207c8e12f5de7b4",
+  "model": null,
+  "execution_kind": "deterministic",
+  "context_characters": 95055,
+  "comparison": {
+    "status": "insufficient_evidence",
+    "reason": "missing_guidance",
+    "calculation": null
+  },
+  "explanation_conclusion": {
+    "status": "insufficient_evidence",
+    "reason": "no_explicit_explanation_found"
+  },
+  "conclusion": "insufficient_evidence",
+  "latency_ms": 2.618
+}

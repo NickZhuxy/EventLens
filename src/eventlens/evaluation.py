@@ -23,6 +23,7 @@ def score(runs, labels):
         tp=fp=fn=comparisons=scored_comparisons=arithmetic_errors=literal_errors=screen_errors=claims=abstentions=0
         expected_abstentions=correct_abstentions=status_correct=0
         tokens=[]
+        labeled_cases=0
         for r in rows:
             synthetic=r['case'].get('synthetic',False)
             if r['comparison']['calculation']:comparisons+=1
@@ -33,16 +34,18 @@ def score(runs, labels):
                     expected_abstentions+=1
                     correct_abstentions+=r['conclusion']==expected
             else:
-                truth=labels['cases'][r['case']['case_id']]
-                gold={signature(x) for x in truth['metrics']}
-                # Score emitted candidates, including rejected ones: invalid output is not hidden.
-                predicted={signature(x['metric']) for x in r['extractions']}
-                tp+=len(gold&predicted);fp+=len(predicted-gold);fn+=len(gold-predicted)
-                status_correct+=r['conclusion']==truth['expected_status']
-                calc=r['comparison']['calculation']
-                if calc:
-                    scored_comparisons+=1
-                    arithmetic_errors+=Decimal(calc['midpoint_delta'])!=Decimal(truth['expected_midpoint_delta_usd'])
+                truth=labels['cases'].get(r['case']['case_id'])
+                if truth and truth.get('status')!='pending':
+                    labeled_cases+=1
+                    gold={signature(x) for x in truth['metrics']}
+                    # Score emitted candidates, including rejected ones: invalid output is not hidden.
+                    predicted={signature(x['metric']) for x in r['extractions']}
+                    tp+=len(gold&predicted);fp+=len(predicted-gold);fn+=len(gold-predicted)
+                    status_correct+=r['conclusion']==truth['expected_status']
+                    calc=r['comparison']['calculation']
+                    if calc:
+                        scored_comparisons+=1
+                        arithmetic_errors+=Decimal(calc['midpoint_delta'])!=Decimal(truth['expected_midpoint_delta_usd'])
             for x in r['extractions']:
                 literal_errors+=not x['validation']['literal_valid']
                 screen_errors+=bool(x['validation']['errors'])
@@ -51,10 +54,11 @@ def score(runs, labels):
             if r['tokens'] is not None:tokens.append(r['tokens']['total_tokens'])
         synthetic=split.startswith('synthetic')
         metrics.append({'method':method,'split':split,'case_count':len(rows),
-            'provisional':labels['status']!='human_reviewed','label_status':labels['status'],
-            'extraction_true_positive':None if synthetic else tp,
-            'extraction_false_positive':None if synthetic else fp,
-            'extraction_false_negative':None if synthetic else fn,
+            'provisional':labels['status']!='human_reviewed','label_status':labels['status'],'labeled_cases':labeled_cases,
+            'unlabeled_cases':0 if synthetic else len(rows)-labeled_cases,
+            'extraction_true_positive':None if synthetic or not labeled_cases else tp,
+            'extraction_false_positive':None if synthetic or not labeled_cases else fp,
+            'extraction_false_negative':None if synthetic or not labeled_cases else fn,
             'extraction_precision':None if synthetic or tp+fp==0 else tp/(tp+fp),
             'extraction_recall':None if synthetic or tp+fn==0 else tp/(tp+fn),
             'emitted_numerical_comparisons':comparisons,'numerically_scored_comparisons':scored_comparisons,
@@ -63,28 +67,28 @@ def score(runs, labels):
             'human_evidence_support_errors':None,'human_reviewed_observations':0,
             'explanation_candidates_pending_review':claims,'abstentions':abstentions,
             'expected_abstention_cases':expected_abstentions,'appropriate_abstentions':correct_abstentions,
-            'status_correct':status_correct,'calls':sum(r['calls'] for r in rows),
+            'status_correct':status_correct if synthetic or labeled_cases else None,'calls':sum(r['calls'] for r in rows),
             'total_tokens':sum(tokens) if len(tokens)==len(rows) else None,
             'latency_ms_sum':sum(r['latency_ms'] for r in rows)})
     return metrics
 
 
 def report_text(summary):
-    lines=['# EventLens evaluation', '', ('All accuracy results below are provisional against AI-drafted labels. Nick has not reviewed these labels.' if any(m['provisional'] for m in summary['metrics']) else 'Extraction labels are marked human-reviewed in labels_used.json. Semantic observation review remains separate.'), '',
+    lines=['# EventLens evaluation', '', ('Accuracy fields cover labeled pairs only and are provisional against AI drafts. Nick has reviewed no labels. Unlabeled cases are included in operational counts, never treated as correct or incorrect.' if any(m['provisional'] for m in summary['metrics']) else 'Extraction labels are marked human-reviewed in labels_used.json. Semantic observation review remains separate.'), '',
            f"Corpus: {summary['corpus']['documents']} normalized public source snapshots; {summary['corpus']['eligible_comparisons']} eligible same-horizon real pairs; {summary['corpus']['issuers']} issuers.",
            'Synthetic controls are counted separately. No live model evaluation was run unless the methods list explicitly says live.', '',
-           '| Method | Split | Cases | Precision | Recall | Numeric errors / emitted | Abstentions | Calls |',
-           '| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |']
+           '| Method | Split | Cases | Labeled cases | Precision | Recall | Numeric errors / emitted | Abstentions | Calls |',
+           '| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |']
     for x in summary['metrics']:
         fmt=lambda v:'unmeasured' if v is None else f'{v:.3f}'
-        lines.append(f"| {x['method']} | {x['split']} | {x['case_count']} | {fmt(x['extraction_precision'])} | {fmt(x['extraction_recall'])} | {x['numerical_comparison_errors']} / {x['emitted_numerical_comparisons']} | {x['abstentions']} | {x['calls']} |")
+        lines.append(f"| {x['method']} | {x['split']} | {x['case_count']} | {x['labeled_cases']} | {fmt(x['extraction_precision'])} | {fmt(x['extraction_recall'])} | {x['numerical_comparison_errors']} / {x['emitted_numerical_comparisons']} | {x['abstentions']} | {x['calls']} |")
     lines+=['','## Method status','']
     lines += [f"- {m}: {status}" for m,status in summary['methods'].items()]
     lines+=['','## Interpretation and limits','',
       'A match requires the source, issuer, metric, currency, basis, fiscal horizon, definition, status and normalized bounds to agree. Equivalent million/billion units count as equal. Precision includes all emitted candidates, including candidates rejected by the evidence screen.',
       'Numerical errors are counted only when a calculation is emitted. Missed comparisons and extraction false negatives remain visible; zero arithmetic errors does not mean all cases succeeded.',
       'Literal evidence checks and lexical semantic screens are automated. Human evidence-support errors are unmeasured. Management explanations are review candidates; no verified causal decomposition is claimed.',
-      'The three real pairs are a convenience sample of upward revisions. They do not estimate broad financial extraction performance. The issuer split was set before held-out runs, but source selection and labels used AI assistance and were not blinded.',
+      'The original three pairs have AI-drafted labels. Expanded pairs are pending review; no full-corpus accuracy claim is supported. Issuer splits were frozen before method tuning; collection was AI-assisted and was not blinded.',
       'The snapshots were retrieved in 2026. The disclosure cutoff is a date-based replay assumption, with date-only publications set conservatively to end of day in New York. It does not prove historical byte availability. Use --cutoff-mode snapshot for a strict retrieval-time bound; these old cutoffs then abstain.',
       'The Autodesk Q2 FY2026 capture contains its main release and outlook but only part of the financial appendix because subsequent retrieval returned HTTP 403. See data/capture_audit.json. Quotes are checked against saved normalized text, not the original HTML byte stream.',
       'B receives the complete saved pair snapshots in one call. C starts with metadata and selects bounded read-only retrieval calls over the same pair. The model, cutoff and questions are shared. Context and call budgets differ and are recorded; this is not a compute-matched comparison.',

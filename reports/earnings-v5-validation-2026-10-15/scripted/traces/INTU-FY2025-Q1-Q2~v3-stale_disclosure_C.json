@@ -1,0 +1,96 @@
+{
+  "kind": "SCRIPTED; NOT a live model result",
+  "run": {
+    "calls": 0,
+    "case": {
+      "case_id": "INTU-FY2025-Q1-Q2~v3-stale_disclosure",
+      "challenge": "stale_disclosure",
+      "cutoff": "2025-02-26T00:00:00-05:00",
+      "horizon": "FY2025",
+      "issuer": "INTU",
+      "metric": "revenue",
+      "new": "INTU-2025-Q1",
+      "old": "INTU-2025-Q1",
+      "parent_case_id": "INTU-FY2025-Q1-Q2",
+      "split": "synthetic_development",
+      "synthetic": true,
+      "transformation": {
+        "description": "Replace new disclosure with old; reject before model access."
+      }
+    },
+    "comparability": null,
+    "comparison": {
+      "calculation": null,
+      "reason": "stale_or_reversed_disclosure_pair",
+      "status": "insufficient_evidence"
+    },
+    "conclusion": "insufficient_evidence",
+    "config": {
+      "approval_status": "pending_new_experiment_approval",
+      "base_url": "https://api.deepseek.com/beta",
+      "case_ids": [
+        "ADBE-FY2025-Q1-Q2",
+        "INTU-FY2025-Q1-Q2",
+        "SNPS-FY2025-Q1-Q2",
+        "BOX-FY2025-Q1-Q2"
+      ],
+      "max_calls": 8,
+      "max_input_bytes": 128000,
+      "max_output_tokens_per_call": 6000,
+      "max_tool_calls": 7,
+      "max_validation_repairs": 2,
+      "methods": [
+        "B",
+        "C"
+      ],
+      "model": "deepseek-flash",
+      "pricing": {
+        "assumption": "Peak rates, all input charged as cache miss; ignore all discounts.",
+        "checked_on": "2026-10-15",
+        "currency": "USD",
+        "input_per_million": "0.30",
+        "output_per_million": "1.20",
+        "reference": "https://api-docs.deepseek.com/quick_start/pricing/"
+      },
+      "proposed_budget_usd": "5.50",
+      "reasoning_effort": "none",
+      "selected_challenges": [
+        "real",
+        "stale_disclosure",
+        "missing_numerical_evidence",
+        "contradictory_commentary"
+      ],
+      "selection": "Four previously exposed development pairs, with their unchanged v3 stale, missing-numerical-evidence and contradictory-commentary controls. B and C both use the new evidence catalog. Multi-column parser and required evidence reviews are tested jointly; not an unseen or isolated causal experiment.",
+      "transport_retries": 0,
+      "version": "earnings-grounded-evidence-v5-development"
+    },
+    "conflicts": [],
+    "cutoff_mode": "disclosure",
+    "errors": [
+      "stale_or_reversed_disclosure_pair"
+    ],
+    "explanations": [],
+    "extractions": [],
+    "human_semantic_review": "pending",
+    "input_hash": "89ab92f40cbb56afb39922c00ab28f104adbeb7c7748a9aac4a5a87ba8236569",
+    "investigation_version": "earnings-grounded-evidence-v5-development",
+    "label_status": "not_used_by_system",
+    "method": "C",
+    "source_hashes": {
+      "INTU-2025-Q1": "f5a2545e3616b337d42cf7e56b0790dc559cc814fc8c56c2d567101698c56bfc"
+    },
+    "tokens": null,
+    "trace": [
+      {
+        "result": {
+          "calculation": null,
+          "reason": "stale_or_reversed_disclosure_pair",
+          "status": "insufficient_evidence"
+        },
+        "stage": "deterministic_comparison"
+      }
+    ],
+    "unresolved": "",
+    "validation_failures": []
+  }
+}

@@ -98,7 +98,7 @@ def main(argv=None):
     from .macro.cli import add_parser as add_macro_parser, execute as execute_macro
     add_macro_parser(sub)
     sub.add_parser('validate');sub.add_parser('ingest');sub.add_parser('demo')
-    p=sub.add_parser('compare');p.add_argument('--case',required=True);p.add_argument('--method',choices=['A','B','C'],default='A')
+    p=sub.add_parser('compare');p.add_argument('--case',required=True);p.add_argument('--method',choices=['A','B','C','D'],default='A')
     p.add_argument('--cutoff-mode',choices=['disclosure','snapshot'],default='disclosure')
     p.add_argument('--model');p.add_argument('--out',type=Path)
     p=sub.add_parser('evaluate');p.add_argument('--live',action='store_true');p.add_argument('--model')
@@ -173,7 +173,7 @@ def main(argv=None):
             labels=json.loads((args.labels or root/'data/labels.draft.json').read_text())
             if labels['source_hashes']!={sid:s.content_hash for sid,s in sources.items()}:
                 raise ValueError('labels refer to a different corpus')
-            runs=[];methods=['A','B','C'] if args.live else ['A']
+            runs=[];methods=['A','B','C','D'] if args.live else ['A','D']
             for c in cases:
                 for method in methods:runs.append(run_pair(sources,c,method,adapter,config,args.cutoff_mode))
             base=next(c for c in cases if c['split']=='development')
@@ -184,7 +184,7 @@ def main(argv=None):
                 if c['new'] not in sources:
                     write_json(out/'synthetic_sources'/f"{c['new']}.json",asdict(data[c['new']]))
             for r in runs:persist_run(root,r,out/'runs'/f"{r['case']['case_id']}_{r['method']}.json")
-            statuses={'A':'executed deterministic rules','B':'not_run_no_live_model','C':'not_run_no_live_model'}
+            statuses={'D':'executed sentence-level document diff','A':'executed deterministic rules','B':'not_run_no_live_model','C':'not_run_no_live_model'}
             if args.live:
                 for method in ['B','C']:
                     mr=[r for r in runs if r['method']==method]

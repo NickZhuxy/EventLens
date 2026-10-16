@@ -1,0 +1,802 @@
+{
+  "run_id": "58875062-42a3-4d9b-880d-ae3ea49baeae",
+  "created_at": "2026-10-14T01:02:05.081341+00:00",
+  "case": {
+    "case_id": "ZS-FY2025-Q2-Q3~v2-contradictory_commentary",
+    "issuer": "ZS",
+    "old": "ZS-2025-Q2",
+    "new": "ZS-2025-Q3~v2-contradictory_commentary",
+    "horizon": "FY2025",
+    "metric": "revenue",
+    "cutoff": "2025-05-30T00:00:00-04:00",
+    "split": "synthetic_heldout",
+    "synthetic": true,
+    "parent_case_id": "ZS-FY2025-Q2-Q3",
+    "challenge": "contradictory_commentary",
+    "expected_status": "conflicting",
+    "transformation": {
+      "description": "Append a synthetic opposing pair about the same annual guidance, driver and basis. Never attribute these sentences to management.",
+      "expected_conflict_quotes": [
+        "Demand caused the FY2025 total revenue guidance revision on a reported basis.",
+        "Demand did not cause the FY2025 total revenue guidance revision on a reported basis."
+      ]
+    },
+    "parent_source_hash": "6560dc3845e05f1d545a743cf19122365f9682293ef957747f2972e44d6c647e",
+    "derived_source_hash": "3079b7f99d80af293ba657f822001bb58390d1b671575930d4cfe2532083c15a"
+  },
+  "method": "D",
+  "config": {
+    "version": "earnings-investigation-v2",
+    "model": "deepseek-flash",
+    "provider": {
+      "base_url": "https://api.deepseek.com",
+      "reasoning_effort": "low"
+    },
+    "max_calls": 8,
+    "max_tool_calls": 7,
+    "max_output_tokens_per_call": 3200,
+    "max_input_characters": 180000,
+    "transport_retries": 0,
+    "pricing": {
+      "currency": "USD",
+      "input_per_million": "0.30",
+      "output_per_million": "1.20",
+      "assumption": "Peak rates; all input treated as cache miss. Discounts never required.",
+      "reference": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "checked_on": "2026-10-13"
+    },
+    "scope": {
+      "real_pairs": 36,
+      "heldout_stress_variants": 72,
+      "supplemental_natural_cases": 2,
+      "stress_types": [
+        "stale_disclosure",
+        "missing_table",
+        "contradictory_commentary"
+      ],
+      "methods": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    "proposed_budget_usd": "8.00",
+    "approval_status": "pending_concrete_budget_approval"
+  },
+  "cutoff_mode": "disclosure",
+  "trace": [
+    {
+      "stage": "document_diff",
+      "algorithm": "difflib.SequenceMatcher sentence-level; autojunk=False",
+      "sentence_counts": [
+        441,
+        452
+      ],
+      "changed_guidance_candidates": [
+        {
+          "operation": "replace",
+          "old_sentences": [
+            2,
+            25
+          ],
+          "new_sentences": [
+            2,
+            26
+          ],
+          "spans": [
+            {
+              "source_id": "ZS-2025-Q2",
+              "sentence": 4,
+              "start": 151,
+              "end": 202,
+              "quote": "•Revenue grows 23% year-over-year to $647.9 million"
+            },
+            {
+              "source_id": "ZS-2025-Q2",
+              "sentence": 6,
+              "start": 269,
+              "end": 331,
+              "quote": "•Deferred revenue grows 25% year-over-year to $1,878.5 million"
+            },
+            {
+              "source_id": "ZS-2025-Q2",
+              "sentence": 14,
+              "start": 1322,
+              "end": 1382,
+              "quote": "•Revenue: $647.9 million, an increase of 23% year-over-year."
+            },
+            {
+              "source_id": "ZS-2025-Q2",
+              "sentence": 15,
+              "start": 1384,
+              "end": 1561,
+              "quote": "•Income (loss) from operations: GAAP loss from operations was $40.1 million, or 6% of revenue, compared to $45.5 million, or 9% of revenue, in the second quarter of fiscal 2024."
+            },
+            {
+              "source_id": "ZS-2025-Q2",
+              "sentence": 16,
+              "start": 1562,
+              "end": 1717,
+              "quote": "Non-GAAP income from operations was $140.5 million, or 22% of revenue, compared to $103.2 million, or 20% of revenue, in the second quarter of fiscal 2024."
+            },
+            {
+              "source_id": "ZS-2025-Q2",
+              "sentence": 21,
+              "start": 2166,
+              "end": 2330,
+              "quote": "•Cash flows: Cash provided by operations was $179.4 million, or 27% of revenue, compared to $142.1 million, or 27% of revenue, in the second quarter of fiscal 2024."
+            },
+            {
+              "source_id": "ZS-2025-Q2",
+              "sentence": 22,
+              "start": 2331,
+              "end": 2469,
+              "quote": "Free cash flow was $143.4 million, or 22% of revenue, compared to $100.8 million, or 19% of revenue, in the second quarter of fiscal 2024."
+            },
+            {
+              "source_id": "ZS-2025-Q2",
+              "sentence": 23,
+              "start": 2471,
+              "end": 2565,
+              "quote": "•Deferred revenue: $1,878.5 million as of January 31, 2025, an increase of 25% year-over-year."
+            },
+            {
+              "source_id": "ZS-2025-Q3~v2-contradictory_commentary",
+              "sentence": 4,
+              "start": 149,
+              "end": 200,
+              "quote": "•Revenue grows 23% year-over-year to $678.0 million"
+            },
+            {
+              "source_id": "ZS-2025-Q3~v2-contradictory_commentary",
+              "sentence": 6,
+              "start": 267,
+              "end": 329,
+              "quote": "•Deferred revenue grows 26% year-over-year to $1,985.0 million"
+            },
+            {
+              "source_id": "ZS-2025-Q3~v2-contradictory_commentary",
+              "sentence": 15,
+              "start": 1308,
+              "end": 1368,
+              "quote": "•Revenue: $678.0 million, an increase of 23% year-over-year."
+            },
+            {
+              "source_id": "ZS-2025-Q3~v2-contradictory_commentary",
+              "sentence": 16,
+              "start": 1370,
+              "end": 1545,
+              "quote": "•Income (loss) from operations: GAAP loss from operations was $25.4 million, or 4% of revenue, compared to $3.0 million, or 1% of revenue, in the third quarter of fiscal 2024."
+            },
+            {
+              "source_id": "ZS-2025-Q3~v2-contradictory_commentary",
+              "sentence": 17,
+              "start": 1546,
+              "end": 1700,
+              "quote": "Non-GAAP income from operations was $146.7 million, or 22% of revenue, compared to $121.8 million, or 22% of revenue, in the third quarter of fiscal 2024."
+            },
+            {
+              "source_id": "ZS-2025-Q3~v2-contradictory_commentary",
+              "sentence": 22,
+              "start": 2194,
+              "end": 2357,
+              "quote": "•Cash flows: Cash provided by operations was $211.1 million, or 31% of revenue, compared to $173.4 million, or 31% of revenue, in the third quarter of fiscal 2024."
+            },
+            {
+              "source_id": "ZS-2025-Q3~v2-contradictory_commentary",
+              "sentence": 23,
+              "start": 2358,
+              "end": 2495,
+              "quote": "Free cash flow was $119.5 million, or 18% of revenue, compared to $123.1 million, or 22% of revenue, in the third quarter of fiscal 2024."
+            },
+            {
+              "source_id": "ZS-2025-Q3~v2-contradictory_commentary",
+              "sentence": 24,
+              "start": 2497,
+              "end": 2589,
+              "quote": "•Deferred revenue: $1,985.0 million as of April 30, 2025, an increase of 26% year-over-year."
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            43,
+            47
+          ],
+          "new_sentences": [
+            52,
+            58
+          ],
+          "spans": [
+            {
+              "source_id": "ZS-2025-Q2",
+              "sentence": 44,
+              "start": 4925,
+              "end": 4965,
+              "quote": "•Revenue of $665 million to $667 million"
+            },
+            {
+              "source_id": "ZS-2025-Q3~v2-contradictory_commentary",
+              "sentence": 53,
+              "start": 6445,
+              "end": 6485,
+              "quote": "•Revenue of $705 million to $707 million"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            48,
+            52
+          ],
+          "new_sentences": [
+            59,
+            63
+          ],
+          "spans": [
+            {
+              "source_id": "ZS-2025-Q2",
+              "sentence": 48,
+              "start": 5243,
+              "end": 5301,
+              "quote": "•Revenue of approximately $2.640 billion to $2.654 billion"
+            },
+            {
+              "source_id": "ZS-2025-Q3~v2-contradictory_commentary",
+              "sentence": 59,
+              "start": 6773,
+              "end": 6831,
+              "quote": "•Revenue of approximately $2.659 billion to $2.661 billion"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            123,
+            126
+          ],
+          "new_sentences": [
+            129,
+            132
+          ],
+          "spans": [
+            {
+              "source_id": "ZS-2025-Q2",
+              "sentence": 123,
+              "start": 13121,
+              "end": 13221,
+              "quote": "Revenue  | $  | 647,900   |  |  | $  | 524,999   |  |  | $  | 1,275,855   |  |  | $  | 1,021,702   |"
+            },
+            {
+              "source_id": "ZS-2025-Q2",
+              "sentence": 124,
+              "start": 13222,
+              "end": 13314,
+              "quote": "Cost of revenue (1) (2)  | 148,498   |  |  | 117,199   |  |  | 289,960   |  |  | 228,593   |"
+            },
+            {
+              "source_id": "ZS-2025-Q3~v2-contradictory_commentary",
+              "sentence": 129,
+              "start": 14461,
+              "end": 14561,
+              "quote": "Revenue  | $  | 678,034   |  |  | $  | 553,201   |  |  | $  | 1,953,889   |  |  | $  | 1,574,903   |"
+            },
+            {
+              "source_id": "ZS-2025-Q3~v2-contradictory_commentary",
+              "sentence": 130,
+              "start": 14562,
+              "end": 14654,
+              "quote": "Cost of revenue (1) (2)  | 155,978   |  |  | 118,331   |  |  | 445,938   |  |  | 346,924   |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            147,
+            151
+          ],
+          "new_sentences": [
+            155,
+            159
+          ],
+          "spans": [
+            {
+              "source_id": "ZS-2025-Q2",
+              "sentence": 147,
+              "start": 15003,
+              "end": 15103,
+              "quote": "Cost of revenue  | $  | 17,619   |  |  | $  | 13,434   |  |  | $  | 33,412   |  |  | $  | 26,389   |"
+            },
+            {
+              "source_id": "ZS-2025-Q3~v2-contradictory_commentary",
+              "sentence": 155,
+              "start": 16495,
+              "end": 16595,
+              "quote": "Cost of revenue  | $  | 18,262   |  |  | $  | 12,487   |  |  | $  | 51,674   |  |  | $  | 38,876   |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            157,
+            161
+          ],
+          "new_sentences": [
+            165,
+            169
+          ],
+          "spans": [
+            {
+              "source_id": "ZS-2025-Q2",
+              "sentence": 157,
+              "start": 15671,
+              "end": 15767,
+              "quote": "Cost of revenue  | $  | 3,815   |  |  | $  | 2,717   |  |  | $  | 7,490   |  |  | $  | 5,434   |"
+            },
+            {
+              "source_id": "ZS-2025-Q3~v2-contradictory_commentary",
+              "sentence": 165,
+              "start": 17164,
+              "end": 17261,
+              "quote": "Cost of revenue  | $  | 3,830   |  |  | $  | 2,962   |  |  | $  | 11,320   |  |  | $  | 8,396   |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            199,
+            203
+          ],
+          "new_sentences": [
+            207,
+            211
+          ],
+          "spans": [
+            {
+              "source_id": "ZS-2025-Q2",
+              "sentence": 199,
+              "start": 17948,
+              "end": 18001,
+              "quote": "Deferred revenue  | 1,595,780   |  |  | 1,643,919   |"
+            },
+            {
+              "source_id": "ZS-2025-Q3~v2-contradictory_commentary",
+              "sentence": 207,
+              "start": 19359,
+              "end": 19412,
+              "quote": "Deferred revenue  | 1,677,895   |  |  | 1,643,919   |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            204,
+            208
+          ],
+          "new_sentences": [
+            212,
+            216
+          ],
+          "spans": [
+            {
+              "source_id": "ZS-2025-Q2",
+              "sentence": 204,
+              "start": 18195,
+              "end": 18256,
+              "quote": "Deferred revenue, noncurrent  | 282,725   |  |  | 251,055   |"
+            },
+            {
+              "source_id": "ZS-2025-Q3~v2-contradictory_commentary",
+              "sentence": 212,
+              "start": 19606,
+              "end": 19667,
+              "quote": "Deferred revenue, noncurrent  | 307,090   |  |  | 251,055   |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            241,
+            250
+          ],
+          "new_sentences": [
+            249,
+            258
+          ],
+          "spans": [
+            {
+              "source_id": "ZS-2025-Q2",
+              "sentence": 247,
+              "start": 20395,
+              "end": 20443,
+              "quote": "Deferred revenue  | (16,469)  |  |  | 62,477   |"
+            },
+            {
+              "source_id": "ZS-2025-Q3~v2-contradictory_commentary",
+              "sentence": 255,
+              "start": 21831,
+              "end": 21879,
+              "quote": "Deferred revenue  | 90,011   |  |  | 132,354   |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            289,
+            290
+          ],
+          "new_sentences": [
+            298,
+            299
+          ],
+          "spans": [
+            {
+              "source_id": "ZS-2025-Q2",
+              "sentence": 289,
+              "start": 22254,
+              "end": 22354,
+              "quote": "Revenue  | $  | 647,900   |  |  | $  | 524,999   |  |  | $  | 1,275,855   |  |  | $  | 1,021,702   |"
+            },
+            {
+              "source_id": "ZS-2025-Q3~v2-contradictory_commentary",
+              "sentence": 298,
+              "start": 23795,
+              "end": 23895,
+              "quote": "Revenue  | $  | 678,034   |  |  | $  | 553,201   |  |  | $  | 1,953,889   |  |  | $  | 1,574,903   |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            381,
+            385
+          ],
+          "new_sentences": [
+            390,
+            394
+          ],
+          "spans": [
+            {
+              "source_id": "ZS-2025-Q2",
+              "sentence": 381,
+              "start": 30335,
+              "end": 30435,
+              "quote": "Revenue  | $  | 647,900   |  |  | $  | 524,999   |  |  | $  | 1,275,855   |  |  | $  | 1,021,702   |"
+            },
+            {
+              "source_id": "ZS-2025-Q2",
+              "sentence": 382,
+              "start": 30436,
+              "end": 30555,
+              "quote": "Add: Total deferred revenue, end of period  | 1,878,505   |  |  | 1,502,175   |  |  | 1,878,505   |  |  | 1,502,175   |"
+            },
+            {
+              "source_id": "ZS-2025-Q2",
+              "sentence": 383,
+              "start": 30556,
+              "end": 30686,
+              "quote": "Less: Total deferred revenue, beginning of period  | (1,783,720)  |  |  | (1,399,544)  |  |  | (1,894,974)  |  |  | (1,439,676)  |"
+            },
+            {
+              "source_id": "ZS-2025-Q3~v2-contradictory_commentary",
+              "sentence": 390,
+              "start": 31937,
+              "end": 32037,
+              "quote": "Revenue  | $  | 678,034   |  |  | $  | 553,201   |  |  | $  | 1,953,889   |  |  | $  | 1,574,903   |"
+            },
+            {
+              "source_id": "ZS-2025-Q3~v2-contradictory_commentary",
+              "sentence": 391,
+              "start": 32038,
+              "end": 32157,
+              "quote": "Add: Total deferred revenue, end of period  | 1,984,985   |  |  | 1,577,014   |  |  | 1,984,985   |  |  | 1,577,014   |"
+            },
+            {
+              "source_id": "ZS-2025-Q3~v2-contradictory_commentary",
+              "sentence": 392,
+              "start": 32158,
+              "end": 32288,
+              "quote": "Less: Total deferred revenue, beginning of period  | (1,878,505)  |  |  | (1,502,175)  |  |  | (1,894,974)  |  |  | (1,439,676)  |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            393,
+            398
+          ],
+          "new_sentences": [
+            402,
+            407
+          ],
+          "spans": [
+            {
+              "source_id": "ZS-2025-Q2",
+              "sentence": 393,
+              "start": 31390,
+              "end": 31516,
+              "quote": "Net cash provided by operating activities, as a percentage of revenue  | 27   | %  |  | 27   | %  |  | 40   | %  |  | 39   | %"
+            },
+            {
+              "source_id": "ZS-2025-Q2",
+              "sentence": 394,
+              "start": 31517,
+              "end": 31657,
+              "quote": "Less: Purchases of property, equipment and other assets, as a percentage of revenue  | (2)  | %  |  | (6)  | %  |  | (3)  | %  |  | (6)  | %"
+            },
+            {
+              "source_id": "ZS-2025-Q2",
+              "sentence": 395,
+              "start": 31658,
+              "end": 31782,
+              "quote": "Less: Capitalized internal-use software, as a percentage of revenue  | (3)  | %  |  | (2)  | %  |  | (3)  | %  |  | (2)  | %"
+            },
+            {
+              "source_id": "ZS-2025-Q3~v2-contradictory_commentary",
+              "sentence": 402,
+              "start": 32993,
+              "end": 33119,
+              "quote": "Net cash provided by operating activities, as a percentage of revenue  | 31   | %  |  | 31   | %  |  | 37   | %  |  | 37   | %"
+            },
+            {
+              "source_id": "ZS-2025-Q3~v2-contradictory_commentary",
+              "sentence": 403,
+              "start": 33120,
+              "end": 33261,
+              "quote": "Less: Purchases of property, equipment and other assets, as a percentage of revenue  | (10)  | %  |  | (6)  | %  |  | (6)  | %  |  | (6)  | %"
+            },
+            {
+              "source_id": "ZS-2025-Q3~v2-contradictory_commentary",
+              "sentence": 404,
+              "start": 33262,
+              "end": 33386,
+              "quote": "Less: Capitalized internal-use software, as a percentage of revenue  | (3)  | %  |  | (3)  | %  |  | (3)  | %  |  | (3)  | %"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            440,
+            441
+          ],
+          "new_sentences": [
+            449,
+            452
+          ],
+          "spans": [
+            {
+              "source_id": "ZS-2025-Q3~v2-contradictory_commentary",
+              "sentence": 450,
+              "start": 39620,
+              "end": 39697,
+              "quote": "Demand caused the FY2025 total revenue guidance revision on a reported basis."
+            },
+            {
+              "source_id": "ZS-2025-Q3~v2-contradictory_commentary",
+              "sentence": 451,
+              "start": 39698,
+              "end": 39782,
+              "quote": "Demand did not cause the FY2025 total revenue guidance revision on a reported basis."
+            }
+          ]
+        }
+      ],
+      "annual_candidate_counts": [
+        1,
+        1
+      ],
+      "issues": [
+        "changed_guidance_pair"
+      ],
+      "selected_alignment": "replace",
+      "selected_sentence_indices": [
+        48,
+        59
+      ]
+    },
+    {
+      "stage": "deterministic_comparison",
+      "result": {
+        "status": "supported",
+        "reason": "raised",
+        "calculation": {
+          "old_lower": "2640000000.000",
+          "old_upper": "2654000000.000",
+          "new_lower": "2659000000.000",
+          "new_upper": "2661000000.000",
+          "old_midpoint": "2647000000.000",
+          "new_midpoint": "2660000000.000",
+          "midpoint_delta": "13000000.000",
+          "lower_delta": "19000000.000",
+          "upper_delta": "7000000.000",
+          "relative_midpoint_change_percent": "0.4911220249338874197204382320",
+          "delta_unit": "USD",
+          "range_change": "raised"
+        }
+      }
+    }
+  ],
+  "extractions": [
+    {
+      "metric": {
+        "source_id": "ZS-2025-Q2",
+        "issuer": "ZS",
+        "metric": "revenue",
+        "currency": "USD",
+        "unit": "billion",
+        "basis": "reported",
+        "horizon": "FY2025",
+        "calendar": "fiscal",
+        "definition": "total_revenue_as_reported",
+        "status": "provided",
+        "lower": "2.640",
+        "upper": "2.654",
+        "evidence": "•Revenue of approximately $2.640 billion to $2.654 billion",
+        "horizon_evidence": "For the full year of fiscal 2025, we expect:\n\n•Revenue of approximately $2.640 billion to $2.654 billion"
+      },
+      "validation": {
+        "literal_valid": true,
+        "semantic_screen": "pass",
+        "errors": [],
+        "human_semantic_review": "pending",
+        "observation_id": "9d1267669d7970bdae65d488c213c2c1f20397f6b7f8298380bf632cf0287b0e"
+      }
+    },
+    {
+      "metric": {
+        "source_id": "ZS-2025-Q3~v2-contradictory_commentary",
+        "issuer": "ZS",
+        "metric": "revenue",
+        "currency": "USD",
+        "unit": "billion",
+        "basis": "reported",
+        "horizon": "FY2025",
+        "calendar": "fiscal",
+        "definition": "total_revenue_as_reported",
+        "status": "provided",
+        "lower": "2.659",
+        "upper": "2.661",
+        "evidence": "•Revenue of approximately $2.659 billion to $2.661 billion",
+        "horizon_evidence": "For the full year of fiscal 2025, we expect:\n\n•Revenue of approximately $2.659 billion to $2.661 billion"
+      },
+      "validation": {
+        "literal_valid": true,
+        "semantic_screen": "pass",
+        "errors": [],
+        "human_semantic_review": "pending",
+        "observation_id": "c5656159c0316eee2512433d3ad966d8f63ce1cc306649ebc6148feea29d2d1b"
+      }
+    }
+  ],
+  "explanations": [
+    {
+      "source_id": "ZS-2025-Q3~v2-contradictory_commentary",
+      "quote": "Demand caused the FY2025 total revenue guidance revision on a reported basis.",
+      "type": "management_statement_candidate",
+      "semantic_review": "pending"
+    },
+    {
+      "source_id": "ZS-2025-Q3~v2-contradictory_commentary",
+      "quote": "Demand did not cause the FY2025 total revenue guidance revision on a reported basis.",
+      "type": "management_statement_candidate",
+      "semantic_review": "pending"
+    }
+  ],
+  "errors": [],
+  "calls": 0,
+  "tokens": null,
+  "label_status": "not_used_by_system",
+  "human_semantic_review": "pending",
+  "source_hashes": {
+    "ZS-2025-Q2": "a6655627998da3f5c0cbbc8c7275046adf4c10e72b0b35a9cc6b573643a2b203",
+    "ZS-2025-Q3~v2-contradictory_commentary": "3079b7f99d80af293ba657f822001bb58390d1b671575930d4cfe2532083c15a"
+  },
+  "input_hash": "2aaff293d3b1b13a67a2be1c0ea04b82018ae359b34d1ef84cd4513de6466bee",
+  "model": null,
+  "execution_kind": "deterministic",
+  "context_characters": 77789,
+  "comparison": {
+    "status": "supported",
+    "reason": "raised",
+    "calculation": {
+      "old_lower": "2640000000.000",
+      "old_upper": "2654000000.000",
+      "new_lower": "2659000000.000",
+      "new_upper": "2661000000.000",
+      "old_midpoint": "2647000000.000",
+      "new_midpoint": "2660000000.000",
+      "midpoint_delta": "13000000.000",
+      "lower_delta": "19000000.000",
+      "upper_delta": "7000000.000",
+      "relative_midpoint_change_percent": "0.4911220249338874197204382320",
+      "delta_unit": "USD",
+      "range_change": "raised"
+    }
+  },
+  "explanation_conclusion": {
+    "status": "conflicting",
+    "reason": "two_cited_opposing_statements",
+    "conflicts": [
+      {
+        "topic": "demand",
+        "reason": "opposite_polarity_same_literal_proposition",
+        "citations": [
+          {
+            "source_id": "ZS-2025-Q3~v2-contradictory_commentary",
+            "quote": "Demand caused the FY2025 total revenue guidance revision on a reported basis.",
+            "start": 39620,
+            "end": 39697,
+            "source_hash": "3079b7f99d80af293ba657f822001bb58390d1b671575930d4cfe2532083c15a",
+            "url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000078/zs-04302025_991.htm",
+            "origin": "synthetic",
+            "literal_valid": true,
+            "semantic_review": "pending"
+          },
+          {
+            "source_id": "ZS-2025-Q3~v2-contradictory_commentary",
+            "quote": "Demand did not cause the FY2025 total revenue guidance revision on a reported basis.",
+            "start": 39698,
+            "end": 39782,
+            "source_hash": "3079b7f99d80af293ba657f822001bb58390d1b671575930d4cfe2532083c15a",
+            "url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000078/zs-04302025_991.htm",
+            "origin": "synthetic",
+            "literal_valid": true,
+            "semantic_review": "pending"
+          }
+        ],
+        "semantic_review": "pending",
+        "kind": "explicit_lexical_conflict"
+      }
+    ],
+    "semantic_review": "pending"
+  },
+  "conclusion": "conflicting",
+  "latency_ms": 24.121,
+  "conflicts": [
+    {
+      "topic": "demand",
+      "reason": "opposite_polarity_same_literal_proposition",
+      "citations": [
+        {
+          "source_id": "ZS-2025-Q3~v2-contradictory_commentary",
+          "quote": "Demand caused the FY2025 total revenue guidance revision on a reported basis.",
+          "start": 39620,
+          "end": 39697,
+          "source_hash": "3079b7f99d80af293ba657f822001bb58390d1b671575930d4cfe2532083c15a",
+          "url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000078/zs-04302025_991.htm",
+          "origin": "synthetic",
+          "literal_valid": true,
+          "semantic_review": "pending"
+        },
+        {
+          "source_id": "ZS-2025-Q3~v2-contradictory_commentary",
+          "quote": "Demand did not cause the FY2025 total revenue guidance revision on a reported basis.",
+          "start": 39698,
+          "end": 39782,
+          "source_hash": "3079b7f99d80af293ba657f822001bb58390d1b671575930d4cfe2532083c15a",
+          "url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000078/zs-04302025_991.htm",
+          "origin": "synthetic",
+          "literal_valid": true,
+          "semantic_review": "pending"
+        }
+      ],
+      "semantic_review": "pending",
+      "kind": "explicit_lexical_conflict"
+    }
+  ],
+  "comparability": null,
+  "investigation_version": "earnings-investigation-v2"
+}

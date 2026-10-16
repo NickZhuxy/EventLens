@@ -1,0 +1,74 @@
+{
+  "run_id": "47cd30d5-8165-43d0-9426-99b20321644b",
+  "created_at": "2026-10-13T19:47:07.627096+00:00",
+  "case": {
+    "case_id": "DDOG-FY2025-Q2-Q3",
+    "issuer": "DDOG",
+    "old": "DDOG-2025-Q2",
+    "new": "DDOG-2025-Q3",
+    "horizon": "FY2025",
+    "metric": "revenue",
+    "cutoff": "2025-11-07T00:00:00-05:00",
+    "split": "heldout",
+    "synthetic": false
+  },
+  "method": "A",
+  "config": {
+    "model": "SET_MODEL_ID",
+    "max_calls": 6,
+    "max_tool_calls": 5,
+    "max_output_tokens_per_call": 1800,
+    "max_input_characters": 160000
+  },
+  "cutoff_mode": "disclosure",
+  "trace": [
+    {
+      "stage": "rule_extraction",
+      "source_id": "DDOG-2025-Q2",
+      "issues": [
+        "no_unambiguous_annual_revenue_range"
+      ]
+    },
+    {
+      "stage": "rule_extraction",
+      "source_id": "DDOG-2025-Q3",
+      "issues": [
+        "no_unambiguous_annual_revenue_range"
+      ]
+    },
+    {
+      "stage": "deterministic_comparison",
+      "result": {
+        "status": "insufficient_evidence",
+        "reason": "missing_guidance",
+        "calculation": null
+      }
+    }
+  ],
+  "extractions": [],
+  "explanations": [],
+  "errors": [],
+  "calls": 0,
+  "tokens": null,
+  "label_status": "not_used_by_system",
+  "human_semantic_review": "pending",
+  "source_hashes": {
+    "DDOG-2025-Q2": "4ca903ad2cb3a06eb395d6b4d8570f823b9fa4c91fd5d9b94aaadc8fcd90c39a",
+    "DDOG-2025-Q3": "915555a0771cbeb88f5f0a8e9f8f28ed1842e9b87db0c67876dd5da88107912f"
+  },
+  "input_hash": "f4753067f4acddb984dafe84adcbc676f919f26c6477090723bd0a757ffbb1c0",
+  "model": null,
+  "execution_kind": "deterministic",
+  "context_characters": 76551,
+  "comparison": {
+    "status": "insufficient_evidence",
+    "reason": "missing_guidance",
+    "calculation": null
+  },
+  "explanation_conclusion": {
+    "status": "insufficient_evidence",
+    "reason": "no_explicit_explanation_found"
+  },
+  "conclusion": "insufficient_evidence",
+  "latency_ms": 1.72
+}

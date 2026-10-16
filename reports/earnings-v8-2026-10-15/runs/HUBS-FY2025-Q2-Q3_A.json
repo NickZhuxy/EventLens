@@ -1,0 +1,113 @@
+{
+  "run_id": "b171c181-397b-48e5-bae7-0793a94b8d29",
+  "created_at": "2026-10-16T02:11:26.430652+00:00",
+  "case": {
+    "case_id": "HUBS-FY2025-Q2-Q3",
+    "issuer": "HUBS",
+    "old": "HUBS-2025-Q2",
+    "new": "HUBS-2025-Q3",
+    "horizon": "FY2025",
+    "metric": "revenue",
+    "cutoff": "2025-11-06T00:00:00-05:00",
+    "split": "heldout",
+    "synthetic": false
+  },
+  "method": "A",
+  "config": {
+    "version": "earnings-v8-point-target-regression",
+    "model": "deepseek-flash",
+    "base_url": "https://api.deepseek.com/beta",
+    "reasoning_effort": "none",
+    "max_calls": 8,
+    "max_tool_calls": 7,
+    "max_validation_repairs": 2,
+    "max_output_tokens_per_call": 6000,
+    "max_input_bytes": 128000,
+    "transport_retries": 0,
+    "selection": "Same 36 corpus pairs and 36 table-row derivatives as v7; frozen v8 point-target screen excludes monetary impacts/deltas discovered on Adobe development data. All previously exposed heldout results are regression only. No tuning on v7 heldout outputs. Retain the v7 uncertain request reservation and never resend an identical wire request; record a blocked outcome instead.",
+    "methods": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "pricing": {
+      "currency": "USD",
+      "input_per_million": "0.30",
+      "output_per_million": "1.20",
+      "assumption": "Peak rates, all input charged as cache miss; ignore all discounts.",
+      "reference": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "checked_on": "2026-10-15"
+    },
+    "proposed_budget_usd": "1.50",
+    "approval_status": "pending_new_experiment_approval",
+    "planning_cost_per_BC_pair_usd": "0.01639565",
+    "budget_authorization": "reports/earnings-budget-2026-10-15/authorization.json",
+    "budget_authorization_sha256": "56b79a004195ffa2feb1e9ba73157b090290af79cdb3bd30c25aeda27b42849d",
+    "prior_paid_bundles": [
+      "reports/earnings-v3-preflight-2026-10-14",
+      "reports/earnings-v4-preflight-2026-10-15",
+      "reports/earnings-v5-preflight-2026-10-15",
+      "reports/earnings-v6-preflight-2026-10-15",
+      "reports/earnings-v7-2026-10-15"
+    ],
+    "retained_uncertain_requests": {
+      "reports/earnings-v7-2026-10-15/requests/HUBS-FY2025-Q1-Q2_B.01.json": "0917fd175f3e454ed26ab508d0bb77cd3d6758f0c429e0be80377378ae941456"
+    }
+  },
+  "cutoff_mode": "disclosure",
+  "trace": [
+    {
+      "stage": "rule_extraction",
+      "source_id": "HUBS-2025-Q2",
+      "issues": [
+        "no_unambiguous_annual_revenue_range"
+      ]
+    },
+    {
+      "stage": "rule_extraction",
+      "source_id": "HUBS-2025-Q3",
+      "issues": [
+        "no_unambiguous_annual_revenue_range"
+      ]
+    },
+    {
+      "stage": "deterministic_comparison",
+      "result": {
+        "status": "insufficient_evidence",
+        "reason": "missing_guidance",
+        "calculation": null
+      }
+    }
+  ],
+  "extractions": [],
+  "explanations": [],
+  "errors": [],
+  "calls": 0,
+  "tokens": null,
+  "label_status": "not_used_by_system",
+  "human_semantic_review": "pending",
+  "source_hashes": {
+    "HUBS-2025-Q2": "939197911188469ed5ee8d80866b90c4e3e00ab0d0cad535129eaccb487e3973",
+    "HUBS-2025-Q3": "90818eb7b3f821a3be21d96aa37d97cb83932c18a86e83b1aafb194e541c4fa2"
+  },
+  "input_hash": "0e35edbb15f0be116af2985969ffb2bee19ec6064b6b6ccb3a220dccc8ee5b9f",
+  "model": null,
+  "execution_kind": "deterministic",
+  "context_characters": 90223,
+  "comparison": {
+    "status": "insufficient_evidence",
+    "reason": "missing_guidance",
+    "calculation": null
+  },
+  "explanation_conclusion": {
+    "status": "insufficient_evidence",
+    "reason": "no_explicit_explanation_found"
+  },
+  "conclusion": "insufficient_evidence",
+  "latency_ms": 2.01,
+  "conflicts": [],
+  "comparability": null,
+  "investigation_version": "earnings-investigation-v2",
+  "validation_failures": []
+}

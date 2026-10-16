@@ -1,0 +1,154 @@
+{
+  "run_id": "726f269c-573c-4284-a161-b0bb16a60aee",
+  "created_at": "2026-10-13T19:47:07.303457+00:00",
+  "case": {
+    "case_id": "ADSK-FY2026-Q2-Q3",
+    "issuer": "ADSK",
+    "old": "ADSK-2026-Q2-SEC",
+    "new": "ADSK-2026-Q3",
+    "horizon": "FY2026",
+    "metric": "revenue",
+    "cutoff": "2025-11-26T00:00:00-05:00",
+    "split": "heldout",
+    "synthetic": false
+  },
+  "method": "A",
+  "config": {
+    "model": "SET_MODEL_ID",
+    "max_calls": 6,
+    "max_tool_calls": 5,
+    "max_output_tokens_per_call": 1800,
+    "max_input_characters": 160000
+  },
+  "cutoff_mode": "disclosure",
+  "trace": [
+    {
+      "stage": "rule_extraction",
+      "source_id": "ADSK-2026-Q2-SEC",
+      "issues": []
+    },
+    {
+      "stage": "rule_extraction",
+      "source_id": "ADSK-2026-Q3",
+      "issues": []
+    },
+    {
+      "stage": "deterministic_comparison",
+      "result": {
+        "status": "supported",
+        "reason": "raised",
+        "calculation": {
+          "old_lower": "7025000000",
+          "old_upper": "7075000000",
+          "new_lower": "7150000000",
+          "new_upper": "7165000000",
+          "old_midpoint": "7050000000",
+          "new_midpoint": "7157500000",
+          "midpoint_delta": "107500000",
+          "lower_delta": "125000000",
+          "upper_delta": "90000000",
+          "relative_midpoint_change_percent": "1.524822695035460992907801418",
+          "delta_unit": "USD",
+          "range_change": "raised"
+        }
+      }
+    }
+  ],
+  "extractions": [
+    {
+      "metric": {
+        "source_id": "ADSK-2026-Q2-SEC",
+        "issuer": "ADSK",
+        "metric": "revenue",
+        "currency": "USD",
+        "unit": "million",
+        "basis": "reported",
+        "horizon": "FY2026",
+        "calendar": "fiscal",
+        "definition": "total_revenue_as_reported",
+        "status": "provided",
+        "lower": "7025",
+        "upper": "7075",
+        "evidence": "Revenue (in millions) (1)  |  | $7,025 - $7,075",
+        "horizon_evidence": "FY26 Guidance Metrics  |  | FY26\n(ending January 31, 2026)\nBillings (in millions) (1)  |  | $7,355 - $7,445\nRevenue (in millions) (1)  |  | $7,025 - $7,075"
+      },
+      "validation": {
+        "literal_valid": true,
+        "semantic_screen": "pass",
+        "errors": [],
+        "human_semantic_review": "pending",
+        "observation_id": "b63f18ac09647a433b97fbbecfe70386ff29c2f5483875f84a1fa32a3f5d3a81"
+      }
+    },
+    {
+      "metric": {
+        "source_id": "ADSK-2026-Q3",
+        "issuer": "ADSK",
+        "metric": "revenue",
+        "currency": "USD",
+        "unit": "million",
+        "basis": "reported",
+        "horizon": "FY2026",
+        "calendar": "fiscal",
+        "definition": "total_revenue_as_reported",
+        "status": "provided",
+        "lower": "7150",
+        "upper": "7165",
+        "evidence": "Revenue (in millions) (1)  |  | $7,150 - $7,165",
+        "horizon_evidence": "FY26 Guidance Metrics  |  | FY26\n(ending January 31, 2026)\nBillings (in millions) (1)  |  | $7,465 - $7,525\nRevenue (in millions) (1)  |  | $7,150 - $7,165"
+      },
+      "validation": {
+        "literal_valid": true,
+        "semantic_screen": "pass",
+        "errors": [],
+        "human_semantic_review": "pending",
+        "observation_id": "f24b3f211ebcb09d8f5ed5092a8057af6bbdabf15d9f9178864214f7957b7a92"
+      }
+    }
+  ],
+  "explanations": [
+    {
+      "source_id": "ADSK-2026-Q2-SEC",
+      "quote": "“While our full year macroeconomic assumptions are unchanged, we have raised our full year guidance to reflect the underlying strength of the business in the first half of the year and additional foreign exchange tailwinds.”",
+      "type": "management_statement_candidate",
+      "semantic_review": "pending"
+    }
+  ],
+  "errors": [],
+  "calls": 0,
+  "tokens": null,
+  "label_status": "not_used_by_system",
+  "human_semantic_review": "pending",
+  "source_hashes": {
+    "ADSK-2026-Q2-SEC": "1f44d1398046f719c5e5a1f51b0e79e6975b7e875e8d5e015b26e706cbd12393",
+    "ADSK-2026-Q3": "591c728c010a23f60bdbe38c1f741c193b78ac812f1dd1bdb7c9d09c159d905d"
+  },
+  "input_hash": "2daa6491db80959822cfd5cc2f12cecd793880804f57f469c6f4e63589020609",
+  "model": null,
+  "execution_kind": "deterministic",
+  "context_characters": 74064,
+  "comparison": {
+    "status": "supported",
+    "reason": "raised",
+    "calculation": {
+      "old_lower": "7025000000",
+      "old_upper": "7075000000",
+      "new_lower": "7150000000",
+      "new_upper": "7165000000",
+      "old_midpoint": "7050000000",
+      "new_midpoint": "7157500000",
+      "midpoint_delta": "107500000",
+      "lower_delta": "125000000",
+      "upper_delta": "90000000",
+      "relative_midpoint_change_percent": "1.524822695035460992907801418",
+      "delta_unit": "USD",
+      "range_change": "raised"
+    }
+  },
+  "explanation_conclusion": {
+    "status": "insufficient_evidence",
+    "reason": "semantic_review_required"
+  },
+  "conclusion": "supported",
+  "latency_ms": 1.815
+}

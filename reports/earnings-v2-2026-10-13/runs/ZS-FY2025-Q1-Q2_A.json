@@ -1,0 +1,109 @@
+{
+  "run_id": "ec1fd45c-d9c1-4991-a8c1-0397a6cd8f26",
+  "created_at": "2026-10-14T01:02:03.698682+00:00",
+  "case": {
+    "case_id": "ZS-FY2025-Q1-Q2",
+    "issuer": "ZS",
+    "old": "ZS-2025-Q1",
+    "new": "ZS-2025-Q2",
+    "horizon": "FY2025",
+    "metric": "revenue",
+    "cutoff": "2025-03-06T00:00:00-05:00",
+    "split": "heldout",
+    "synthetic": false
+  },
+  "method": "A",
+  "config": {
+    "version": "earnings-investigation-v2",
+    "model": "deepseek-flash",
+    "provider": {
+      "base_url": "https://api.deepseek.com",
+      "reasoning_effort": "low"
+    },
+    "max_calls": 8,
+    "max_tool_calls": 7,
+    "max_output_tokens_per_call": 3200,
+    "max_input_characters": 180000,
+    "transport_retries": 0,
+    "pricing": {
+      "currency": "USD",
+      "input_per_million": "0.30",
+      "output_per_million": "1.20",
+      "assumption": "Peak rates; all input treated as cache miss. Discounts never required.",
+      "reference": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "checked_on": "2026-10-13"
+    },
+    "scope": {
+      "real_pairs": 36,
+      "heldout_stress_variants": 72,
+      "supplemental_natural_cases": 2,
+      "stress_types": [
+        "stale_disclosure",
+        "missing_table",
+        "contradictory_commentary"
+      ],
+      "methods": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    "proposed_budget_usd": "8.00",
+    "approval_status": "pending_concrete_budget_approval"
+  },
+  "cutoff_mode": "disclosure",
+  "trace": [
+    {
+      "stage": "rule_extraction",
+      "source_id": "ZS-2025-Q1",
+      "issues": [
+        "no_unambiguous_annual_revenue_range"
+      ]
+    },
+    {
+      "stage": "rule_extraction",
+      "source_id": "ZS-2025-Q2",
+      "issues": [
+        "no_unambiguous_annual_revenue_range"
+      ]
+    },
+    {
+      "stage": "deterministic_comparison",
+      "result": {
+        "status": "insufficient_evidence",
+        "reason": "missing_guidance",
+        "calculation": null
+      }
+    }
+  ],
+  "extractions": [],
+  "explanations": [],
+  "errors": [],
+  "calls": 0,
+  "tokens": null,
+  "label_status": "not_used_by_system",
+  "human_semantic_review": "pending",
+  "source_hashes": {
+    "ZS-2025-Q1": "13fa3337ddd5be7fbeea9615914764e25f6616093af354c76029e18b684dfcc5",
+    "ZS-2025-Q2": "a6655627998da3f5c0cbbc8c7275046adf4c10e72b0b35a9cc6b573643a2b203"
+  },
+  "input_hash": "7f7445a675b281e5a0e6d247f485a834d3e9abf89ffc431f3eb3af2b42e93ba0",
+  "model": null,
+  "execution_kind": "deterministic",
+  "context_characters": 72542,
+  "comparison": {
+    "status": "insufficient_evidence",
+    "reason": "missing_guidance",
+    "calculation": null
+  },
+  "explanation_conclusion": {
+    "status": "insufficient_evidence",
+    "reason": "no_explicit_explanation_found"
+  },
+  "conclusion": "insufficient_evidence",
+  "latency_ms": 7.552,
+  "conflicts": [],
+  "comparability": null,
+  "investigation_version": "earnings-investigation-v2"
+}

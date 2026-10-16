@@ -1,0 +1,283 @@
+{
+  "run_id": "5e216622-d80e-4130-9ebb-c9df1666bf82",
+  "created_at": "2026-10-16T02:20:45.018281+00:00",
+  "case": {
+    "case_id": "ADSK-FY2026-Q2-Q3~v2-contradictory_commentary",
+    "issuer": "ADSK",
+    "old": "ADSK-2026-Q2-SEC",
+    "new": "ADSK-2026-Q3~v2-contradictory_commentary",
+    "horizon": "FY2026",
+    "metric": "revenue",
+    "cutoff": "2025-11-26T00:00:00-05:00",
+    "split": "synthetic_heldout",
+    "synthetic": true,
+    "parent_case_id": "ADSK-FY2026-Q2-Q3",
+    "challenge": "contradictory_commentary",
+    "expected_status": "conflicting",
+    "transformation": {
+      "description": "Append a synthetic opposing pair about the same annual guidance, driver and basis. Never attribute these sentences to management.",
+      "expected_conflict_quotes": [
+        "Demand caused the FY2026 total revenue guidance revision on a reported basis.",
+        "Demand did not cause the FY2026 total revenue guidance revision on a reported basis."
+      ]
+    },
+    "parent_source_hash": "591c728c010a23f60bdbe38c1f741c193b78ac812f1dd1bdb7c9d09c159d905d",
+    "derived_source_hash": "1e6c9817453707ccbb2c41cf0be60bd02de26921dd47e4f08e303c696d61bf9f"
+  },
+  "method": "A",
+  "config": {
+    "version": "earnings-v9-original-stress-regression",
+    "model": "deepseek-flash",
+    "base_url": "https://api.deepseek.com/beta",
+    "reasoning_effort": "none",
+    "max_calls": 8,
+    "max_tool_calls": 7,
+    "max_validation_repairs": 2,
+    "max_output_tokens_per_call": 6000,
+    "max_input_bytes": 128000,
+    "transport_retries": 0,
+    "selection": "Reuse 72 byte-identical v2 synthetic heldout cases and two original supplemental natural withdrawal/rollover cases. B/C use unchanged v8 code; all inputs are exposed regression. No new blind-test claim. Retain frozen uncertain charges and block identical wire requests.",
+    "methods": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "pricing": {
+      "currency": "USD",
+      "input_per_million": "0.30",
+      "output_per_million": "1.20",
+      "assumption": "Peak rates, all input charged as cache miss; ignore all discounts.",
+      "reference": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "checked_on": "2026-10-15"
+    },
+    "proposed_budget_usd": "1.75",
+    "approval_status": "allocation_under_recorded_continuing_authorization",
+    "planning_cost_per_BC_pair_usd": "0.01639565",
+    "budget_authorization": "reports/earnings-budget-2026-10-15/authorization.json",
+    "budget_authorization_sha256": "56b79a004195ffa2feb1e9ba73157b090290af79cdb3bd30c25aeda27b42849d",
+    "prior_paid_bundles": [
+      "reports/earnings-v3-preflight-2026-10-14",
+      "reports/earnings-v4-preflight-2026-10-15",
+      "reports/earnings-v5-preflight-2026-10-15",
+      "reports/earnings-v6-preflight-2026-10-15",
+      "reports/earnings-v7-2026-10-15",
+      "reports/earnings-v8-2026-10-15"
+    ],
+    "retained_uncertain_requests": {
+      "reports/earnings-v7-2026-10-15/requests/HUBS-FY2025-Q1-Q2_B.01.json": "0917fd175f3e454ed26ab508d0bb77cd3d6758f0c429e0be80377378ae941456"
+    },
+    "experiment": "v9-original-stress-regression"
+  },
+  "cutoff_mode": "disclosure",
+  "trace": [
+    {
+      "stage": "rule_extraction",
+      "source_id": "ADSK-2026-Q2-SEC",
+      "issues": []
+    },
+    {
+      "stage": "rule_extraction",
+      "source_id": "ADSK-2026-Q3~v2-contradictory_commentary",
+      "issues": []
+    },
+    {
+      "stage": "deterministic_comparison",
+      "result": {
+        "status": "supported",
+        "reason": "raised",
+        "calculation": {
+          "old_lower": "7025000000",
+          "old_upper": "7075000000",
+          "new_lower": "7150000000",
+          "new_upper": "7165000000",
+          "old_midpoint": "7050000000",
+          "new_midpoint": "7157500000",
+          "midpoint_delta": "107500000",
+          "lower_delta": "125000000",
+          "upper_delta": "90000000",
+          "relative_midpoint_change_percent": "1.524822695035460992907801418",
+          "delta_unit": "USD",
+          "range_change": "raised"
+        }
+      }
+    }
+  ],
+  "extractions": [
+    {
+      "metric": {
+        "source_id": "ADSK-2026-Q2-SEC",
+        "issuer": "ADSK",
+        "metric": "revenue",
+        "currency": "USD",
+        "unit": "million",
+        "basis": "reported",
+        "horizon": "FY2026",
+        "calendar": "fiscal",
+        "definition": "total_revenue_as_reported",
+        "status": "provided",
+        "lower": "7025",
+        "upper": "7075",
+        "evidence": "Revenue (in millions) (1)  |  | $7,025 - $7,075",
+        "horizon_evidence": "FY26 Guidance Metrics  |  | FY26\n(ending January 31, 2026)\nBillings (in millions) (1)  |  | $7,355 - $7,445\nRevenue (in millions) (1)  |  | $7,025 - $7,075"
+      },
+      "validation": {
+        "literal_valid": true,
+        "semantic_screen": "pass",
+        "errors": [],
+        "human_semantic_review": "pending",
+        "observation_id": "b63f18ac09647a433b97fbbecfe70386ff29c2f5483875f84a1fa32a3f5d3a81"
+      }
+    },
+    {
+      "metric": {
+        "source_id": "ADSK-2026-Q3~v2-contradictory_commentary",
+        "issuer": "ADSK",
+        "metric": "revenue",
+        "currency": "USD",
+        "unit": "million",
+        "basis": "reported",
+        "horizon": "FY2026",
+        "calendar": "fiscal",
+        "definition": "total_revenue_as_reported",
+        "status": "provided",
+        "lower": "7150",
+        "upper": "7165",
+        "evidence": "Revenue (in millions) (1)  |  | $7,150 - $7,165",
+        "horizon_evidence": "FY26 Guidance Metrics  |  | FY26\n(ending January 31, 2026)\nBillings (in millions) (1)  |  | $7,465 - $7,525\nRevenue (in millions) (1)  |  | $7,150 - $7,165"
+      },
+      "validation": {
+        "literal_valid": true,
+        "semantic_screen": "pass",
+        "errors": [],
+        "human_semantic_review": "pending",
+        "observation_id": "d9f75acbf143d21f94620e1640703ef98c57da355ce5d1c53e1cb1788b177037"
+      }
+    }
+  ],
+  "explanations": [
+    {
+      "source_id": "ADSK-2026-Q2-SEC",
+      "quote": "“While our full year macroeconomic assumptions are unchanged, we have raised our full year guidance to reflect the underlying strength of the business in the first half of the year and additional foreign exchange tailwinds.”",
+      "type": "management_statement_candidate",
+      "semantic_review": "pending"
+    },
+    {
+      "source_id": "ADSK-2026-Q3~v2-contradictory_commentary",
+      "quote": "Demand caused the FY2026 total revenue guidance revision on a reported basis.",
+      "type": "management_statement_candidate",
+      "semantic_review": "pending"
+    },
+    {
+      "source_id": "ADSK-2026-Q3~v2-contradictory_commentary",
+      "quote": "Demand did not cause the FY2026 total revenue guidance revision on a reported basis.",
+      "type": "management_statement_candidate",
+      "semantic_review": "pending"
+    }
+  ],
+  "errors": [],
+  "calls": 0,
+  "tokens": null,
+  "label_status": "not_used_by_system",
+  "human_semantic_review": "pending",
+  "source_hashes": {
+    "ADSK-2026-Q2-SEC": "1f44d1398046f719c5e5a1f51b0e79e6975b7e875e8d5e015b26e706cbd12393",
+    "ADSK-2026-Q3~v2-contradictory_commentary": "1e6c9817453707ccbb2c41cf0be60bd02de26921dd47e4f08e303c696d61bf9f"
+  },
+  "input_hash": "82b220411e728f9053f436671c82b299b9d9fe6ae9e5bf92d952b2bd830f5c3d",
+  "model": null,
+  "execution_kind": "deterministic",
+  "context_characters": 74228,
+  "comparison": {
+    "status": "supported",
+    "reason": "raised",
+    "calculation": {
+      "old_lower": "7025000000",
+      "old_upper": "7075000000",
+      "new_lower": "7150000000",
+      "new_upper": "7165000000",
+      "old_midpoint": "7050000000",
+      "new_midpoint": "7157500000",
+      "midpoint_delta": "107500000",
+      "lower_delta": "125000000",
+      "upper_delta": "90000000",
+      "relative_midpoint_change_percent": "1.524822695035460992907801418",
+      "delta_unit": "USD",
+      "range_change": "raised"
+    }
+  },
+  "explanation_conclusion": {
+    "status": "conflicting",
+    "reason": "two_cited_opposing_statements",
+    "conflicts": [
+      {
+        "topic": "demand",
+        "reason": "opposite_polarity_same_literal_proposition",
+        "citations": [
+          {
+            "source_id": "ADSK-2026-Q3~v2-contradictory_commentary",
+            "quote": "Demand caused the FY2026 total revenue guidance revision on a reported basis.",
+            "start": 36451,
+            "end": 36528,
+            "source_hash": "1e6c9817453707ccbb2c41cf0be60bd02de26921dd47e4f08e303c696d61bf9f",
+            "url": "https://www.sec.gov/Archives/edgar/data/769397/000076939725000126/q326pressrelease.htm",
+            "origin": "synthetic",
+            "literal_valid": true,
+            "semantic_review": "pending"
+          },
+          {
+            "source_id": "ADSK-2026-Q3~v2-contradictory_commentary",
+            "quote": "Demand did not cause the FY2026 total revenue guidance revision on a reported basis.",
+            "start": 36529,
+            "end": 36613,
+            "source_hash": "1e6c9817453707ccbb2c41cf0be60bd02de26921dd47e4f08e303c696d61bf9f",
+            "url": "https://www.sec.gov/Archives/edgar/data/769397/000076939725000126/q326pressrelease.htm",
+            "origin": "synthetic",
+            "literal_valid": true,
+            "semantic_review": "pending"
+          }
+        ],
+        "semantic_review": "pending",
+        "kind": "explicit_lexical_conflict"
+      }
+    ],
+    "semantic_review": "pending"
+  },
+  "conclusion": "conflicting",
+  "latency_ms": 1.725,
+  "conflicts": [
+    {
+      "topic": "demand",
+      "reason": "opposite_polarity_same_literal_proposition",
+      "citations": [
+        {
+          "source_id": "ADSK-2026-Q3~v2-contradictory_commentary",
+          "quote": "Demand caused the FY2026 total revenue guidance revision on a reported basis.",
+          "start": 36451,
+          "end": 36528,
+          "source_hash": "1e6c9817453707ccbb2c41cf0be60bd02de26921dd47e4f08e303c696d61bf9f",
+          "url": "https://www.sec.gov/Archives/edgar/data/769397/000076939725000126/q326pressrelease.htm",
+          "origin": "synthetic",
+          "literal_valid": true,
+          "semantic_review": "pending"
+        },
+        {
+          "source_id": "ADSK-2026-Q3~v2-contradictory_commentary",
+          "quote": "Demand did not cause the FY2026 total revenue guidance revision on a reported basis.",
+          "start": 36529,
+          "end": 36613,
+          "source_hash": "1e6c9817453707ccbb2c41cf0be60bd02de26921dd47e4f08e303c696d61bf9f",
+          "url": "https://www.sec.gov/Archives/edgar/data/769397/000076939725000126/q326pressrelease.htm",
+          "origin": "synthetic",
+          "literal_valid": true,
+          "semantic_review": "pending"
+        }
+      ],
+      "semantic_review": "pending",
+      "kind": "explicit_lexical_conflict"
+    }
+  ],
+  "comparability": null,
+  "investigation_version": "earnings-investigation-v2",
+  "validation_failures": []
+}

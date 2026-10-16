@@ -1,0 +1,618 @@
+{
+  "run_id": "83599b36-3e7a-4461-94ea-b4d0afac1e1b",
+  "created_at": "2026-10-16T02:06:02.216130+00:00",
+  "case": {
+    "case_id": "ADSK-FY2026-Q1-Q2",
+    "issuer": "ADSK",
+    "old": "ADSK-2026-Q1",
+    "new": "ADSK-2026-Q2",
+    "horizon": "FY2026",
+    "metric": "revenue",
+    "cutoff": "2025-08-29T00:00:00-04:00",
+    "split": "heldout",
+    "synthetic": false
+  },
+  "method": "D",
+  "config": {
+    "version": "earnings-v8-point-target-regression",
+    "model": "deepseek-flash",
+    "base_url": "https://api.deepseek.com/beta",
+    "reasoning_effort": "none",
+    "max_calls": 8,
+    "max_tool_calls": 7,
+    "max_validation_repairs": 2,
+    "max_output_tokens_per_call": 6000,
+    "max_input_bytes": 128000,
+    "transport_retries": 0,
+    "selection": "Same 36 corpus pairs and 36 table-row derivatives as v7; frozen v8 point-target screen excludes monetary impacts/deltas discovered on Adobe development data. All previously exposed heldout results are regression only. No tuning on v7 heldout outputs. Retain the v7 uncertain request reservation and never resend an identical wire request; record a blocked outcome instead.",
+    "methods": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "pricing": {
+      "currency": "USD",
+      "input_per_million": "0.30",
+      "output_per_million": "1.20",
+      "assumption": "Peak rates, all input charged as cache miss; ignore all discounts.",
+      "reference": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "checked_on": "2026-10-15"
+    },
+    "proposed_budget_usd": "1.50",
+    "approval_status": "pending_new_experiment_approval",
+    "planning_cost_per_BC_pair_usd": "0.01639565",
+    "budget_authorization": "reports/earnings-budget-2026-10-15/authorization.json",
+    "budget_authorization_sha256": "56b79a004195ffa2feb1e9ba73157b090290af79cdb3bd30c25aeda27b42849d",
+    "prior_paid_bundles": [
+      "reports/earnings-v3-preflight-2026-10-14",
+      "reports/earnings-v4-preflight-2026-10-15",
+      "reports/earnings-v5-preflight-2026-10-15",
+      "reports/earnings-v6-preflight-2026-10-15",
+      "reports/earnings-v7-2026-10-15"
+    ],
+    "retained_uncertain_requests": {
+      "reports/earnings-v7-2026-10-15/requests/HUBS-FY2025-Q1-Q2_B.01.json": "0917fd175f3e454ed26ab508d0bb77cd3d6758f0c429e0be80377378ae941456"
+    }
+  },
+  "cutoff_mode": "disclosure",
+  "trace": [
+    {
+      "stage": "document_diff",
+      "algorithm": "difflib.SequenceMatcher sentence-level; autojunk=False",
+      "sentence_counts": [
+        582,
+        520
+      ],
+      "changed_guidance_candidates": [
+        {
+          "operation": "replace",
+          "old_sentences": [
+            32,
+            39
+          ],
+          "new_sentences": [
+            32,
+            43
+          ],
+          "spans": [
+            {
+              "source_id": "ADSK-2026-Q1",
+              "sentence": 32,
+              "start": 669,
+              "end": 770,
+              "quote": "- First quarter revenue grew 15 percent, and 16 percent on a constant currency basis, to $1.6 billion"
+            },
+            {
+              "source_id": "ADSK-2026-Q2",
+              "sentence": 32,
+              "start": 670,
+              "end": 773,
+              "quote": "- Second quarter revenue grew 17 percent, and 18 percent on a constant currency basis, to $1.76 billion"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            40,
+            56
+          ],
+          "new_sentences": [
+            44,
+            60
+          ],
+          "spans": [
+            {
+              "source_id": "ADSK-2026-Q1",
+              "sentence": 42,
+              "start": 1959,
+              "end": 1999,
+              "quote": "Revenue  | $                    1,633  |"
+            },
+            {
+              "source_id": "ADSK-2026-Q2",
+              "sentence": 46,
+              "start": 2363,
+              "end": 2398,
+              "quote": "Revenue  | $               1,763  |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            64,
+            76
+          ],
+          "new_sentences": [
+            68,
+            80
+          ],
+          "spans": [
+            {
+              "source_id": "ADSK-2026-Q1",
+              "sentence": 73,
+              "start": 2658,
+              "end": 2714,
+              "quote": "Total Net Revenue  | $                          1,633  |"
+            },
+            {
+              "source_id": "ADSK-2026-Q2",
+              "sentence": 77,
+              "start": 3015,
+              "end": 3064,
+              "quote": "Total Net Revenue  | $                   1,763  |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            84,
+            88
+          ],
+          "new_sentences": [
+            88,
+            98
+          ],
+          "spans": [
+            {
+              "source_id": "ADSK-2026-Q2",
+              "sentence": 97,
+              "start": 3360,
+              "end": 3408,
+              "quote": "Total Net Revenue  | $                  1,763  |"
+            }
+          ]
+        },
+        {
+          "operation": "delete",
+          "old_sentences": [
+            90,
+            96
+          ],
+          "new_sentences": [
+            100,
+            100
+          ],
+          "spans": [
+            {
+              "source_id": "ADSK-2026-Q1",
+              "sentence": 93,
+              "start": 3016,
+              "end": 3071,
+              "quote": "Total Net Revenue  | $                         1,633  |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            105,
+            123
+          ],
+          "new_sentences": [
+            109,
+            127
+          ],
+          "spans": [
+            {
+              "source_id": "ADSK-2026-Q1",
+              "sentence": 120,
+              "start": 3664,
+              "end": 3718,
+              "quote": "Total Net Revenue  | $                        1,633  |"
+            },
+            {
+              "source_id": "ADSK-2026-Q2",
+              "sentence": 124,
+              "start": 3996,
+              "end": 4044,
+              "quote": "Total Net Revenue  | $                  1,763  |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            124,
+            132
+          ],
+          "new_sentences": [
+            128,
+            133
+          ],
+          "spans": [
+            {
+              "source_id": "ADSK-2026-Q1",
+              "sentence": 125,
+              "start": 3832,
+              "end": 3886,
+              "quote": "Deferred Revenue  | $                   3,929  | (1) %"
+            },
+            {
+              "source_id": "ADSK-2026-Q1",
+              "sentence": 126,
+              "start": 3887,
+              "end": 3929,
+              "quote": "Unbilled deferred revenue  | 3,228  | 67 %"
+            },
+            {
+              "source_id": "ADSK-2026-Q2",
+              "sentence": 129,
+              "start": 4158,
+              "end": 4206,
+              "quote": "Deferred Revenue  | $               3,844  | 4 %"
+            },
+            {
+              "source_id": "ADSK-2026-Q2",
+              "sentence": 130,
+              "start": 4207,
+              "end": 4249,
+              "quote": "Unbilled deferred revenue  | 3,453  | 59 %"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            133,
+            141
+          ],
+          "new_sentences": [
+            134,
+            142
+          ],
+          "spans": [
+            {
+              "source_id": "ADSK-2026-Q1",
+              "sentence": 138,
+              "start": 4949,
+              "end": 4989,
+              "quote": "Revenue (in millions)  | $1,720 - $1,730"
+            },
+            {
+              "source_id": "ADSK-2026-Q2",
+              "sentence": 139,
+              "start": 4963,
+              "end": 5003,
+              "quote": "Revenue (in millions)  | $1,800 - $1,810"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            146,
+            148
+          ],
+          "new_sentences": [
+            147,
+            149
+          ],
+          "spans": [
+            {
+              "source_id": "ADSK-2026-Q1",
+              "sentence": 147,
+              "start": 5267,
+              "end": 5311,
+              "quote": "Revenue (in millions) (1)  | $6,925 - $6,995"
+            },
+            {
+              "source_id": "ADSK-2026-Q2",
+              "sentence": 148,
+              "start": 5283,
+              "end": 5327,
+              "quote": "Revenue (in millions) (1)  | $7,025 - $7,075"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            258,
+            268
+          ],
+          "new_sentences": [
+            287,
+            311
+          ],
+          "spans": [
+            {
+              "source_id": "ADSK-2026-Q1",
+              "sentence": 262,
+              "start": 20584,
+              "end": 20638,
+              "quote": "Total subscription and maintenance revenue  | 1,540  |"
+            },
+            {
+              "source_id": "ADSK-2026-Q1",
+              "sentence": 266,
+              "start": 20669,
+              "end": 20698,
+              "quote": "Total net revenue  | 1,633  |"
+            },
+            {
+              "source_id": "ADSK-2026-Q2",
+              "sentence": 299,
+              "start": 22043,
+              "end": 22097,
+              "quote": "Total subscription and maintenance revenue  | 1,667  |"
+            },
+            {
+              "source_id": "ADSK-2026-Q2",
+              "sentence": 307,
+              "start": 22172,
+              "end": 22201,
+              "quote": "Total net revenue  | 1,763  |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            271,
+            281
+          ],
+          "new_sentences": [
+            314,
+            338
+          ],
+          "spans": [
+            {
+              "source_id": "ADSK-2026-Q1",
+              "sentence": 271,
+              "start": 20734,
+              "end": 20788,
+              "quote": "Cost of subscription and maintenance revenue  | 111  |"
+            },
+            {
+              "source_id": "ADSK-2026-Q1",
+              "sentence": 273,
+              "start": 20796,
+              "end": 20826,
+              "quote": "Cost of other revenue  | 24  |"
+            },
+            {
+              "source_id": "ADSK-2026-Q1",
+              "sentence": 277,
+              "start": 20887,
+              "end": 20918,
+              "quote": "Total cost of revenue  | 160  |"
+            },
+            {
+              "source_id": "ADSK-2026-Q2",
+              "sentence": 318,
+              "start": 22273,
+              "end": 22327,
+              "quote": "Cost of subscription and maintenance revenue  | 114  |"
+            },
+            {
+              "source_id": "ADSK-2026-Q2",
+              "sentence": 322,
+              "start": 22355,
+              "end": 22385,
+              "quote": "Cost of other revenue  | 22  |"
+            },
+            {
+              "source_id": "ADSK-2026-Q2",
+              "sentence": 330,
+              "start": 22482,
+              "end": 22513,
+              "quote": "Total cost of revenue  | 159  |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            373,
+            374
+          ],
+          "new_sentences": [
+            464,
+            465
+          ],
+          "spans": [
+            {
+              "source_id": "ADSK-2026-Q1",
+              "sentence": 373,
+              "start": 22903,
+              "end": 22931,
+              "quote": "Deferred revenue  | 3,620  |"
+            },
+            {
+              "source_id": "ADSK-2026-Q2",
+              "sentence": 464,
+              "start": 24924,
+              "end": 24952,
+              "quote": "Deferred revenue  | 3,550  |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            383,
+            384
+          ],
+          "new_sentences": [
+            474,
+            475
+          ],
+          "spans": [
+            {
+              "source_id": "ADSK-2026-Q1",
+              "sentence": 383,
+              "start": 23139,
+              "end": 23175,
+              "quote": "Long-term deferred revenue  | 309  |"
+            },
+            {
+              "source_id": "ADSK-2026-Q2",
+              "sentence": 474,
+              "start": 25158,
+              "end": 25194,
+              "quote": "Long-term deferred revenue  | 294  |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            427,
+            582
+          ],
+          "new_sentences": [
+            518,
+            520
+          ],
+          "spans": [
+            {
+              "source_id": "ADSK-2026-Q1",
+              "sentence": 453,
+              "start": 24665,
+              "end": 24693,
+              "quote": "Deferred revenue  | (204)  |"
+            }
+          ]
+        }
+      ],
+      "annual_candidate_counts": [
+        1,
+        1
+      ],
+      "issues": [
+        "changed_guidance_pair"
+      ],
+      "selected_alignment": "replace",
+      "selected_sentence_indices": [
+        147,
+        148
+      ]
+    },
+    {
+      "stage": "deterministic_comparison",
+      "result": {
+        "status": "supported",
+        "reason": "raised",
+        "calculation": {
+          "old_lower": "6925000000",
+          "old_upper": "6995000000",
+          "new_lower": "7025000000",
+          "new_upper": "7075000000",
+          "old_midpoint": "6960000000",
+          "new_midpoint": "7050000000",
+          "midpoint_delta": "90000000",
+          "lower_delta": "100000000",
+          "upper_delta": "80000000",
+          "relative_midpoint_change_percent": "1.293103448275862068965517241",
+          "delta_unit": "USD",
+          "range_change": "raised"
+        }
+      }
+    }
+  ],
+  "extractions": [
+    {
+      "metric": {
+        "source_id": "ADSK-2026-Q1",
+        "issuer": "ADSK",
+        "metric": "revenue",
+        "currency": "USD",
+        "unit": "million",
+        "basis": "reported",
+        "horizon": "FY2026",
+        "calendar": "fiscal",
+        "definition": "total_revenue_as_reported",
+        "status": "provided",
+        "lower": "6925",
+        "upper": "6995",
+        "evidence": "Revenue (in millions) (1)  | $6,925 - $6,995",
+        "horizon_evidence": "FY26 Guidance Metrics  | FY26\n(ending January 31, 2026)\nBillings (in millions) (1)  | $7,160 - $7,310\nRevenue (in millions) (1)  | $6,925 - $6,995"
+      },
+      "validation": {
+        "literal_valid": true,
+        "semantic_screen": "pass",
+        "errors": [],
+        "human_semantic_review": "pending",
+        "observation_id": "b615fc87c92a106d890a572322f3df0c51e384b0b8213af423a92fa7f4e2daaa"
+      }
+    },
+    {
+      "metric": {
+        "source_id": "ADSK-2026-Q2",
+        "issuer": "ADSK",
+        "metric": "revenue",
+        "currency": "USD",
+        "unit": "million",
+        "basis": "reported",
+        "horizon": "FY2026",
+        "calendar": "fiscal",
+        "definition": "total_revenue_as_reported",
+        "status": "provided",
+        "lower": "7025",
+        "upper": "7075",
+        "evidence": "Revenue (in millions) (1)  | $7,025 - $7,075",
+        "horizon_evidence": "FY26 Guidance Metrics  | FY26\n(ending January 31, 2026)\nBillings (in millions) (1)  | $7,355 - $7,445\nRevenue (in millions) (1)  | $7,025 - $7,075"
+      },
+      "validation": {
+        "literal_valid": true,
+        "semantic_screen": "pass",
+        "errors": [],
+        "human_semantic_review": "pending",
+        "observation_id": "0ec0e7977c4a9c8cf25f8e1fe484f54e84bd08c59738e767adf291b954778361"
+      }
+    }
+  ],
+  "explanations": [
+    {
+      "source_id": "ADSK-2026-Q2",
+      "quote": "\"While our full year  macroeconomic assumptions are unchanged, we have raised our full year guidance to reflect the underlying strength of the business in the first half of the year and additional foreign exchange tailwinds.\"",
+      "type": "management_statement_candidate",
+      "semantic_review": "pending"
+    }
+  ],
+  "errors": [],
+  "calls": 0,
+  "tokens": null,
+  "label_status": "not_used_by_system",
+  "human_semantic_review": "pending",
+  "source_hashes": {
+    "ADSK-2026-Q1": "a5ad3c7b77962f06198c39e38ae47091a3ac9a95852518182ec346a96a50e8e2",
+    "ADSK-2026-Q2": "daecdbc0dcef88ccd8b0157d05f1968215c7173d0531f61b0f9f95e38325e6dc"
+  },
+  "input_hash": "42becabca069977b52fcbda78849625f59939a056d5fc1d30c348aa0b4158f64",
+  "model": null,
+  "execution_kind": "deterministic",
+  "context_characters": 57969,
+  "comparison": {
+    "status": "supported",
+    "reason": "raised",
+    "calculation": {
+      "old_lower": "6925000000",
+      "old_upper": "6995000000",
+      "new_lower": "7025000000",
+      "new_upper": "7075000000",
+      "old_midpoint": "6960000000",
+      "new_midpoint": "7050000000",
+      "midpoint_delta": "90000000",
+      "lower_delta": "100000000",
+      "upper_delta": "80000000",
+      "relative_midpoint_change_percent": "1.293103448275862068965517241",
+      "delta_unit": "USD",
+      "range_change": "raised"
+    }
+  },
+  "explanation_conclusion": {
+    "status": "insufficient_evidence",
+    "reason": "semantic_review_required"
+  },
+  "conclusion": "supported",
+  "latency_ms": 11.277,
+  "conflicts": [],
+  "comparability": null,
+  "investigation_version": "earnings-investigation-v2",
+  "validation_failures": []
+}

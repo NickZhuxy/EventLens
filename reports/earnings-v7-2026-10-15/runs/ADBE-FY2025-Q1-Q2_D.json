@@ -1,0 +1,591 @@
+{
+  "run_id": "1de1d39c-b4b8-4d55-a50b-0a90c01b18ba",
+  "created_at": "2026-10-16T01:48:19.183256+00:00",
+  "case": {
+    "case_id": "ADBE-FY2025-Q1-Q2",
+    "issuer": "ADBE",
+    "old": "ADBE-2025-Q1",
+    "new": "ADBE-2025-Q2",
+    "horizon": "FY2025",
+    "metric": "revenue",
+    "cutoff": "2025-06-13T00:00:00-04:00",
+    "split": "development",
+    "synthetic": false
+  },
+  "method": "D",
+  "config": {
+    "version": "earnings-v7-corpus-regression-table-ablation",
+    "model": "deepseek-flash",
+    "base_url": "https://api.deepseek.com/beta",
+    "reasoning_effort": "none",
+    "max_calls": 8,
+    "max_tool_calls": 7,
+    "max_validation_repairs": 2,
+    "max_output_tokens_per_call": 6000,
+    "max_input_bytes": 128000,
+    "transport_retries": 0,
+    "selection": "All 36 existing pairs and all 36 pipe-table-row-only derivatives. Same v6 model/controller and v5 candidate parser, no tuning on new outputs. Previously exposed heldout is regression only. All failures retained.",
+    "methods": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "pricing": {
+      "currency": "USD",
+      "input_per_million": "0.30",
+      "output_per_million": "1.20",
+      "assumption": "Peak rates, all input charged as cache miss; ignore all discounts.",
+      "reference": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "checked_on": "2026-10-15"
+    },
+    "proposed_budget_usd": "3.25",
+    "approval_status": "pending_new_experiment_approval",
+    "planning_cost_per_BC_pair_usd": "0.01639565",
+    "budget_authorization": "reports/earnings-budget-2026-10-15/authorization.json",
+    "budget_authorization_sha256": "56b79a004195ffa2feb1e9ba73157b090290af79cdb3bd30c25aeda27b42849d",
+    "prior_paid_bundles": [
+      "reports/earnings-v3-preflight-2026-10-14",
+      "reports/earnings-v4-preflight-2026-10-15",
+      "reports/earnings-v5-preflight-2026-10-15",
+      "reports/earnings-v6-preflight-2026-10-15"
+    ]
+  },
+  "cutoff_mode": "disclosure",
+  "trace": [
+    {
+      "stage": "document_diff",
+      "algorithm": "difflib.SequenceMatcher sentence-level; autojunk=False",
+      "sentence_counts": [
+        372,
+        372
+      ],
+      "changed_guidance_candidates": [
+        {
+          "operation": "replace",
+          "old_sentences": [
+            12,
+            27
+          ],
+          "new_sentences": [
+            11,
+            23
+          ],
+          "spans": [
+            {
+              "source_id": "ADBE-2025-Q1",
+              "sentence": 22,
+              "start": 1554,
+              "end": 1730,
+              "quote": "•Adobe achieved record revenue of $5.71 billion in its first quarter of fiscal year 2025, which represents 10 percent year-over-year growth, or 11 percent in constant currency."
+            },
+            {
+              "source_id": "ADBE-2025-Q2",
+              "sentence": 11,
+              "start": 212,
+              "end": 286,
+              "quote": "Adobe Reports Record Revenue in Q2 and Raises FY25 Revenue and EPS Targets"
+            },
+            {
+              "source_id": "ADBE-2025-Q2",
+              "sentence": 13,
+              "start": 436,
+              "end": 697,
+              "quote": "“Our strategy to deliver ground-breaking innovation for Business Professionals and Consumers, and Creative and Marketing Professionals is delighting customers and we are pleased to raise Adobe’s FY25 revenue target,” said Shantanu Narayen, chair and CEO, Adobe."
+            },
+            {
+              "source_id": "ADBE-2025-Q2",
+              "sentence": 15,
+              "start": 833,
+              "end": 1034,
+              "quote": "“As a result of us driving strong performance in the first half of the year, we are pleased to raise Adobe’s FY25 total revenue and EPS targets,” said Dan Durn, executive vice president and CFO, Adobe."
+            },
+            {
+              "source_id": "ADBE-2025-Q2",
+              "sentence": 18,
+              "start": 1233,
+              "end": 1411,
+              "quote": "•Adobe achieved record revenue of $5.87 billion in its second quarter of fiscal year 2025, which represents 11 percent year-over-year growth as reported and in constant currency."
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            28,
+            34
+          ],
+          "new_sentences": [
+            24,
+            30
+          ],
+          "spans": [
+            {
+              "source_id": "ADBE-2025-Q1",
+              "sentence": 30,
+              "start": 2343,
+              "end": 2479,
+              "quote": "•Digital Media segment revenue was $4.23 billion, which represents 11 percent year-over-year growth, or 12 percent in constant currency."
+            },
+            {
+              "source_id": "ADBE-2025-Q1",
+              "sentence": 31,
+              "start": 2480,
+              "end": 2619,
+              "quote": "Digital Media Annualized Recurring Revenue (“ARR”) exiting the quarter was $17.63 billion, representing 12.6 percent year-over-year growth."
+            },
+            {
+              "source_id": "ADBE-2025-Q1",
+              "sentence": 32,
+              "start": 2620,
+              "end": 2758,
+              "quote": "•Digital Experience segment revenue was $1.41 billion, representing 10 percent year-over-year growth as reported and in constant currency."
+            },
+            {
+              "source_id": "ADBE-2025-Q1",
+              "sentence": 33,
+              "start": 2759,
+              "end": 2901,
+              "quote": "Digital Experience subscription revenue was $1.30 billion, representing 11 percent year-over-year growth as reported and in constant currency."
+            },
+            {
+              "source_id": "ADBE-2025-Q2",
+              "sentence": 26,
+              "start": 2026,
+              "end": 2162,
+              "quote": "•Digital Media segment revenue was $4.35 billion, which represents 11 percent year-over-year growth, or 12 percent in constant currency."
+            },
+            {
+              "source_id": "ADBE-2025-Q2",
+              "sentence": 27,
+              "start": 2163,
+              "end": 2302,
+              "quote": "Digital Media Annualized Recurring Revenue (“ARR”) exiting the quarter was $18.09 billion, representing 12.1 percent year-over-year growth."
+            },
+            {
+              "source_id": "ADBE-2025-Q2",
+              "sentence": 28,
+              "start": 2303,
+              "end": 2441,
+              "quote": "•Digital Experience segment revenue was $1.46 billion, representing 10 percent year-over-year growth as reported and in constant currency."
+            },
+            {
+              "source_id": "ADBE-2025-Q2",
+              "sentence": 29,
+              "start": 2442,
+              "end": 2584,
+              "quote": "Digital Experience subscription revenue was $1.33 billion, representing 11 percent year-over-year growth as reported and in constant currency."
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            35,
+            41
+          ],
+          "new_sentences": [
+            31,
+            34
+          ],
+          "spans": [
+            {
+              "source_id": "ADBE-2025-Q1",
+              "sentence": 39,
+              "start": 3570,
+              "end": 3704,
+              "quote": "•Business Professionals and Consumers Group subscription revenue was $1.53 billion, which represents 15 percent year-over-year growth."
+            },
+            {
+              "source_id": "ADBE-2025-Q1",
+              "sentence": 40,
+              "start": 3706,
+              "end": 3840,
+              "quote": "•Creative and Marketing Professionals Group subscription revenue was $3.92 billion, which represents 10 percent year-over-year growth."
+            },
+            {
+              "source_id": "ADBE-2025-Q2",
+              "sentence": 32,
+              "start": 2633,
+              "end": 2804,
+              "quote": "•Business Professionals and Consumers Group subscription revenue was $1.60 billion, which represents 15 percent year-over-year growth as reported and in constant currency."
+            },
+            {
+              "source_id": "ADBE-2025-Q2",
+              "sentence": 33,
+              "start": 2805,
+              "end": 2975,
+              "quote": "•Creative and Marketing Professionals Group subscription revenue was $4.02 billion, which represents 10 percent year-over-year growth, or 11 percent in constant currency."
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            44,
+            51
+          ],
+          "new_sentences": [
+            37,
+            44
+          ],
+          "spans": [
+            {
+              "source_id": "ADBE-2025-Q1",
+              "sentence": 44,
+              "start": 3966,
+              "end": 4013,
+              "quote": "Total revenue  | $5.77 billion to $5.82 billion"
+            },
+            {
+              "source_id": "ADBE-2025-Q1",
+              "sentence": 45,
+              "start": 4014,
+              "end": 4077,
+              "quote": "Digital Media segment revenue  | $4.27 billion to $4.30 billion"
+            },
+            {
+              "source_id": "ADBE-2025-Q1",
+              "sentence": 46,
+              "start": 4078,
+              "end": 4146,
+              "quote": "Digital Experience segment revenue  | $1.43 billion to $1.45 billion"
+            },
+            {
+              "source_id": "ADBE-2025-Q1",
+              "sentence": 47,
+              "start": 4147,
+              "end": 4222,
+              "quote": "Digital Experience subscription revenue  | $1.315 billion to $1.325 billion"
+            },
+            {
+              "source_id": "ADBE-2025-Q2",
+              "sentence": 37,
+              "start": 3148,
+              "end": 3197,
+              "quote": "Total revenue  | $5.875 billion to $5.925 billion"
+            },
+            {
+              "source_id": "ADBE-2025-Q2",
+              "sentence": 38,
+              "start": 3198,
+              "end": 3261,
+              "quote": "Digital Media segment revenue  | $4.37 billion to $4.40 billion"
+            },
+            {
+              "source_id": "ADBE-2025-Q2",
+              "sentence": 39,
+              "start": 3262,
+              "end": 3330,
+              "quote": "Digital Experience segment revenue  | $1.45 billion to $1.47 billion"
+            },
+            {
+              "source_id": "ADBE-2025-Q2",
+              "sentence": 40,
+              "start": 3331,
+              "end": 3404,
+              "quote": "Digital Experience subscription revenue  | $1.35 billion to $1.36 billion"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            52,
+            54
+          ],
+          "new_sentences": [
+            45,
+            47
+          ],
+          "spans": [
+            {
+              "source_id": "ADBE-2025-Q1",
+              "sentence": 52,
+              "start": 4603,
+              "end": 4652,
+              "quote": "Total revenue  | $23.30 billion to $23.55 billion"
+            },
+            {
+              "source_id": "ADBE-2025-Q1",
+              "sentence": 53,
+              "start": 4653,
+              "end": 4718,
+              "quote": "Digital Media segment revenue  | $17.25 billion to $17.40 billion"
+            },
+            {
+              "source_id": "ADBE-2025-Q2",
+              "sentence": 45,
+              "start": 3794,
+              "end": 3843,
+              "quote": "Total revenue  | $23.50 billion to $23.60 billion"
+            },
+            {
+              "source_id": "ADBE-2025-Q2",
+              "sentence": 46,
+              "start": 3844,
+              "end": 3909,
+              "quote": "Digital Media segment revenue  | $17.45 billion to $17.50 billion"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            96,
+            136
+          ],
+          "new_sentences": [
+            82,
+            122
+          ],
+          "spans": [
+            {
+              "source_id": "ADBE-2025-Q1",
+              "sentence": 103,
+              "start": 10176,
+              "end": 10218,
+              "quote": "Total revenue  | 5,714   |  |  | 5,182   |"
+            },
+            {
+              "source_id": "ADBE-2025-Q1",
+              "sentence": 109,
+              "start": 10365,
+              "end": 10411,
+              "quote": "Total cost of revenue  | 622   |  |  | 590   |"
+            },
+            {
+              "source_id": "ADBE-2025-Q2",
+              "sentence": 89,
+              "start": 9116,
+              "end": 9192,
+              "quote": "Total revenue  | 5,873   |  |  | 5,309   |  |  | 11,587   |  |  | 10,491   |"
+            },
+            {
+              "source_id": "ADBE-2025-Q2",
+              "sentence": 95,
+              "start": 9445,
+              "end": 9523,
+              "quote": "Total cost of revenue  | 638   |  |  | 598   |  |  | 1,260   |  |  | 1,188   |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            166,
+            168
+          ],
+          "new_sentences": [
+            152,
+            154
+          ],
+          "spans": [
+            {
+              "source_id": "ADBE-2025-Q1",
+              "sentence": 166,
+              "start": 12751,
+              "end": 12796,
+              "quote": "Deferred revenue  | 6,347   |  |  | 6,131   |"
+            },
+            {
+              "source_id": "ADBE-2025-Q2",
+              "sentence": 152,
+              "start": 12532,
+              "end": 12577,
+              "quote": "Deferred revenue  | 6,220   |  |  | 6,131   |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            172,
+            175
+          ],
+          "new_sentences": [
+            158,
+            161
+          ],
+          "spans": [
+            {
+              "source_id": "ADBE-2025-Q1",
+              "sentence": 173,
+              "start": 13025,
+              "end": 13066,
+              "quote": "Deferred revenue  | 143   |  |  | 128   |"
+            },
+            {
+              "source_id": "ADBE-2025-Q2",
+              "sentence": 159,
+              "start": 12806,
+              "end": 12847,
+              "quote": "Deferred revenue  | 114   |  |  | 128   |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            204,
+            208
+          ],
+          "new_sentences": [
+            190,
+            194
+          ],
+          "spans": [
+            {
+              "source_id": "ADBE-2025-Q1",
+              "sentence": 205,
+              "start": 14319,
+              "end": 14371,
+              "quote": "Changes in deferred revenue  | 231   |  |  | 160   |"
+            },
+            {
+              "source_id": "ADBE-2025-Q2",
+              "sentence": 191,
+              "start": 14095,
+              "end": 14149,
+              "quote": "Changes in deferred revenue  | (156)  |  |  | (424)  |"
+            }
+          ]
+        }
+      ],
+      "annual_candidate_counts": [
+        1,
+        1
+      ],
+      "issues": [
+        "changed_guidance_pair"
+      ],
+      "selected_alignment": "replace",
+      "selected_sentence_indices": [
+        52,
+        45
+      ]
+    },
+    {
+      "stage": "deterministic_comparison",
+      "result": {
+        "status": "supported",
+        "reason": "raised",
+        "calculation": {
+          "old_lower": "23300000000.00",
+          "old_upper": "23550000000.00",
+          "new_lower": "23500000000.00",
+          "new_upper": "23600000000.00",
+          "old_midpoint": "23425000000.00",
+          "new_midpoint": "23550000000.00",
+          "midpoint_delta": "125000000.00",
+          "lower_delta": "200000000.00",
+          "upper_delta": "50000000.00",
+          "relative_midpoint_change_percent": "0.5336179295624332977588046958",
+          "delta_unit": "USD",
+          "range_change": "raised"
+        }
+      }
+    }
+  ],
+  "extractions": [
+    {
+      "metric": {
+        "source_id": "ADBE-2025-Q1",
+        "issuer": "ADBE",
+        "metric": "revenue",
+        "currency": "USD",
+        "unit": "billion",
+        "basis": "reported",
+        "horizon": "FY2025",
+        "calendar": "fiscal",
+        "definition": "total_revenue_as_reported",
+        "status": "provided",
+        "lower": "23.30",
+        "upper": "23.55",
+        "evidence": "Total revenue  | $23.30 billion to $23.55 billion",
+        "horizon_evidence": "The following table summarizes Adobe’s fiscal year 2025 targets, which assumes current macroeconomic conditions2:\n |  |  |  |  |  |  |  |\nTotal revenue  | $23.30 billion to $23.55 billion"
+      },
+      "validation": {
+        "literal_valid": true,
+        "semantic_screen": "pass",
+        "errors": [],
+        "human_semantic_review": "pending",
+        "observation_id": "3498b50d7208996746ab5aee5f464d13ae77b21f2b4b5d54bec6db83adb7272f"
+      }
+    },
+    {
+      "metric": {
+        "source_id": "ADBE-2025-Q2",
+        "issuer": "ADBE",
+        "metric": "revenue",
+        "currency": "USD",
+        "unit": "billion",
+        "basis": "reported",
+        "horizon": "FY2025",
+        "calendar": "fiscal",
+        "definition": "total_revenue_as_reported",
+        "status": "provided",
+        "lower": "23.50",
+        "upper": "23.60",
+        "evidence": "Total revenue  | $23.50 billion to $23.60 billion",
+        "horizon_evidence": "The following updated table summarizes Adobe’s fiscal year 2025 targets, which assumes current macroeconomic conditions2:\n |  |  |  |  |  |  |  |\nTotal revenue  | $23.50 billion to $23.60 billion"
+      },
+      "validation": {
+        "literal_valid": true,
+        "semantic_screen": "pass",
+        "errors": [],
+        "human_semantic_review": "pending",
+        "observation_id": "1a9ca561784322750239b3c43c55764cdbe898cb76b9a7ac821daa09788693dd"
+      }
+    }
+  ],
+  "explanations": [
+    {
+      "source_id": "ADBE-2025-Q2",
+      "quote": "“As a result of us driving strong performance in the first half of the year, we are pleased to raise Adobe’s FY25 total revenue and EPS targets,” said Dan Durn, executive vice president and CFO, Adobe. “We continue to invest in AI innovation across our customer groups to enhance value realization and expand the universe of customers we serve.”",
+      "type": "management_statement_candidate",
+      "semantic_review": "pending"
+    }
+  ],
+  "errors": [],
+  "calls": 0,
+  "tokens": null,
+  "label_status": "not_used_by_system",
+  "human_semantic_review": "pending",
+  "source_hashes": {
+    "ADBE-2025-Q1": "9e5181255eea8ef1ae56972e8fc1bdc02134dacb9715ece80ff7ec692e088d60",
+    "ADBE-2025-Q2": "99e83a21cac144ba1d31481534ba6658a0f4bf7016b842510b5a36b4c0e5a24b"
+  },
+  "input_hash": "96457f254fe6959bc27bd6c5ddd9815754640ae38efc8b7d6e994b87f2d5b953",
+  "model": null,
+  "execution_kind": "deterministic",
+  "context_characters": 48766,
+  "comparison": {
+    "status": "supported",
+    "reason": "raised",
+    "calculation": {
+      "old_lower": "23300000000.00",
+      "old_upper": "23550000000.00",
+      "new_lower": "23500000000.00",
+      "new_upper": "23600000000.00",
+      "old_midpoint": "23425000000.00",
+      "new_midpoint": "23550000000.00",
+      "midpoint_delta": "125000000.00",
+      "lower_delta": "200000000.00",
+      "upper_delta": "50000000.00",
+      "relative_midpoint_change_percent": "0.5336179295624332977588046958",
+      "delta_unit": "USD",
+      "range_change": "raised"
+    }
+  },
+  "explanation_conclusion": {
+    "status": "insufficient_evidence",
+    "reason": "semantic_review_required"
+  },
+  "conclusion": "supported",
+  "latency_ms": 8.41,
+  "conflicts": [],
+  "comparability": null,
+  "investigation_version": "earnings-investigation-v2",
+  "validation_failures": []
+}

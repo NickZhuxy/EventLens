@@ -15,7 +15,7 @@ ROOT=Path(__file__).resolve().parents[1]
 class EvaluationTests(unittest.TestCase):
     def test_real_draft_denominators(self):
         _,sources=load_corpus(ROOT/'data/manifest.json')
-        cases=json.loads((ROOT/'data/cases.json').read_text())
+        cases=json.loads((ROOT/'data/pilot_v1/cases.json').read_text())
         labels=json.loads((ROOT/'data/labels.draft.json').read_text())
         results=score([run_pair(sources,c) for c in cases],labels)
         heldout=next(x for x in results if x['split']=='heldout')
@@ -25,6 +25,20 @@ class EvaluationTests(unittest.TestCase):
         self.assertEqual(heldout['abstentions'],1)
         self.assertIsNone(heldout['human_evidence_support_errors'])
         self.assertTrue(heldout['provisional'])
+
+    def test_pending_labels_have_no_accuracy_denominator(self):
+        _,sources=load_corpus(ROOT/'data/manifest.json')
+        case=json.loads((ROOT/'data/cases.json').read_text())[0]
+        run=run_pair(sources,case)
+        labels={'status':'ai_draft','cases':{case['case_id']:{'status':'pending'}}}
+        metric=score([run],labels)[0]
+        self.assertEqual(metric['case_count'],1)
+        self.assertEqual(metric['labeled_cases'],0)
+        self.assertEqual(metric['unlabeled_cases'],1)
+        self.assertEqual(metric['emitted_numerical_comparisons'],1)
+        self.assertIsNone(metric['extraction_precision'])
+        self.assertIsNone(metric['numerical_comparison_errors'])
+        self.assertIsNone(metric['status_correct'])
 
     def test_false_values_count_as_error_not_just_literal_success(self):
         _,sources=load_corpus(ROOT/'data/manifest.json')
@@ -46,7 +60,7 @@ class EvaluationTests(unittest.TestCase):
         output=io.StringIO()
         with contextlib.redirect_stdout(output):rc=main(['--root',str(ROOT),'validate'])
         self.assertEqual(rc,0)
-        self.assertEqual(json.loads(output.getvalue())['eligible_comparisons'],3)
+        self.assertGreaterEqual(json.loads(output.getvalue())['eligible_comparisons'],30)
 
     def test_live_requires_model_and_key(self):
         from unittest.mock import patch

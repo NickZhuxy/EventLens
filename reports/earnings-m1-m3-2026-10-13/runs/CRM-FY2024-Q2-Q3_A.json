@@ -1,0 +1,81 @@
+{
+  "run_id": "060cae5e-3a12-415e-816f-c6577f917a02",
+  "created_at": "2026-10-13T19:47:07.274928+00:00",
+  "case": {
+    "case_id": "CRM-FY2024-Q2-Q3",
+    "issuer": "CRM",
+    "old": "CRM-2024-Q2",
+    "new": "CRM-2024-Q3",
+    "horizon": "FY2024",
+    "metric": "revenue",
+    "cutoff": "2023-11-30T00:00:00-05:00",
+    "split": "heldout",
+    "synthetic": false
+  },
+  "method": "A",
+  "config": {
+    "model": "SET_MODEL_ID",
+    "max_calls": 6,
+    "max_tool_calls": 5,
+    "max_output_tokens_per_call": 1800,
+    "max_input_characters": 160000
+  },
+  "cutoff_mode": "disclosure",
+  "trace": [
+    {
+      "stage": "rule_extraction",
+      "source_id": "CRM-2024-Q2",
+      "issues": [
+        "no_unambiguous_annual_revenue_range"
+      ]
+    },
+    {
+      "stage": "rule_extraction",
+      "source_id": "CRM-2024-Q3",
+      "issues": [
+        "no_unambiguous_annual_revenue_range"
+      ]
+    },
+    {
+      "stage": "deterministic_comparison",
+      "result": {
+        "status": "insufficient_evidence",
+        "reason": "missing_guidance",
+        "calculation": null
+      }
+    }
+  ],
+  "extractions": [],
+  "explanations": [
+    {
+      "source_id": "CRM-2024-Q2",
+      "quote": "“Our transformation drove our strong second quarter results, delivering revenue of $8.6 billion and record GAAP and non-GAAP operating margins,” said Marc Benioff, Chair and CEO of Salesforce. “Based on our performance and what we see in the back half of the year, we’re raising our fiscal year ‘24 revenue, operating margin, and operating cash flow growth guidance.",
+      "type": "management_statement_candidate",
+      "semantic_review": "pending"
+    }
+  ],
+  "errors": [],
+  "calls": 0,
+  "tokens": null,
+  "label_status": "not_used_by_system",
+  "human_semantic_review": "pending",
+  "source_hashes": {
+    "CRM-2024-Q2": "5e6ac8f74d23e2ebef90b574e091cab1a323933bce89bb1299b6a0c7b05e5d73",
+    "CRM-2024-Q3": "111ff058ea32aaf374dafc072e505f15265e8e4c113f69dca84dc59364563356"
+  },
+  "input_hash": "90fc9314257c2d099c6856575d16e4619d58ac44808bc78e4973c620ee38bfb2",
+  "model": null,
+  "execution_kind": "deterministic",
+  "context_characters": 108375,
+  "comparison": {
+    "status": "insufficient_evidence",
+    "reason": "missing_guidance",
+    "calculation": null
+  },
+  "explanation_conclusion": {
+    "status": "insufficient_evidence",
+    "reason": "semantic_review_required"
+  },
+  "conclusion": "insufficient_evidence",
+  "latency_ms": 2.454
+}

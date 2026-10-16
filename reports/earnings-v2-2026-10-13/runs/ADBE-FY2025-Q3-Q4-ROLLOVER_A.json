@@ -1,0 +1,148 @@
+{
+  "run_id": "7ea24a9a-87cf-46f1-baec-8d36b3abc07f",
+  "created_at": "2026-10-14T01:02:05.651182+00:00",
+  "case": {
+    "case_id": "ADBE-FY2025-Q3-Q4-ROLLOVER",
+    "old": "ADBE-2025-Q3",
+    "new": "ADBE-2025-Q4",
+    "issuer": "ADBE",
+    "horizon": "FY2025",
+    "metric": "revenue",
+    "cutoff": "2025-12-10T23:59:59-05:00",
+    "split": "supplemental_natural",
+    "synthetic": false,
+    "label_status": "pending_Nick_review",
+    "counted_in_quarterly_pairs": false
+  },
+  "method": "A",
+  "config": {
+    "version": "earnings-investigation-v2",
+    "model": "deepseek-flash",
+    "provider": {
+      "base_url": "https://api.deepseek.com",
+      "reasoning_effort": "low"
+    },
+    "max_calls": 8,
+    "max_tool_calls": 7,
+    "max_output_tokens_per_call": 3200,
+    "max_input_characters": 180000,
+    "transport_retries": 0,
+    "pricing": {
+      "currency": "USD",
+      "input_per_million": "0.30",
+      "output_per_million": "1.20",
+      "assumption": "Peak rates; all input treated as cache miss. Discounts never required.",
+      "reference": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "checked_on": "2026-10-13"
+    },
+    "scope": {
+      "real_pairs": 36,
+      "heldout_stress_variants": 72,
+      "supplemental_natural_cases": 2,
+      "stress_types": [
+        "stale_disclosure",
+        "missing_table",
+        "contradictory_commentary"
+      ],
+      "methods": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    "proposed_budget_usd": "8.00",
+    "approval_status": "pending_concrete_budget_approval"
+  },
+  "cutoff_mode": "disclosure",
+  "trace": [
+    {
+      "stage": "rule_extraction",
+      "source_id": "ADBE-2025-Q3",
+      "issues": []
+    },
+    {
+      "stage": "rule_extraction",
+      "source_id": "ADBE-2025-Q4",
+      "issues": [
+        "no_unambiguous_annual_revenue_range"
+      ]
+    },
+    {
+      "stage": "deterministic_comparison",
+      "result": {
+        "status": "insufficient_evidence",
+        "reason": "missing_guidance",
+        "calculation": null
+      }
+    }
+  ],
+  "extractions": [
+    {
+      "metric": {
+        "source_id": "ADBE-2025-Q3",
+        "issuer": "ADBE",
+        "metric": "revenue",
+        "currency": "USD",
+        "unit": "billion",
+        "basis": "reported",
+        "horizon": "FY2025",
+        "calendar": "fiscal",
+        "definition": "total_revenue_as_reported",
+        "status": "provided",
+        "lower": "23.65",
+        "upper": "23.70",
+        "evidence": "Total revenue  | $23.65 billion to $23.70 billion",
+        "horizon_evidence": "The following updated table summarizes Adobe’s fiscal year 2025 targets, which assumes current macroeconomic conditions2:\n |  |  |  |  |  |  |  |\nTotal revenue  | $23.65 billion to $23.70 billion"
+      },
+      "validation": {
+        "literal_valid": true,
+        "semantic_screen": "pass",
+        "errors": [],
+        "human_semantic_review": "pending",
+        "observation_id": "91a1a1dd688bf8407dc9a6262258e1530f3c698fadf2067f0e411eaa6e72469c"
+      }
+    }
+  ],
+  "explanations": [
+    {
+      "source_id": "ADBE-2025-Q3",
+      "quote": "“Adobe is the leader in the AI creative applications category with AI-influenced ARR surpassing $5 billion and AI-first ARR already exceeding our $250 million year-end target,” said Shantanu Narayen, chair and CEO, Adobe. “Given our customer strategy, AI product innovation and strong go-to-market execution, we’re pleased to once again raise our FY25 total revenue and EPS targets.”",
+      "type": "management_statement_candidate",
+      "semantic_review": "pending"
+    },
+    {
+      "source_id": "ADBE-2025-Q3",
+      "quote": "“Adobe delivered record Q3 revenue, with strength in subscription revenue across both Digital Media and Digital Experience segments,” said Dan Durn, executive vice president and CFO, Adobe. “We’re raising our FY25 total revenue and EPS targets as we execute against our growth strategy to deliver category leading and AI-infused solutions to meet the diverse needs of our customers.”",
+      "type": "management_statement_candidate",
+      "semantic_review": "pending"
+    }
+  ],
+  "errors": [],
+  "calls": 0,
+  "tokens": null,
+  "label_status": "not_used_by_system",
+  "human_semantic_review": "pending",
+  "source_hashes": {
+    "ADBE-2025-Q3": "e504dd9473b01c3a3a8b7a5c481a4e54b5f0cd91bbee7ed9300d168f72b4fc2c",
+    "ADBE-2025-Q4": "c90dd78d82a4c845c6393021f0017e4738d63327710fab1b254ef8adc0a3e66b"
+  },
+  "input_hash": "2dc52bda8a181bf581594ec5cf1486091f277f75fc9b32b482013ad241c62856",
+  "model": null,
+  "execution_kind": "deterministic",
+  "context_characters": 53693,
+  "comparison": {
+    "status": "insufficient_evidence",
+    "reason": "missing_guidance",
+    "calculation": null
+  },
+  "explanation_conclusion": {
+    "status": "insufficient_evidence",
+    "reason": "semantic_review_required"
+  },
+  "conclusion": "insufficient_evidence",
+  "latency_ms": 2.171,
+  "conflicts": [],
+  "comparability": null,
+  "investigation_version": "earnings-investigation-v2"
+}

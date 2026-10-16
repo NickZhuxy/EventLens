@@ -1,0 +1,110 @@
+{
+  "run_id": "e85356ae-c2e9-43c8-9eb6-8b4ff78a1af0",
+  "created_at": "2026-10-14T01:02:03.011147+00:00",
+  "case": {
+    "case_id": "CRM-FY2024-priorQ4-Q1",
+    "issuer": "CRM",
+    "old": "CRM-2023-Q4",
+    "new": "CRM-2024-Q1",
+    "horizon": "FY2024",
+    "metric": "revenue",
+    "cutoff": "2023-06-01T00:00:00-04:00",
+    "split": "heldout",
+    "synthetic": false
+  },
+  "method": "A",
+  "config": {
+    "version": "earnings-investigation-v2",
+    "model": "deepseek-flash",
+    "provider": {
+      "base_url": "https://api.deepseek.com",
+      "reasoning_effort": "low"
+    },
+    "max_calls": 8,
+    "max_tool_calls": 7,
+    "max_output_tokens_per_call": 3200,
+    "max_input_characters": 180000,
+    "transport_retries": 0,
+    "pricing": {
+      "currency": "USD",
+      "input_per_million": "0.30",
+      "output_per_million": "1.20",
+      "assumption": "Peak rates; all input treated as cache miss. Discounts never required.",
+      "reference": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "checked_on": "2026-10-13"
+    },
+    "scope": {
+      "real_pairs": 36,
+      "heldout_stress_variants": 72,
+      "supplemental_natural_cases": 2,
+      "stress_types": [
+        "stale_disclosure",
+        "missing_table",
+        "contradictory_commentary"
+      ],
+      "methods": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    "proposed_budget_usd": "8.00",
+    "approval_status": "pending_concrete_budget_approval"
+  },
+  "cutoff_mode": "disclosure",
+  "trace": [
+    {
+      "stage": "rule_extraction",
+      "source_id": "CRM-2023-Q4",
+      "issues": [
+        "ambiguous_multi_column_revenue_row",
+        "no_unambiguous_annual_revenue_range"
+      ]
+    },
+    {
+      "stage": "rule_extraction",
+      "source_id": "CRM-2024-Q1",
+      "issues": [
+        "no_unambiguous_annual_revenue_range"
+      ]
+    },
+    {
+      "stage": "deterministic_comparison",
+      "result": {
+        "status": "insufficient_evidence",
+        "reason": "missing_guidance",
+        "calculation": null
+      }
+    }
+  ],
+  "extractions": [],
+  "explanations": [],
+  "errors": [],
+  "calls": 0,
+  "tokens": null,
+  "label_status": "not_used_by_system",
+  "human_semantic_review": "pending",
+  "source_hashes": {
+    "CRM-2023-Q4": "40ee65c6f64a5e8f2ace60abef5f843ddb9619499d38f0e381af45d26de23315",
+    "CRM-2024-Q1": "ce3ef55515214a97a91294454551acca8e9a411e428c7458d1848a5d90e81ad3"
+  },
+  "input_hash": "d28a026b2155c6e784a2df0bbc9796dad212967c8472dd3570c3e743d7da7722",
+  "model": null,
+  "execution_kind": "deterministic",
+  "context_characters": 105315,
+  "comparison": {
+    "status": "insufficient_evidence",
+    "reason": "missing_guidance",
+    "calculation": null
+  },
+  "explanation_conclusion": {
+    "status": "insufficient_evidence",
+    "reason": "no_explicit_explanation_found"
+  },
+  "conclusion": "insufficient_evidence",
+  "latency_ms": 4.777,
+  "conflicts": [],
+  "comparability": null,
+  "investigation_version": "earnings-investigation-v2"
+}

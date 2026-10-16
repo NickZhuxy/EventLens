@@ -1,0 +1,204 @@
+{
+  "run_id": "f2258605-9d87-49c9-aa6b-65956f6c1d71",
+  "created_at": "2026-10-14T01:02:04.568563+00:00",
+  "case": {
+    "case_id": "CDNS-FY2025-priorQ4-Q1~v2-contradictory_commentary",
+    "issuer": "CDNS",
+    "old": "CDNS-2024-Q4",
+    "new": "CDNS-2025-Q1~v2-contradictory_commentary",
+    "horizon": "FY2025",
+    "metric": "revenue",
+    "cutoff": "2025-04-29T00:00:00-04:00",
+    "split": "synthetic_heldout",
+    "synthetic": true,
+    "parent_case_id": "CDNS-FY2025-priorQ4-Q1",
+    "challenge": "contradictory_commentary",
+    "expected_status": "conflicting",
+    "transformation": {
+      "description": "Append a synthetic opposing pair about the same annual guidance, driver and basis. Never attribute these sentences to management.",
+      "expected_conflict_quotes": [
+        "Demand caused the FY2025 total revenue guidance revision on a reported basis.",
+        "Demand did not cause the FY2025 total revenue guidance revision on a reported basis."
+      ]
+    },
+    "parent_source_hash": "968039bf45c150a41089b59ede0e04cca8801a8b0602f25964c2133cdaa73b0b",
+    "derived_source_hash": "b184d21f2f307f7cfaf769221329d0ace70d3f754fad26387150f71d9e377a31"
+  },
+  "method": "A",
+  "config": {
+    "version": "earnings-investigation-v2",
+    "model": "deepseek-flash",
+    "provider": {
+      "base_url": "https://api.deepseek.com",
+      "reasoning_effort": "low"
+    },
+    "max_calls": 8,
+    "max_tool_calls": 7,
+    "max_output_tokens_per_call": 3200,
+    "max_input_characters": 180000,
+    "transport_retries": 0,
+    "pricing": {
+      "currency": "USD",
+      "input_per_million": "0.30",
+      "output_per_million": "1.20",
+      "assumption": "Peak rates; all input treated as cache miss. Discounts never required.",
+      "reference": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "checked_on": "2026-10-13"
+    },
+    "scope": {
+      "real_pairs": 36,
+      "heldout_stress_variants": 72,
+      "supplemental_natural_cases": 2,
+      "stress_types": [
+        "stale_disclosure",
+        "missing_table",
+        "contradictory_commentary"
+      ],
+      "methods": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    "proposed_budget_usd": "8.00",
+    "approval_status": "pending_concrete_budget_approval"
+  },
+  "cutoff_mode": "disclosure",
+  "trace": [
+    {
+      "stage": "rule_extraction",
+      "source_id": "CDNS-2024-Q4",
+      "issues": [
+        "no_unambiguous_annual_revenue_range"
+      ]
+    },
+    {
+      "stage": "rule_extraction",
+      "source_id": "CDNS-2025-Q1~v2-contradictory_commentary",
+      "issues": [
+        "no_unambiguous_annual_revenue_range"
+      ]
+    },
+    {
+      "stage": "deterministic_comparison",
+      "result": {
+        "status": "insufficient_evidence",
+        "reason": "missing_guidance",
+        "calculation": null
+      }
+    }
+  ],
+  "extractions": [],
+  "explanations": [
+    {
+      "source_id": "CDNS-2025-Q1~v2-contradictory_commentary",
+      "quote": "“Q1 was a strong quarter for Cadence, driven by broad-based strength across all our businesses,” said John Wall, senior vice president and chief financial officer. “I am pleased that we exceeded all key financial metrics for the quarter, and we are tracking ahead of our original forecast for 2025, allowing us to raise our full year outlook.”",
+      "type": "management_statement_candidate",
+      "semantic_review": "pending"
+    },
+    {
+      "source_id": "CDNS-2025-Q1~v2-contradictory_commentary",
+      "quote": "Demand caused the FY2025 total revenue guidance revision on a reported basis.",
+      "type": "management_statement_candidate",
+      "semantic_review": "pending"
+    },
+    {
+      "source_id": "CDNS-2025-Q1~v2-contradictory_commentary",
+      "quote": "Demand did not cause the FY2025 total revenue guidance revision on a reported basis.",
+      "type": "management_statement_candidate",
+      "semantic_review": "pending"
+    }
+  ],
+  "errors": [],
+  "calls": 0,
+  "tokens": null,
+  "label_status": "not_used_by_system",
+  "human_semantic_review": "pending",
+  "source_hashes": {
+    "CDNS-2024-Q4": "7295b06325e479d1bd35864660765e06137a8d8b83e020612c9ed99ee0fddfc1",
+    "CDNS-2025-Q1~v2-contradictory_commentary": "b184d21f2f307f7cfaf769221329d0ace70d3f754fad26387150f71d9e377a31"
+  },
+  "input_hash": "7ad41b0dbdc897a32eef7da467e115dc921d5814cec86bf99cd31d146f4dc246",
+  "model": null,
+  "execution_kind": "deterministic",
+  "context_characters": 58827,
+  "comparison": {
+    "status": "insufficient_evidence",
+    "reason": "missing_guidance",
+    "calculation": null
+  },
+  "explanation_conclusion": {
+    "status": "conflicting",
+    "reason": "two_cited_opposing_statements",
+    "conflicts": [
+      {
+        "topic": "demand",
+        "reason": "opposite_polarity_same_literal_proposition",
+        "citations": [
+          {
+            "source_id": "CDNS-2025-Q1~v2-contradictory_commentary",
+            "quote": "Demand caused the FY2025 total revenue guidance revision on a reported basis.",
+            "start": 26427,
+            "end": 26504,
+            "source_hash": "b184d21f2f307f7cfaf769221329d0ace70d3f754fad26387150f71d9e377a31",
+            "url": "https://www.sec.gov/Archives/edgar/data/813672/000081367225000046/cdns4282025ex9901.htm",
+            "origin": "synthetic",
+            "literal_valid": true,
+            "semantic_review": "pending"
+          },
+          {
+            "source_id": "CDNS-2025-Q1~v2-contradictory_commentary",
+            "quote": "Demand did not cause the FY2025 total revenue guidance revision on a reported basis.",
+            "start": 26505,
+            "end": 26589,
+            "source_hash": "b184d21f2f307f7cfaf769221329d0ace70d3f754fad26387150f71d9e377a31",
+            "url": "https://www.sec.gov/Archives/edgar/data/813672/000081367225000046/cdns4282025ex9901.htm",
+            "origin": "synthetic",
+            "literal_valid": true,
+            "semantic_review": "pending"
+          }
+        ],
+        "semantic_review": "pending",
+        "kind": "explicit_lexical_conflict"
+      }
+    ],
+    "semantic_review": "pending"
+  },
+  "conclusion": "conflicting",
+  "latency_ms": 5.779,
+  "conflicts": [
+    {
+      "topic": "demand",
+      "reason": "opposite_polarity_same_literal_proposition",
+      "citations": [
+        {
+          "source_id": "CDNS-2025-Q1~v2-contradictory_commentary",
+          "quote": "Demand caused the FY2025 total revenue guidance revision on a reported basis.",
+          "start": 26427,
+          "end": 26504,
+          "source_hash": "b184d21f2f307f7cfaf769221329d0ace70d3f754fad26387150f71d9e377a31",
+          "url": "https://www.sec.gov/Archives/edgar/data/813672/000081367225000046/cdns4282025ex9901.htm",
+          "origin": "synthetic",
+          "literal_valid": true,
+          "semantic_review": "pending"
+        },
+        {
+          "source_id": "CDNS-2025-Q1~v2-contradictory_commentary",
+          "quote": "Demand did not cause the FY2025 total revenue guidance revision on a reported basis.",
+          "start": 26505,
+          "end": 26589,
+          "source_hash": "b184d21f2f307f7cfaf769221329d0ace70d3f754fad26387150f71d9e377a31",
+          "url": "https://www.sec.gov/Archives/edgar/data/813672/000081367225000046/cdns4282025ex9901.htm",
+          "origin": "synthetic",
+          "literal_valid": true,
+          "semantic_review": "pending"
+        }
+      ],
+      "semantic_review": "pending",
+      "kind": "explicit_lexical_conflict"
+    }
+  ],
+  "comparability": null,
+  "investigation_version": "earnings-investigation-v2"
+}

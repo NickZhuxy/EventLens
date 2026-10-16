@@ -1,0 +1,147 @@
+{
+  "run_id": "5f16b719-1013-42d8-b2b9-1e33104d691f",
+  "created_at": "2026-10-13T19:47:07.395842+00:00",
+  "case": {
+    "case_id": "BOX-FY2025-priorQ4-Q1",
+    "issuer": "BOX",
+    "old": "BOX-2024-Q4",
+    "new": "BOX-2025-Q1",
+    "horizon": "FY2025",
+    "metric": "revenue",
+    "cutoff": "2024-05-29T00:00:00-04:00",
+    "split": "development",
+    "synthetic": false
+  },
+  "method": "A",
+  "config": {
+    "model": "SET_MODEL_ID",
+    "max_calls": 6,
+    "max_tool_calls": 5,
+    "max_output_tokens_per_call": 1800,
+    "max_input_characters": 160000
+  },
+  "cutoff_mode": "disclosure",
+  "trace": [
+    {
+      "stage": "rule_extraction",
+      "source_id": "BOX-2024-Q4",
+      "issues": []
+    },
+    {
+      "stage": "rule_extraction",
+      "source_id": "BOX-2025-Q1",
+      "issues": []
+    },
+    {
+      "stage": "deterministic_comparison",
+      "result": {
+        "status": "supported",
+        "reason": "lowered",
+        "calculation": {
+          "old_lower": "1080000000.00",
+          "old_upper": "1085000000.000",
+          "new_lower": "1075000000.000",
+          "new_upper": "1080000000.00",
+          "old_midpoint": "1082500000.000",
+          "new_midpoint": "1077500000.000",
+          "midpoint_delta": "-5000000.000",
+          "lower_delta": "-5000000.000",
+          "upper_delta": "-5000000.000",
+          "relative_midpoint_change_percent": "-0.4618937644341801385681293303",
+          "delta_unit": "USD",
+          "range_change": "lowered"
+        }
+      }
+    }
+  ],
+  "extractions": [
+    {
+      "metric": {
+        "source_id": "BOX-2024-Q4",
+        "issuer": "BOX",
+        "metric": "revenue",
+        "currency": "USD",
+        "unit": "billion",
+        "basis": "reported",
+        "horizon": "FY2025",
+        "calendar": "fiscal",
+        "definition": "total_revenue_as_reported",
+        "status": "provided",
+        "lower": "1.08",
+        "upper": "1.085",
+        "evidence": "Revenue is expected to be in the range of $1.08 billion to $1.085 billion, up 5% year-over-year at the high-end of the range, or 6% growth on a constant currency basis.",
+        "horizon_evidence": "Full Year FY25 Guidance\n\n•\nRevenue is expected to be in the range of $1.08 billion to $1.085 billion, up 5% year-over-year at the high-end of the range, or 6% growth on a constant currency basis."
+      },
+      "validation": {
+        "literal_valid": true,
+        "semantic_screen": "pass",
+        "errors": [],
+        "human_semantic_review": "pending",
+        "observation_id": "668d575e499557356dfcc41f1ed5f13e32f644d7a98374aa4adf8258f6c284bc"
+      }
+    },
+    {
+      "metric": {
+        "source_id": "BOX-2025-Q1",
+        "issuer": "BOX",
+        "metric": "revenue",
+        "currency": "USD",
+        "unit": "billion",
+        "basis": "reported",
+        "horizon": "FY2025",
+        "calendar": "fiscal",
+        "definition": "total_revenue_as_reported",
+        "status": "provided",
+        "lower": "1.075",
+        "upper": "1.08",
+        "evidence": "Revenue is expected to be in the range of $1.075 billion to $1.08 billion, up 4% year-over-year at the high-end of the range, or 7% growth on a constant currency basis. On a constant currency basis, this represents a $3 million increase from our previous guidance.",
+        "horizon_evidence": "Full Year FY25 Guidance\n\n•\nRevenue is expected to be in the range of $1.075 billion to $1.08 billion, up 4% year-over-year at the high-end of the range, or 7% growth on a constant currency basis. On a constant currency basis, this represents a $3 million increase from our previous guidance."
+      },
+      "validation": {
+        "literal_valid": true,
+        "semantic_screen": "pass",
+        "errors": [],
+        "human_semantic_review": "pending",
+        "observation_id": "04d6bfd85388b71ef03bc0c47443e9f6ca29ba18cb7685d99448b0f326ba9323"
+      }
+    }
+  ],
+  "explanations": [],
+  "errors": [],
+  "calls": 0,
+  "tokens": null,
+  "label_status": "not_used_by_system",
+  "human_semantic_review": "pending",
+  "source_hashes": {
+    "BOX-2024-Q4": "f8d977ee7a7acfa351605933072b5a099c795f21ffc2a20849688b199dcf40df",
+    "BOX-2025-Q1": "0b256a50725dd8b72dabe5854384fda6ee3018bb28904ccfb59c3511d49c8309"
+  },
+  "input_hash": "3879a99a7c7149fd90bc7fa72f67cef78e870d3aa6fb38ea6a95119feb41df4a",
+  "model": null,
+  "execution_kind": "deterministic",
+  "context_characters": 100265,
+  "comparison": {
+    "status": "supported",
+    "reason": "lowered",
+    "calculation": {
+      "old_lower": "1080000000.00",
+      "old_upper": "1085000000.000",
+      "new_lower": "1075000000.000",
+      "new_upper": "1080000000.00",
+      "old_midpoint": "1082500000.000",
+      "new_midpoint": "1077500000.000",
+      "midpoint_delta": "-5000000.000",
+      "lower_delta": "-5000000.000",
+      "upper_delta": "-5000000.000",
+      "relative_midpoint_change_percent": "-0.4618937644341801385681293303",
+      "delta_unit": "USD",
+      "range_change": "lowered"
+    }
+  },
+  "explanation_conclusion": {
+    "status": "insufficient_evidence",
+    "reason": "no_explicit_explanation_found"
+  },
+  "conclusion": "supported",
+  "latency_ms": 2.514
+}

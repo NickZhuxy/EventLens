@@ -1,0 +1,74 @@
+{
+  "run_id": "2769dd0a-16a1-476e-afd1-85af9ae87e84",
+  "created_at": "2026-10-13T19:47:07.664776+00:00",
+  "case": {
+    "case_id": "OKTA-FY2025-Q2-Q3",
+    "issuer": "OKTA",
+    "old": "OKTA-2025-Q2",
+    "new": "OKTA-2025-Q3",
+    "horizon": "FY2025",
+    "metric": "revenue",
+    "cutoff": "2024-12-04T00:00:00-05:00",
+    "split": "heldout",
+    "synthetic": false
+  },
+  "method": "A",
+  "config": {
+    "model": "SET_MODEL_ID",
+    "max_calls": 6,
+    "max_tool_calls": 5,
+    "max_output_tokens_per_call": 1800,
+    "max_input_characters": 160000
+  },
+  "cutoff_mode": "disclosure",
+  "trace": [
+    {
+      "stage": "rule_extraction",
+      "source_id": "OKTA-2025-Q2",
+      "issues": [
+        "no_unambiguous_annual_revenue_range"
+      ]
+    },
+    {
+      "stage": "rule_extraction",
+      "source_id": "OKTA-2025-Q3",
+      "issues": [
+        "no_unambiguous_annual_revenue_range"
+      ]
+    },
+    {
+      "stage": "deterministic_comparison",
+      "result": {
+        "status": "insufficient_evidence",
+        "reason": "missing_guidance",
+        "calculation": null
+      }
+    }
+  ],
+  "extractions": [],
+  "explanations": [],
+  "errors": [],
+  "calls": 0,
+  "tokens": null,
+  "label_status": "not_used_by_system",
+  "human_semantic_review": "pending",
+  "source_hashes": {
+    "OKTA-2025-Q2": "7244ee5b2515a9a9dcf3833292d0e0838c49f545b9e987fa75c4b07ecf91cc69",
+    "OKTA-2025-Q3": "ac45a202936d1199dfc3b0c37f9d7d2327ae78b01fede707e9f8e93906fad203"
+  },
+  "input_hash": "b320abe2fd7128c7fcd0a07d8615abcf30fb99881781f2defeeb4128ff21144d",
+  "model": null,
+  "execution_kind": "deterministic",
+  "context_characters": 64964,
+  "comparison": {
+    "status": "insufficient_evidence",
+    "reason": "missing_guidance",
+    "calculation": null
+  },
+  "explanation_conclusion": {
+    "status": "insufficient_evidence",
+    "reason": "no_explicit_explanation_found"
+  },
+  "conclusion": "insufficient_evidence",
+  "latency_ms": 2.117
+}

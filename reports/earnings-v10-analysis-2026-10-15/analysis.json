@@ -1,0 +1,265 @@
+{
+  "scope": "Four live outcomes on two exposed natural supplemental cases; no human-reviewed accuracy.",
+  "summary": {
+    "completed_runs": 4,
+    "planned_runs": 4,
+    "metrics": [
+      {
+        "method": "B",
+        "split": "supplemental_natural",
+        "challenge": "real",
+        "cases": 2,
+        "completed_without_errors": 2,
+        "numeric_outputs": 0,
+        "valid_control_outcomes": null,
+        "terminal_errors": 0,
+        "validation_failures": 0,
+        "recovered_runs": 0,
+        "calls": 2,
+        "human_reviewed_accuracy": null
+      },
+      {
+        "method": "C",
+        "split": "supplemental_natural",
+        "challenge": "real",
+        "cases": 2,
+        "completed_without_errors": 2,
+        "numeric_outputs": 0,
+        "valid_control_outcomes": null,
+        "terminal_errors": 0,
+        "validation_failures": 0,
+        "recovered_runs": 0,
+        "calls": 6,
+        "human_reviewed_accuracy": null
+      }
+    ],
+    "request_attempts": 8,
+    "charged_upper_usd": "0.0232560",
+    "uncertain_requests": 0,
+    "scope": "V10 focused natural withdrawal/rollover regression with inherited prior target identity and explicit annual suspension evidence. No human-reviewed labels."
+  },
+  "replay": {
+    "replayed_runs": 4,
+    "journalled_requests": 8,
+    "network_calls": 0,
+    "paid_calls": 0,
+    "all_requests_and_results_matched": true
+  },
+  "paired_results": [
+    {
+      "case_id": "SNPS-FY2025-Q2-WITHDRAWAL",
+      "method": "B",
+      "v9_comparison": {
+        "status": "insufficient_evidence",
+        "reason": "missing_guidance",
+        "calculation": null
+      },
+      "v10_comparison": {
+        "status": "supported",
+        "reason": "guidance_withdrawn",
+        "calculation": null
+      },
+      "v10_errors": [],
+      "v10_calls": 1,
+      "withdrawal_records": [
+        {
+          "metric": {
+            "source_id": "SNPS-2025-WITHDRAWAL",
+            "issuer": "SNPS",
+            "metric": "revenue",
+            "currency": "USD",
+            "unit": "million",
+            "basis": "reported",
+            "horizon": "FY2025",
+            "calendar": "fiscal",
+            "definition": "total_revenue_as_reported",
+            "status": "withdrawn",
+            "lower": null,
+            "upper": null,
+            "evidence": "In connection with BIS Letter (as discussed in Item 8.01 below), Synopsys, Inc. (“Synopsys”) has suspended its financial guidance for the third quarter of fiscal year 2025 and full fiscal year 2025.",
+            "horizon_evidence": "In connection with BIS Letter (as discussed in Item 8.01 below), Synopsys, Inc. (“Synopsys”) has suspended its financial guidance for the third quarter of fiscal year 2025 and full fiscal year 2025."
+          },
+          "metric_id": "m_02b17b058d26d9a32628b62a",
+          "evidence_binding": {
+            "kind": "explicit_annual_all_financial_guidance_withdrawal",
+            "withdrawal_statement": {
+              "evidence_id": "e_f10f6ae8b2403b04212d0421",
+              "source_id": "SNPS-2025-WITHDRAWAL",
+              "source_hash": "b827486acf50f1c37a8f9a9244bbfa4a96afc51d8d6308f7a97084f02b5070e3",
+              "start": 2239,
+              "end": 2437,
+              "quote": "In connection with BIS Letter (as discussed in Item 8.01 below), Synopsys, Inc. (“Synopsys”) has suspended its financial guidance for the third quarter of fiscal year 2025 and full fiscal year 2025.",
+              "url": "https://www.sec.gov/Archives/edgar/data/883241/000119312525130725/d14316d8k.htm",
+              "origin": "disclosure",
+              "literal_valid": true,
+              "semantic_review": "pending"
+            },
+            "annual_scope": {
+              "evidence_id": "e_521e3f6c92f145d391408663",
+              "source_id": "SNPS-2025-WITHDRAWAL",
+              "source_hash": "b827486acf50f1c37a8f9a9244bbfa4a96afc51d8d6308f7a97084f02b5070e3",
+              "start": 2415,
+              "end": 2436,
+              "quote": "full fiscal year 2025",
+              "url": "https://www.sec.gov/Archives/edgar/data/883241/000119312525130725/d14316d8k.htm",
+              "origin": "disclosure",
+              "literal_valid": true,
+              "semantic_review": "pending"
+            },
+            "prior_guidance": {
+              "evidence_id": "e_86b1191b86feb17869733f8b",
+              "source_id": "SNPS-2025-Q2",
+              "source_hash": "0c6955b8090d5b98291345d03f66302c14c9aca53fa4b6804f5b19973419ebfd",
+              "start": 4434,
+              "end": 4878,
+              "quote": "Third Quarter and Full Fiscal Year 2025 Financial Targets ^{(1)}\n\n(in millions except per share amounts)\n |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n   |     | Range for Three Months\nEnding\nJuly 31, 2025  |    |    | Range for Fiscal Year\nEnding October 31, 2025  |\n   |     | Low  |    |    | High  |    |    | Low  |    |    | High  |\nRevenue  |     | $  | 1,755  |    |    | $  | 1,785  |    |    |  $  | 6,745  |    |    | $  | 6,805  |",
+              "url": "https://www.sec.gov/Archives/edgar/data/883241/000119312525129525/d815632dex991.htm",
+              "origin": "disclosure",
+              "literal_valid": true,
+              "semantic_review": "pending"
+            },
+            "prior_metric_id": "m_677ad70ee2d0599ccfa98b2d",
+            "identity_rule": "Unqualified all-financial-guidance withdrawal; inherit the unique prior revenue target identity. No new value is inferred."
+          },
+          "validation": {
+            "literal_valid": true,
+            "semantic_screen": "explicit_annual_all_financial_guidance_withdrawal",
+            "errors": [],
+            "human_semantic_review": "pending",
+            "identity_inherited_from": "m_677ad70ee2d0599ccfa98b2d"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "SNPS-FY2025-Q2-WITHDRAWAL",
+      "method": "C",
+      "v9_comparison": {
+        "status": "insufficient_evidence",
+        "reason": "missing_guidance",
+        "calculation": null
+      },
+      "v10_comparison": {
+        "status": "supported",
+        "reason": "guidance_withdrawn",
+        "calculation": null
+      },
+      "v10_errors": [],
+      "v10_calls": 3,
+      "withdrawal_records": [
+        {
+          "metric": {
+            "source_id": "SNPS-2025-WITHDRAWAL",
+            "issuer": "SNPS",
+            "metric": "revenue",
+            "currency": "USD",
+            "unit": "million",
+            "basis": "reported",
+            "horizon": "FY2025",
+            "calendar": "fiscal",
+            "definition": "total_revenue_as_reported",
+            "status": "withdrawn",
+            "lower": null,
+            "upper": null,
+            "evidence": "In connection with BIS Letter (as discussed in Item 8.01 below), Synopsys, Inc. (“Synopsys”) has suspended its financial guidance for the third quarter of fiscal year 2025 and full fiscal year 2025.",
+            "horizon_evidence": "In connection with BIS Letter (as discussed in Item 8.01 below), Synopsys, Inc. (“Synopsys”) has suspended its financial guidance for the third quarter of fiscal year 2025 and full fiscal year 2025."
+          },
+          "metric_id": "m_02b17b058d26d9a32628b62a",
+          "evidence_binding": {
+            "kind": "explicit_annual_all_financial_guidance_withdrawal",
+            "withdrawal_statement": {
+              "evidence_id": "e_f10f6ae8b2403b04212d0421",
+              "source_id": "SNPS-2025-WITHDRAWAL",
+              "source_hash": "b827486acf50f1c37a8f9a9244bbfa4a96afc51d8d6308f7a97084f02b5070e3",
+              "start": 2239,
+              "end": 2437,
+              "quote": "In connection with BIS Letter (as discussed in Item 8.01 below), Synopsys, Inc. (“Synopsys”) has suspended its financial guidance for the third quarter of fiscal year 2025 and full fiscal year 2025.",
+              "url": "https://www.sec.gov/Archives/edgar/data/883241/000119312525130725/d14316d8k.htm",
+              "origin": "disclosure",
+              "literal_valid": true,
+              "semantic_review": "pending"
+            },
+            "annual_scope": {
+              "evidence_id": "e_521e3f6c92f145d391408663",
+              "source_id": "SNPS-2025-WITHDRAWAL",
+              "source_hash": "b827486acf50f1c37a8f9a9244bbfa4a96afc51d8d6308f7a97084f02b5070e3",
+              "start": 2415,
+              "end": 2436,
+              "quote": "full fiscal year 2025",
+              "url": "https://www.sec.gov/Archives/edgar/data/883241/000119312525130725/d14316d8k.htm",
+              "origin": "disclosure",
+              "literal_valid": true,
+              "semantic_review": "pending"
+            },
+            "prior_guidance": {
+              "evidence_id": "e_86b1191b86feb17869733f8b",
+              "source_id": "SNPS-2025-Q2",
+              "source_hash": "0c6955b8090d5b98291345d03f66302c14c9aca53fa4b6804f5b19973419ebfd",
+              "start": 4434,
+              "end": 4878,
+              "quote": "Third Quarter and Full Fiscal Year 2025 Financial Targets ^{(1)}\n\n(in millions except per share amounts)\n |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n   |     | Range for Three Months\nEnding\nJuly 31, 2025  |    |    | Range for Fiscal Year\nEnding October 31, 2025  |\n   |     | Low  |    |    | High  |    |    | Low  |    |    | High  |\nRevenue  |     | $  | 1,755  |    |    | $  | 1,785  |    |    |  $  | 6,745  |    |    | $  | 6,805  |",
+              "url": "https://www.sec.gov/Archives/edgar/data/883241/000119312525129525/d815632dex991.htm",
+              "origin": "disclosure",
+              "literal_valid": true,
+              "semantic_review": "pending"
+            },
+            "prior_metric_id": "m_677ad70ee2d0599ccfa98b2d",
+            "identity_rule": "Unqualified all-financial-guidance withdrawal; inherit the unique prior revenue target identity. No new value is inferred."
+          },
+          "validation": {
+            "literal_valid": true,
+            "semantic_screen": "explicit_annual_all_financial_guidance_withdrawal",
+            "errors": [],
+            "human_semantic_review": "pending",
+            "identity_inherited_from": "m_677ad70ee2d0599ccfa98b2d"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "ADBE-FY2025-Q3-Q4-ROLLOVER",
+      "method": "B",
+      "v9_comparison": {
+        "status": "insufficient_evidence",
+        "reason": "missing_guidance",
+        "calculation": null
+      },
+      "v10_comparison": {
+        "status": "insufficient_evidence",
+        "reason": "missing_guidance",
+        "calculation": null
+      },
+      "v10_errors": [],
+      "v10_calls": 1,
+      "withdrawal_records": []
+    },
+    {
+      "case_id": "ADBE-FY2025-Q3-Q4-ROLLOVER",
+      "method": "C",
+      "v9_comparison": {
+        "status": "insufficient_evidence",
+        "reason": "missing_guidance",
+        "calculation": null
+      },
+      "v10_comparison": {
+        "status": "insufficient_evidence",
+        "reason": "missing_guidance",
+        "calculation": null
+      },
+      "v10_errors": [],
+      "v10_calls": 3,
+      "withdrawal_records": []
+    }
+  ],
+  "non_withdrawal_recorded_regression_runs": 290,
+  "recorded_regression_sha256": "078cfebd1178b5aad9666eaea0785aa458a32a81de80ca8e002f1ca91307648b",
+  "analysis_script_sha256": "d3d9f9a8275a0468a0dafd6ba2b55df4d487d1af6b8f9f87cb318a6ec9412215",
+  "bundle_hashes_sha256": "0144800c34698fb83c93f3a10d346631a6c303621c9d21d1af0ee96ab6c52c05",
+  "limits": [
+    "The withdrawal rule is narrow: an explicit suspension/withdrawal of financial guidance for the full fiscal year, optionally alongside its quarter.",
+    "The unique prior revenue target supplies currency, basis, definition and units. The source proves withdrawal, not a replacement value.",
+    "Negated, conditional, partial-metric, quarterly-only and unsupported wording abstain. Natural semantic review remains pending.",
+    "Recorded regression reuses prior model responses; it is not fresh inference on the full corpus.",
+    "The rollover case remains an abstention; the system does not compare different fiscal-year targets."
+  ]
+}

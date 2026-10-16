@@ -1,0 +1,198 @@
+{
+  "run_id": "0c61b143-c577-4340-addc-d976462fb634",
+  "created_at": "2026-10-14T01:02:05.014157+00:00",
+  "case": {
+    "case_id": "ZS-FY2025-Q1-Q2~v2-contradictory_commentary",
+    "issuer": "ZS",
+    "old": "ZS-2025-Q1",
+    "new": "ZS-2025-Q2~v2-contradictory_commentary",
+    "horizon": "FY2025",
+    "metric": "revenue",
+    "cutoff": "2025-03-06T00:00:00-05:00",
+    "split": "synthetic_heldout",
+    "synthetic": true,
+    "parent_case_id": "ZS-FY2025-Q1-Q2",
+    "challenge": "contradictory_commentary",
+    "expected_status": "conflicting",
+    "transformation": {
+      "description": "Append a synthetic opposing pair about the same annual guidance, driver and basis. Never attribute these sentences to management.",
+      "expected_conflict_quotes": [
+        "Demand caused the FY2025 total revenue guidance revision on a reported basis.",
+        "Demand did not cause the FY2025 total revenue guidance revision on a reported basis."
+      ]
+    },
+    "parent_source_hash": "a6655627998da3f5c0cbbc8c7275046adf4c10e72b0b35a9cc6b573643a2b203",
+    "derived_source_hash": "2156b5e68f9e8f53850a5e56cee60920c79e85f7bb3a2cc95db4aa56222beef7"
+  },
+  "method": "A",
+  "config": {
+    "version": "earnings-investigation-v2",
+    "model": "deepseek-flash",
+    "provider": {
+      "base_url": "https://api.deepseek.com",
+      "reasoning_effort": "low"
+    },
+    "max_calls": 8,
+    "max_tool_calls": 7,
+    "max_output_tokens_per_call": 3200,
+    "max_input_characters": 180000,
+    "transport_retries": 0,
+    "pricing": {
+      "currency": "USD",
+      "input_per_million": "0.30",
+      "output_per_million": "1.20",
+      "assumption": "Peak rates; all input treated as cache miss. Discounts never required.",
+      "reference": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "checked_on": "2026-10-13"
+    },
+    "scope": {
+      "real_pairs": 36,
+      "heldout_stress_variants": 72,
+      "supplemental_natural_cases": 2,
+      "stress_types": [
+        "stale_disclosure",
+        "missing_table",
+        "contradictory_commentary"
+      ],
+      "methods": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    "proposed_budget_usd": "8.00",
+    "approval_status": "pending_concrete_budget_approval"
+  },
+  "cutoff_mode": "disclosure",
+  "trace": [
+    {
+      "stage": "rule_extraction",
+      "source_id": "ZS-2025-Q1",
+      "issues": [
+        "no_unambiguous_annual_revenue_range"
+      ]
+    },
+    {
+      "stage": "rule_extraction",
+      "source_id": "ZS-2025-Q2~v2-contradictory_commentary",
+      "issues": [
+        "no_unambiguous_annual_revenue_range"
+      ]
+    },
+    {
+      "stage": "deterministic_comparison",
+      "result": {
+        "status": "insufficient_evidence",
+        "reason": "missing_guidance",
+        "calculation": null
+      }
+    }
+  ],
+  "extractions": [],
+  "explanations": [
+    {
+      "source_id": "ZS-2025-Q2~v2-contradictory_commentary",
+      "quote": "Demand caused the FY2025 total revenue guidance revision on a reported basis.",
+      "type": "management_statement_candidate",
+      "semantic_review": "pending"
+    },
+    {
+      "source_id": "ZS-2025-Q2~v2-contradictory_commentary",
+      "quote": "Demand did not cause the FY2025 total revenue guidance revision on a reported basis.",
+      "type": "management_statement_candidate",
+      "semantic_review": "pending"
+    }
+  ],
+  "errors": [],
+  "calls": 0,
+  "tokens": null,
+  "label_status": "not_used_by_system",
+  "human_semantic_review": "pending",
+  "source_hashes": {
+    "ZS-2025-Q1": "13fa3337ddd5be7fbeea9615914764e25f6616093af354c76029e18b684dfcc5",
+    "ZS-2025-Q2~v2-contradictory_commentary": "2156b5e68f9e8f53850a5e56cee60920c79e85f7bb3a2cc95db4aa56222beef7"
+  },
+  "input_hash": "498f769054b43c39f1e7101770121be595a18afa4d8e6e44ee5c2631a0e3a40f",
+  "model": null,
+  "execution_kind": "deterministic",
+  "context_characters": 72706,
+  "comparison": {
+    "status": "insufficient_evidence",
+    "reason": "missing_guidance",
+    "calculation": null
+  },
+  "explanation_conclusion": {
+    "status": "conflicting",
+    "reason": "two_cited_opposing_statements",
+    "conflicts": [
+      {
+        "topic": "demand",
+        "reason": "opposite_polarity_same_literal_proposition",
+        "citations": [
+          {
+            "source_id": "ZS-2025-Q2~v2-contradictory_commentary",
+            "quote": "Demand caused the FY2025 total revenue guidance revision on a reported basis.",
+            "start": 38007,
+            "end": 38084,
+            "source_hash": "2156b5e68f9e8f53850a5e56cee60920c79e85f7bb3a2cc95db4aa56222beef7",
+            "url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000025/zs-01312025_991.htm",
+            "origin": "synthetic",
+            "literal_valid": true,
+            "semantic_review": "pending"
+          },
+          {
+            "source_id": "ZS-2025-Q2~v2-contradictory_commentary",
+            "quote": "Demand did not cause the FY2025 total revenue guidance revision on a reported basis.",
+            "start": 38085,
+            "end": 38169,
+            "source_hash": "2156b5e68f9e8f53850a5e56cee60920c79e85f7bb3a2cc95db4aa56222beef7",
+            "url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000025/zs-01312025_991.htm",
+            "origin": "synthetic",
+            "literal_valid": true,
+            "semantic_review": "pending"
+          }
+        ],
+        "semantic_review": "pending",
+        "kind": "explicit_lexical_conflict"
+      }
+    ],
+    "semantic_review": "pending"
+  },
+  "conclusion": "conflicting",
+  "latency_ms": 4.68,
+  "conflicts": [
+    {
+      "topic": "demand",
+      "reason": "opposite_polarity_same_literal_proposition",
+      "citations": [
+        {
+          "source_id": "ZS-2025-Q2~v2-contradictory_commentary",
+          "quote": "Demand caused the FY2025 total revenue guidance revision on a reported basis.",
+          "start": 38007,
+          "end": 38084,
+          "source_hash": "2156b5e68f9e8f53850a5e56cee60920c79e85f7bb3a2cc95db4aa56222beef7",
+          "url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000025/zs-01312025_991.htm",
+          "origin": "synthetic",
+          "literal_valid": true,
+          "semantic_review": "pending"
+        },
+        {
+          "source_id": "ZS-2025-Q2~v2-contradictory_commentary",
+          "quote": "Demand did not cause the FY2025 total revenue guidance revision on a reported basis.",
+          "start": 38085,
+          "end": 38169,
+          "source_hash": "2156b5e68f9e8f53850a5e56cee60920c79e85f7bb3a2cc95db4aa56222beef7",
+          "url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000025/zs-01312025_991.htm",
+          "origin": "synthetic",
+          "literal_valid": true,
+          "semantic_review": "pending"
+        }
+      ],
+      "semantic_review": "pending",
+      "kind": "explicit_lexical_conflict"
+    }
+  ],
+  "comparability": null,
+  "investigation_version": "earnings-investigation-v2"
+}

@@ -37,11 +37,17 @@ def run_pair(sources, case, method="A", adapter=None, config=None, cutoff_mode="
                 run["trace"].append({"stage": "rule_extraction", "source_id": source.source_id, "issues": issues})
                 metrics.append(metric)
                 run["explanations"].extend(explanation_candidates(source))
+        elif method == "D":
+            from .document_diff import extract_pair
+            run["model"] = None
+            run["execution_kind"] = "deterministic"
+            run["context_characters"] = sum(len(s.text) for s in selected)
+            metrics = extract_pair(*selected, case["horizon"], run)
         elif method in {"B", "C"}:
             from .llm import model_extract
             metrics = model_extract(selected, sources, case, method, adapter, cfg, run, cutoff_mode)
         else:
-            raise ValueError("method must be A, B, or C")
+            raise ValueError("method must be A, B, C, or D")
         valid = []
         for source, metric in zip(selected, metrics):
             if metric:

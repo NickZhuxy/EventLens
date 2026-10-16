@@ -1,0 +1,198 @@
+{
+  "run_id": "c6be8059-138d-4afe-853d-cf1db324d65f",
+  "created_at": "2026-10-14T01:02:05.127936+00:00",
+  "case": {
+    "case_id": "DDOG-FY2025-priorQ4-Q1~v2-contradictory_commentary",
+    "issuer": "DDOG",
+    "old": "DDOG-2024-Q4",
+    "new": "DDOG-2025-Q1~v2-contradictory_commentary",
+    "horizon": "FY2025",
+    "metric": "revenue",
+    "cutoff": "2025-05-07T00:00:00-04:00",
+    "split": "synthetic_heldout",
+    "synthetic": true,
+    "parent_case_id": "DDOG-FY2025-priorQ4-Q1",
+    "challenge": "contradictory_commentary",
+    "expected_status": "conflicting",
+    "transformation": {
+      "description": "Append a synthetic opposing pair about the same annual guidance, driver and basis. Never attribute these sentences to management.",
+      "expected_conflict_quotes": [
+        "Demand caused the FY2025 total revenue guidance revision on a reported basis.",
+        "Demand did not cause the FY2025 total revenue guidance revision on a reported basis."
+      ]
+    },
+    "parent_source_hash": "5773f0b787af41045dc640a34930abc50622b1798dd01452bb97041c287f2a54",
+    "derived_source_hash": "79db5a44e3f863c931e7eabe2ff9d33d9bf7e0c52c3c1c219ff1ba32bf821566"
+  },
+  "method": "A",
+  "config": {
+    "version": "earnings-investigation-v2",
+    "model": "deepseek-flash",
+    "provider": {
+      "base_url": "https://api.deepseek.com",
+      "reasoning_effort": "low"
+    },
+    "max_calls": 8,
+    "max_tool_calls": 7,
+    "max_output_tokens_per_call": 3200,
+    "max_input_characters": 180000,
+    "transport_retries": 0,
+    "pricing": {
+      "currency": "USD",
+      "input_per_million": "0.30",
+      "output_per_million": "1.20",
+      "assumption": "Peak rates; all input treated as cache miss. Discounts never required.",
+      "reference": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "checked_on": "2026-10-13"
+    },
+    "scope": {
+      "real_pairs": 36,
+      "heldout_stress_variants": 72,
+      "supplemental_natural_cases": 2,
+      "stress_types": [
+        "stale_disclosure",
+        "missing_table",
+        "contradictory_commentary"
+      ],
+      "methods": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    "proposed_budget_usd": "8.00",
+    "approval_status": "pending_concrete_budget_approval"
+  },
+  "cutoff_mode": "disclosure",
+  "trace": [
+    {
+      "stage": "rule_extraction",
+      "source_id": "DDOG-2024-Q4",
+      "issues": [
+        "no_unambiguous_annual_revenue_range"
+      ]
+    },
+    {
+      "stage": "rule_extraction",
+      "source_id": "DDOG-2025-Q1~v2-contradictory_commentary",
+      "issues": [
+        "no_unambiguous_annual_revenue_range"
+      ]
+    },
+    {
+      "stage": "deterministic_comparison",
+      "result": {
+        "status": "insufficient_evidence",
+        "reason": "missing_guidance",
+        "calculation": null
+      }
+    }
+  ],
+  "extractions": [],
+  "explanations": [
+    {
+      "source_id": "DDOG-2025-Q1~v2-contradictory_commentary",
+      "quote": "Demand caused the FY2025 total revenue guidance revision on a reported basis.",
+      "type": "management_statement_candidate",
+      "semantic_review": "pending"
+    },
+    {
+      "source_id": "DDOG-2025-Q1~v2-contradictory_commentary",
+      "quote": "Demand did not cause the FY2025 total revenue guidance revision on a reported basis.",
+      "type": "management_statement_candidate",
+      "semantic_review": "pending"
+    }
+  ],
+  "errors": [],
+  "calls": 0,
+  "tokens": null,
+  "label_status": "not_used_by_system",
+  "human_semantic_review": "pending",
+  "source_hashes": {
+    "DDOG-2024-Q4": "4cdddaf5305ec32c5bf1e8732acb8993bcc9e9f5fd5b78ab73c160d7ceb23b7e",
+    "DDOG-2025-Q1~v2-contradictory_commentary": "79db5a44e3f863c931e7eabe2ff9d33d9bf7e0c52c3c1c219ff1ba32bf821566"
+  },
+  "input_hash": "4c5e97bb179c03f5d9f2549b49cb6f88a8a3b34196a7b6756fe12dedcbdb13c0",
+  "model": null,
+  "execution_kind": "deterministic",
+  "context_characters": 71291,
+  "comparison": {
+    "status": "insufficient_evidence",
+    "reason": "missing_guidance",
+    "calculation": null
+  },
+  "explanation_conclusion": {
+    "status": "conflicting",
+    "reason": "two_cited_opposing_statements",
+    "conflicts": [
+      {
+        "topic": "demand",
+        "reason": "opposite_polarity_same_literal_proposition",
+        "citations": [
+          {
+            "source_id": "DDOG-2025-Q1~v2-contradictory_commentary",
+            "quote": "Demand caused the FY2025 total revenue guidance revision on a reported basis.",
+            "start": 32970,
+            "end": 33047,
+            "source_hash": "79db5a44e3f863c931e7eabe2ff9d33d9bf7e0c52c3c1c219ff1ba32bf821566",
+            "url": "https://www.sec.gov/Archives/edgar/data/1561550/000156155025000118/ex-991x20250331x8k.htm",
+            "origin": "synthetic",
+            "literal_valid": true,
+            "semantic_review": "pending"
+          },
+          {
+            "source_id": "DDOG-2025-Q1~v2-contradictory_commentary",
+            "quote": "Demand did not cause the FY2025 total revenue guidance revision on a reported basis.",
+            "start": 33048,
+            "end": 33132,
+            "source_hash": "79db5a44e3f863c931e7eabe2ff9d33d9bf7e0c52c3c1c219ff1ba32bf821566",
+            "url": "https://www.sec.gov/Archives/edgar/data/1561550/000156155025000118/ex-991x20250331x8k.htm",
+            "origin": "synthetic",
+            "literal_valid": true,
+            "semantic_review": "pending"
+          }
+        ],
+        "semantic_review": "pending",
+        "kind": "explicit_lexical_conflict"
+      }
+    ],
+    "semantic_review": "pending"
+  },
+  "conclusion": "conflicting",
+  "latency_ms": 3.193,
+  "conflicts": [
+    {
+      "topic": "demand",
+      "reason": "opposite_polarity_same_literal_proposition",
+      "citations": [
+        {
+          "source_id": "DDOG-2025-Q1~v2-contradictory_commentary",
+          "quote": "Demand caused the FY2025 total revenue guidance revision on a reported basis.",
+          "start": 32970,
+          "end": 33047,
+          "source_hash": "79db5a44e3f863c931e7eabe2ff9d33d9bf7e0c52c3c1c219ff1ba32bf821566",
+          "url": "https://www.sec.gov/Archives/edgar/data/1561550/000156155025000118/ex-991x20250331x8k.htm",
+          "origin": "synthetic",
+          "literal_valid": true,
+          "semantic_review": "pending"
+        },
+        {
+          "source_id": "DDOG-2025-Q1~v2-contradictory_commentary",
+          "quote": "Demand did not cause the FY2025 total revenue guidance revision on a reported basis.",
+          "start": 33048,
+          "end": 33132,
+          "source_hash": "79db5a44e3f863c931e7eabe2ff9d33d9bf7e0c52c3c1c219ff1ba32bf821566",
+          "url": "https://www.sec.gov/Archives/edgar/data/1561550/000156155025000118/ex-991x20250331x8k.htm",
+          "origin": "synthetic",
+          "literal_valid": true,
+          "semantic_review": "pending"
+        }
+      ],
+      "semantic_review": "pending",
+      "kind": "explicit_lexical_conflict"
+    }
+  ],
+  "comparability": null,
+  "investigation_version": "earnings-investigation-v2"
+}

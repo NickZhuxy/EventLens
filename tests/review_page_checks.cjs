@@ -1,0 +1,20 @@
+// Pure validation tests, with no browser state and no human-review records saved.
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
+const input=JSON.parse(fs.readFileSync(0,'utf8'));
+const code=input.page.slice(input.page.indexOf('function decimalParts'),input.page.indexOf("document.addEventListener('selectionchange'"));
+const DATA=input.data,rows=structuredClone(DATA.cases),context={DATA,metadata:DATA.case_metadata,rows};
+vm.createContext(context);vm.runInContext(code,context);
+const cid='CRM-FY2024-Q1-Q2',c=DATA.case_metadata.find(c=>c.case_id===cid);
+const r=structuredClone(rows[cid]);Object.assign(r,{direction:'lowered',explanation_status:'none_found',explanation_conflict:'no',notes:'Synthetic validation test.'});
+assert.match(context.validateFields(r,c),/disagrees/);
+r.direction='raised';assert.equal(context.validateFields(r,c),'');
+r.metrics[0].lower='34.500000000000000000001';r.metrics[0].upper='34.700000000000000000001';
+assert.equal(context.inferredDirection(r.metrics),'raised');
+const x={schema:DATA.schema,source_hashes:DATA.source_hashes,cases:structuredClone(rows)};
+assert.doesNotThrow(()=>context.validateImport(x));
+x.cases[cid].explanations=[null];const before=JSON.stringify(rows);
+assert.throws(()=>context.validateImport(x),/Invalid explanation/);assert.equal(JSON.stringify(rows),before);
+x.cases[cid]=structuredClone(r);Object.assign(x.cases[cid],{review_status:'reviewed',human_attestation:true,reviewed_by:'Synthetic test reviewer',reviewed_at:'2026-10-13T00:00:00Z'});
+assert.doesNotThrow(()=>context.validateImport(x));
+x.cases[cid].direction='lowered';assert.throws(()=>context.validateImport(x),/disagrees/);
+console.log('Browser validation: direction, decimal precision, pending restore, reviewed restore, and invalid-import preservation passed.');

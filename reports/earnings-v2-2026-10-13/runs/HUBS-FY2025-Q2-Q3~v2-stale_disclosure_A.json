@@ -1,0 +1,99 @@
+{
+  "run_id": "b0627482-bb09-4b75-8174-3bc101d6db39",
+  "created_at": "2026-10-14T01:02:05.631784+00:00",
+  "case": {
+    "case_id": "HUBS-FY2025-Q2-Q3~v2-stale_disclosure",
+    "issuer": "HUBS",
+    "old": "HUBS-2025-Q2",
+    "new": "HUBS-2025-Q2",
+    "horizon": "FY2025",
+    "metric": "revenue",
+    "cutoff": "2025-11-06T00:00:00-05:00",
+    "split": "synthetic_heldout",
+    "synthetic": true,
+    "parent_case_id": "HUBS-FY2025-Q2-Q3",
+    "challenge": "stale_disclosure",
+    "expected_status": "insufficient_evidence",
+    "transformation": {
+      "description": "Substitute the old disclosure for the new one; fail eligibility before any model request."
+    }
+  },
+  "method": "A",
+  "config": {
+    "version": "earnings-investigation-v2",
+    "model": "deepseek-flash",
+    "provider": {
+      "base_url": "https://api.deepseek.com",
+      "reasoning_effort": "low"
+    },
+    "max_calls": 8,
+    "max_tool_calls": 7,
+    "max_output_tokens_per_call": 3200,
+    "max_input_characters": 180000,
+    "transport_retries": 0,
+    "pricing": {
+      "currency": "USD",
+      "input_per_million": "0.30",
+      "output_per_million": "1.20",
+      "assumption": "Peak rates; all input treated as cache miss. Discounts never required.",
+      "reference": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "checked_on": "2026-10-13"
+    },
+    "scope": {
+      "real_pairs": 36,
+      "heldout_stress_variants": 72,
+      "supplemental_natural_cases": 2,
+      "stress_types": [
+        "stale_disclosure",
+        "missing_table",
+        "contradictory_commentary"
+      ],
+      "methods": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    "proposed_budget_usd": "8.00",
+    "approval_status": "pending_concrete_budget_approval"
+  },
+  "cutoff_mode": "disclosure",
+  "trace": [
+    {
+      "stage": "deterministic_comparison",
+      "result": {
+        "status": "insufficient_evidence",
+        "reason": "stale_or_reversed_disclosure_pair",
+        "calculation": null
+      }
+    }
+  ],
+  "extractions": [],
+  "explanations": [],
+  "errors": [
+    "stale_or_reversed_disclosure_pair"
+  ],
+  "calls": 0,
+  "tokens": null,
+  "label_status": "not_used_by_system",
+  "human_semantic_review": "pending",
+  "source_hashes": {
+    "HUBS-2025-Q2": "939197911188469ed5ee8d80866b90c4e3e00ab0d0cad535129eaccb487e3973"
+  },
+  "input_hash": "1b77dfde54a6a123903f801409ab7c776f93db191346678d69ccfdb987835378",
+  "comparison": {
+    "status": "insufficient_evidence",
+    "reason": "stale_or_reversed_disclosure_pair",
+    "calculation": null
+  },
+  "explanation_conclusion": {
+    "status": "insufficient_evidence",
+    "reason": "no_explicit_explanation_found"
+  },
+  "conclusion": "insufficient_evidence",
+  "latency_ms": 0.111,
+  "conflicts": [],
+  "comparability": null,
+  "investigation_version": "earnings-investigation-v2"
+}

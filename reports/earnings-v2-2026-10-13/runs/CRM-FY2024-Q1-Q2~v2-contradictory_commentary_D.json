@@ -1,0 +1,799 @@
+{
+  "run_id": "e4f0c9d5-14bc-48b0-b310-4b948ad7c775",
+  "created_at": "2026-10-14T01:02:04.090859+00:00",
+  "case": {
+    "case_id": "CRM-FY2024-Q1-Q2~v2-contradictory_commentary",
+    "issuer": "CRM",
+    "old": "CRM-2024-Q1",
+    "new": "CRM-2024-Q2~v2-contradictory_commentary",
+    "horizon": "FY2024",
+    "metric": "revenue",
+    "cutoff": "2023-08-31T00:00:00-04:00",
+    "split": "synthetic_heldout",
+    "synthetic": true,
+    "parent_case_id": "CRM-FY2024-Q1-Q2",
+    "challenge": "contradictory_commentary",
+    "expected_status": "conflicting",
+    "transformation": {
+      "description": "Append a synthetic opposing pair about the same annual guidance, driver and basis. Never attribute these sentences to management.",
+      "expected_conflict_quotes": [
+        "Demand caused the FY2024 total revenue guidance revision on a reported basis.",
+        "Demand did not cause the FY2024 total revenue guidance revision on a reported basis."
+      ]
+    },
+    "parent_source_hash": "5e6ac8f74d23e2ebef90b574e091cab1a323933bce89bb1299b6a0c7b05e5d73",
+    "derived_source_hash": "f413bf9b2768abf60fe1e1aa68bb3db1cc38f8e46dc0574e40451db231f32ec9"
+  },
+  "method": "D",
+  "config": {
+    "version": "earnings-investigation-v2",
+    "model": "deepseek-flash",
+    "provider": {
+      "base_url": "https://api.deepseek.com",
+      "reasoning_effort": "low"
+    },
+    "max_calls": 8,
+    "max_tool_calls": 7,
+    "max_output_tokens_per_call": 3200,
+    "max_input_characters": 180000,
+    "transport_retries": 0,
+    "pricing": {
+      "currency": "USD",
+      "input_per_million": "0.30",
+      "output_per_million": "1.20",
+      "assumption": "Peak rates; all input treated as cache miss. Discounts never required.",
+      "reference": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "checked_on": "2026-10-13"
+    },
+    "scope": {
+      "real_pairs": 36,
+      "heldout_stress_variants": 72,
+      "supplemental_natural_cases": 2,
+      "stress_types": [
+        "stale_disclosure",
+        "missing_table",
+        "contradictory_commentary"
+      ],
+      "methods": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    "proposed_budget_usd": "8.00",
+    "approval_status": "pending_concrete_budget_approval"
+  },
+  "cutoff_mode": "disclosure",
+  "trace": [
+    {
+      "stage": "document_diff",
+      "algorithm": "difflib.SequenceMatcher sentence-level; autojunk=False",
+      "sentence_counts": [
+        627,
+        632
+      ],
+      "changed_guidance_candidates": [
+        {
+          "operation": "replace",
+          "old_sentences": [
+            2,
+            33
+          ],
+          "new_sentences": [
+            2,
+            33
+          ],
+          "spans": [
+            {
+              "source_id": "CRM-2024-Q1",
+              "sentence": 4,
+              "start": 301,
+              "end": 404,
+              "quote": "•First Quarter Revenue of $8.25 Billion, up 11% Year-Over-Year (\"Y/Y\"), up 13% Constant Currency (\"CC\")"
+            },
+            {
+              "source_id": "CRM-2024-Q1",
+              "sentence": 9,
+              "start": 759,
+              "end": 853,
+              "quote": "•Initiates Second Quarter FY24 Revenue Guidance of $8.51 Billion to $8.53 Billion, up ~10% Y/Y"
+            },
+            {
+              "source_id": "CRM-2024-Q1",
+              "sentence": 10,
+              "start": 855,
+              "end": 945,
+              "quote": "•Reiterates Full Year FY24 Revenue Guidance of $34.5 Billion to $34.7 Billion, up ~10% Y/Y"
+            },
+            {
+              "source_id": "CRM-2024-Q1",
+              "sentence": 19,
+              "start": 2175,
+              "end": 2266,
+              "quote": "Revenue: Total first quarter revenue was $8.25 billion, an increase of 11% Y/Y, and 13% CC."
+            },
+            {
+              "source_id": "CRM-2024-Q2~v2-contradictory_commentary",
+              "sentence": 4,
+              "start": 294,
+              "end": 401,
+              "quote": "•Second Quarter Revenue of $8.60 Billion, up 11% Year-Over-Year (\"Y/Y\"), up 11% in Constant Currency (\"CC\")"
+            },
+            {
+              "source_id": "CRM-2024-Q2~v2-contradictory_commentary",
+              "sentence": 9,
+              "start": 764,
+              "end": 857,
+              "quote": "•Initiates Third Quarter FY24 Revenue Guidance of $8.70 Billion to $8.72 Billion, up ~11% Y/Y"
+            },
+            {
+              "source_id": "CRM-2024-Q2~v2-contradictory_commentary",
+              "sentence": 10,
+              "start": 859,
+              "end": 945,
+              "quote": "•Raises Full Year FY24 Revenue Guidance to $34.7 Billion to $34.8 Billion, up ~11% Y/Y"
+            },
+            {
+              "source_id": "CRM-2024-Q2~v2-contradictory_commentary",
+              "sentence": 13,
+              "start": 1137,
+              "end": 1329,
+              "quote": "“Our transformation drove our strong second quarter results, delivering revenue of $8.6 billion and record GAAP and non-GAAP operating margins,” said Marc Benioff, Chair and CEO of Salesforce."
+            },
+            {
+              "source_id": "CRM-2024-Q2~v2-contradictory_commentary",
+              "sentence": 14,
+              "start": 1330,
+              "end": 1503,
+              "quote": "“Based on our performance and what we see in the back half of the year, we’re raising our fiscal year ‘24 revenue, operating margin, and operating cash flow growth guidance."
+            },
+            {
+              "source_id": "CRM-2024-Q2~v2-contradictory_commentary",
+              "sentence": 19,
+              "start": 2102,
+              "end": 2193,
+              "quote": "Revenue: Total second quarter revenue was $8.60 billion, an increase of 11% Y/Y and 11% CC."
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            35,
+            37
+          ],
+          "new_sentences": [
+            35,
+            37
+          ],
+          "spans": [
+            {
+              "source_id": "CRM-2024-Q1",
+              "sentence": 35,
+              "start": 3542,
+              "end": 3718,
+              "quote": "As of May 31, 2023, the Company is initiating its second quarter GAAP and non-GAAP EPS guidance, current remaining performance obligation growth guidance, and revenue guidance."
+            },
+            {
+              "source_id": "CRM-2024-Q1",
+              "sentence": 36,
+              "start": 3719,
+              "end": 3909,
+              "quote": "The Company is reiterating its full year FY24 revenue guidance and updating its GAAP and non-GAAP EPS guidance, GAAP and non-GAAP operating margin guidance, and operating cash flow guidance."
+            },
+            {
+              "source_id": "CRM-2024-Q2~v2-contradictory_commentary",
+              "sentence": 35,
+              "start": 3467,
+              "end": 3653,
+              "quote": "As of August 30, 2023, the Company is initiating its third quarter GAAP and non-GAAP diluted EPS guidance, current remaining performance obligation growth guidance, and revenue guidance."
+            },
+            {
+              "source_id": "CRM-2024-Q2~v2-contradictory_commentary",
+              "sentence": 36,
+              "start": 3654,
+              "end": 3839,
+              "quote": "The Company is raising its full year FY24 revenue guidance, GAAP and non-GAAP diluted EPS guidance, GAAP and non-GAAP operating margin guidance, and operating cash flow growth guidance."
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            41,
+            52
+          ],
+          "new_sentences": [
+            41,
+            52
+          ],
+          "spans": [
+            {
+              "source_id": "CRM-2024-Q1",
+              "sentence": 42,
+              "start": 4590,
+              "end": 4662,
+              "quote": "Revenue  | $8.51 - $8.53 Billion  |  | $34.5 - $34.7 Billion  |  |  |  |"
+            },
+            {
+              "source_id": "CRM-2024-Q2~v2-contradictory_commentary",
+              "sentence": 42,
+              "start": 4526,
+              "end": 4598,
+              "quote": "Revenue  | $8.70 - $8.72 Billion  |  | $34.7 - $34.8 Billion  |  |  |  |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            118,
+            119
+          ],
+          "new_sentences": [
+            118,
+            119
+          ],
+          "spans": [
+            {
+              "source_id": "CRM-2024-Q1",
+              "sentence": 118,
+              "start": 10591,
+              "end": 11421,
+              "quote": "\"Safe harbor\" statement under the Private Securities Litigation Reform Act of 1995: This press release contains forward-looking statements about the Company's financial and operating results and guidance, which include, but are not limited to, expected GAAP and non-GAAP financial and other operating and non-operating results, including revenue, net income, earnings per share, operating cash flow growth, operating margin, expected revenue growth, expected foreign currency exchange rate impact, expected current remaining performance obligation growth, expected tax rates or provisions, stock-based compensation expenses, amortization of purchased intangibles, shares outstanding, market growth, strategic investments, and expected restructuring expense or charges, and the expected timing of product releases and enhancements."
+            },
+            {
+              "source_id": "CRM-2024-Q2~v2-contradictory_commentary",
+              "sentence": 118,
+              "start": 10411,
+              "end": 11233,
+              "quote": "\"Safe harbor\" statement under the Private Securities Litigation Reform Act of 1995: This press release contains forward-looking statements about the Company's financial and operating results and guidance, which include, but are not limited to, expected GAAP and non-GAAP financial and other operating and non-operating results, including revenue, net income, earnings per share, operating cash flow growth, operating margin, expected revenue growth, expected foreign currency exchange rate impact, expected current remaining performance obligation growth, expected tax rates or provisions, stock-based compensation expenses, amortization of purchased intangibles, shares outstanding, market growth, strategic investments, expected restructuring expense or charges, and expected timing of product releases and enhancements."
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            121,
+            122
+          ],
+          "new_sentences": [
+            121,
+            123
+          ],
+          "spans": [
+            {
+              "source_id": "CRM-2024-Q1",
+              "sentence": 121,
+              "start": 11781,
+              "end": 16012,
+              "quote": "The risks and uncertainties referred to above include -- but are not limited to -- risks associated with the impact of, and actions we may take in response to, the COVID-19 pandemic, related public health measures and resulting economic downturn and market volatility; our ability to maintain security levels and service performance that meet the expectations of our customers, and the resources and costs required to avoid unanticipated downtime and prevent, detect and remediate performance degradation and security breaches; the expenses associated with our data centers and third-party infrastructure providers; our ability to secure additional data center capacity; our reliance on third-party hardware, software and platform providers; the effect of evolving domestic and foreign government regulations, including those related to the provision of services on the Internet, those related to accessing the Internet, and those addressing data privacy, cross-border data transfers and import and export controls; current and potential litigation involving us or our industry, including litigation involving acquired entities such as Slack Technologies, Inc., and the resolution or settlement thereof; regulatory developments and regulatory investigations involving us or affecting our industry; our ability to successfully introduce new services and product features, including any efforts to expand our services; the success of our strategy of acquiring or making investments in complementary businesses, joint ventures, services, technologies and intellectual property rights; our ability to complete, on a timely basis or at all, announced transactions; our ability to realize the benefits from acquisitions, strategic partnerships, joint ventures and investments, and successfully integrate acquired businesses and technologies; our ability to compete in the markets in which we participate; the success of our business strategy and our plan to build our business, including our strategy to be a leading provider of enterprise cloud computing applications and platforms; our ability to execute our business plans; our ability to continue to grow unearned revenue and remaining performance obligation; the pace of change and innovation in enterprise cloud computing services; the seasonal nature of our sales cycles; our ability to limit customer attrition and costs related to those efforts; the success of our international expansion strategy; the demands on our personnel and infrastructure resulting from significant growth in our customer base and operations, including as a result of acquisitions; our ability to preserve our workplace culture, including as a result of our decisions regarding our current and future office environments or work-from-home policies; our dependency on the development and maintenance of the infrastructure of the Internet; our real estate and office facilities strategy and related costs and uncertainties; fluctuations in, and our ability to predict, our operating results and cash flows; the variability in our results arising from the accounting for term license revenue products; the performance and fair value of our investments in complementary businesses through our strategic investment portfolio; the impact of future gains or losses from our strategic investment portfolio, including gains or losses from overall market conditions that may affect the publicly traded companies within our strategic investment portfolio; our ability to protect our intellectual property rights; our ability to maintain and enhance our brands; the impact of foreign currency exchange rate and interest rate fluctuations on our results; the valuation of our deferred tax assets and the release of related valuation allowances; the potential availability of additional tax assets in the future; the impact of new accounting pronouncements and tax laws; uncertainties affecting our ability to estimate our tax rate; uncertainties regarding our tax obligations in connection with potential jurisdictional transfers of intellectual property, including the tax rate, the timing of transfers and the value of such transferred intellectual property; uncertainties regarding the effect of general economic,"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            243,
+            252
+          ],
+          "new_sentences": [
+            244,
+            253
+          ],
+          "spans": [
+            {
+              "source_id": "CRM-2024-Q1",
+              "sentence": 246,
+              "start": 24451,
+              "end": 24530,
+              "quote": "Costs capitalized to obtain revenue contracts, net  | 1,772   |  |  | 1,776   |"
+            },
+            {
+              "source_id": "CRM-2024-Q1",
+              "sentence": 251,
+              "start": 24781,
+              "end": 24871,
+              "quote": "Noncurrent costs capitalized to obtain revenue contracts, net  | 2,506   |  |  | 2,697   |"
+            },
+            {
+              "source_id": "CRM-2024-Q2~v2-contradictory_commentary",
+              "sentence": 247,
+              "start": 25494,
+              "end": 25573,
+              "quote": "Costs capitalized to obtain revenue contracts, net  | 1,781   |  |  | 1,776   |"
+            },
+            {
+              "source_id": "CRM-2024-Q2~v2-contradictory_commentary",
+              "sentence": 252,
+              "start": 25824,
+              "end": 25914,
+              "quote": "Noncurrent costs capitalized to obtain revenue contracts, net  | 2,352   |  |  | 2,697   |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            260,
+            263
+          ],
+          "new_sentences": [
+            261,
+            264
+          ],
+          "spans": [
+            {
+              "source_id": "CRM-2024-Q1",
+              "sentence": 262,
+              "start": 25422,
+              "end": 25469,
+              "quote": "Unearned revenue  | 15,121   |  |  | 17,376   |"
+            },
+            {
+              "source_id": "CRM-2024-Q2~v2-contradictory_commentary",
+              "sentence": 263,
+              "start": 26465,
+              "end": 26512,
+              "quote": "Unearned revenue  | 14,237   |  |  | 17,376   |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            290,
+            293
+          ],
+          "new_sentences": [
+            291,
+            294
+          ],
+          "spans": [
+            {
+              "source_id": "CRM-2024-Q1",
+              "sentence": 291,
+              "start": 26765,
+              "end": 26874,
+              "quote": "Amortization of costs capitalized to obtain revenue contracts, net  | 470   |  |  | 394   |  |  |  |  |  |  |"
+            },
+            {
+              "source_id": "CRM-2024-Q2~v2-contradictory_commentary",
+              "sentence": 292,
+              "start": 27914,
+              "end": 28039,
+              "quote": "Amortization of costs capitalized to obtain revenue contracts, net  | 476   |  |  | 408   |  |  | 946   |  |  | 802   |  |  |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            299,
+            302
+          ],
+          "new_sentences": [
+            300,
+            303
+          ],
+          "spans": [
+            {
+              "source_id": "CRM-2024-Q1",
+              "sentence": 300,
+              "start": 27310,
+              "end": 27405,
+              "quote": "Costs capitalized to obtain revenue contracts, net  | (275)  |  |  | (399)  |  |  |  |  |  |  |"
+            },
+            {
+              "source_id": "CRM-2024-Q2~v2-contradictory_commentary",
+              "sentence": 301,
+              "start": 28529,
+              "end": 28642,
+              "quote": "Costs capitalized to obtain revenue contracts, net  | (331)  |  |  | (505)  |  |  | (606)  |  |  | (904)  |  |  |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            304,
+            308
+          ],
+          "new_sentences": [
+            305,
+            309
+          ],
+          "spans": [
+            {
+              "source_id": "CRM-2024-Q1",
+              "sentence": 306,
+              "start": 27746,
+              "end": 27811,
+              "quote": "Unearned revenue  | (2,255)  |  |  | (1,994)  |  |  |  |  |  |  |"
+            },
+            {
+              "source_id": "CRM-2024-Q2~v2-contradictory_commentary",
+              "sentence": 307,
+              "start": 29032,
+              "end": 29115,
+              "quote": "Unearned revenue  | (884)  |  |  | (813)  |  |  | (3,139)  |  |  | (2,807)  |  |  |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            383,
+            390
+          ],
+          "new_sentences": [
+            383,
+            390
+          ],
+          "spans": [
+            {
+              "source_id": "CRM-2024-Q1",
+              "sentence": 386,
+              "start": 32574,
+              "end": 32664,
+              "quote": "Unearned revenue, beginning of period  | $  | 17,376   |  |  | $  | 15,628   |  |  |  |  |"
+            },
+            {
+              "source_id": "CRM-2024-Q1",
+              "sentence": 389,
+              "start": 32797,
+              "end": 32868,
+              "quote": "Revenue recognized over time  | (7,837)  |  |  | (7,056)  |  |  |  |  |"
+            },
+            {
+              "source_id": "CRM-2024-Q2~v2-contradictory_commentary",
+              "sentence": 386,
+              "start": 34318,
+              "end": 34440,
+              "quote": "Unearned revenue, beginning of period  | $  | 15,121   |  |  | $  | 13,636   |  |  | $  | 17,376   |  |  | $  | 15,628   |"
+            },
+            {
+              "source_id": "CRM-2024-Q2~v2-contradictory_commentary",
+              "sentence": 389,
+              "start": 34610,
+              "end": 34705,
+              "quote": "Revenue recognized over time  | (8,178)  |  |  | (7,336)  |  |  | (16,015)  |  |  | (14,392)  |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            391,
+            394
+          ],
+          "new_sentences": [
+            391,
+            394
+          ],
+          "spans": [
+            {
+              "source_id": "CRM-2024-Q1",
+              "sentence": 391,
+              "start": 32890,
+              "end": 32966,
+              "quote": "Revenue recognized at a point in time  | (410)  |  |  | (355)  |  |  |  |  |"
+            },
+            {
+              "source_id": "CRM-2024-Q1",
+              "sentence": 392,
+              "start": 32967,
+              "end": 33043,
+              "quote": "Unearned revenue from business combinations  | 0   |  |  | 2   |  |  |  |  |"
+            },
+            {
+              "source_id": "CRM-2024-Q1",
+              "sentence": 393,
+              "start": 33044,
+              "end": 33128,
+              "quote": "Unearned revenue, end of period  | $  | 15,121   |  |  | $  | 13,636   |  |  |  |  |"
+            },
+            {
+              "source_id": "CRM-2024-Q2~v2-contradictory_commentary",
+              "sentence": 391,
+              "start": 34727,
+              "end": 34821,
+              "quote": "Revenue recognized at a point in time  | (425)  |  |  | (384)  |  |  | (835)  |  |  | (739)  |"
+            },
+            {
+              "source_id": "CRM-2024-Q2~v2-contradictory_commentary",
+              "sentence": 392,
+              "start": 34822,
+              "end": 34910,
+              "quote": "Unearned revenue from business combinations  | 0   |  |  | 2   |  |  | 0   |  |  | 4   |"
+            },
+            {
+              "source_id": "CRM-2024-Q2~v2-contradictory_commentary",
+              "sentence": 393,
+              "start": 34911,
+              "end": 35027,
+              "quote": "Unearned revenue, end of period  | $  | 14,237   |  |  | $  | 12,825   |  |  | $  | 14,237   |  |  | $  | 12,825   |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            399,
+            408
+          ],
+          "new_sentences": [
+            399,
+            409
+          ],
+          "spans": [
+            {
+              "source_id": "CRM-2024-Q2~v2-contradictory_commentary",
+              "sentence": 408,
+              "start": 35935,
+              "end": 36049,
+              "quote": "(1) Data is comprised of revenue from Analytics, which includes Tableau, and Integration, which includes Mulesoft."
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            433,
+            442
+          ],
+          "new_sentences": [
+            437,
+            444
+          ],
+          "spans": [
+            {
+              "source_id": "CRM-2024-Q2~v2-contradictory_commentary",
+              "sentence": 443,
+              "start": 37437,
+              "end": 37551,
+              "quote": "(1) Data is comprised of revenue from Analytics, which includes Tableau, and Integration, which includes Mulesoft."
+            }
+          ]
+        },
+        {
+          "operation": "insert",
+          "old_sentences": [
+            627,
+            627
+          ],
+          "new_sentences": [
+            629,
+            632
+          ],
+          "spans": [
+            {
+              "source_id": "CRM-2024-Q2~v2-contradictory_commentary",
+              "sentence": 630,
+              "start": 53880,
+              "end": 53957,
+              "quote": "Demand caused the FY2024 total revenue guidance revision on a reported basis."
+            },
+            {
+              "source_id": "CRM-2024-Q2~v2-contradictory_commentary",
+              "sentence": 631,
+              "start": 53958,
+              "end": 54042,
+              "quote": "Demand did not cause the FY2024 total revenue guidance revision on a reported basis."
+            }
+          ]
+        }
+      ],
+      "annual_candidate_counts": [
+        1,
+        1
+      ],
+      "issues": [
+        "changed_guidance_pair"
+      ],
+      "selected_alignment": "replace",
+      "selected_sentence_indices": [
+        10,
+        10
+      ]
+    },
+    {
+      "stage": "deterministic_comparison",
+      "result": {
+        "status": "supported",
+        "reason": "raised",
+        "calculation": {
+          "old_lower": "34500000000.0",
+          "old_upper": "34700000000.0",
+          "new_lower": "34700000000.0",
+          "new_upper": "34800000000.0",
+          "old_midpoint": "34600000000.0",
+          "new_midpoint": "34750000000.0",
+          "midpoint_delta": "150000000.0",
+          "lower_delta": "200000000.0",
+          "upper_delta": "100000000.0",
+          "relative_midpoint_change_percent": "0.4335260115606936416184971098",
+          "delta_unit": "USD",
+          "range_change": "raised"
+        }
+      }
+    }
+  ],
+  "extractions": [
+    {
+      "metric": {
+        "source_id": "CRM-2024-Q1",
+        "issuer": "CRM",
+        "metric": "revenue",
+        "currency": "USD",
+        "unit": "billion",
+        "basis": "reported",
+        "horizon": "FY2024",
+        "calendar": "fiscal",
+        "definition": "total_revenue_as_reported",
+        "status": "provided",
+        "lower": "34.5",
+        "upper": "34.7",
+        "evidence": "•Reiterates Full Year FY24 Revenue Guidance of $34.5 Billion to $34.7 Billion, up ~10% Y/Y",
+        "horizon_evidence": "•Reiterates Full Year FY24 Revenue Guidance of $34.5 Billion to $34.7 Billion, up ~10% Y/Y"
+      },
+      "validation": {
+        "literal_valid": true,
+        "semantic_screen": "pass",
+        "errors": [],
+        "human_semantic_review": "pending",
+        "observation_id": "190605a3b9ff7e5fa90b9c9a57f27bd9fd770c5c482fc5bfc7fddcc363c1e810"
+      }
+    },
+    {
+      "metric": {
+        "source_id": "CRM-2024-Q2~v2-contradictory_commentary",
+        "issuer": "CRM",
+        "metric": "revenue",
+        "currency": "USD",
+        "unit": "billion",
+        "basis": "reported",
+        "horizon": "FY2024",
+        "calendar": "fiscal",
+        "definition": "total_revenue_as_reported",
+        "status": "provided",
+        "lower": "34.7",
+        "upper": "34.8",
+        "evidence": "•Raises Full Year FY24 Revenue Guidance to $34.7 Billion to $34.8 Billion, up ~11% Y/Y",
+        "horizon_evidence": "•Raises Full Year FY24 Revenue Guidance to $34.7 Billion to $34.8 Billion, up ~11% Y/Y"
+      },
+      "validation": {
+        "literal_valid": true,
+        "semantic_screen": "pass",
+        "errors": [],
+        "human_semantic_review": "pending",
+        "observation_id": "7b3c3e4779198fbd4546f10de5771c23b2467d892655750e524759904f4073c8"
+      }
+    }
+  ],
+  "explanations": [
+    {
+      "source_id": "CRM-2024-Q2~v2-contradictory_commentary",
+      "quote": "“Our transformation drove our strong second quarter results, delivering revenue of $8.6 billion and record GAAP and non-GAAP operating margins,” said Marc Benioff, Chair and CEO of Salesforce. “Based on our performance and what we see in the back half of the year, we’re raising our fiscal year ‘24 revenue, operating margin, and operating cash flow growth guidance.",
+      "type": "management_statement_candidate",
+      "semantic_review": "pending"
+    },
+    {
+      "source_id": "CRM-2024-Q2~v2-contradictory_commentary",
+      "quote": "Demand caused the FY2024 total revenue guidance revision on a reported basis.",
+      "type": "management_statement_candidate",
+      "semantic_review": "pending"
+    },
+    {
+      "source_id": "CRM-2024-Q2~v2-contradictory_commentary",
+      "quote": "Demand did not cause the FY2024 total revenue guidance revision on a reported basis.",
+      "type": "management_statement_candidate",
+      "semantic_review": "pending"
+    }
+  ],
+  "errors": [],
+  "calls": 0,
+  "tokens": null,
+  "label_status": "not_used_by_system",
+  "human_semantic_review": "pending",
+  "source_hashes": {
+    "CRM-2024-Q1": "ce3ef55515214a97a91294454551acca8e9a411e428c7458d1848a5d90e81ad3",
+    "CRM-2024-Q2~v2-contradictory_commentary": "f413bf9b2768abf60fe1e1aa68bb3db1cc38f8e46dc0574e40451db231f32ec9"
+  },
+  "input_hash": "b1a93c87d15a4f914de6d4c0b075ef0c75ab776c03fadac15c8fe956d2f5c585",
+  "model": null,
+  "execution_kind": "deterministic",
+  "context_characters": 103846,
+  "comparison": {
+    "status": "supported",
+    "reason": "raised",
+    "calculation": {
+      "old_lower": "34500000000.0",
+      "old_upper": "34700000000.0",
+      "new_lower": "34700000000.0",
+      "new_upper": "34800000000.0",
+      "old_midpoint": "34600000000.0",
+      "new_midpoint": "34750000000.0",
+      "midpoint_delta": "150000000.0",
+      "lower_delta": "200000000.0",
+      "upper_delta": "100000000.0",
+      "relative_midpoint_change_percent": "0.4335260115606936416184971098",
+      "delta_unit": "USD",
+      "range_change": "raised"
+    }
+  },
+  "explanation_conclusion": {
+    "status": "conflicting",
+    "reason": "two_cited_opposing_statements",
+    "conflicts": [
+      {
+        "topic": "demand",
+        "reason": "opposite_polarity_same_literal_proposition",
+        "citations": [
+          {
+            "source_id": "CRM-2024-Q2~v2-contradictory_commentary",
+            "quote": "Demand caused the FY2024 total revenue guidance revision on a reported basis.",
+            "start": 53880,
+            "end": 53957,
+            "source_hash": "f413bf9b2768abf60fe1e1aa68bb3db1cc38f8e46dc0574e40451db231f32ec9",
+            "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852423000037/crm-q2fy24xexhibit991.htm",
+            "origin": "synthetic",
+            "literal_valid": true,
+            "semantic_review": "pending"
+          },
+          {
+            "source_id": "CRM-2024-Q2~v2-contradictory_commentary",
+            "quote": "Demand did not cause the FY2024 total revenue guidance revision on a reported basis.",
+            "start": 53958,
+            "end": 54042,
+            "source_hash": "f413bf9b2768abf60fe1e1aa68bb3db1cc38f8e46dc0574e40451db231f32ec9",
+            "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852423000037/crm-q2fy24xexhibit991.htm",
+            "origin": "synthetic",
+            "literal_valid": true,
+            "semantic_review": "pending"
+          }
+        ],
+        "semantic_review": "pending",
+        "kind": "explicit_lexical_conflict"
+      }
+    ],
+    "semantic_review": "pending"
+  },
+  "conclusion": "conflicting",
+  "latency_ms": 27.702,
+  "conflicts": [
+    {
+      "topic": "demand",
+      "reason": "opposite_polarity_same_literal_proposition",
+      "citations": [
+        {
+          "source_id": "CRM-2024-Q2~v2-contradictory_commentary",
+          "quote": "Demand caused the FY2024 total revenue guidance revision on a reported basis.",
+          "start": 53880,
+          "end": 53957,
+          "source_hash": "f413bf9b2768abf60fe1e1aa68bb3db1cc38f8e46dc0574e40451db231f32ec9",
+          "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852423000037/crm-q2fy24xexhibit991.htm",
+          "origin": "synthetic",
+          "literal_valid": true,
+          "semantic_review": "pending"
+        },
+        {
+          "source_id": "CRM-2024-Q2~v2-contradictory_commentary",
+          "quote": "Demand did not cause the FY2024 total revenue guidance revision on a reported basis.",
+          "start": 53958,
+          "end": 54042,
+          "source_hash": "f413bf9b2768abf60fe1e1aa68bb3db1cc38f8e46dc0574e40451db231f32ec9",
+          "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852423000037/crm-q2fy24xexhibit991.htm",
+          "origin": "synthetic",
+          "literal_valid": true,
+          "semantic_review": "pending"
+        }
+      ],
+      "semantic_review": "pending",
+      "kind": "explicit_lexical_conflict"
+    }
+  ],
+  "comparability": null,
+  "investigation_version": "earnings-investigation-v2"
+}

@@ -1,0 +1,92 @@
+{
+  "verified_at": "2026-10-14T17:37:44.732142+00:00",
+  "tests_passed": 180,
+  "new_protocol_tests": 21,
+  "v3_paid_calls": 0,
+  "v3_approval_status": "pending",
+  "preflight_freeze_sha256": "214503a3e568cde34e8d24fb0f717b89519dfc603c2583da730fa97cc94b3eb4",
+  "checks": {
+    "v2-replay.json": {
+      "replayed_runs": 440,
+      "recorded_requests": 342,
+      "paid_model_calls": 0,
+      "network_calls": 0,
+      "all_saved_requests_matched": true,
+      "all_evidence_and_results_matched": true,
+      "results_table_reproduced": true
+    },
+    "m1-m3-replay.json": {
+      "verified_runs": 90,
+      "network_calls": 0,
+      "model_calls": 0,
+      "saved_table_reproduced": true,
+      "raw_bundle_hashes_verified": 103,
+      "excluded_fields": "new run UUID, execution time and latency",
+      "labels": "AI drafts for three original pairs; remaining pairs pending; zero human-reviewed labels"
+    },
+    "macro-replay.json": {
+      "success": true,
+      "execution_kind": "recorded_replay",
+      "paid_model_calls": 0,
+      "unrelated_earnings_code_changes": [
+        "cli.py",
+        "evaluation.py",
+        "pipeline.py"
+      ],
+      "original_model": "deepseek-flash",
+      "original_execution_kind": "live",
+      "source_count": 11,
+      "capture_count": 13,
+      "recorded_model_responses": 5,
+      "tool_calls": 3,
+      "validation_outcomes": [
+        false,
+        true
+      ],
+      "compared_fields": [
+        "case",
+        "source_hashes",
+        "eligible_source_ids",
+        "excluded_source_ids",
+        "calendar",
+        "brief",
+        "status",
+        "validation",
+        "calls",
+        "tool_calls",
+        "tokens",
+        "errors",
+        "input_hash",
+        "coverage"
+      ],
+      "scope": "Reproduces controller behavior from recorded responses; does not repeat model inference or assess claim meaning."
+    },
+    "scripted-replay.json": {
+      "scope": "Three scripted controller fixtures, not live inference or accuracy evidence.",
+      "fixture_traces": 3,
+      "network_calls": 0,
+      "paid_calls": 0,
+      "all_saved_responses_and_results_replayed": true,
+      "code_hashes": {
+        "scripts/verify_earnings_protocol_v3.py": "b5f6d85cf87dbc8db60b9c0c64acc742c767a1ac48a0add2fdf341692f7d7fd8",
+        "scripts/earnings_protocol_v3.py": "03ac5ee5b9308cf5b58da96cf21e78f4ef69fbf00bbd49e4c0549d2703a16b7b",
+        "configs/earnings_protocol_v3.json": "3920c1a394c6f7d47daa1be0aac4c62f1dc3b37fd3687afdec28e97a94cd4f22",
+        "src/eventlens/protocol_v3.py": "0660b956032666c1907a1932a049abdcadd7ed32e474534fe08569a1d91ed0ab"
+      },
+      "trace_hashes": {
+        "retrieval_repairs_unseen_citations.json": "16a67bd905df071331e7efb88102154ad95439c4038e4caca9da7b5c80e84f81",
+        "repeated_invalid_citations_stop.json": "c3a3f19eee4b4d0c2fe80f6f6e252456809f82aeafb5478a7a37703997f09566",
+        "stale_pair_never_calls_model.json": "680c2f91c534c8f1ce9f9c18503d5433ea26bb08327d98158b97c5a6e79c40ed"
+      }
+    }
+  },
+  "artifact_sha256": {
+    "tests-final.log": "5ee8b1da7bdeb2f724d522766a133d8a274009faa2988217b14168447823223f",
+    "v2-replay.json": "664163f5c44ce3cb7d70d1b0a0d4fe733c95b567e143b3907199cc292f98f646",
+    "m1-m3-replay.json": "ab91dbc5559a739485f027684806f31b885e1f9b4e50b59301446fba7065d7f9",
+    "macro-replay.json": "2810f5bde71e764954930a78a71f99b4d0dbdad8d730b8bc6b640de6f5a588d4",
+    "scripted-replay.json": "a3a0c98cefc7bd97d9903c40d71cbdc4bfd889a000e96275e3c2711bdbd68960"
+  },
+  "scope": "Local protocol verification and exact offline replay. No live v3 reliability or human-reviewed accuracy result.",
+  "remote_ci": "not_run_no_push"
+}

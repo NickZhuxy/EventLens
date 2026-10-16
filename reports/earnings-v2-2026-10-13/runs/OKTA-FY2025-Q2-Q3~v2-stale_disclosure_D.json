@@ -1,0 +1,99 @@
+{
+  "run_id": "730f6b02-555e-49e4-9c9c-80e88d8c29e1",
+  "created_at": "2026-10-14T01:02:05.446183+00:00",
+  "case": {
+    "case_id": "OKTA-FY2025-Q2-Q3~v2-stale_disclosure",
+    "issuer": "OKTA",
+    "old": "OKTA-2025-Q2",
+    "new": "OKTA-2025-Q2",
+    "horizon": "FY2025",
+    "metric": "revenue",
+    "cutoff": "2024-12-04T00:00:00-05:00",
+    "split": "synthetic_heldout",
+    "synthetic": true,
+    "parent_case_id": "OKTA-FY2025-Q2-Q3",
+    "challenge": "stale_disclosure",
+    "expected_status": "insufficient_evidence",
+    "transformation": {
+      "description": "Substitute the old disclosure for the new one; fail eligibility before any model request."
+    }
+  },
+  "method": "D",
+  "config": {
+    "version": "earnings-investigation-v2",
+    "model": "deepseek-flash",
+    "provider": {
+      "base_url": "https://api.deepseek.com",
+      "reasoning_effort": "low"
+    },
+    "max_calls": 8,
+    "max_tool_calls": 7,
+    "max_output_tokens_per_call": 3200,
+    "max_input_characters": 180000,
+    "transport_retries": 0,
+    "pricing": {
+      "currency": "USD",
+      "input_per_million": "0.30",
+      "output_per_million": "1.20",
+      "assumption": "Peak rates; all input treated as cache miss. Discounts never required.",
+      "reference": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "checked_on": "2026-10-13"
+    },
+    "scope": {
+      "real_pairs": 36,
+      "heldout_stress_variants": 72,
+      "supplemental_natural_cases": 2,
+      "stress_types": [
+        "stale_disclosure",
+        "missing_table",
+        "contradictory_commentary"
+      ],
+      "methods": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    "proposed_budget_usd": "8.00",
+    "approval_status": "pending_concrete_budget_approval"
+  },
+  "cutoff_mode": "disclosure",
+  "trace": [
+    {
+      "stage": "deterministic_comparison",
+      "result": {
+        "status": "insufficient_evidence",
+        "reason": "stale_or_reversed_disclosure_pair",
+        "calculation": null
+      }
+    }
+  ],
+  "extractions": [],
+  "explanations": [],
+  "errors": [
+    "stale_or_reversed_disclosure_pair"
+  ],
+  "calls": 0,
+  "tokens": null,
+  "label_status": "not_used_by_system",
+  "human_semantic_review": "pending",
+  "source_hashes": {
+    "OKTA-2025-Q2": "7244ee5b2515a9a9dcf3833292d0e0838c49f545b9e987fa75c4b07ecf91cc69"
+  },
+  "input_hash": "692a0ed50b2f99e7133368f9b408e54378f9f5e5d702235c22b68dd4c3d56e91",
+  "comparison": {
+    "status": "insufficient_evidence",
+    "reason": "stale_or_reversed_disclosure_pair",
+    "calculation": null
+  },
+  "explanation_conclusion": {
+    "status": "insufficient_evidence",
+    "reason": "no_explicit_explanation_found"
+  },
+  "conclusion": "insufficient_evidence",
+  "latency_ms": 0.028,
+  "conflicts": [],
+  "comparability": null,
+  "investigation_version": "earnings-investigation-v2"
+}

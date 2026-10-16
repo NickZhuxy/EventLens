@@ -1,0 +1,972 @@
+{
+  "scope": "Eight exposed development cases. Operational results, not reviewed accuracy or unseen validation.",
+  "bundle": "reports/earnings-v4-preflight-2026-10-15",
+  "previous_bundle": "reports/earnings-v3-preflight-2026-10-14",
+  "bundle_hashes_sha256": "a2971e5d12df91e541a328a4e8d435d485407c3bb74ee0576f7ba4a1e11d2e6a",
+  "previous_bundle_hashes_sha256": "1f06b1cfa32f9680f78beaf41b2505c25c41a188bb448893b6158354d095a4ce",
+  "analysis_script_sha256": "0c84c62b9bddf502e0b3cf8ada67545f73ef7e9842834d53ec407e57c58a4da9",
+  "approval": {
+    "approved": true,
+    "approved_by": "Nick",
+    "max_usd": "3.00",
+    "freeze_sha256": "7d0b5e66f94450631b3f35abeb82a4b847b04c11cf94038faa10584866be548d",
+    "approved_on": "2026-10-15T20:49:49.755277+00:00",
+    "approval_text": "Approve up to $3 USD",
+    "approval_question": "Approve up to $3 from the unused portion of your $6 budget for the v4 batching check? It runs eight C cases (four real development pairs and four contradiction controls). Planning estimate: $0.24; conservative full-budget estimate: $2.997. V3 finished at $0.238. This changed controller needs fresh approval under your per-run rule.",
+    "scope": "Eight frozen C jobs; maximum 64 requests; allocation from the unused prior USD 6 budget."
+  },
+  "replay": {
+    "replayed_runs": 8,
+    "journalled_requests": 43,
+    "network_calls": 0,
+    "paid_calls": 0,
+    "all_requests_and_results_matched": true
+  },
+  "previous_replay": {
+    "replayed_runs": 32,
+    "journalled_requests": 94,
+    "network_calls": 0,
+    "paid_calls": 0,
+    "all_requests_and_results_matched": true
+  },
+  "summary": {
+    "completed_runs": 8,
+    "planned_runs": 8,
+    "metrics": [
+      {
+        "method": "C",
+        "challenge": "contradictory_commentary",
+        "cases": 4,
+        "completed_without_errors": 3,
+        "numeric_outputs": 2,
+        "valid_control_outcomes": 1,
+        "terminal_errors": 1,
+        "validation_failures": 7,
+        "recovered_runs": 3,
+        "calls": 24,
+        "human_reviewed_accuracy": null
+      },
+      {
+        "method": "C",
+        "challenge": "real",
+        "cases": 4,
+        "completed_without_errors": 3,
+        "numeric_outputs": 3,
+        "valid_control_outcomes": null,
+        "terminal_errors": 1,
+        "validation_failures": 3,
+        "recovered_runs": 0,
+        "calls": 19,
+        "human_reviewed_accuracy": null
+      }
+    ],
+    "request_attempts": 43,
+    "charged_upper_usd": "0.1034148",
+    "uncertain_requests": 0,
+    "scope": "V4 batching diagnostic on eight C cases; operational counts, not accuracy. Zero human-reviewed labels."
+  },
+  "v3_matched_C_metrics": [
+    {
+      "method": "C",
+      "challenge": "contradictory_commentary",
+      "cases": 4,
+      "completed_without_errors": 3,
+      "numeric_outputs": 2,
+      "valid_control_outcomes": 0,
+      "terminal_errors": 1,
+      "validation_failures": 8,
+      "recovered_runs": 3,
+      "calls": 32,
+      "human_reviewed_accuracy": null
+    },
+    {
+      "method": "C",
+      "challenge": "real",
+      "cases": 4,
+      "completed_without_errors": 3,
+      "numeric_outputs": 2,
+      "valid_control_outcomes": null,
+      "terminal_errors": 1,
+      "validation_failures": 7,
+      "recovered_runs": 2,
+      "calls": 25,
+      "human_reviewed_accuracy": null
+    }
+  ],
+  "v3_existing_B_metrics": [
+    {
+      "method": "B",
+      "challenge": "contradictory_commentary",
+      "cases": 4,
+      "completed_without_errors": 2,
+      "numeric_outputs": 2,
+      "valid_control_outcomes": 1,
+      "terminal_errors": 2,
+      "validation_failures": 2,
+      "recovered_runs": 0,
+      "calls": 4,
+      "human_reviewed_accuracy": null
+    },
+    {
+      "method": "B",
+      "challenge": "real",
+      "cases": 4,
+      "completed_without_errors": 2,
+      "numeric_outputs": 2,
+      "valid_control_outcomes": null,
+      "terminal_errors": 2,
+      "validation_failures": 2,
+      "recovered_runs": 0,
+      "calls": 4,
+      "human_reviewed_accuracy": null
+    }
+  ],
+  "paired_cases": [
+    {
+      "case_id": "ADBE-FY2025-Q1-Q2",
+      "challenge": "real",
+      "v3_C": {
+        "completed_without_errors": true,
+        "numeric_output": true,
+        "comparison_reason": "raised",
+        "errors": [],
+        "calls": 7,
+        "accepted_retrievals": 4,
+        "validation_failures": [
+          {
+            "call": 1,
+            "error": "expected_one_native_tool_call"
+          },
+          {
+            "call": 2,
+            "error": "expected_one_native_tool_call"
+          }
+        ],
+        "expected_statements_retrieved": null,
+        "valid_two_citation_flag": null,
+        "explanation_candidates": 1,
+        "latency_ms": 10042.083
+      },
+      "v4_C": {
+        "completed_without_errors": true,
+        "numeric_output": true,
+        "comparison_reason": "raised",
+        "errors": [],
+        "calls": 6,
+        "accepted_retrievals": 7,
+        "validation_failures": [],
+        "expected_statements_retrieved": null,
+        "valid_two_citation_flag": null,
+        "explanation_candidates": 3,
+        "latency_ms": 9327.123
+      },
+      "v3_B": {
+        "completed_without_errors": true,
+        "numeric_output": true,
+        "comparison_reason": "raised",
+        "errors": [],
+        "calls": 1,
+        "accepted_retrievals": 0,
+        "validation_failures": [],
+        "expected_statements_retrieved": null,
+        "valid_two_citation_flag": null,
+        "explanation_candidates": 5,
+        "latency_ms": 4101.774
+      }
+    },
+    {
+      "case_id": "ADBE-FY2025-Q1-Q2~v3-contradictory_commentary",
+      "challenge": "contradictory_commentary",
+      "v3_C": {
+        "completed_without_errors": true,
+        "numeric_output": true,
+        "comparison_reason": "raised",
+        "errors": [],
+        "calls": 8,
+        "accepted_retrievals": 5,
+        "validation_failures": [
+          {
+            "call": 1,
+            "error": "expected_one_native_tool_call"
+          },
+          {
+            "call": 7,
+            "error": "citation_not_literal"
+          }
+        ],
+        "expected_statements_retrieved": [
+          false,
+          false
+        ],
+        "valid_two_citation_flag": false,
+        "explanation_candidates": 3,
+        "latency_ms": 14785.161
+      },
+      "v4_C": {
+        "completed_without_errors": true,
+        "numeric_output": true,
+        "comparison_reason": "raised",
+        "errors": [],
+        "calls": 5,
+        "accepted_retrievals": 6,
+        "validation_failures": [
+          {
+            "call": 4,
+            "error": "retrieval_batch_exceeds_remaining_tool_budget"
+          }
+        ],
+        "expected_statements_retrieved": [
+          false,
+          false
+        ],
+        "valid_two_citation_flag": false,
+        "explanation_candidates": 2,
+        "latency_ms": 8812.102
+      },
+      "v3_B": {
+        "completed_without_errors": true,
+        "numeric_output": true,
+        "comparison_reason": "raised",
+        "errors": [],
+        "calls": 1,
+        "accepted_retrievals": 0,
+        "validation_failures": [],
+        "expected_statements_retrieved": [
+          false,
+          false
+        ],
+        "valid_two_citation_flag": true,
+        "explanation_candidates": 3,
+        "latency_ms": 4258.485
+      }
+    },
+    {
+      "case_id": "BOX-FY2025-Q1-Q2",
+      "challenge": "real",
+      "v3_C": {
+        "completed_without_errors": true,
+        "numeric_output": false,
+        "comparison_reason": "missing_guidance",
+        "errors": [],
+        "calls": 7,
+        "accepted_retrievals": 4,
+        "validation_failures": [
+          {
+            "call": 1,
+            "error": "expected_one_native_tool_call"
+          },
+          {
+            "call": 3,
+            "error": "expected_one_native_tool_call"
+          }
+        ],
+        "expected_statements_retrieved": null,
+        "valid_two_citation_flag": null,
+        "explanation_candidates": 2,
+        "latency_ms": 9176.881
+      },
+      "v4_C": {
+        "completed_without_errors": true,
+        "numeric_output": true,
+        "comparison_reason": "raised",
+        "errors": [],
+        "calls": 3,
+        "accepted_retrievals": 4,
+        "validation_failures": [],
+        "expected_statements_retrieved": null,
+        "valid_two_citation_flag": null,
+        "explanation_candidates": 4,
+        "latency_ms": 6592.863
+      },
+      "v3_B": {
+        "completed_without_errors": true,
+        "numeric_output": true,
+        "comparison_reason": "raised",
+        "errors": [],
+        "calls": 1,
+        "accepted_retrievals": 0,
+        "validation_failures": [],
+        "expected_statements_retrieved": null,
+        "valid_two_citation_flag": null,
+        "explanation_candidates": 7,
+        "latency_ms": 4930.702
+      }
+    },
+    {
+      "case_id": "BOX-FY2025-Q1-Q2~v3-contradictory_commentary",
+      "challenge": "contradictory_commentary",
+      "v3_C": {
+        "completed_without_errors": true,
+        "numeric_output": true,
+        "comparison_reason": "raised",
+        "errors": [],
+        "calls": 8,
+        "accepted_retrievals": 6,
+        "validation_failures": [
+          {
+            "call": 1,
+            "error": "expected_one_native_tool_call"
+          }
+        ],
+        "expected_statements_retrieved": [
+          false,
+          false
+        ],
+        "valid_two_citation_flag": false,
+        "explanation_candidates": 2,
+        "latency_ms": 12075.123
+      },
+      "v4_C": {
+        "completed_without_errors": true,
+        "numeric_output": true,
+        "comparison_reason": "raised",
+        "errors": [],
+        "calls": 6,
+        "accepted_retrievals": 7,
+        "validation_failures": [
+          {
+            "call": 4,
+            "error": "retrieval_batch_exceeds_remaining_tool_budget"
+          }
+        ],
+        "expected_statements_retrieved": [
+          true,
+          true
+        ],
+        "valid_two_citation_flag": true,
+        "explanation_candidates": 3,
+        "latency_ms": 11379.702
+      },
+      "v3_B": {
+        "completed_without_errors": true,
+        "numeric_output": true,
+        "comparison_reason": "raised",
+        "errors": [],
+        "calls": 1,
+        "accepted_retrievals": 0,
+        "validation_failures": [],
+        "expected_statements_retrieved": [
+          false,
+          false
+        ],
+        "valid_two_citation_flag": false,
+        "explanation_candidates": 2,
+        "latency_ms": 5144.915
+      }
+    },
+    {
+      "case_id": "INTU-FY2025-Q1-Q2",
+      "challenge": "real",
+      "v3_C": {
+        "completed_without_errors": true,
+        "numeric_output": true,
+        "comparison_reason": "unchanged",
+        "errors": [],
+        "calls": 4,
+        "accepted_retrievals": 3,
+        "validation_failures": [],
+        "expected_statements_retrieved": null,
+        "valid_two_citation_flag": null,
+        "explanation_candidates": 2,
+        "latency_ms": 6471.141
+      },
+      "v4_C": {
+        "completed_without_errors": true,
+        "numeric_output": true,
+        "comparison_reason": "unchanged",
+        "errors": [],
+        "calls": 4,
+        "accepted_retrievals": 6,
+        "validation_failures": [],
+        "expected_statements_retrieved": null,
+        "valid_two_citation_flag": null,
+        "explanation_candidates": 2,
+        "latency_ms": 7671.569
+      },
+      "v3_B": {
+        "completed_without_errors": false,
+        "numeric_output": false,
+        "comparison_reason": "missing_guidance",
+        "errors": [
+          "metric_validation: nonliteral_evidence, nonliteral_horizon_evidence, unit_not_in_quote, horizon_not_supported, citation_not_in_retrieved_context"
+        ],
+        "calls": 1,
+        "accepted_retrievals": 0,
+        "validation_failures": [
+          {
+            "call": 1,
+            "error": "metric_validation: nonliteral_evidence, nonliteral_horizon_evidence, unit_not_in_quote, horizon_not_supported, citation_not_in_retrieved_context"
+          }
+        ],
+        "expected_statements_retrieved": null,
+        "valid_two_citation_flag": null,
+        "explanation_candidates": 0,
+        "latency_ms": 6528.128
+      }
+    },
+    {
+      "case_id": "INTU-FY2025-Q1-Q2~v3-contradictory_commentary",
+      "challenge": "contradictory_commentary",
+      "v3_C": {
+        "completed_without_errors": true,
+        "numeric_output": false,
+        "comparison_reason": "missing_guidance",
+        "errors": [],
+        "calls": 8,
+        "accepted_retrievals": 5,
+        "validation_failures": [
+          {
+            "call": 1,
+            "error": "expected_one_native_tool_call"
+          },
+          {
+            "call": 3,
+            "error": "expected_one_native_tool_call"
+          }
+        ],
+        "expected_statements_retrieved": [
+          false,
+          false
+        ],
+        "valid_two_citation_flag": false,
+        "explanation_candidates": 0,
+        "latency_ms": 9967.311
+      },
+      "v4_C": {
+        "completed_without_errors": true,
+        "numeric_output": false,
+        "comparison_reason": "missing_guidance",
+        "errors": [],
+        "calls": 7,
+        "accepted_retrievals": 7,
+        "validation_failures": [
+          {
+            "call": 4,
+            "error": "metric_validation: nonliteral_evidence, nonliteral_horizon_evidence, value_not_in_quote, horizon_not_supported, citation_not_in_retrieved_context"
+          },
+          {
+            "call": 5,
+            "error": "retrieval_batch_exceeds_remaining_tool_budget"
+          }
+        ],
+        "expected_statements_retrieved": [
+          false,
+          false
+        ],
+        "valid_two_citation_flag": false,
+        "explanation_candidates": 4,
+        "latency_ms": 13266.847
+      },
+      "v3_B": {
+        "completed_without_errors": false,
+        "numeric_output": false,
+        "comparison_reason": "missing_guidance",
+        "errors": [
+          "metric_validation: nonliteral_evidence, nonliteral_horizon_evidence, value_not_in_quote, horizon_not_supported, citation_not_in_retrieved_context"
+        ],
+        "calls": 1,
+        "accepted_retrievals": 0,
+        "validation_failures": [
+          {
+            "call": 1,
+            "error": "metric_validation: nonliteral_evidence, nonliteral_horizon_evidence, value_not_in_quote, horizon_not_supported, citation_not_in_retrieved_context"
+          }
+        ],
+        "expected_statements_retrieved": [
+          false,
+          false
+        ],
+        "valid_two_citation_flag": false,
+        "explanation_candidates": 0,
+        "latency_ms": 3904.321
+      }
+    },
+    {
+      "case_id": "SNPS-FY2025-Q1-Q2",
+      "challenge": "real",
+      "v3_C": {
+        "completed_without_errors": false,
+        "numeric_output": false,
+        "comparison_reason": "missing_guidance",
+        "errors": [
+          "metric_validation: nonliteral_evidence, nonliteral_horizon_evidence, unit_not_in_quote, quarterly_or_ambiguous_horizon, citation_not_in_retrieved_context"
+        ],
+        "calls": 7,
+        "accepted_retrievals": 4,
+        "validation_failures": [
+          {
+            "call": 1,
+            "error": "expected_one_native_tool_call"
+          },
+          {
+            "call": 3,
+            "error": "expected_one_native_tool_call"
+          },
+          {
+            "call": 7,
+            "error": "metric_validation: nonliteral_evidence, nonliteral_horizon_evidence, unit_not_in_quote, quarterly_or_ambiguous_horizon, citation_not_in_retrieved_context"
+          }
+        ],
+        "expected_statements_retrieved": null,
+        "valid_two_citation_flag": null,
+        "explanation_candidates": 0,
+        "latency_ms": 12093.915
+      },
+      "v4_C": {
+        "completed_without_errors": false,
+        "numeric_output": false,
+        "comparison_reason": "missing_guidance",
+        "errors": [
+          "metric_validation: nonliteral_evidence, nonliteral_horizon_evidence, unit_not_in_quote, quarterly_or_ambiguous_horizon, citation_not_in_retrieved_context"
+        ],
+        "calls": 6,
+        "accepted_retrievals": 6,
+        "validation_failures": [
+          {
+            "call": 4,
+            "error": "retrieval_batch_exceeds_remaining_tool_budget"
+          },
+          {
+            "call": 5,
+            "error": "metric_validation: nonliteral_evidence, nonliteral_horizon_evidence, unit_not_in_quote, quarterly_or_ambiguous_horizon, citation_not_in_retrieved_context"
+          },
+          {
+            "call": 6,
+            "error": "metric_validation: nonliteral_evidence, nonliteral_horizon_evidence, unit_not_in_quote, quarterly_or_ambiguous_horizon, citation_not_in_retrieved_context"
+          }
+        ],
+        "expected_statements_retrieved": null,
+        "valid_two_citation_flag": null,
+        "explanation_candidates": 0,
+        "latency_ms": 14429.507
+      },
+      "v3_B": {
+        "completed_without_errors": false,
+        "numeric_output": false,
+        "comparison_reason": "missing_guidance",
+        "errors": [
+          "metric_validation: nonliteral_evidence, nonliteral_horizon_evidence, disconnected_horizon_evidence, value_not_in_quote, unit_not_in_quote, quarterly_or_ambiguous_horizon, citation_not_in_retrieved_context"
+        ],
+        "calls": 1,
+        "accepted_retrievals": 0,
+        "validation_failures": [
+          {
+            "call": 1,
+            "error": "metric_validation: nonliteral_evidence, nonliteral_horizon_evidence, disconnected_horizon_evidence, value_not_in_quote, unit_not_in_quote, quarterly_or_ambiguous_horizon, citation_not_in_retrieved_context"
+          }
+        ],
+        "expected_statements_retrieved": null,
+        "valid_two_citation_flag": null,
+        "explanation_candidates": 0,
+        "latency_ms": 5025.324
+      }
+    },
+    {
+      "case_id": "SNPS-FY2025-Q1-Q2~v3-contradictory_commentary",
+      "challenge": "contradictory_commentary",
+      "v3_C": {
+        "completed_without_errors": false,
+        "numeric_output": false,
+        "comparison_reason": "missing_guidance",
+        "errors": [
+          "metric_validation: nonliteral_evidence, nonliteral_horizon_evidence, unit_not_in_quote, quarterly_or_ambiguous_horizon, citation_not_in_retrieved_context"
+        ],
+        "calls": 8,
+        "accepted_retrievals": 5,
+        "validation_failures": [
+          {
+            "call": 1,
+            "error": "expected_one_native_tool_call"
+          },
+          {
+            "call": 2,
+            "error": "expected_one_native_tool_call"
+          },
+          {
+            "call": 8,
+            "error": "metric_validation: nonliteral_evidence, nonliteral_horizon_evidence, unit_not_in_quote, quarterly_or_ambiguous_horizon, citation_not_in_retrieved_context"
+          }
+        ],
+        "expected_statements_retrieved": [
+          false,
+          false
+        ],
+        "valid_two_citation_flag": false,
+        "explanation_candidates": 0,
+        "latency_ms": 13037.639
+      },
+      "v4_C": {
+        "completed_without_errors": false,
+        "numeric_output": false,
+        "comparison_reason": "missing_guidance",
+        "errors": [
+          "metric_validation: nonliteral_evidence, nonliteral_horizon_evidence, disconnected_horizon_evidence, unit_not_in_quote, quarterly_or_ambiguous_horizon, citation_not_in_retrieved_context"
+        ],
+        "calls": 6,
+        "accepted_retrievals": 6,
+        "validation_failures": [
+          {
+            "call": 4,
+            "error": "retrieval_batch_exceeds_remaining_tool_budget"
+          },
+          {
+            "call": 5,
+            "error": "metric_validation: nonliteral_evidence, nonliteral_horizon_evidence, disconnected_horizon_evidence, unit_not_in_quote, quarterly_or_ambiguous_horizon, citation_not_in_retrieved_context"
+          },
+          {
+            "call": 6,
+            "error": "metric_validation: nonliteral_evidence, nonliteral_horizon_evidence, disconnected_horizon_evidence, unit_not_in_quote, quarterly_or_ambiguous_horizon, citation_not_in_retrieved_context"
+          }
+        ],
+        "expected_statements_retrieved": [
+          false,
+          false
+        ],
+        "valid_two_citation_flag": false,
+        "explanation_candidates": 0,
+        "latency_ms": 15046.09
+      },
+      "v3_B": {
+        "completed_without_errors": false,
+        "numeric_output": false,
+        "comparison_reason": "missing_guidance",
+        "errors": [
+          "metric_validation: nonliteral_evidence, nonliteral_horizon_evidence, unit_not_in_quote, quarterly_or_ambiguous_horizon, citation_not_in_retrieved_context"
+        ],
+        "calls": 1,
+        "accepted_retrievals": 0,
+        "validation_failures": [
+          {
+            "call": 1,
+            "error": "metric_validation: nonliteral_evidence, nonliteral_horizon_evidence, unit_not_in_quote, quarterly_or_ambiguous_horizon, citation_not_in_retrieved_context"
+          }
+        ],
+        "expected_statements_retrieved": [
+          false,
+          false
+        ],
+        "valid_two_citation_flag": false,
+        "explanation_candidates": 0,
+        "latency_ms": 7234.172
+      }
+    }
+  ],
+  "previous_selected_run_sha256": {
+    "runs/ADBE-FY2025-Q1-Q2_C.json": "a66125601630c80f3cd776f40a69faee8376f2547bddbd3586da8cac898577f7",
+    "runs/ADBE-FY2025-Q1-Q2_B.json": "d48775ef4c45043b68a805d06171a8417900a26584967cf0cd441bf528db614d",
+    "runs/ADBE-FY2025-Q1-Q2~v3-contradictory_commentary_C.json": "0658db605086142be2be23976671ae18a2c891529d0f0f46e3d9e9ca398ed5c8",
+    "runs/ADBE-FY2025-Q1-Q2~v3-contradictory_commentary_B.json": "875083931e3e7b2c9d89c04d2becb00996b62d383e03024d9e0d95d358c897ba",
+    "runs/BOX-FY2025-Q1-Q2_C.json": "d25ab25625a14d030670c0d8beca88abde2acfa2e718480191c860f3e3447854",
+    "runs/BOX-FY2025-Q1-Q2_B.json": "5a788c0e13c98143d64c15f3822420d77b1d42a600eb77e0af4fda2207fcb009",
+    "runs/BOX-FY2025-Q1-Q2~v3-contradictory_commentary_C.json": "42f9b7473cfc72766cf2e74c9787f0f9612c46b815b2ba331b8fbcc1b3de8871",
+    "runs/BOX-FY2025-Q1-Q2~v3-contradictory_commentary_B.json": "6d89eaf4c1aa4d439ff786d433eaebae96779d013576a33059a66fa04ff163de",
+    "runs/INTU-FY2025-Q1-Q2_C.json": "e88e6bafc8eb9781566fee4031ecbf44ce517cb377ef4b66c5e7c2d7c8f59030",
+    "runs/INTU-FY2025-Q1-Q2_B.json": "f6765c8b4eacae98a3c229bf6bf5449a097ef3e511c3dbfe17cb0083eb13cada",
+    "runs/INTU-FY2025-Q1-Q2~v3-contradictory_commentary_C.json": "ae63ac2191415dc90b50fb47ffa20a190299d5bd143eec027dfff58779bf3c37",
+    "runs/INTU-FY2025-Q1-Q2~v3-contradictory_commentary_B.json": "6b2f79beff60cb3a9080a33c58f2de0fb3c9fd0053fb6ee1b4c67b63b82caea6",
+    "runs/SNPS-FY2025-Q1-Q2_C.json": "66d6fd92039ab2012488c4b86ffae4ac8e65c1c3e4c1cd44da3379a34222b839",
+    "runs/SNPS-FY2025-Q1-Q2_B.json": "bd64e13fc6994f8d260e7803c831da7b6622d2d5d935e579e2c7db0151931140",
+    "runs/SNPS-FY2025-Q1-Q2~v3-contradictory_commentary_C.json": "32366b5610a64f72a6a40d7e2271dfe5cbc4ddfbd60ed5865f3e4847a215dd5c",
+    "runs/SNPS-FY2025-Q1-Q2~v3-contradictory_commentary_B.json": "68f027ae01cd66ebe09207cb0431144d12b63e69645cf15f7d1d1df973a74764"
+  },
+  "diagnostics": {
+    "terminal_errors": {
+      "metric_validation: nonliteral_evidence, nonliteral_horizon_evidence, unit_not_in_quote, quarterly_or_ambiguous_horizon, citation_not_in_retrieved_context": 1,
+      "metric_validation: nonliteral_evidence, nonliteral_horizon_evidence, disconnected_horizon_evidence, unit_not_in_quote, quarterly_or_ambiguous_horizon, citation_not_in_retrieved_context": 1
+    },
+    "validation_errors": {
+      "retrieval_batch_exceeds_remaining_tool_budget": 5,
+      "metric_validation: nonliteral_evidence, nonliteral_horizon_evidence, value_not_in_quote, horizon_not_supported, citation_not_in_retrieved_context": 1,
+      "metric_validation: nonliteral_evidence, nonliteral_horizon_evidence, unit_not_in_quote, quarterly_or_ambiguous_horizon, citation_not_in_retrieved_context": 2,
+      "metric_validation: nonliteral_evidence, nonliteral_horizon_evidence, disconnected_horizon_evidence, unit_not_in_quote, quarterly_or_ambiguous_horizon, citation_not_in_retrieved_context": 2
+    },
+    "multi_function_responses": 27,
+    "accepted_batches": 22,
+    "batches": [
+      {
+        "case_id": "ADBE-FY2025-Q1-Q2",
+        "model_call": 1,
+        "function_names": [
+          "search_passages",
+          "search_passages"
+        ],
+        "accepted": true,
+        "validation_error": null
+      },
+      {
+        "case_id": "ADBE-FY2025-Q1-Q2",
+        "model_call": 2,
+        "function_names": [
+          "search_passages",
+          "search_passages"
+        ],
+        "accepted": true,
+        "validation_error": null
+      },
+      {
+        "case_id": "ADBE-FY2025-Q1-Q2~v3-contradictory_commentary",
+        "model_call": 1,
+        "function_names": [
+          "search_passages",
+          "search_passages"
+        ],
+        "accepted": true,
+        "validation_error": null
+      },
+      {
+        "case_id": "ADBE-FY2025-Q1-Q2~v3-contradictory_commentary",
+        "model_call": 2,
+        "function_names": [
+          "search_passages",
+          "search_passages"
+        ],
+        "accepted": true,
+        "validation_error": null
+      },
+      {
+        "case_id": "ADBE-FY2025-Q1-Q2~v3-contradictory_commentary",
+        "model_call": 3,
+        "function_names": [
+          "get_source",
+          "search_passages"
+        ],
+        "accepted": true,
+        "validation_error": null
+      },
+      {
+        "case_id": "ADBE-FY2025-Q1-Q2~v3-contradictory_commentary",
+        "model_call": 4,
+        "function_names": [
+          "search_passages",
+          "search_passages"
+        ],
+        "accepted": false,
+        "validation_error": "retrieval_batch_exceeds_remaining_tool_budget"
+      },
+      {
+        "case_id": "BOX-FY2025-Q1-Q2",
+        "model_call": 1,
+        "function_names": [
+          "search_passages",
+          "search_passages"
+        ],
+        "accepted": true,
+        "validation_error": null
+      },
+      {
+        "case_id": "BOX-FY2025-Q1-Q2",
+        "model_call": 2,
+        "function_names": [
+          "get_source",
+          "search_passages"
+        ],
+        "accepted": true,
+        "validation_error": null
+      },
+      {
+        "case_id": "BOX-FY2025-Q1-Q2~v3-contradictory_commentary",
+        "model_call": 1,
+        "function_names": [
+          "search_passages",
+          "search_passages"
+        ],
+        "accepted": true,
+        "validation_error": null
+      },
+      {
+        "case_id": "BOX-FY2025-Q1-Q2~v3-contradictory_commentary",
+        "model_call": 2,
+        "function_names": [
+          "search_passages",
+          "search_passages"
+        ],
+        "accepted": true,
+        "validation_error": null
+      },
+      {
+        "case_id": "BOX-FY2025-Q1-Q2~v3-contradictory_commentary",
+        "model_call": 3,
+        "function_names": [
+          "get_source",
+          "get_source"
+        ],
+        "accepted": true,
+        "validation_error": null
+      },
+      {
+        "case_id": "BOX-FY2025-Q1-Q2~v3-contradictory_commentary",
+        "model_call": 4,
+        "function_names": [
+          "search_passages",
+          "search_passages"
+        ],
+        "accepted": false,
+        "validation_error": "retrieval_batch_exceeds_remaining_tool_budget"
+      },
+      {
+        "case_id": "INTU-FY2025-Q1-Q2",
+        "model_call": 1,
+        "function_names": [
+          "search_passages",
+          "search_passages"
+        ],
+        "accepted": true,
+        "validation_error": null
+      },
+      {
+        "case_id": "INTU-FY2025-Q1-Q2",
+        "model_call": 2,
+        "function_names": [
+          "search_passages",
+          "search_passages"
+        ],
+        "accepted": true,
+        "validation_error": null
+      },
+      {
+        "case_id": "INTU-FY2025-Q1-Q2",
+        "model_call": 3,
+        "function_names": [
+          "search_passages",
+          "search_passages"
+        ],
+        "accepted": true,
+        "validation_error": null
+      },
+      {
+        "case_id": "INTU-FY2025-Q1-Q2~v3-contradictory_commentary",
+        "model_call": 1,
+        "function_names": [
+          "search_passages",
+          "search_passages"
+        ],
+        "accepted": true,
+        "validation_error": null
+      },
+      {
+        "case_id": "INTU-FY2025-Q1-Q2~v3-contradictory_commentary",
+        "model_call": 2,
+        "function_names": [
+          "search_passages",
+          "search_passages"
+        ],
+        "accepted": true,
+        "validation_error": null
+      },
+      {
+        "case_id": "INTU-FY2025-Q1-Q2~v3-contradictory_commentary",
+        "model_call": 3,
+        "function_names": [
+          "search_passages",
+          "search_passages"
+        ],
+        "accepted": true,
+        "validation_error": null
+      },
+      {
+        "case_id": "INTU-FY2025-Q1-Q2~v3-contradictory_commentary",
+        "model_call": 5,
+        "function_names": [
+          "get_source",
+          "get_source"
+        ],
+        "accepted": false,
+        "validation_error": "retrieval_batch_exceeds_remaining_tool_budget"
+      },
+      {
+        "case_id": "SNPS-FY2025-Q1-Q2",
+        "model_call": 1,
+        "function_names": [
+          "search_passages",
+          "search_passages"
+        ],
+        "accepted": true,
+        "validation_error": null
+      },
+      {
+        "case_id": "SNPS-FY2025-Q1-Q2",
+        "model_call": 2,
+        "function_names": [
+          "search_passages",
+          "search_passages"
+        ],
+        "accepted": true,
+        "validation_error": null
+      },
+      {
+        "case_id": "SNPS-FY2025-Q1-Q2",
+        "model_call": 3,
+        "function_names": [
+          "search_passages",
+          "search_passages"
+        ],
+        "accepted": true,
+        "validation_error": null
+      },
+      {
+        "case_id": "SNPS-FY2025-Q1-Q2",
+        "model_call": 4,
+        "function_names": [
+          "get_source",
+          "get_source"
+        ],
+        "accepted": false,
+        "validation_error": "retrieval_batch_exceeds_remaining_tool_budget"
+      },
+      {
+        "case_id": "SNPS-FY2025-Q1-Q2~v3-contradictory_commentary",
+        "model_call": 1,
+        "function_names": [
+          "search_passages",
+          "search_passages"
+        ],
+        "accepted": true,
+        "validation_error": null
+      },
+      {
+        "case_id": "SNPS-FY2025-Q1-Q2~v3-contradictory_commentary",
+        "model_call": 2,
+        "function_names": [
+          "search_passages",
+          "search_passages"
+        ],
+        "accepted": true,
+        "validation_error": null
+      },
+      {
+        "case_id": "SNPS-FY2025-Q1-Q2~v3-contradictory_commentary",
+        "model_call": 3,
+        "function_names": [
+          "search_passages",
+          "search_passages"
+        ],
+        "accepted": true,
+        "validation_error": null
+      },
+      {
+        "case_id": "SNPS-FY2025-Q1-Q2~v3-contradictory_commentary",
+        "model_call": 4,
+        "function_names": [
+          "get_source",
+          "get_source"
+        ],
+        "accepted": false,
+        "validation_error": "retrieval_batch_exceeds_remaining_tool_budget"
+      }
+    ],
+    "median_latency_seconds": 10.3534125,
+    "prompt_tokens": 288384,
+    "completion_tokens": 14083
+  },
+  "combined_v3_v4_conservative_cost_usd": "0.3410172",
+  "limits": [
+    "Four selected real development pairs and four synthetic derivatives, not eight independent events.",
+    "Only C is rerun; B numbers are the existing v3 results on exactly matching sources.",
+    "Batch handling and the C batching instruction changed; model, tool budget, retrieval ranking and validators stayed fixed.",
+    "One run per case and version cannot isolate model variability or establish generalization.",
+    "Synthetic contradiction wording is construction-known and does not establish natural-conflict detection.",
+    "Real-case labels and semantic support judgments remain pending; literal validation is not entailment.",
+    "Missing-evidence and stale controls were not rerun in v4; earlier counts must not be attributed to v4.",
+    "Reported token cost uses peak cache-miss rates, ignores discounts, and is not a provider invoice."
+  ]
+}

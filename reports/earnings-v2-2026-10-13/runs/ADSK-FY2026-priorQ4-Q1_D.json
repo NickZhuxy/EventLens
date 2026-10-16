@@ -1,0 +1,727 @@
+{
+  "run_id": "13d7bf56-572f-494a-8e23-267d50d88afe",
+  "created_at": "2026-10-14T01:02:03.129892+00:00",
+  "case": {
+    "case_id": "ADSK-FY2026-priorQ4-Q1",
+    "issuer": "ADSK",
+    "old": "ADSK-2025-Q4",
+    "new": "ADSK-2026-Q1-SEC",
+    "horizon": "FY2026",
+    "metric": "revenue",
+    "cutoff": "2025-05-23T00:00:00-04:00",
+    "split": "heldout",
+    "synthetic": false
+  },
+  "method": "D",
+  "config": {
+    "version": "earnings-investigation-v2",
+    "model": "deepseek-flash",
+    "provider": {
+      "base_url": "https://api.deepseek.com",
+      "reasoning_effort": "low"
+    },
+    "max_calls": 8,
+    "max_tool_calls": 7,
+    "max_output_tokens_per_call": 3200,
+    "max_input_characters": 180000,
+    "transport_retries": 0,
+    "pricing": {
+      "currency": "USD",
+      "input_per_million": "0.30",
+      "output_per_million": "1.20",
+      "assumption": "Peak rates; all input treated as cache miss. Discounts never required.",
+      "reference": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "checked_on": "2026-10-13"
+    },
+    "scope": {
+      "real_pairs": 36,
+      "heldout_stress_variants": 72,
+      "supplemental_natural_cases": 2,
+      "stress_types": [
+        "stale_disclosure",
+        "missing_table",
+        "contradictory_commentary"
+      ],
+      "methods": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    "proposed_budget_usd": "8.00",
+    "approval_status": "pending_concrete_budget_approval"
+  },
+  "cutoff_mode": "disclosure",
+  "trace": [
+    {
+      "stage": "document_diff",
+      "algorithm": "difflib.SequenceMatcher sentence-level; autojunk=False",
+      "sentence_counts": [
+        592,
+        523
+      ],
+      "changed_guidance_candidates": [
+        {
+          "operation": "replace",
+          "old_sentences": [
+            2,
+            25
+          ],
+          "new_sentences": [
+            2,
+            32
+          ],
+          "spans": [
+            {
+              "source_id": "ADSK-2025-Q4",
+              "sentence": 3,
+              "start": 124,
+              "end": 226,
+              "quote": "- Fourth quarter revenue grew 12 percent as reported and on a constant currency basis, to $1.6 billion"
+            },
+            {
+              "source_id": "ADSK-2025-Q4",
+              "sentence": 10,
+              "start": 856,
+              "end": 909,
+              "quote": "•Total revenue increased 12 percent to $1.64 billion;"
+            },
+            {
+              "source_id": "ADSK-2026-Q1-SEC",
+              "sentence": 3,
+              "start": 109,
+              "end": 210,
+              "quote": "- First quarter revenue grew 15 percent, and 16 percent on a constant currency basis, to $1.6 billion"
+            },
+            {
+              "source_id": "ADSK-2026-Q1-SEC",
+              "sentence": 13,
+              "start": 1450,
+              "end": 1505,
+              "quote": "Revenue  | $  | 1,633   |  |  |  | 15   | %  |  |  |  |"
+            },
+            {
+              "source_id": "ADSK-2026-Q1-SEC",
+              "sentence": 29,
+              "start": 2339,
+              "end": 2410,
+              "quote": "Total Net Revenue  | $  | 1,633   |  |  |  |  | 15   | %  |  | 16   | %"
+            }
+          ]
+        },
+        {
+          "operation": "delete",
+          "old_sentences": [
+            27,
+            50
+          ],
+          "new_sentences": [
+            34,
+            34
+          ],
+          "spans": [
+            {
+              "source_id": "ADSK-2025-Q4",
+              "sentence": 29,
+              "start": 2986,
+              "end": 3091,
+              "quote": "•Total revenue was $1.64 billion, an increase of 12 percent as reported and on a constant currency basis."
+            },
+            {
+              "source_id": "ADSK-2025-Q4",
+              "sentence": 30,
+              "start": 3092,
+              "end": 3141,
+              "quote": "Recurring revenue represents 97 percent of total."
+            },
+            {
+              "source_id": "ADSK-2025-Q4",
+              "sentence": 31,
+              "start": 3143,
+              "end": 3249,
+              "quote": "•Design revenue was $1.36 billion, an increase of 12 percent as reported and on a constant currency basis."
+            },
+            {
+              "source_id": "ADSK-2025-Q4",
+              "sentence": 32,
+              "start": 3250,
+              "end": 3353,
+              "quote": "On a sequential basis, Design revenue increased 5 percent as reported and on a constant currency basis."
+            },
+            {
+              "source_id": "ADSK-2025-Q4",
+              "sentence": 33,
+              "start": 3354,
+              "end": 3457,
+              "quote": "•Make revenue was $176 million, an increase of 28 percent as reported and on a constant currency basis."
+            },
+            {
+              "source_id": "ADSK-2025-Q4",
+              "sentence": 34,
+              "start": 3458,
+              "end": 3559,
+              "quote": "On a sequential basis, Make revenue increased 3 percent as reported and on a constant currency basis."
+            },
+            {
+              "source_id": "ADSK-2025-Q4",
+              "sentence": 35,
+              "start": 3561,
+              "end": 3678,
+              "quote": "•Subscription plan revenue was $1.52 billion, an increase of 14 percent as reported and on a constant currency basis."
+            },
+            {
+              "source_id": "ADSK-2025-Q4",
+              "sentence": 36,
+              "start": 3679,
+              "end": 3804,
+              "quote": "On a sequential basis, subscription plan revenue increased 4 percent as reported, and 5 percent on a constant currency basis."
+            },
+            {
+              "source_id": "ADSK-2025-Q4",
+              "sentence": 37,
+              "start": 3805,
+              "end": 3905,
+              "quote": "•Net revenue retention rate was within the range of 100 to 110 percent on a constant currency basis."
+            },
+            {
+              "source_id": "ADSK-2025-Q4",
+              "sentence": 44,
+              "start": 4328,
+              "end": 4383,
+              "quote": "•Deferred revenue decreased 3 percent to $4.13 billion."
+            },
+            {
+              "source_id": "ADSK-2025-Q4",
+              "sentence": 45,
+              "start": 4384,
+              "end": 4457,
+              "quote": "Unbilled deferred revenue was $2.81 billion, an increase of $966 million."
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            51,
+            65
+          ],
+          "new_sentences": [
+            35,
+            65
+          ],
+          "spans": [
+            {
+              "source_id": "ADSK-2025-Q4",
+              "sentence": 62,
+              "start": 5746,
+              "end": 5866,
+              "quote": "Total Net Revenue  | $  | 1,639   |  |  | $  | 1,469   |  |  | $  | 170   |  |  | 12   | %  |  | 12   | %  |  |  |  |  |"
+            },
+            {
+              "source_id": "ADSK-2026-Q1-SEC",
+              "sentence": 41,
+              "start": 2844,
+              "end": 2915,
+              "quote": "Total Net Revenue  | $  | 1,633   |  |  |  |  | 15   | %  |  | 16   | %"
+            },
+            {
+              "source_id": "ADSK-2026-Q1-SEC",
+              "sentence": 52,
+              "start": 3626,
+              "end": 3697,
+              "quote": "Total Net Revenue  | $  | 1,633   |  |  |  |  | 15   | %  |  | 16   | %"
+            },
+            {
+              "source_id": "ADSK-2026-Q1-SEC",
+              "sentence": 56,
+              "start": 3828,
+              "end": 3880,
+              "quote": "Deferred Revenue  | $  | 3,929   |  |  |  | (1)  | %"
+            },
+            {
+              "source_id": "ADSK-2026-Q1-SEC",
+              "sentence": 57,
+              "start": 3881,
+              "end": 3937,
+              "quote": "Unbilled deferred revenue  | 3,228   |  |  |  | 67   | %"
+            }
+          ]
+        },
+        {
+          "operation": "delete",
+          "old_sentences": [
+            67,
+            149
+          ],
+          "new_sentences": [
+            67,
+            67
+          ],
+          "spans": [
+            {
+              "source_id": "ADSK-2025-Q4",
+              "sentence": 78,
+              "start": 6924,
+              "end": 7038,
+              "quote": "Total Net Revenue  | $  | 1,639   |  |  | $  | 1,469   |  |  | $  | 170   |  |  | 12   | %  |  |  |  |  |  |  |  |"
+            },
+            {
+              "source_id": "ADSK-2025-Q4",
+              "sentence": 92,
+              "start": 7606,
+              "end": 7723,
+              "quote": "•Total revenue was $6.13 billion, an increase of 12 percent as reported, and 13 percent on a constant currency basis."
+            },
+            {
+              "source_id": "ADSK-2025-Q4",
+              "sentence": 93,
+              "start": 7724,
+              "end": 7773,
+              "quote": "Recurring revenue represents 97 percent of total."
+            },
+            {
+              "source_id": "ADSK-2025-Q4",
+              "sentence": 94,
+              "start": 7775,
+              "end": 7893,
+              "quote": "•Design revenue was $5.10 billion, an increase of 10 percent as reported, and 11 percent on a constant currency basis."
+            },
+            {
+              "source_id": "ADSK-2025-Q4",
+              "sentence": 95,
+              "start": 7895,
+              "end": 8010,
+              "quote": "•Make revenue was $654 million, an increase of 25 percent as reported, and 26 percent on a constant currency basis."
+            },
+            {
+              "source_id": "ADSK-2025-Q4",
+              "sentence": 96,
+              "start": 8011,
+              "end": 8140,
+              "quote": "•Subscription plan revenue was $5.72 billion, an increase of 12 percent as reported, and 13 percent on a constant currency basis."
+            },
+            {
+              "source_id": "ADSK-2025-Q4",
+              "sentence": 121,
+              "start": 9927,
+              "end": 10047,
+              "quote": "Total Net Revenue  | $  | 6,131   |  |  | $  | 5,497   |  |  | $  | 634   |  |  | 12   | %  |  | 13   | %  |  |  |  |  |"
+            },
+            {
+              "source_id": "ADSK-2025-Q4",
+              "sentence": 135,
+              "start": 11011,
+              "end": 11125,
+              "quote": "Total Net Revenue  | $  | 6,131   |  |  | $  | 5,497   |  |  | $  | 634   |  |  | 12   | %  |  |  |  |  |  |  |  |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            154,
+            159
+          ],
+          "new_sentences": [
+            72,
+            77
+          ],
+          "spans": [
+            {
+              "source_id": "ADSK-2025-Q4",
+              "sentence": 156,
+              "start": 12270,
+              "end": 12313,
+              "quote": "Revenue (in millions)  |  | $1,600 - $1,610"
+            },
+            {
+              "source_id": "ADSK-2026-Q1-SEC",
+              "sentence": 74,
+              "start": 5038,
+              "end": 5081,
+              "quote": "Revenue (in millions)  |  | $1,720 - $1,730"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            165,
+            172
+          ],
+          "new_sentences": [
+            83,
+            90
+          ],
+          "spans": [
+            {
+              "source_id": "ADSK-2025-Q4",
+              "sentence": 166,
+              "start": 12622,
+              "end": 12668,
+              "quote": "| Revenue (in millions) (1)  | $6,895 - $6,965"
+            },
+            {
+              "source_id": "ADSK-2026-Q1-SEC",
+              "sentence": 84,
+              "start": 5388,
+              "end": 5435,
+              "quote": "Revenue (in millions) (1)  |  | $6,925 - $6,995"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            202,
+            203
+          ],
+          "new_sentences": [
+            122,
+            123
+          ],
+          "spans": [
+            {
+              "source_id": "ADSK-2025-Q4",
+              "sentence": 202,
+              "start": 14966,
+              "end": 15150,
+              "quote": "To help better understand our financial performance, we use several key performance metrics including billings, recurring revenue, net revenue retention rate (\"NR3\") and subscriptions."
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            258,
+            260
+          ],
+          "new_sentences": [
+            172,
+            174
+          ],
+          "spans": [
+            {
+              "source_id": "ADSK-2025-Q4",
+              "sentence": 258,
+              "start": 22365,
+              "end": 22541,
+              "quote": "Under FASB Accounting Standards Codification (\"ASC\") Topic 606, unbilled deferred revenue is not included as a receivable or deferred revenue on our Consolidated Balance Sheet."
+            },
+            {
+              "source_id": "ADSK-2026-Q1-SEC",
+              "sentence": 172,
+              "start": 14453,
+              "end": 14639,
+              "quote": "Under FASB Accounting Standards Codification (\"ASC\") Topic 606, unbilled deferred revenue is not included as a receivable or deferred revenue on our Condensed Consolidated Balance Sheet."
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            295,
+            300
+          ],
+          "new_sentences": [
+            209,
+            214
+          ],
+          "spans": [
+            {
+              "source_id": "ADSK-2025-Q4",
+              "sentence": 297,
+              "start": 29125,
+              "end": 29228,
+              "quote": "Total subscription and maintenance revenue  | 1,532   |  |  | 1,353   |  |  | 5,758   |  |  | 5,170   |"
+            },
+            {
+              "source_id": "ADSK-2025-Q4",
+              "sentence": 299,
+              "start": 29288,
+              "end": 29366,
+              "quote": "Total net revenue  | 1,639   |  |  | 1,469   |  |  | 6,131   |  |  | 5,497   |"
+            },
+            {
+              "source_id": "ADSK-2026-Q1-SEC",
+              "sentence": 211,
+              "start": 21096,
+              "end": 21179,
+              "quote": "Total subscription and maintenance revenue  | 1,540   |  |  | 1,341   |  |  |  |  |"
+            },
+            {
+              "source_id": "ADSK-2026-Q1-SEC",
+              "sentence": 213,
+              "start": 21221,
+              "end": 21279,
+              "quote": "Total net revenue  | 1,633   |  |  | 1,417   |  |  |  |  |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            301,
+            306
+          ],
+          "new_sentences": [
+            215,
+            220
+          ],
+          "spans": [
+            {
+              "source_id": "ADSK-2025-Q4",
+              "sentence": 301,
+              "start": 29405,
+              "end": 29501,
+              "quote": "Cost of subscription and maintenance revenue  | 108   |  |  | 96   |  |  | 413   |  |  | 381   |"
+            },
+            {
+              "source_id": "ADSK-2025-Q4",
+              "sentence": 302,
+              "start": 29502,
+              "end": 29572,
+              "quote": "Cost of other revenue  | 23   |  |  | 20   |  |  | 80   |  |  | 82   |"
+            },
+            {
+              "source_id": "ADSK-2025-Q4",
+              "sentence": 304,
+              "start": 29661,
+              "end": 29735,
+              "quote": "Total cost of revenue  | 154   |  |  | 130   |  |  | 578   |  |  | 511   |"
+            },
+            {
+              "source_id": "ADSK-2026-Q1-SEC",
+              "sentence": 215,
+              "start": 21318,
+              "end": 21399,
+              "quote": "Cost of subscription and maintenance revenue  | 111   |  |  | 100   |  |  |  |  |"
+            },
+            {
+              "source_id": "ADSK-2026-Q1-SEC",
+              "sentence": 216,
+              "start": 21400,
+              "end": 21456,
+              "quote": "Cost of other revenue  | 24   |  |  | 20   |  |  |  |  |"
+            },
+            {
+              "source_id": "ADSK-2026-Q1-SEC",
+              "sentence": 218,
+              "start": 21531,
+              "end": 21589,
+              "quote": "Total cost of revenue  | 160   |  |  | 137   |  |  |  |  |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            349,
+            354
+          ],
+          "new_sentences": [
+            263,
+            268
+          ],
+          "spans": [
+            {
+              "source_id": "ADSK-2025-Q4",
+              "sentence": 352,
+              "start": 32440,
+              "end": 32485,
+              "quote": "Deferred revenue  | 3,787   |  |  | 3,500   |"
+            },
+            {
+              "source_id": "ADSK-2026-Q1-SEC",
+              "sentence": 266,
+              "start": 23997,
+              "end": 24042,
+              "quote": "Deferred revenue  | 3,620   |  |  | 3,787   |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            355,
+            364
+          ],
+          "new_sentences": [
+            269,
+            278
+          ],
+          "spans": [
+            {
+              "source_id": "ADSK-2025-Q4",
+              "sentence": 358,
+              "start": 32723,
+              "end": 32774,
+              "quote": "Long-term deferred revenue  | 341   |  |  | 764   |"
+            },
+            {
+              "source_id": "ADSK-2026-Q1-SEC",
+              "sentence": 272,
+              "start": 24282,
+              "end": 24333,
+              "quote": "Long-term deferred revenue  | 309   |  |  | 341   |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            393,
+            399
+          ],
+          "new_sentences": [
+            307,
+            313
+          ],
+          "spans": [
+            {
+              "source_id": "ADSK-2025-Q4",
+              "sentence": 396,
+              "start": 34539,
+              "end": 34582,
+              "quote": "Deferred revenue  | (134)  |  |  | (316)  |"
+            },
+            {
+              "source_id": "ADSK-2026-Q1-SEC",
+              "sentence": 310,
+              "start": 26012,
+              "end": 26055,
+              "quote": "Deferred revenue  | (204)  |  |  | (305)  |"
+            }
+          ]
+        }
+      ],
+      "annual_candidate_counts": [
+        1,
+        1
+      ],
+      "issues": [
+        "changed_guidance_pair"
+      ],
+      "selected_alignment": "replace",
+      "selected_sentence_indices": [
+        166,
+        84
+      ]
+    },
+    {
+      "stage": "deterministic_comparison",
+      "result": {
+        "status": "supported",
+        "reason": "raised",
+        "calculation": {
+          "old_lower": "6895000000",
+          "old_upper": "6965000000",
+          "new_lower": "6925000000",
+          "new_upper": "6995000000",
+          "old_midpoint": "6930000000",
+          "new_midpoint": "6960000000",
+          "midpoint_delta": "30000000",
+          "lower_delta": "30000000",
+          "upper_delta": "30000000",
+          "relative_midpoint_change_percent": "0.4329004329004329004329004329",
+          "delta_unit": "USD",
+          "range_change": "raised"
+        }
+      }
+    }
+  ],
+  "extractions": [
+    {
+      "metric": {
+        "source_id": "ADSK-2025-Q4",
+        "issuer": "ADSK",
+        "metric": "revenue",
+        "currency": "USD",
+        "unit": "million",
+        "basis": "reported",
+        "horizon": "FY2026",
+        "calendar": "fiscal",
+        "definition": "total_revenue_as_reported",
+        "status": "provided",
+        "lower": "6895",
+        "upper": "6965",
+        "evidence": "| Revenue (in millions) (1)  | $6,895 - $6,965",
+        "horizon_evidence": " | FY26 Guidance Metrics  | FY26\n(ending January 31, 2026)\n | Billings (in millions) (1)  | $7,060 - $7,210\n | Revenue (in millions) (1)  | $6,895 - $6,965"
+      },
+      "validation": {
+        "literal_valid": true,
+        "semantic_screen": "pass",
+        "errors": [],
+        "human_semantic_review": "pending",
+        "observation_id": "d19ca858cf772b6a5243eeafca1f57a37e0698c5983ba9fd6f2b9c7ce2411f43"
+      }
+    },
+    {
+      "metric": {
+        "source_id": "ADSK-2026-Q1-SEC",
+        "issuer": "ADSK",
+        "metric": "revenue",
+        "currency": "USD",
+        "unit": "million",
+        "basis": "reported",
+        "horizon": "FY2026",
+        "calendar": "fiscal",
+        "definition": "total_revenue_as_reported",
+        "status": "provided",
+        "lower": "6925",
+        "upper": "6995",
+        "evidence": "Revenue (in millions) (1)  |  | $6,925 - $6,995",
+        "horizon_evidence": "FY26 Guidance Metrics  |  | FY26\n(ending January 31, 2026)\nBillings (in millions) (1)  |  | $7,160 - $7,310\nRevenue (in millions) (1)  |  | $6,925 - $6,995"
+      },
+      "validation": {
+        "literal_valid": true,
+        "semantic_screen": "pass",
+        "errors": [],
+        "human_semantic_review": "pending",
+        "observation_id": "5f084deb00dfe603353eb9c71c3595da38c0264cbe01915dd5ba6938bdc1f29f"
+      }
+    }
+  ],
+  "explanations": [],
+  "errors": [],
+  "calls": 0,
+  "tokens": null,
+  "label_status": "not_used_by_system",
+  "human_semantic_review": "pending",
+  "source_hashes": {
+    "ADSK-2025-Q4": "dc33ce01ee6bc7d422d7046e6f471b5b04523af789b3fb04bc65bf97fbcbdcf2",
+    "ADSK-2026-Q1-SEC": "fe722eae03241b256fb19c8d7124ea61dfd0360dda4d8ae94b82b8d69b1ff21e"
+  },
+  "input_hash": "acf7b72f8e42b6e39a464559e79f1e8cc81acbcc46cec981bbd1e2f901d3f119",
+  "model": null,
+  "execution_kind": "deterministic",
+  "context_characters": 81947,
+  "comparison": {
+    "status": "supported",
+    "reason": "raised",
+    "calculation": {
+      "old_lower": "6895000000",
+      "old_upper": "6965000000",
+      "new_lower": "6925000000",
+      "new_upper": "6995000000",
+      "old_midpoint": "6930000000",
+      "new_midpoint": "6960000000",
+      "midpoint_delta": "30000000",
+      "lower_delta": "30000000",
+      "upper_delta": "30000000",
+      "relative_midpoint_change_percent": "0.4329004329004329004329004329",
+      "delta_unit": "USD",
+      "range_change": "raised"
+    }
+  },
+  "explanation_conclusion": {
+    "status": "insufficient_evidence",
+    "reason": "no_explicit_explanation_found"
+  },
+  "conclusion": "supported",
+  "latency_ms": 27.232,
+  "conflicts": [],
+  "comparability": null,
+  "investigation_version": "earnings-investigation-v2"
+}

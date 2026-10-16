@@ -1,0 +1,102 @@
+{
+  "kind": "SCRIPTED; NOT a live model result",
+  "run": {
+    "calls": 0,
+    "case": {
+      "case_id": "DDOG-FY2025-Q2-Q3~v2-stale_disclosure",
+      "challenge": "stale_disclosure",
+      "cutoff": "2025-11-07T00:00:00-05:00",
+      "expected_status": "insufficient_evidence",
+      "horizon": "FY2025",
+      "issuer": "DDOG",
+      "metric": "revenue",
+      "new": "DDOG-2025-Q2",
+      "old": "DDOG-2025-Q2",
+      "parent_case_id": "DDOG-FY2025-Q2-Q3",
+      "split": "synthetic_heldout",
+      "synthetic": true,
+      "transformation": {
+        "description": "Substitute the old disclosure for the new one; fail eligibility before any model request."
+      }
+    },
+    "comparability": null,
+    "comparison": {
+      "calculation": null,
+      "reason": "stale_or_reversed_disclosure_pair",
+      "status": "insufficient_evidence"
+    },
+    "conclusion": "insufficient_evidence",
+    "config": {
+      "approval_status": "allocation_under_recorded_continuing_authorization",
+      "base_url": "https://api.deepseek.com/beta",
+      "budget_authorization": "reports/earnings-budget-2026-10-15/authorization.json",
+      "budget_authorization_sha256": "56b79a004195ffa2feb1e9ba73157b090290af79cdb3bd30c25aeda27b42849d",
+      "experiment": "v9-original-stress-regression",
+      "max_calls": 8,
+      "max_input_bytes": 128000,
+      "max_output_tokens_per_call": 6000,
+      "max_tool_calls": 7,
+      "max_validation_repairs": 2,
+      "methods": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "model": "deepseek-flash",
+      "planning_cost_per_BC_pair_usd": "0.01639565",
+      "pricing": {
+        "assumption": "Peak rates, all input charged as cache miss; ignore all discounts.",
+        "checked_on": "2026-10-15",
+        "currency": "USD",
+        "input_per_million": "0.30",
+        "output_per_million": "1.20",
+        "reference": "https://api-docs.deepseek.com/quick_start/pricing/"
+      },
+      "prior_paid_bundles": [
+        "reports/earnings-v3-preflight-2026-10-14",
+        "reports/earnings-v4-preflight-2026-10-15",
+        "reports/earnings-v5-preflight-2026-10-15",
+        "reports/earnings-v6-preflight-2026-10-15",
+        "reports/earnings-v7-2026-10-15",
+        "reports/earnings-v8-2026-10-15"
+      ],
+      "proposed_budget_usd": "1.75",
+      "reasoning_effort": "none",
+      "retained_uncertain_requests": {
+        "reports/earnings-v7-2026-10-15/requests/HUBS-FY2025-Q1-Q2_B.01.json": "0917fd175f3e454ed26ab508d0bb77cd3d6758f0c429e0be80377378ae941456"
+      },
+      "selection": "Reuse 72 byte-identical v2 synthetic heldout cases and two original supplemental natural withdrawal/rollover cases. B/C use unchanged v8 code; all inputs are exposed regression. No new blind-test claim. Retain frozen uncertain charges and block identical wire requests.",
+      "transport_retries": 0,
+      "version": "earnings-v9-original-stress-regression"
+    },
+    "conflicts": [],
+    "cutoff_mode": "disclosure",
+    "errors": [
+      "stale_or_reversed_disclosure_pair"
+    ],
+    "explanations": [],
+    "extractions": [],
+    "human_semantic_review": "pending",
+    "input_hash": "283c2cfb0f495b8eb481604a5829b69abe6481156c944cf67dc8d17721ad80c9",
+    "investigation_version": "earnings-point-target-v8",
+    "label_status": "not_used_by_system",
+    "method": "C",
+    "source_hashes": {
+      "DDOG-2025-Q2": "4ca903ad2cb3a06eb395d6b4d8570f823b9fa4c91fd5d9b94aaadc8fcd90c39a"
+    },
+    "tokens": null,
+    "trace": [
+      {
+        "result": {
+          "calculation": null,
+          "reason": "stale_or_reversed_disclosure_pair",
+          "status": "insufficient_evidence"
+        },
+        "stage": "deterministic_comparison"
+      }
+    ],
+    "unresolved": "",
+    "validation_failures": []
+  }
+}

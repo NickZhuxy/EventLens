@@ -1,0 +1,74 @@
+{
+  "run_id": "fdde8128-8a1b-442e-889d-52cb3394642f",
+  "created_at": "2026-10-13T19:47:07.696501+00:00",
+  "case": {
+    "case_id": "HUBS-FY2025-Q2-Q3",
+    "issuer": "HUBS",
+    "old": "HUBS-2025-Q2",
+    "new": "HUBS-2025-Q3",
+    "horizon": "FY2025",
+    "metric": "revenue",
+    "cutoff": "2025-11-06T00:00:00-05:00",
+    "split": "heldout",
+    "synthetic": false
+  },
+  "method": "A",
+  "config": {
+    "model": "SET_MODEL_ID",
+    "max_calls": 6,
+    "max_tool_calls": 5,
+    "max_output_tokens_per_call": 1800,
+    "max_input_characters": 160000
+  },
+  "cutoff_mode": "disclosure",
+  "trace": [
+    {
+      "stage": "rule_extraction",
+      "source_id": "HUBS-2025-Q2",
+      "issues": [
+        "no_unambiguous_annual_revenue_range"
+      ]
+    },
+    {
+      "stage": "rule_extraction",
+      "source_id": "HUBS-2025-Q3",
+      "issues": [
+        "no_unambiguous_annual_revenue_range"
+      ]
+    },
+    {
+      "stage": "deterministic_comparison",
+      "result": {
+        "status": "insufficient_evidence",
+        "reason": "missing_guidance",
+        "calculation": null
+      }
+    }
+  ],
+  "extractions": [],
+  "explanations": [],
+  "errors": [],
+  "calls": 0,
+  "tokens": null,
+  "label_status": "not_used_by_system",
+  "human_semantic_review": "pending",
+  "source_hashes": {
+    "HUBS-2025-Q2": "939197911188469ed5ee8d80866b90c4e3e00ab0d0cad535129eaccb487e3973",
+    "HUBS-2025-Q3": "90818eb7b3f821a3be21d96aa37d97cb83932c18a86e83b1aafb194e541c4fa2"
+  },
+  "input_hash": "0e35edbb15f0be116af2985969ffb2bee19ec6064b6b6ccb3a220dccc8ee5b9f",
+  "model": null,
+  "execution_kind": "deterministic",
+  "context_characters": 90223,
+  "comparison": {
+    "status": "insufficient_evidence",
+    "reason": "missing_guidance",
+    "calculation": null
+  },
+  "explanation_conclusion": {
+    "status": "insufficient_evidence",
+    "reason": "no_explicit_explanation_found"
+  },
+  "conclusion": "insufficient_evidence",
+  "latency_ms": 2.47
+}

@@ -1,0 +1,776 @@
+{
+  "bundle": "reports/earnings-v2-2026-10-13",
+  "complete_runs": 440,
+  "request_attempts": 342,
+  "completed_requests": 342,
+  "request_states": {
+    "complete": 342
+  },
+  "cost_upper_usd": "1.3671111",
+  "cost_upper_by_method_usd": {
+    "B": "0.9815598",
+    "C": "0.3855513"
+  },
+  "cost_basis": "Peak price with every input token treated as a cache miss; uncertain requests retain the full reservation. Not an invoice.",
+  "provider_usage": {
+    "prompt_tokens": 3088697,
+    "completion_tokens": 367085,
+    "prompt_cache_hit_tokens": 603264,
+    "prompt_cache_miss_tokens": 2485433
+  },
+  "methods": [
+    {
+      "method": "A",
+      "split": "development",
+      "n": 12,
+      "numerical_outputs": 5,
+      "withdrawal_flags": 0,
+      "apparent_conflicts": 0,
+      "abstentions": 7,
+      "calls": 0,
+      "tool_calls": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "reasoning_tokens_reported": 0,
+      "missing_token_usage_runs": 0,
+      "median_latency_seconds": 0.007,
+      "p95_latency_seconds": 0.008,
+      "output_truncated_calls": 0,
+      "errors": {},
+      "validation_errors": {},
+      "comparison_reasons": {
+        "raised": 3,
+        "unchanged": 1,
+        "missing_guidance": 7,
+        "lowered": 1
+      }
+    },
+    {
+      "method": "A",
+      "split": "heldout",
+      "n": 24,
+      "numerical_outputs": 2,
+      "withdrawal_flags": 0,
+      "apparent_conflicts": 0,
+      "abstentions": 22,
+      "calls": 0,
+      "tool_calls": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "reasoning_tokens_reported": 0,
+      "missing_token_usage_runs": 0,
+      "median_latency_seconds": 0.005,
+      "p95_latency_seconds": 0.011,
+      "output_truncated_calls": 0,
+      "errors": {},
+      "validation_errors": {},
+      "comparison_reasons": {
+        "raised": 2,
+        "missing_guidance": 22
+      }
+    },
+    {
+      "method": "A",
+      "split": "supplemental_natural",
+      "n": 2,
+      "numerical_outputs": 0,
+      "withdrawal_flags": 0,
+      "apparent_conflicts": 0,
+      "abstentions": 2,
+      "calls": 0,
+      "tool_calls": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "reasoning_tokens_reported": 0,
+      "missing_token_usage_runs": 0,
+      "median_latency_seconds": 0.002,
+      "p95_latency_seconds": 0.003,
+      "output_truncated_calls": 0,
+      "errors": {},
+      "validation_errors": {},
+      "comparison_reasons": {
+        "missing_guidance": 2
+      }
+    },
+    {
+      "method": "A",
+      "split": "synthetic_heldout",
+      "n": 72,
+      "numerical_outputs": 2,
+      "withdrawal_flags": 0,
+      "apparent_conflicts": 24,
+      "abstentions": 48,
+      "calls": 0,
+      "tool_calls": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "reasoning_tokens_reported": 0,
+      "missing_token_usage_runs": 0,
+      "median_latency_seconds": 0.004,
+      "p95_latency_seconds": 0.008,
+      "output_truncated_calls": 0,
+      "errors": {
+        "stale_or_reversed_disclosure_pair": 24
+      },
+      "validation_errors": {},
+      "comparison_reasons": {
+        "raised": 2,
+        "missing_guidance": 46,
+        "stale_or_reversed_disclosure_pair": 24
+      }
+    },
+    {
+      "method": "B",
+      "split": "development",
+      "n": 12,
+      "numerical_outputs": 5,
+      "withdrawal_flags": 0,
+      "apparent_conflicts": 0,
+      "abstentions": 7,
+      "calls": 12,
+      "tool_calls": 0,
+      "prompt_tokens": 353388,
+      "completion_tokens": 37096,
+      "reasoning_tokens_reported": 34525,
+      "missing_token_usage_runs": 0,
+      "median_latency_seconds": 17.131,
+      "p95_latency_seconds": 19.614,
+      "output_truncated_calls": 7,
+      "errors": {
+        "incomplete_model_output": 7
+      },
+      "validation_errors": {},
+      "comparison_reasons": {
+        "raised": 1,
+        "missing_guidance": 7,
+        "unchanged": 3,
+        "lowered": 1
+      }
+    },
+    {
+      "method": "B",
+      "split": "heldout",
+      "n": 24,
+      "numerical_outputs": 4,
+      "withdrawal_flags": 0,
+      "apparent_conflicts": 0,
+      "abstentions": 20,
+      "calls": 24,
+      "tool_calls": 0,
+      "prompt_tokens": 611839,
+      "completion_tokens": 66737,
+      "reasoning_tokens_reported": 61803,
+      "missing_token_usage_runs": 0,
+      "median_latency_seconds": 15.81,
+      "p95_latency_seconds": 19.789,
+      "output_truncated_calls": 11,
+      "errors": {
+        "incomplete_model_output": 11,
+        "calendar/horizon mismatch": 2,
+        "citation_not_in_supplied_context": 4
+      },
+      "validation_errors": {
+        "quarterly_or_ambiguous_horizon": 2,
+        "horizon_not_supported": 4
+      },
+      "comparison_reasons": {
+        "missing_guidance": 20,
+        "raised": 4
+      }
+    },
+    {
+      "method": "B",
+      "split": "supplemental_natural",
+      "n": 2,
+      "numerical_outputs": 0,
+      "withdrawal_flags": 0,
+      "apparent_conflicts": 0,
+      "abstentions": 2,
+      "calls": 2,
+      "tool_calls": 0,
+      "prompt_tokens": 40162,
+      "completion_tokens": 6400,
+      "reasoning_tokens_reported": 6400,
+      "missing_token_usage_runs": 0,
+      "median_latency_seconds": 18.13,
+      "p95_latency_seconds": 19.203,
+      "output_truncated_calls": 2,
+      "errors": {
+        "incomplete_model_output": 2
+      },
+      "validation_errors": {},
+      "comparison_reasons": {
+        "missing_guidance": 2
+      }
+    },
+    {
+      "method": "B",
+      "split": "synthetic_heldout",
+      "n": 72,
+      "numerical_outputs": 2,
+      "withdrawal_flags": 0,
+      "apparent_conflicts": 2,
+      "abstentions": 70,
+      "calls": 48,
+      "tool_calls": 0,
+      "prompt_tokens": 1279717,
+      "completion_tokens": 136457,
+      "reasoning_tokens_reported": 130523,
+      "missing_token_usage_runs": 0,
+      "median_latency_seconds": 14.394,
+      "p95_latency_seconds": 19.548,
+      "output_truncated_calls": 28,
+      "errors": {
+        "incomplete_model_output": 28,
+        "stale_or_reversed_disclosure_pair": 24,
+        "calendar/horizon mismatch": 3,
+        "citation_not_in_supplied_context": 6
+      },
+      "validation_errors": {
+        "quarterly_or_ambiguous_horizon": 1,
+        "horizon_not_supported": 1
+      },
+      "comparison_reasons": {
+        "missing_guidance": 46,
+        "stale_or_reversed_disclosure_pair": 24,
+        "raised": 2
+      }
+    },
+    {
+      "method": "C",
+      "split": "development",
+      "n": 12,
+      "numerical_outputs": 4,
+      "withdrawal_flags": 0,
+      "apparent_conflicts": 0,
+      "abstentions": 8,
+      "calls": 38,
+      "tool_calls": 26,
+      "prompt_tokens": 117959,
+      "completion_tokens": 15913,
+      "reasoning_tokens_reported": 8897,
+      "missing_token_usage_runs": 0,
+      "median_latency_seconds": 7.422,
+      "p95_latency_seconds": 19.748,
+      "output_truncated_calls": 0,
+      "errors": {
+        "Extra data: line 1 column 187 (char 186)": 1,
+        "Extra data: line 3 column 1 (char 197)": 1,
+        "Extra data: line 3 column 1 (char 175)": 1,
+        "Extra data: line 3 column 1 (char 192)": 1,
+        "Extra data: line 3 column 1 (char 199)": 1,
+        "Extra data: line 3 column 1 (char 211)": 1,
+        "Extra data: line 1 column 184 (char 183)": 1
+      },
+      "validation_errors": {},
+      "comparison_reasons": {
+        "missing_guidance": 7,
+        "raised": 2,
+        "unknown_definition_or_basis": 1,
+        "lowered": 1,
+        "unchanged": 1
+      }
+    },
+    {
+      "method": "C",
+      "split": "heldout",
+      "n": 24,
+      "numerical_outputs": 4,
+      "withdrawal_flags": 0,
+      "apparent_conflicts": 0,
+      "abstentions": 20,
+      "calls": 76,
+      "tool_calls": 52,
+      "prompt_tokens": 245783,
+      "completion_tokens": 35571,
+      "reasoning_tokens_reported": 23818,
+      "missing_token_usage_runs": 0,
+      "median_latency_seconds": 10.385,
+      "p95_latency_seconds": 22.918,
+      "output_truncated_calls": 2,
+      "errors": {
+        "citation_not_literal": 1,
+        "incomplete_model_output": 2,
+        "Extra data: line 3 column 1 (char 196)": 1,
+        "citation_not_in_supplied_context": 4,
+        "citation_not_in_retrieved_context": 1,
+        "Extra data: line 1 column 190 (char 189)": 1,
+        "Extra data: line 3 column 1 (char 211)": 1,
+        "Extra data: line 3 column 1 (char 191)": 1,
+        "Extra data: line 3 column 1 (char 192)": 1,
+        "Extra data: line 3 column 1 (char 184)": 1,
+        "Extra data: line 3 column 1 (char 185)": 1,
+        "Extra data: line 3 column 1 (char 190)": 2,
+        "Extra data: line 2 column 1 (char 206)": 1,
+        "Extra data: line 1 column 213 (char 212)": 1
+      },
+      "validation_errors": {
+        "horizon_not_supported": 2
+      },
+      "comparison_reasons": {
+        "missing_guidance": 20,
+        "raised": 4
+      }
+    },
+    {
+      "method": "C",
+      "split": "supplemental_natural",
+      "n": 2,
+      "numerical_outputs": 0,
+      "withdrawal_flags": 0,
+      "apparent_conflicts": 0,
+      "abstentions": 2,
+      "calls": 11,
+      "tool_calls": 9,
+      "prompt_tokens": 41543,
+      "completion_tokens": 7569,
+      "reasoning_tokens_reported": 6169,
+      "missing_token_usage_runs": 0,
+      "median_latency_seconds": 26.0,
+      "p95_latency_seconds": 35.339,
+      "output_truncated_calls": 0,
+      "errors": {
+        "citation_not_in_supplied_context": 1
+      },
+      "validation_errors": {},
+      "comparison_reasons": {
+        "missing_guidance": 2
+      }
+    },
+    {
+      "method": "C",
+      "split": "synthetic_heldout",
+      "n": 72,
+      "numerical_outputs": 2,
+      "withdrawal_flags": 0,
+      "apparent_conflicts": 1,
+      "abstentions": 70,
+      "calls": 131,
+      "tool_calls": 83,
+      "prompt_tokens": 398306,
+      "completion_tokens": 61342,
+      "reasoning_tokens_reported": 38906,
+      "missing_token_usage_runs": 0,
+      "median_latency_seconds": 2.405,
+      "p95_latency_seconds": 20.243,
+      "output_truncated_calls": 4,
+      "errors": {
+        "Extra data: line 1 column 216 (char 215)": 1,
+        "citation_not_literal": 4,
+        "stale_or_reversed_disclosure_pair": 24,
+        "incomplete_model_output": 4,
+        "Extra data: line 3 column 1 (char 194)": 1,
+        "Extra data: line 1 column 191 (char 190)": 2,
+        "Extra data: line 3 column 1 (char 196)": 1,
+        "Extra data: line 1 column 194 (char 193)": 2,
+        "Extra data: line 3 column 1 (char 226)": 1,
+        "Extra data: line 3 column 1 (char 186)": 1,
+        "Extra data: line 1 column 190 (char 189)": 2,
+        "Extra data: line 3 column 1 (char 192)": 1,
+        "Extra data: line 3 column 1 (char 217)": 1,
+        "Extra data: line 3 column 1 (char 228)": 1,
+        "Extra data: line 3 column 1 (char 187)": 1,
+        "Extra data: line 3 column 1 (char 207)": 1,
+        "Extra data: line 3 column 1 (char 179)": 1,
+        "Extra data: line 1 column 204 (char 203)": 1,
+        "Extra data: line 1 column 182 (char 181)": 1,
+        "Extra data: line 1 column 178 (char 177)": 1,
+        "Extra data: line 1 column 210 (char 209)": 1,
+        "Extra data: line 3 column 1 (char 197)": 1,
+        "Extra data: line 3 column 1 (char 189)": 1,
+        "citation_not_in_supplied_context": 7,
+        "Extra data: line 3 column 1 (char 198)": 1,
+        "Extra data: line 3 column 1 (char 221)": 1,
+        "Extra data: line 1 column 196 (char 195)": 1
+      },
+      "validation_errors": {
+        "quarterly_or_ambiguous_horizon": 1,
+        "horizon_not_supported": 1
+      },
+      "comparison_reasons": {
+        "missing_guidance": 46,
+        "stale_or_reversed_disclosure_pair": 24,
+        "raised": 2
+      }
+    },
+    {
+      "method": "D",
+      "split": "development",
+      "n": 12,
+      "numerical_outputs": 5,
+      "withdrawal_flags": 0,
+      "apparent_conflicts": 0,
+      "abstentions": 7,
+      "calls": 0,
+      "tool_calls": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "reasoning_tokens_reported": 0,
+      "missing_token_usage_runs": 0,
+      "median_latency_seconds": 0.023,
+      "p95_latency_seconds": 0.034,
+      "output_truncated_calls": 0,
+      "errors": {},
+      "validation_errors": {},
+      "comparison_reasons": {
+        "raised": 3,
+        "missing_guidance": 7,
+        "unchanged": 2
+      }
+    },
+    {
+      "method": "D",
+      "split": "heldout",
+      "n": 24,
+      "numerical_outputs": 14,
+      "withdrawal_flags": 0,
+      "apparent_conflicts": 0,
+      "abstentions": 10,
+      "calls": 0,
+      "tool_calls": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "reasoning_tokens_reported": 0,
+      "missing_token_usage_runs": 0,
+      "median_latency_seconds": 0.021,
+      "p95_latency_seconds": 0.037,
+      "output_truncated_calls": 0,
+      "errors": {},
+      "validation_errors": {
+        "horizon_not_supported": 5
+      },
+      "comparison_reasons": {
+        "raised": 13,
+        "missing_guidance": 10,
+        "unchanged": 1
+      }
+    },
+    {
+      "method": "D",
+      "split": "supplemental_natural",
+      "n": 2,
+      "numerical_outputs": 0,
+      "withdrawal_flags": 0,
+      "apparent_conflicts": 0,
+      "abstentions": 2,
+      "calls": 0,
+      "tool_calls": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "reasoning_tokens_reported": 0,
+      "missing_token_usage_runs": 0,
+      "median_latency_seconds": 0.014,
+      "p95_latency_seconds": 0.016,
+      "output_truncated_calls": 0,
+      "errors": {},
+      "validation_errors": {},
+      "comparison_reasons": {
+        "missing_guidance": 2
+      }
+    },
+    {
+      "method": "D",
+      "split": "synthetic_heldout",
+      "n": 72,
+      "numerical_outputs": 14,
+      "withdrawal_flags": 0,
+      "apparent_conflicts": 17,
+      "abstentions": 55,
+      "calls": 0,
+      "tool_calls": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "reasoning_tokens_reported": 0,
+      "missing_token_usage_runs": 0,
+      "median_latency_seconds": 0.017,
+      "p95_latency_seconds": 0.03,
+      "output_truncated_calls": 0,
+      "errors": {
+        "stale_or_reversed_disclosure_pair": 24
+      },
+      "validation_errors": {
+        "horizon_not_supported": 5
+      },
+      "comparison_reasons": {
+        "raised": 13,
+        "missing_guidance": 34,
+        "stale_or_reversed_disclosure_pair": 24,
+        "unchanged": 1
+      }
+    }
+  ],
+  "stress": [
+    {
+      "method": "A",
+      "challenge": "contradictory_commentary",
+      "n": 24,
+      "status_matches": 24,
+      "valid_expected_decisions": 24,
+      "valid_expected_decision_rate": 1.0,
+      "both_expected_citations": 24,
+      "both_expected_statements_retrieved": null,
+      "absent_source_metric_candidates": null
+    },
+    {
+      "method": "A",
+      "challenge": "missing_table",
+      "n": 24,
+      "status_matches": 24,
+      "valid_expected_decisions": 24,
+      "valid_expected_decision_rate": 1.0,
+      "both_expected_citations": null,
+      "both_expected_statements_retrieved": null,
+      "absent_source_metric_candidates": 0
+    },
+    {
+      "method": "A",
+      "challenge": "stale_disclosure",
+      "n": 24,
+      "status_matches": 24,
+      "valid_expected_decisions": 24,
+      "valid_expected_decision_rate": 1.0,
+      "both_expected_citations": null,
+      "both_expected_statements_retrieved": null,
+      "absent_source_metric_candidates": 0
+    },
+    {
+      "method": "B",
+      "challenge": "contradictory_commentary",
+      "n": 24,
+      "status_matches": 2,
+      "valid_expected_decisions": 2,
+      "valid_expected_decision_rate": 0.08333333333333333,
+      "both_expected_citations": 2,
+      "both_expected_statements_retrieved": null,
+      "absent_source_metric_candidates": null
+    },
+    {
+      "method": "B",
+      "challenge": "missing_table",
+      "n": 24,
+      "status_matches": 24,
+      "valid_expected_decisions": 9,
+      "valid_expected_decision_rate": 0.375,
+      "both_expected_citations": null,
+      "both_expected_statements_retrieved": null,
+      "absent_source_metric_candidates": 0
+    },
+    {
+      "method": "B",
+      "challenge": "stale_disclosure",
+      "n": 24,
+      "status_matches": 24,
+      "valid_expected_decisions": 24,
+      "valid_expected_decision_rate": 1.0,
+      "both_expected_citations": null,
+      "both_expected_statements_retrieved": null,
+      "absent_source_metric_candidates": 0
+    },
+    {
+      "method": "C",
+      "challenge": "contradictory_commentary",
+      "n": 24,
+      "status_matches": 1,
+      "valid_expected_decisions": 1,
+      "valid_expected_decision_rate": 0.041666666666666664,
+      "both_expected_citations": 1,
+      "both_expected_statements_retrieved": 5,
+      "absent_source_metric_candidates": null
+    },
+    {
+      "method": "C",
+      "challenge": "missing_table",
+      "n": 24,
+      "status_matches": 24,
+      "valid_expected_decisions": 5,
+      "valid_expected_decision_rate": 0.20833333333333334,
+      "both_expected_citations": null,
+      "both_expected_statements_retrieved": null,
+      "absent_source_metric_candidates": 0
+    },
+    {
+      "method": "C",
+      "challenge": "stale_disclosure",
+      "n": 24,
+      "status_matches": 24,
+      "valid_expected_decisions": 24,
+      "valid_expected_decision_rate": 1.0,
+      "both_expected_citations": null,
+      "both_expected_statements_retrieved": null,
+      "absent_source_metric_candidates": 0
+    },
+    {
+      "method": "D",
+      "challenge": "contradictory_commentary",
+      "n": 24,
+      "status_matches": 17,
+      "valid_expected_decisions": 17,
+      "valid_expected_decision_rate": 0.7083333333333334,
+      "both_expected_citations": 17,
+      "both_expected_statements_retrieved": null,
+      "absent_source_metric_candidates": null
+    },
+    {
+      "method": "D",
+      "challenge": "missing_table",
+      "n": 24,
+      "status_matches": 24,
+      "valid_expected_decisions": 24,
+      "valid_expected_decision_rate": 1.0,
+      "both_expected_citations": null,
+      "both_expected_statements_retrieved": null,
+      "absent_source_metric_candidates": 0
+    },
+    {
+      "method": "D",
+      "challenge": "stale_disclosure",
+      "n": 24,
+      "status_matches": 24,
+      "valid_expected_decisions": 24,
+      "valid_expected_decision_rate": 1.0,
+      "both_expected_citations": null,
+      "both_expected_statements_retrieved": null,
+      "absent_source_metric_candidates": 0
+    }
+  ],
+  "investigation_examples": [
+    {
+      "case_id": "ADBE-FY2025-Q2-Q3",
+      "kind": "numerical_example",
+      "comparison": {
+        "status": "supported",
+        "reason": "raised",
+        "calculation": {
+          "old_lower": "23500000000.00",
+          "old_upper": "23600000000.00",
+          "new_lower": "23650000000.00",
+          "new_upper": "23700000000.00",
+          "old_midpoint": "23550000000.00",
+          "new_midpoint": "23675000000.00",
+          "midpoint_delta": "125000000.00",
+          "lower_delta": "150000000.00",
+          "upper_delta": "100000000.00",
+          "relative_midpoint_change_percent": "0.5307855626326963906581740977",
+          "delta_unit": "USD",
+          "range_change": "raised"
+        }
+      },
+      "calls": 6,
+      "tool_calls": 5
+    },
+    {
+      "case_id": "BOX-FY2025-priorQ4-Q1",
+      "kind": "numerical_example",
+      "comparison": {
+        "status": "supported",
+        "reason": "lowered",
+        "calculation": {
+          "old_lower": "1080000000.00",
+          "old_upper": "1085000000.000",
+          "new_lower": "1075000000.000",
+          "new_upper": "1080000000.00",
+          "old_midpoint": "1082500000.000",
+          "new_midpoint": "1077500000.000",
+          "midpoint_delta": "-5000000.000",
+          "lower_delta": "-5000000.000",
+          "upper_delta": "-5000000.000",
+          "relative_midpoint_change_percent": "-0.4618937644341801385681293303",
+          "delta_unit": "USD",
+          "range_change": "lowered"
+        }
+      },
+      "calls": 5,
+      "tool_calls": 4
+    },
+    {
+      "case_id": "INTU-FY2025-Q2-Q3",
+      "kind": "numerical_example",
+      "comparison": {
+        "status": "supported",
+        "reason": "raised",
+        "calculation": {
+          "old_lower": "18160000000.000",
+          "old_upper": "18347000000.000",
+          "new_lower": "18723000000.000",
+          "new_upper": "18760000000.000",
+          "old_midpoint": "18253500000.000",
+          "new_midpoint": "18741500000.000",
+          "midpoint_delta": "488000000.000",
+          "lower_delta": "563000000.000",
+          "upper_delta": "413000000.000",
+          "relative_midpoint_change_percent": "2.673459884405730407866984414",
+          "delta_unit": "USD",
+          "range_change": "raised"
+        }
+      },
+      "calls": 6,
+      "tool_calls": 5
+    },
+    {
+      "case_id": "INTU-FY2025-priorQ4-Q1",
+      "kind": "numerical_example",
+      "comparison": {
+        "status": "supported",
+        "reason": "unchanged",
+        "calculation": {
+          "old_lower": "18160000000.000",
+          "old_upper": "18347000000.000",
+          "new_lower": "18160000000.000",
+          "new_upper": "18347000000.000",
+          "old_midpoint": "18253500000.000",
+          "new_midpoint": "18253500000.000",
+          "midpoint_delta": "0.000",
+          "lower_delta": "0.000",
+          "upper_delta": "0.000",
+          "relative_midpoint_change_percent": "0",
+          "delta_unit": "USD",
+          "range_change": "unchanged"
+        }
+      },
+      "calls": 6,
+      "tool_calls": 5
+    },
+    {
+      "case_id": "OKTA-FY2025-Q2-Q3~v2-contradictory_commentary",
+      "kind": "synthetic_conflict",
+      "citations": [
+        {
+          "topic": "Whether demand caused the FY2025 total revenue guidance revision on a reported basis",
+          "reason": "Two statements in the same disclosure address the identical period, scope and basis (FY2025 total revenue guidance revision, reported basis) and assert opposite propositions.",
+          "citations": [
+            {
+              "source_id": "OKTA-2025-Q3~v2-contradictory_commentary",
+              "quote": "Demand caused the FY2025 total revenue guidance revision on a reported basis.",
+              "start": 32692,
+              "end": 32769,
+              "source_hash": "2c14bf33e04acaa71e2b433dcc560b3ab328f90f8751e496802e0302a59e4d53",
+              "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013424000165/okta-10312024_ex991.htm",
+              "origin": "synthetic",
+              "literal_valid": true,
+              "semantic_review": "pending"
+            },
+            {
+              "source_id": "OKTA-2025-Q3~v2-contradictory_commentary",
+              "quote": "Demand did not cause the FY2025 total revenue guidance revision on a reported basis.",
+              "start": 32770,
+              "end": 32854,
+              "source_hash": "2c14bf33e04acaa71e2b433dcc560b3ab328f90f8751e496802e0302a59e4d53",
+              "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013424000165/okta-10312024_ex991.htm",
+              "origin": "synthetic",
+              "literal_valid": true,
+              "semantic_review": "pending"
+            }
+          ],
+          "semantic_review": "pending",
+          "kind": "model_flagged_apparent_conflict"
+        }
+      ],
+      "calls": 7,
+      "tool_calls": 6
+    }
+  ],
+  "stress_definition": "Valid expected decisions require the expected status and no controller errors, except the intended stale-pair eligibility rejection. Rejected metric candidates remain separately visible. All attempted runs remain in the denominator; these are construction-known synthetic controls, not reviewed natural labels.",
+  "analysis_script_sha256": "2f13bddb357f23b129135c69052e7587206480cbf059b379540b1a43c33ceb8d",
+  "source_bundle_hashes_sha256": "60f006afec4babbef6d915092d27622fd657b60508aea927705ddbbe29b976ce",
+  "interpretation": "Counts are coverage and engineering evidence. No natural-case accuracy or superiority claim until human label and explanation review."
+}

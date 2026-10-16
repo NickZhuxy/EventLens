@@ -1,0 +1,74 @@
+{
+  "run_id": "9a1ae150-80b1-45d4-897c-786a2accee6c",
+  "created_at": "2026-10-13T19:47:07.381531+00:00",
+  "case": {
+    "case_id": "SNPS-FY2025-Q2-Q3",
+    "issuer": "SNPS",
+    "old": "SNPS-2025-Q2",
+    "new": "SNPS-2025-Q3",
+    "horizon": "FY2025",
+    "metric": "revenue",
+    "cutoff": "2025-09-10T00:00:00-04:00",
+    "split": "development",
+    "synthetic": false
+  },
+  "method": "A",
+  "config": {
+    "model": "SET_MODEL_ID",
+    "max_calls": 6,
+    "max_tool_calls": 5,
+    "max_output_tokens_per_call": 1800,
+    "max_input_characters": 160000
+  },
+  "cutoff_mode": "disclosure",
+  "trace": [
+    {
+      "stage": "rule_extraction",
+      "source_id": "SNPS-2025-Q2",
+      "issues": [
+        "no_unambiguous_annual_revenue_range"
+      ]
+    },
+    {
+      "stage": "rule_extraction",
+      "source_id": "SNPS-2025-Q3",
+      "issues": [
+        "no_unambiguous_annual_revenue_range"
+      ]
+    },
+    {
+      "stage": "deterministic_comparison",
+      "result": {
+        "status": "insufficient_evidence",
+        "reason": "missing_guidance",
+        "calculation": null
+      }
+    }
+  ],
+  "extractions": [],
+  "explanations": [],
+  "errors": [],
+  "calls": 0,
+  "tokens": null,
+  "label_status": "not_used_by_system",
+  "human_semantic_review": "pending",
+  "source_hashes": {
+    "SNPS-2025-Q2": "0c6955b8090d5b98291345d03f66302c14c9aca53fa4b6804f5b19973419ebfd",
+    "SNPS-2025-Q3": "1128c5d2b48bf9031090987c6769be7c4e197fd623c1d6201ed32a1d5bc0d9a9"
+  },
+  "input_hash": "10aa5001ac3a03a2287cd79951db7c5b3130aeabe4b136e6c77ca526f409b02d",
+  "model": null,
+  "execution_kind": "deterministic",
+  "context_characters": 106031,
+  "comparison": {
+    "status": "insufficient_evidence",
+    "reason": "missing_guidance",
+    "calculation": null
+  },
+  "explanation_conclusion": {
+    "status": "insufficient_evidence",
+    "reason": "no_explicit_explanation_found"
+  },
+  "conclusion": "insufficient_evidence",
+  "latency_ms": 4.146
+}

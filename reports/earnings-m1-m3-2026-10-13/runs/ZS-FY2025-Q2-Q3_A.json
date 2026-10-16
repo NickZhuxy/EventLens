@@ -1,0 +1,74 @@
+{
+  "run_id": "755630db-00d6-4ac4-b2b3-971c403a1889",
+  "created_at": "2026-10-13T19:47:07.584607+00:00",
+  "case": {
+    "case_id": "ZS-FY2025-Q2-Q3",
+    "issuer": "ZS",
+    "old": "ZS-2025-Q2",
+    "new": "ZS-2025-Q3",
+    "horizon": "FY2025",
+    "metric": "revenue",
+    "cutoff": "2025-05-30T00:00:00-04:00",
+    "split": "heldout",
+    "synthetic": false
+  },
+  "method": "A",
+  "config": {
+    "model": "SET_MODEL_ID",
+    "max_calls": 6,
+    "max_tool_calls": 5,
+    "max_output_tokens_per_call": 1800,
+    "max_input_characters": 160000
+  },
+  "cutoff_mode": "disclosure",
+  "trace": [
+    {
+      "stage": "rule_extraction",
+      "source_id": "ZS-2025-Q2",
+      "issues": [
+        "no_unambiguous_annual_revenue_range"
+      ]
+    },
+    {
+      "stage": "rule_extraction",
+      "source_id": "ZS-2025-Q3",
+      "issues": [
+        "no_unambiguous_annual_revenue_range"
+      ]
+    },
+    {
+      "stage": "deterministic_comparison",
+      "result": {
+        "status": "insufficient_evidence",
+        "reason": "missing_guidance",
+        "calculation": null
+      }
+    }
+  ],
+  "extractions": [],
+  "explanations": [],
+  "errors": [],
+  "calls": 0,
+  "tokens": null,
+  "label_status": "not_used_by_system",
+  "human_semantic_review": "pending",
+  "source_hashes": {
+    "ZS-2025-Q2": "a6655627998da3f5c0cbbc8c7275046adf4c10e72b0b35a9cc6b573643a2b203",
+    "ZS-2025-Q3": "6560dc3845e05f1d545a743cf19122365f9682293ef957747f2972e44d6c647e"
+  },
+  "input_hash": "01ffdcbe51ccbfc6997ab3276db77b81fff431c49f398457d3bfd78d2ee5e0a7",
+  "model": null,
+  "execution_kind": "deterministic",
+  "context_characters": 77625,
+  "comparison": {
+    "status": "insufficient_evidence",
+    "reason": "missing_guidance",
+    "calculation": null
+  },
+  "explanation_conclusion": {
+    "status": "insufficient_evidence",
+    "reason": "no_explicit_explanation_found"
+  },
+  "conclusion": "insufficient_evidence",
+  "latency_ms": 3.678
+}

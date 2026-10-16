@@ -1,0 +1,111 @@
+{
+  "run_id": "fc673107-cbfd-41e7-9fea-35adfe9e1ff7",
+  "created_at": "2026-10-14T01:02:05.634703+00:00",
+  "case": {
+    "case_id": "SNPS-FY2025-Q2-WITHDRAWAL",
+    "old": "SNPS-2025-Q2",
+    "new": "SNPS-2025-WITHDRAWAL",
+    "issuer": "SNPS",
+    "horizon": "FY2025",
+    "metric": "revenue",
+    "cutoff": "2025-05-29T23:59:59-04:00",
+    "split": "supplemental_natural",
+    "synthetic": false,
+    "label_status": "pending_Nick_review",
+    "counted_in_quarterly_pairs": false
+  },
+  "method": "A",
+  "config": {
+    "version": "earnings-investigation-v2",
+    "model": "deepseek-flash",
+    "provider": {
+      "base_url": "https://api.deepseek.com",
+      "reasoning_effort": "low"
+    },
+    "max_calls": 8,
+    "max_tool_calls": 7,
+    "max_output_tokens_per_call": 3200,
+    "max_input_characters": 180000,
+    "transport_retries": 0,
+    "pricing": {
+      "currency": "USD",
+      "input_per_million": "0.30",
+      "output_per_million": "1.20",
+      "assumption": "Peak rates; all input treated as cache miss. Discounts never required.",
+      "reference": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "checked_on": "2026-10-13"
+    },
+    "scope": {
+      "real_pairs": 36,
+      "heldout_stress_variants": 72,
+      "supplemental_natural_cases": 2,
+      "stress_types": [
+        "stale_disclosure",
+        "missing_table",
+        "contradictory_commentary"
+      ],
+      "methods": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    "proposed_budget_usd": "8.00",
+    "approval_status": "pending_concrete_budget_approval"
+  },
+  "cutoff_mode": "disclosure",
+  "trace": [
+    {
+      "stage": "rule_extraction",
+      "source_id": "SNPS-2025-Q2",
+      "issues": [
+        "no_unambiguous_annual_revenue_range"
+      ]
+    },
+    {
+      "stage": "rule_extraction",
+      "source_id": "SNPS-2025-WITHDRAWAL",
+      "issues": [
+        "no_unambiguous_annual_revenue_range"
+      ]
+    },
+    {
+      "stage": "deterministic_comparison",
+      "result": {
+        "status": "insufficient_evidence",
+        "reason": "missing_guidance",
+        "calculation": null
+      }
+    }
+  ],
+  "extractions": [],
+  "explanations": [],
+  "errors": [],
+  "calls": 0,
+  "tokens": null,
+  "label_status": "not_used_by_system",
+  "human_semantic_review": "pending",
+  "source_hashes": {
+    "SNPS-2025-Q2": "0c6955b8090d5b98291345d03f66302c14c9aca53fa4b6804f5b19973419ebfd",
+    "SNPS-2025-WITHDRAWAL": "b827486acf50f1c37a8f9a9244bbfa4a96afc51d8d6308f7a97084f02b5070e3"
+  },
+  "input_hash": "ef41e543c216b3507184539f0a87b1e650e8885e127ccaca220f63286439c8ad",
+  "model": null,
+  "execution_kind": "deterministic",
+  "context_characters": 57989,
+  "comparison": {
+    "status": "insufficient_evidence",
+    "reason": "missing_guidance",
+    "calculation": null
+  },
+  "explanation_conclusion": {
+    "status": "insufficient_evidence",
+    "reason": "no_explicit_explanation_found"
+  },
+  "conclusion": "insufficient_evidence",
+  "latency_ms": 2.72,
+  "conflicts": [],
+  "comparability": null,
+  "investigation_version": "earnings-investigation-v2"
+}

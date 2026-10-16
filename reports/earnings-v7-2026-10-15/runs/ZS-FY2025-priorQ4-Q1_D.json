@@ -1,0 +1,708 @@
+{
+  "run_id": "1574aa38-daf5-431c-a17a-ded67ed923b6",
+  "created_at": "2026-10-16T01:51:57.036474+00:00",
+  "case": {
+    "case_id": "ZS-FY2025-priorQ4-Q1",
+    "issuer": "ZS",
+    "old": "ZS-2024-Q4",
+    "new": "ZS-2025-Q1",
+    "horizon": "FY2025",
+    "metric": "revenue",
+    "cutoff": "2024-12-03T00:00:00-05:00",
+    "split": "heldout",
+    "synthetic": false
+  },
+  "method": "D",
+  "config": {
+    "version": "earnings-v7-corpus-regression-table-ablation",
+    "model": "deepseek-flash",
+    "base_url": "https://api.deepseek.com/beta",
+    "reasoning_effort": "none",
+    "max_calls": 8,
+    "max_tool_calls": 7,
+    "max_validation_repairs": 2,
+    "max_output_tokens_per_call": 6000,
+    "max_input_bytes": 128000,
+    "transport_retries": 0,
+    "selection": "All 36 existing pairs and all 36 pipe-table-row-only derivatives. Same v6 model/controller and v5 candidate parser, no tuning on new outputs. Previously exposed heldout is regression only. All failures retained.",
+    "methods": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "pricing": {
+      "currency": "USD",
+      "input_per_million": "0.30",
+      "output_per_million": "1.20",
+      "assumption": "Peak rates, all input charged as cache miss; ignore all discounts.",
+      "reference": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "checked_on": "2026-10-15"
+    },
+    "proposed_budget_usd": "3.25",
+    "approval_status": "pending_new_experiment_approval",
+    "planning_cost_per_BC_pair_usd": "0.01639565",
+    "budget_authorization": "reports/earnings-budget-2026-10-15/authorization.json",
+    "budget_authorization_sha256": "56b79a004195ffa2feb1e9ba73157b090290af79cdb3bd30c25aeda27b42849d",
+    "prior_paid_bundles": [
+      "reports/earnings-v3-preflight-2026-10-14",
+      "reports/earnings-v4-preflight-2026-10-15",
+      "reports/earnings-v5-preflight-2026-10-15",
+      "reports/earnings-v6-preflight-2026-10-15"
+    ]
+  },
+  "cutoff_mode": "disclosure",
+  "trace": [
+    {
+      "stage": "document_diff",
+      "algorithm": "difflib.SequenceMatcher sentence-level; autojunk=False",
+      "sentence_counts": [
+        468,
+        426
+      ],
+      "changed_guidance_candidates": [
+        {
+          "operation": "replace",
+          "old_sentences": [
+            2,
+            31
+          ],
+          "new_sentences": [
+            2,
+            31
+          ],
+          "spans": [
+            {
+              "source_id": "ZS-2024-Q4",
+              "sentence": 4,
+              "start": 155,
+              "end": 206,
+              "quote": "•Revenue grows 30% year-over-year to $592.9 million"
+            },
+            {
+              "source_id": "ZS-2024-Q4",
+              "sentence": 6,
+              "start": 273,
+              "end": 335,
+              "quote": "•Deferred revenue grows 32% year-over-year to $1,895.0 million"
+            },
+            {
+              "source_id": "ZS-2024-Q4",
+              "sentence": 14,
+              "start": 1305,
+              "end": 1365,
+              "quote": "•Revenue: $592.9 million, an increase of 30% year-over-year."
+            },
+            {
+              "source_id": "ZS-2024-Q4",
+              "sentence": 15,
+              "start": 1367,
+              "end": 1545,
+              "quote": "•Income (loss) from operations: GAAP loss from operations was $27.0 million, or 5% of revenue, compared to $44.6 million, or 10% of revenue, in the fourth quarter of fiscal 2023."
+            },
+            {
+              "source_id": "ZS-2024-Q4",
+              "sentence": 16,
+              "start": 1546,
+              "end": 1700,
+              "quote": "Non-GAAP income from operations was $127.5 million, or 22% of revenue, compared to $86.0 million, or 19% of revenue, in the fourth quarter of fiscal 2023."
+            },
+            {
+              "source_id": "ZS-2024-Q4",
+              "sentence": 21,
+              "start": 2161,
+              "end": 2325,
+              "quote": "•Cash flows: Cash provided by operations was $203.6 million, or 34% of revenue, compared to $135.9 million, or 30% of revenue, in the fourth quarter of fiscal 2023."
+            },
+            {
+              "source_id": "ZS-2024-Q4",
+              "sentence": 22,
+              "start": 2326,
+              "end": 2464,
+              "quote": "Free cash flow was $136.3 million, or 23% of revenue, compared to $101.3 million, or 22% of revenue, in the fourth quarter of fiscal 2023."
+            },
+            {
+              "source_id": "ZS-2024-Q4",
+              "sentence": 23,
+              "start": 2466,
+              "end": 2557,
+              "quote": "•Deferred revenue: $1,895.0 million as of July 31, 2024, an increase of 32% year-over-year."
+            },
+            {
+              "source_id": "ZS-2024-Q4",
+              "sentence": 26,
+              "start": 2743,
+              "end": 2805,
+              "quote": "•Revenue: $2,167.8 million, an increase of 34% year-over-year."
+            },
+            {
+              "source_id": "ZS-2024-Q4",
+              "sentence": 27,
+              "start": 2806,
+              "end": 2964,
+              "quote": "•Income (loss) from operations: GAAP loss from operations was $121.5 million, or 6% of revenue, compared to $234.6 million, or 15% of revenue, in fiscal 2023."
+            },
+            {
+              "source_id": "ZS-2024-Q4",
+              "sentence": 28,
+              "start": 2965,
+              "end": 3098,
+              "quote": "Non-GAAP income from operations was $442.2 million, or 20% of revenue, compared to $240.8 million, or 15% of revenue, in fiscal 2023."
+            },
+            {
+              "source_id": "ZS-2025-Q1",
+              "sentence": 4,
+              "start": 149,
+              "end": 200,
+              "quote": "•Revenue grows 26% year-over-year to $628.0 million"
+            },
+            {
+              "source_id": "ZS-2025-Q1",
+              "sentence": 6,
+              "start": 267,
+              "end": 329,
+              "quote": "•Deferred revenue grows 27% year-over-year to $1,783.7 million"
+            },
+            {
+              "source_id": "ZS-2025-Q1",
+              "sentence": 14,
+              "start": 1257,
+              "end": 1317,
+              "quote": "•Revenue: $628.0 million, an increase of 26% year-over-year."
+            },
+            {
+              "source_id": "ZS-2025-Q1",
+              "sentence": 15,
+              "start": 1319,
+              "end": 1495,
+              "quote": "•Income (loss) from operations: GAAP loss from operations was $30.7 million, or 5% of revenue, compared to $46.1 million, or 9% of revenue, in the first quarter of fiscal 2024."
+            },
+            {
+              "source_id": "ZS-2025-Q1",
+              "sentence": 16,
+              "start": 1496,
+              "end": 1649,
+              "quote": "Non-GAAP income from operations was $134.1 million, or 21% of revenue, compared to $89.7 million, or 18% of revenue, in the first quarter of fiscal 2024."
+            },
+            {
+              "source_id": "ZS-2025-Q1",
+              "sentence": 21,
+              "start": 2095,
+              "end": 2258,
+              "quote": "•Cash flows: Cash provided by operations was $331.3 million, or 53% of revenue, compared to $260.8 million, or 53% of revenue, in the first quarter of fiscal 2024."
+            },
+            {
+              "source_id": "ZS-2025-Q1",
+              "sentence": 22,
+              "start": 2259,
+              "end": 2396,
+              "quote": "Free cash flow was $291.9 million, or 46% of revenue, compared to $224.7 million, or 45% of revenue, in the first quarter of fiscal 2024."
+            },
+            {
+              "source_id": "ZS-2025-Q1",
+              "sentence": 23,
+              "start": 2398,
+              "end": 2492,
+              "quote": "•Deferred revenue: $1,783.7 million as of October 31, 2024, an increase of 27% year-over-year."
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            33,
+            48
+          ],
+          "new_sentences": [
+            33,
+            37
+          ],
+          "spans": [
+            {
+              "source_id": "ZS-2024-Q4",
+              "sentence": 35,
+              "start": 3483,
+              "end": 3625,
+              "quote": "•Cash flows: Cash provided by operations was $779.8 million, or 36% of revenue, compared to $462.3 million, or 29% of revenue, in fiscal 2023."
+            },
+            {
+              "source_id": "ZS-2024-Q4",
+              "sentence": 36,
+              "start": 3626,
+              "end": 3742,
+              "quote": "Free cash flow was $585.0 million, or 27% of revenue, compared to $333.6 million, or 21% of revenue, in fiscal 2023."
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            54,
+            65
+          ],
+          "new_sentences": [
+            43,
+            52
+          ],
+          "spans": [
+            {
+              "source_id": "ZS-2024-Q4",
+              "sentence": 55,
+              "start": 6529,
+              "end": 6569,
+              "quote": "•Revenue of $604 million to $606 million"
+            },
+            {
+              "source_id": "ZS-2024-Q4",
+              "sentence": 61,
+              "start": 6854,
+              "end": 6910,
+              "quote": "•Revenue of approximately $2.60 billion to $2.62 billion"
+            },
+            {
+              "source_id": "ZS-2025-Q1",
+              "sentence": 44,
+              "start": 5239,
+              "end": 5279,
+              "quote": "•Revenue of $633 million to $635 million"
+            },
+            {
+              "source_id": "ZS-2025-Q1",
+              "sentence": 48,
+              "start": 5557,
+              "end": 5615,
+              "quote": "•Revenue of approximately $2.623 billion to $2.643 billion"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            129,
+            135
+          ],
+          "new_sentences": [
+            120,
+            126
+          ],
+          "spans": [
+            {
+              "source_id": "ZS-2024-Q4",
+              "sentence": 132,
+              "start": 14887,
+              "end": 14987,
+              "quote": "Revenue  | $  | 592,868   |  |  | $  | 455,006   |  |  | $  | 2,167,771   |  |  | $  | 1,616,952   |"
+            },
+            {
+              "source_id": "ZS-2024-Q4",
+              "sentence": 133,
+              "start": 14988,
+              "end": 15080,
+              "quote": "Cost of revenue (1) (2)  | 130,205   |  |  | 102,682   |  |  | 477,129   |  |  | 362,832   |"
+            },
+            {
+              "source_id": "ZS-2025-Q1",
+              "sentence": 123,
+              "start": 13265,
+              "end": 13327,
+              "quote": "Revenue  | $  | 627,955   |  |  | $  | 496,703   |  |  |  |  |"
+            },
+            {
+              "source_id": "ZS-2025-Q1",
+              "sentence": 124,
+              "start": 13328,
+              "end": 13396,
+              "quote": "Cost of revenue (1) (2)  | 141,462   |  |  | 111,394   |  |  |  |  |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            154,
+            160
+          ],
+          "new_sentences": [
+            145,
+            151
+          ],
+          "spans": [
+            {
+              "source_id": "ZS-2024-Q4",
+              "sentence": 154,
+              "start": 16780,
+              "end": 16880,
+              "quote": "Cost of revenue  | $  | 13,890   |  |  | $  | 12,016   |  |  | $  | 52,766   |  |  | $  | 40,297   |"
+            },
+            {
+              "source_id": "ZS-2025-Q1",
+              "sentence": 145,
+              "start": 14641,
+              "end": 14709,
+              "quote": "Cost of revenue  | $  | 15,793   |  |  | $  | 12,955   |  |  |  |  |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            164,
+            169
+          ],
+          "new_sentences": [
+            155,
+            160
+          ],
+          "spans": [
+            {
+              "source_id": "ZS-2024-Q4",
+              "sentence": 164,
+              "start": 17509,
+              "end": 17606,
+              "quote": "Cost of revenue  | $  | 4,483   |  |  | $  | 2,765   |  |  | $  | 12,879   |  |  | $  | 9,574   |"
+            },
+            {
+              "source_id": "ZS-2025-Q1",
+              "sentence": 155,
+              "start": 15150,
+              "end": 15216,
+              "quote": "Cost of revenue  | $  | 3,675   |  |  | $  | 2,717   |  |  |  |  |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            205,
+            214
+          ],
+          "new_sentences": [
+            194,
+            203
+          ],
+          "spans": [
+            {
+              "source_id": "ZS-2024-Q4",
+              "sentence": 205,
+              "start": 19590,
+              "end": 19643,
+              "quote": "Deferred revenue  | 1,643,919   |  |  | 1,281,143   |"
+            },
+            {
+              "source_id": "ZS-2024-Q4",
+              "sentence": 210,
+              "start": 19886,
+              "end": 19947,
+              "quote": "Deferred revenue, noncurrent  | 251,055   |  |  | 158,533   |"
+            },
+            {
+              "source_id": "ZS-2025-Q1",
+              "sentence": 194,
+              "start": 16885,
+              "end": 16938,
+              "quote": "Deferred revenue  | 1,533,080   |  |  | 1,643,919   |"
+            },
+            {
+              "source_id": "ZS-2025-Q1",
+              "sentence": 199,
+              "start": 17132,
+              "end": 17193,
+              "quote": "Deferred revenue, noncurrent  | 250,640   |  |  | 251,055   |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            246,
+            255
+          ],
+          "new_sentences": [
+            236,
+            245
+          ],
+          "spans": [
+            {
+              "source_id": "ZS-2024-Q4",
+              "sentence": 252,
+              "start": 22077,
+              "end": 22126,
+              "quote": "Deferred revenue  | 450,314   |  |  | 418,564   |"
+            },
+            {
+              "source_id": "ZS-2025-Q1",
+              "sentence": 242,
+              "start": 19322,
+              "end": 19372,
+              "quote": "Deferred revenue  | (111,254)  |  |  | (40,154)  |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            294,
+            295
+          ],
+          "new_sentences": [
+            284,
+            285
+          ],
+          "spans": [
+            {
+              "source_id": "ZS-2024-Q4",
+              "sentence": 294,
+              "start": 24049,
+              "end": 24149,
+              "quote": "Revenue  | $  | 592,868   |  |  | $  | 455,006   |  |  | $  | 2,167,771   |  |  | $  | 1,616,952   |"
+            },
+            {
+              "source_id": "ZS-2025-Q1",
+              "sentence": 284,
+              "start": 20943,
+              "end": 21005,
+              "quote": "Revenue  | $  | 627,955   |  |  | $  | 496,703   |  |  |  |  |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            374,
+            382
+          ],
+          "new_sentences": [
+            362,
+            370
+          ],
+          "spans": [
+            {
+              "source_id": "ZS-2024-Q4",
+              "sentence": 378,
+              "start": 31744,
+              "end": 31844,
+              "quote": "Revenue  | $  | 592,868   |  |  | $  | 455,006   |  |  | $  | 2,167,771   |  |  | $  | 1,616,952   |"
+            },
+            {
+              "source_id": "ZS-2024-Q4",
+              "sentence": 379,
+              "start": 31845,
+              "end": 31964,
+              "quote": "Add: Total deferred revenue, end of period  | 1,894,974   |  |  | 1,439,676   |  |  | 1,894,974   |  |  | 1,439,676   |"
+            },
+            {
+              "source_id": "ZS-2024-Q4",
+              "sentence": 380,
+              "start": 31965,
+              "end": 32095,
+              "quote": "Less: Total deferred revenue, beginning of period  | (1,577,014)  |  |  | (1,175,373)  |  |  | (1,439,676)  |  |  | (1,021,123)  |"
+            },
+            {
+              "source_id": "ZS-2025-Q1",
+              "sentence": 366,
+              "start": 27224,
+              "end": 27286,
+              "quote": "Revenue  | $  | 627,955   |  |  | $  | 496,703   |  |  |  |  |"
+            },
+            {
+              "source_id": "ZS-2025-Q1",
+              "sentence": 367,
+              "start": 27287,
+              "end": 27378,
+              "quote": "Add: Total deferred revenue, end of period  | 1,783,720   |  |  | 1,399,544   |  |  |  |  |"
+            },
+            {
+              "source_id": "ZS-2025-Q1",
+              "sentence": 368,
+              "start": 27379,
+              "end": 27479,
+              "quote": "Less: Total deferred revenue, beginning of period  | (1,894,974)  |  |  | (1,439,676)  |  |  |  |  |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            389,
+            422
+          ],
+          "new_sentences": [
+            377,
+            383
+          ],
+          "spans": [
+            {
+              "source_id": "ZS-2024-Q4",
+              "sentence": 390,
+              "start": 32799,
+              "end": 32925,
+              "quote": "Net cash provided by operating activities, as a percentage of revenue  | 34   | %  |  | 30   | %  |  | 36   | %  |  | 29   | %"
+            },
+            {
+              "source_id": "ZS-2024-Q4",
+              "sentence": 391,
+              "start": 32926,
+              "end": 33066,
+              "quote": "Less: Purchases of property, equipment and other assets, as a percentage of revenue  | (8)  | %  |  | (6)  | %  |  | (7)  | %  |  | (6)  | %"
+            },
+            {
+              "source_id": "ZS-2024-Q4",
+              "sentence": 392,
+              "start": 33067,
+              "end": 33191,
+              "quote": "Less: Capitalized internal-use software, as a percentage of revenue  | (3)  | %  |  | (2)  | %  |  | (2)  | %  |  | (2)  | %"
+            },
+            {
+              "source_id": "ZS-2025-Q1",
+              "sentence": 378,
+              "start": 28028,
+              "end": 28126,
+              "quote": "Net cash provided by operating activities, as a percentage of revenue  | 53%  |  | 53%  |  |  |  |"
+            },
+            {
+              "source_id": "ZS-2025-Q1",
+              "sentence": 379,
+              "start": 28127,
+              "end": 28241,
+              "quote": "Less: Purchases of property, equipment and other assets, as a percentage of revenue  | (3)%  |  | (6)%  |  |  |  |"
+            },
+            {
+              "source_id": "ZS-2025-Q1",
+              "sentence": 380,
+              "start": 28242,
+              "end": 28340,
+              "quote": "Less: Capitalized internal-use software, as a percentage of revenue  | (4)%  |  | (2)%  |  |  |  |"
+            }
+          ]
+        }
+      ],
+      "annual_candidate_counts": [
+        1,
+        1
+      ],
+      "issues": [
+        "changed_guidance_pair"
+      ],
+      "selected_alignment": "replace",
+      "selected_sentence_indices": [
+        61,
+        48
+      ]
+    },
+    {
+      "stage": "deterministic_comparison",
+      "result": {
+        "status": "supported",
+        "reason": "raised",
+        "calculation": {
+          "old_lower": "2600000000.00",
+          "old_upper": "2620000000.00",
+          "new_lower": "2623000000.000",
+          "new_upper": "2643000000.000",
+          "old_midpoint": "2610000000.00",
+          "new_midpoint": "2633000000.000",
+          "midpoint_delta": "23000000.000",
+          "lower_delta": "23000000.000",
+          "upper_delta": "23000000.000",
+          "relative_midpoint_change_percent": "0.8812260536398467432950191571",
+          "delta_unit": "USD",
+          "range_change": "raised"
+        }
+      }
+    }
+  ],
+  "extractions": [
+    {
+      "metric": {
+        "source_id": "ZS-2024-Q4",
+        "issuer": "ZS",
+        "metric": "revenue",
+        "currency": "USD",
+        "unit": "billion",
+        "basis": "reported",
+        "horizon": "FY2025",
+        "calendar": "fiscal",
+        "definition": "total_revenue_as_reported",
+        "status": "provided",
+        "lower": "2.60",
+        "upper": "2.62",
+        "evidence": "•Revenue of approximately $2.60 billion to $2.62 billion",
+        "horizon_evidence": "For the full year fiscal 2025, we expect:\n\n•Revenue of approximately $2.60 billion to $2.62 billion"
+      },
+      "validation": {
+        "literal_valid": true,
+        "semantic_screen": "pass",
+        "errors": [],
+        "human_semantic_review": "pending",
+        "observation_id": "7bbe6c92fca751095bbef181f7961dd5b5b26193321a4a49b2cbe5c219c570b1"
+      }
+    },
+    {
+      "metric": {
+        "source_id": "ZS-2025-Q1",
+        "issuer": "ZS",
+        "metric": "revenue",
+        "currency": "USD",
+        "unit": "billion",
+        "basis": "reported",
+        "horizon": "FY2025",
+        "calendar": "fiscal",
+        "definition": "total_revenue_as_reported",
+        "status": "provided",
+        "lower": "2.623",
+        "upper": "2.643",
+        "evidence": "•Revenue of approximately $2.623 billion to $2.643 billion",
+        "horizon_evidence": "For the full year of fiscal 2025, we expect:\n\n•Revenue of approximately $2.623 billion to $2.643 billion"
+      },
+      "validation": {
+        "literal_valid": true,
+        "semantic_screen": "pass",
+        "errors": [],
+        "human_semantic_review": "pending",
+        "observation_id": "ab6e6f479b1b72de7406695ba2c66bb6fba4485be2b533f253e41e8457ae78fc"
+      }
+    }
+  ],
+  "explanations": [],
+  "errors": [],
+  "calls": 0,
+  "tokens": null,
+  "label_status": "not_used_by_system",
+  "human_semantic_review": "pending",
+  "source_hashes": {
+    "ZS-2024-Q4": "12b47c5f8cfc38298ee488a45109615c196225299531c8b766fceaf51d3dfd92",
+    "ZS-2025-Q1": "13fa3337ddd5be7fbeea9615914764e25f6616093af354c76029e18b684dfcc5"
+  },
+  "input_hash": "a84611e23d081175c82b5dde463b92b63078c490baf844a10643181701fe49af",
+  "model": null,
+  "execution_kind": "deterministic",
+  "context_characters": 77108,
+  "comparison": {
+    "status": "supported",
+    "reason": "raised",
+    "calculation": {
+      "old_lower": "2600000000.00",
+      "old_upper": "2620000000.00",
+      "new_lower": "2623000000.000",
+      "new_upper": "2643000000.000",
+      "old_midpoint": "2610000000.00",
+      "new_midpoint": "2633000000.000",
+      "midpoint_delta": "23000000.000",
+      "lower_delta": "23000000.000",
+      "upper_delta": "23000000.000",
+      "relative_midpoint_change_percent": "0.8812260536398467432950191571",
+      "delta_unit": "USD",
+      "range_change": "raised"
+    }
+  },
+  "explanation_conclusion": {
+    "status": "insufficient_evidence",
+    "reason": "no_explicit_explanation_found"
+  },
+  "conclusion": "supported",
+  "latency_ms": 8.282,
+  "conflicts": [],
+  "comparability": null,
+  "investigation_version": "earnings-investigation-v2",
+  "validation_failures": []
+}

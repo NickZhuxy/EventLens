@@ -1,0 +1,154 @@
+{
+  "run_id": "61b12c6c-df70-4f9e-80af-8a515ebceb4e",
+  "created_at": "2026-10-13T19:47:07.249400+00:00",
+  "case": {
+    "case_id": "ADBE-FY2025-Q1-Q2",
+    "issuer": "ADBE",
+    "old": "ADBE-2025-Q1",
+    "new": "ADBE-2025-Q2",
+    "horizon": "FY2025",
+    "metric": "revenue",
+    "cutoff": "2025-06-13T00:00:00-04:00",
+    "split": "development",
+    "synthetic": false
+  },
+  "method": "A",
+  "config": {
+    "model": "SET_MODEL_ID",
+    "max_calls": 6,
+    "max_tool_calls": 5,
+    "max_output_tokens_per_call": 1800,
+    "max_input_characters": 160000
+  },
+  "cutoff_mode": "disclosure",
+  "trace": [
+    {
+      "stage": "rule_extraction",
+      "source_id": "ADBE-2025-Q1",
+      "issues": []
+    },
+    {
+      "stage": "rule_extraction",
+      "source_id": "ADBE-2025-Q2",
+      "issues": []
+    },
+    {
+      "stage": "deterministic_comparison",
+      "result": {
+        "status": "supported",
+        "reason": "raised",
+        "calculation": {
+          "old_lower": "23300000000.00",
+          "old_upper": "23550000000.00",
+          "new_lower": "23500000000.00",
+          "new_upper": "23600000000.00",
+          "old_midpoint": "23425000000.00",
+          "new_midpoint": "23550000000.00",
+          "midpoint_delta": "125000000.00",
+          "lower_delta": "200000000.00",
+          "upper_delta": "50000000.00",
+          "relative_midpoint_change_percent": "0.5336179295624332977588046958",
+          "delta_unit": "USD",
+          "range_change": "raised"
+        }
+      }
+    }
+  ],
+  "extractions": [
+    {
+      "metric": {
+        "source_id": "ADBE-2025-Q1",
+        "issuer": "ADBE",
+        "metric": "revenue",
+        "currency": "USD",
+        "unit": "billion",
+        "basis": "reported",
+        "horizon": "FY2025",
+        "calendar": "fiscal",
+        "definition": "total_revenue_as_reported",
+        "status": "provided",
+        "lower": "23.30",
+        "upper": "23.55",
+        "evidence": "Total revenue  | $23.30 billion to $23.55 billion",
+        "horizon_evidence": "The following table summarizes Adobe’s fiscal year 2025 targets, which assumes current macroeconomic conditions2:\n |  |  |  |  |  |  |  |\nTotal revenue  | $23.30 billion to $23.55 billion"
+      },
+      "validation": {
+        "literal_valid": true,
+        "semantic_screen": "pass",
+        "errors": [],
+        "human_semantic_review": "pending",
+        "observation_id": "3498b50d7208996746ab5aee5f464d13ae77b21f2b4b5d54bec6db83adb7272f"
+      }
+    },
+    {
+      "metric": {
+        "source_id": "ADBE-2025-Q2",
+        "issuer": "ADBE",
+        "metric": "revenue",
+        "currency": "USD",
+        "unit": "billion",
+        "basis": "reported",
+        "horizon": "FY2025",
+        "calendar": "fiscal",
+        "definition": "total_revenue_as_reported",
+        "status": "provided",
+        "lower": "23.50",
+        "upper": "23.60",
+        "evidence": "Total revenue  | $23.50 billion to $23.60 billion",
+        "horizon_evidence": "The following updated table summarizes Adobe’s fiscal year 2025 targets, which assumes current macroeconomic conditions2:\n |  |  |  |  |  |  |  |\nTotal revenue  | $23.50 billion to $23.60 billion"
+      },
+      "validation": {
+        "literal_valid": true,
+        "semantic_screen": "pass",
+        "errors": [],
+        "human_semantic_review": "pending",
+        "observation_id": "1a9ca561784322750239b3c43c55764cdbe898cb76b9a7ac821daa09788693dd"
+      }
+    }
+  ],
+  "explanations": [
+    {
+      "source_id": "ADBE-2025-Q2",
+      "quote": "“As a result of us driving strong performance in the first half of the year, we are pleased to raise Adobe’s FY25 total revenue and EPS targets,” said Dan Durn, executive vice president and CFO, Adobe. “We continue to invest in AI innovation across our customer groups to enhance value realization and expand the universe of customers we serve.”",
+      "type": "management_statement_candidate",
+      "semantic_review": "pending"
+    }
+  ],
+  "errors": [],
+  "calls": 0,
+  "tokens": null,
+  "label_status": "not_used_by_system",
+  "human_semantic_review": "pending",
+  "source_hashes": {
+    "ADBE-2025-Q1": "9e5181255eea8ef1ae56972e8fc1bdc02134dacb9715ece80ff7ec692e088d60",
+    "ADBE-2025-Q2": "99e83a21cac144ba1d31481534ba6658a0f4bf7016b842510b5a36b4c0e5a24b"
+  },
+  "input_hash": "96457f254fe6959bc27bd6c5ddd9815754640ae38efc8b7d6e994b87f2d5b953",
+  "model": null,
+  "execution_kind": "deterministic",
+  "context_characters": 48766,
+  "comparison": {
+    "status": "supported",
+    "reason": "raised",
+    "calculation": {
+      "old_lower": "23300000000.00",
+      "old_upper": "23550000000.00",
+      "new_lower": "23500000000.00",
+      "new_upper": "23600000000.00",
+      "old_midpoint": "23425000000.00",
+      "new_midpoint": "23550000000.00",
+      "midpoint_delta": "125000000.00",
+      "lower_delta": "200000000.00",
+      "upper_delta": "50000000.00",
+      "relative_midpoint_change_percent": "0.5336179295624332977588046958",
+      "delta_unit": "USD",
+      "range_change": "raised"
+    }
+  },
+  "explanation_conclusion": {
+    "status": "insufficient_evidence",
+    "reason": "semantic_review_required"
+  },
+  "conclusion": "supported",
+  "latency_ms": 1.413
+}

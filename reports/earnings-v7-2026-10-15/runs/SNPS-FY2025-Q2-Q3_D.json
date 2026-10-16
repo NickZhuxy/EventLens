@@ -1,0 +1,423 @@
+{
+  "run_id": "3c54b435-3f77-431a-9a81-7926257907ca",
+  "created_at": "2026-10-16T01:50:02.229923+00:00",
+  "case": {
+    "case_id": "SNPS-FY2025-Q2-Q3",
+    "issuer": "SNPS",
+    "old": "SNPS-2025-Q2",
+    "new": "SNPS-2025-Q3",
+    "horizon": "FY2025",
+    "metric": "revenue",
+    "cutoff": "2025-09-10T00:00:00-04:00",
+    "split": "development",
+    "synthetic": false
+  },
+  "method": "D",
+  "config": {
+    "version": "earnings-v7-corpus-regression-table-ablation",
+    "model": "deepseek-flash",
+    "base_url": "https://api.deepseek.com/beta",
+    "reasoning_effort": "none",
+    "max_calls": 8,
+    "max_tool_calls": 7,
+    "max_validation_repairs": 2,
+    "max_output_tokens_per_call": 6000,
+    "max_input_bytes": 128000,
+    "transport_retries": 0,
+    "selection": "All 36 existing pairs and all 36 pipe-table-row-only derivatives. Same v6 model/controller and v5 candidate parser, no tuning on new outputs. Previously exposed heldout is regression only. All failures retained.",
+    "methods": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "pricing": {
+      "currency": "USD",
+      "input_per_million": "0.30",
+      "output_per_million": "1.20",
+      "assumption": "Peak rates, all input charged as cache miss; ignore all discounts.",
+      "reference": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "checked_on": "2026-10-15"
+    },
+    "proposed_budget_usd": "3.25",
+    "approval_status": "pending_new_experiment_approval",
+    "planning_cost_per_BC_pair_usd": "0.01639565",
+    "budget_authorization": "reports/earnings-budget-2026-10-15/authorization.json",
+    "budget_authorization_sha256": "56b79a004195ffa2feb1e9ba73157b090290af79cdb3bd30c25aeda27b42849d",
+    "prior_paid_bundles": [
+      "reports/earnings-v3-preflight-2026-10-14",
+      "reports/earnings-v4-preflight-2026-10-15",
+      "reports/earnings-v5-preflight-2026-10-15",
+      "reports/earnings-v6-preflight-2026-10-15"
+    ]
+  },
+  "cutoff_mode": "disclosure",
+  "trace": [
+    {
+      "stage": "document_diff",
+      "algorithm": "difflib.SequenceMatcher sentence-level; autojunk=False",
+      "sentence_counts": [
+        552,
+        540
+      ],
+      "changed_guidance_candidates": [
+        {
+          "operation": "replace",
+          "old_sentences": [
+            13,
+            24
+          ],
+          "new_sentences": [
+            13,
+            28
+          ],
+          "spans": [
+            {
+              "source_id": "SNPS-2025-Q2",
+              "sentence": 15,
+              "start": 341,
+              "end": 421,
+              "quote": "| •  |    | Quarterly revenue of $1.604 billion, exceeding midpoint of guidance."
+            },
+            {
+              "source_id": "SNPS-2025-Q2",
+              "sentence": 17,
+              "start": 561,
+              "end": 657,
+              "quote": "| •  |    | Reaffirming full-year 2025 revenue guidance, and non-GAAP operating margin guidance."
+            },
+            {
+              "source_id": "SNPS-2025-Q2",
+              "sentence": 19,
+              "start": 790,
+              "end": 931,
+              "quote": "Revenue for the second quarter of fiscal year 2025 was $1.604 billion, compared to $1.455 billion for the second quarter of fiscal year 2024."
+            },
+            {
+              "source_id": "SNPS-2025-Q3",
+              "sentence": 15,
+              "start": 341,
+              "end": 417,
+              "quote": "| •  |    | Quarterly revenue of $1.740 billion, up 14% year-over-year (YoY)"
+            },
+            {
+              "source_id": "SNPS-2025-Q3",
+              "sentence": 18,
+              "start": 620,
+              "end": 741,
+              "quote": "| •  |    | Expecting full-year 2025 revenue between $7.03 and $7.06 billion dollars as Synopsys transformation continues"
+            },
+            {
+              "source_id": "SNPS-2025-Q3",
+              "sentence": 20,
+              "start": 873,
+              "end": 1012,
+              "quote": "Revenue for the third quarter of fiscal year 2025 was $1.740 billion, compared to $1.526 billion for the third quarter of fiscal year 2024."
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            25,
+            27
+          ],
+          "new_sentences": [
+            29,
+            38
+          ],
+          "spans": [
+            {
+              "source_id": "SNPS-2025-Q3",
+              "sentence": 37,
+              "start": 2830,
+              "end": 3382,
+              "quote": "Synopsys reports revenue and operating income in two segments: (1) Design Automation, which includes our advanced silicon design, verification products and services, simulation and analysis solutions (Ansys), system integration products and services, digital, custom and field programmable gate array IC design software, verification software and hardware products, manufacturing software products and other and (2) Design IP, which includes our interface, foundation, security, and embedded processor IP, IP subsystems, and IP implementation services."
+            }
+          ]
+        },
+        {
+          "operation": "delete",
+          "old_sentences": [
+            30,
+            37
+          ],
+          "new_sentences": [
+            41,
+            41
+          ],
+          "spans": [
+            {
+              "source_id": "SNPS-2025-Q2",
+              "sentence": 36,
+              "start": 2981,
+              "end": 3490,
+              "quote": "Synopsys reports revenue and operating income in two segments: (1) Design Automation, which includes our advanced silicon design, verification products and services, system integration products and services, digital, custom and field programmable gate array IC design software, verification software and hardware products, manufacturing software products and other and (2) Design IP, which includes our interface, foundation, security, and embedded processor IP, IP subsystems, and IP implementation services."
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            54,
+            58
+          ],
+          "new_sentences": [
+            58,
+            62
+          ],
+          "spans": [
+            {
+              "source_id": "SNPS-2025-Q2",
+              "sentence": 54,
+              "start": 4775,
+              "end": 4878,
+              "quote": "Revenue  |     | $  | 1,755  |    |    | $  | 1,785  |    |    |  $  | 6,745  |    |    | $  | 6,805  |"
+            },
+            {
+              "source_id": "SNPS-2025-Q3",
+              "sentence": 58,
+              "start": 5089,
+              "end": 5191,
+              "quote": "Revenue  |     | $  | 2,230  |    |    | $  | 2,260  |    |    | $  | 7,030  |    |    | $  | 7,060  |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            231,
+            233
+          ],
+          "new_sentences": [
+            226,
+            228
+          ],
+          "spans": [
+            {
+              "source_id": "SNPS-2025-Q2",
+              "sentence": 231,
+              "start": 21545,
+              "end": 21681,
+              "quote": "Total products revenue  |     |    | 1,339,002  |    |     |    | 1,178,103  |    |     |    | 2,535,364  |    |     |    | 2,425,532  |"
+            },
+            {
+              "source_id": "SNPS-2025-Q3",
+              "sentence": 226,
+              "start": 21367,
+              "end": 21500,
+              "quote": "Total products revenue  |     |    | 1,408,768  |    |    |    | 1,245,675  |    |    |    | 3,944,132  |    |    |    | 3,671,207  |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            234,
+            235
+          ],
+          "new_sentences": [
+            229,
+            230
+          ],
+          "spans": [
+            {
+              "source_id": "SNPS-2025-Q2",
+              "sentence": 234,
+              "start": 21894,
+              "end": 22021,
+              "quote": "Total revenue  |     |    | 1,604,266  |    |     |    | 1,454,712  |    |     |    | 3,059,581  |    |     |    | 2,965,701  |"
+            },
+            {
+              "source_id": "SNPS-2025-Q3",
+              "sentence": 229,
+              "start": 21707,
+              "end": 21831,
+              "quote": "Total revenue  |     |    | 1,739,737  |    |    |    | 1,525,749  |    |    |    | 4,799,318  |    |    |    | 4,491,450  |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            236,
+            238
+          ],
+          "new_sentences": [
+            231,
+            287
+          ],
+          "spans": [
+            {
+              "source_id": "SNPS-2025-Q3",
+              "sentence": 235,
+              "start": 22365,
+              "end": 22489,
+              "quote": "Total cost of revenue  |     |    | 380,564  |    |    |    | 290,676  |    |    |    | 968,886  |    |    |    | 870,266  |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            240,
+            293
+          ],
+          "new_sentences": [
+            289,
+            347
+          ],
+          "spans": [
+            {
+              "source_id": "SNPS-2025-Q2",
+              "sentence": 243,
+              "start": 22621,
+              "end": 22745,
+              "quote": "Total cost of revenue  |     |    | 318,347  |    |    |    | 300,397  |    |    |    | 588,322  |    |    |    | 579,590  |"
+            },
+            {
+              "source_id": "SNPS-2025-Q3",
+              "sentence": 319,
+              "start": 29990,
+              "end": 30061,
+              "quote": "Deferred revenue  |     |    | 1,991,429  |    |    |    | 1,391,737  |"
+            },
+            {
+              "source_id": "SNPS-2025-Q3",
+              "sentence": 325,
+              "start": 30411,
+              "end": 30488,
+              "quote": "Long-term deferred revenue  |     |    | 383,405  |    |    |    | 340,831  |"
+            }
+          ]
+        },
+        {
+          "operation": "delete",
+          "old_sentences": [
+            298,
+            359
+          ],
+          "new_sentences": [
+            352,
+            352
+          ],
+          "spans": [
+            {
+              "source_id": "SNPS-2025-Q2",
+              "sentence": 326,
+              "start": 30171,
+              "end": 30243,
+              "quote": "Deferred revenue  |     |    | 1,375,398  |    |     |    | 1,391,737  |"
+            },
+            {
+              "source_id": "SNPS-2025-Q2",
+              "sentence": 331,
+              "start": 30518,
+              "end": 30596,
+              "quote": "Long-term deferred revenue  |     |    | 331,133  |    |     |    | 340,831  |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            367,
+            373
+          ],
+          "new_sentences": [
+            360,
+            366
+          ],
+          "spans": [
+            {
+              "source_id": "SNPS-2025-Q2",
+              "sentence": 369,
+              "start": 33148,
+              "end": 33258,
+              "quote": "Amortization of capitalized costs to obtain revenue contracts  |     |    | 25,405  |    |    |    | 37,912  |"
+            },
+            {
+              "source_id": "SNPS-2025-Q3",
+              "sentence": 362,
+              "start": 33015,
+              "end": 33125,
+              "quote": "Amortization of capitalized costs to obtain revenue contracts  |     |    | 38,920  |    |    |    | 57,071  |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            380,
+            391
+          ],
+          "new_sentences": [
+            373,
+            381
+          ],
+          "spans": [
+            {
+              "source_id": "SNPS-2025-Q2",
+              "sentence": 390,
+              "start": 34687,
+              "end": 34754,
+              "quote": "Deferred revenue  |     |    | (37,412  | )   |    |    | 52,612  |"
+            },
+            {
+              "source_id": "SNPS-2025-Q3",
+              "sentence": 380,
+              "start": 34513,
+              "end": 34583,
+              "quote": "Deferred revenue  |     |    | (19,932  | )   |    |    | (46,276  | )"
+            }
+          ]
+        }
+      ],
+      "annual_candidate_counts": [
+        0,
+        1
+      ],
+      "issues": [
+        "missing_or_ambiguous_annual_guidance_pair"
+      ]
+    },
+    {
+      "stage": "deterministic_comparison",
+      "result": {
+        "status": "insufficient_evidence",
+        "reason": "missing_guidance",
+        "calculation": null
+      }
+    }
+  ],
+  "extractions": [],
+  "explanations": [],
+  "errors": [],
+  "calls": 0,
+  "tokens": null,
+  "label_status": "not_used_by_system",
+  "human_semantic_review": "pending",
+  "source_hashes": {
+    "SNPS-2025-Q2": "0c6955b8090d5b98291345d03f66302c14c9aca53fa4b6804f5b19973419ebfd",
+    "SNPS-2025-Q3": "1128c5d2b48bf9031090987c6769be7c4e197fd623c1d6201ed32a1d5bc0d9a9"
+  },
+  "input_hash": "10aa5001ac3a03a2287cd79951db7c5b3130aeabe4b136e6c77ca526f409b02d",
+  "model": null,
+  "execution_kind": "deterministic",
+  "context_characters": 106031,
+  "comparison": {
+    "status": "insufficient_evidence",
+    "reason": "missing_guidance",
+    "calculation": null
+  },
+  "explanation_conclusion": {
+    "status": "insufficient_evidence",
+    "reason": "no_explicit_explanation_found"
+  },
+  "conclusion": "insufficient_evidence",
+  "latency_ms": 8.487,
+  "conflicts": [],
+  "comparability": null,
+  "investigation_version": "earnings-investigation-v2",
+  "validation_failures": []
+}

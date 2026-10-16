@@ -1,19 +1,28 @@
 {
-  "version": "1",
+  "version": "2",
   "created_at": "2026-10-07T17:40:56.611043+00:00",
   "research_question": "Can retrieval-assisted LLM extraction identify changes in same-horizon corporate revenue guidance with verifiable evidence?",
   "sector": "enterprise and creative software",
   "development_issuers": [
-    "ADBE"
+    "ADBE",
+    "INTU",
+    "SNPS",
+    "BOX"
   ],
   "heldout_issuers": [
     "CRM",
-    "ADSK"
+    "ADSK",
+    "CDNS",
+    "ZM",
+    "ZS",
+    "DDOG",
+    "OKTA",
+    "HUBS"
   ],
   "primary_metric": "revenue",
   "split_unit": "issuer",
   "label_status": "AI-draft; Nick review pending",
-  "freeze_policy": "Extraction rules and prompts freeze after ADBE development and before CRM/ADSK evaluation. Collection and draft labeling may inspect held-out source formatting; no issuer-specific tuning after first held-out run. Small convenience sample, not blind external validation.",
+  "freeze_policy": "Issuer split frozen before corpus expansion and method D implementation. Original method A remains unchanged. D uses only development cases and synthetic fixtures before its first held-out run. Collection is not blinded.",
   "cutoff_mode": "disclosure_date_end_of_day",
   "historical_limit": "Snapshots retrieved today; publication-date replay is not proof of historical byte availability or model-training isolation.",
   "primary_outcomes": [
@@ -23,5 +32,6 @@
     "abstention",
     "calls/tokens/latency"
   ],
-  "live_comparison": "Same configured model for B/C; B all eligible pair source text, C bounded read-only retrieval over exactly the same pair. Budgets reported separately; not compute-matched."
+  "live_comparison": "Same configured model for B/C; B all eligible pair source text, C bounded read-only retrieval over exactly the same pair. Budgets reported separately; not compute-matched.",
+  "split_freeze": "configs/corpus_v2_split.json"
 }

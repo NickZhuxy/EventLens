@@ -1,0 +1,154 @@
+{
+  "run_id": "9a5e70ff-b043-46ff-a676-cebb99d59670",
+  "created_at": "2026-10-16T02:28:16.556386+00:00",
+  "case": {
+    "case_id": "ADBE-FY2025-Q3-Q4-ROLLOVER",
+    "old": "ADBE-2025-Q3",
+    "new": "ADBE-2025-Q4",
+    "issuer": "ADBE",
+    "horizon": "FY2025",
+    "metric": "revenue",
+    "cutoff": "2025-12-10T23:59:59-05:00",
+    "split": "supplemental_natural",
+    "synthetic": false,
+    "label_status": "pending_Nick_review",
+    "counted_in_quarterly_pairs": false
+  },
+  "method": "A",
+  "config": {
+    "version": "earnings-v9-original-stress-regression",
+    "model": "deepseek-flash",
+    "base_url": "https://api.deepseek.com/beta",
+    "reasoning_effort": "none",
+    "max_calls": 8,
+    "max_tool_calls": 7,
+    "max_validation_repairs": 2,
+    "max_output_tokens_per_call": 6000,
+    "max_input_bytes": 128000,
+    "transport_retries": 0,
+    "selection": "Reuse 72 byte-identical v2 synthetic heldout cases and two original supplemental natural withdrawal/rollover cases. B/C use unchanged v8 code; all inputs are exposed regression. No new blind-test claim. Retain frozen uncertain charges and block identical wire requests.",
+    "methods": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "pricing": {
+      "currency": "USD",
+      "input_per_million": "0.30",
+      "output_per_million": "1.20",
+      "assumption": "Peak rates, all input charged as cache miss; ignore all discounts.",
+      "reference": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "checked_on": "2026-10-15"
+    },
+    "proposed_budget_usd": "1.75",
+    "approval_status": "allocation_under_recorded_continuing_authorization",
+    "planning_cost_per_BC_pair_usd": "0.01639565",
+    "budget_authorization": "reports/earnings-budget-2026-10-15/authorization.json",
+    "budget_authorization_sha256": "56b79a004195ffa2feb1e9ba73157b090290af79cdb3bd30c25aeda27b42849d",
+    "prior_paid_bundles": [
+      "reports/earnings-v3-preflight-2026-10-14",
+      "reports/earnings-v4-preflight-2026-10-15",
+      "reports/earnings-v5-preflight-2026-10-15",
+      "reports/earnings-v6-preflight-2026-10-15",
+      "reports/earnings-v7-2026-10-15",
+      "reports/earnings-v8-2026-10-15"
+    ],
+    "retained_uncertain_requests": {
+      "reports/earnings-v7-2026-10-15/requests/HUBS-FY2025-Q1-Q2_B.01.json": "0917fd175f3e454ed26ab508d0bb77cd3d6758f0c429e0be80377378ae941456"
+    },
+    "experiment": "v9-original-stress-regression"
+  },
+  "cutoff_mode": "disclosure",
+  "trace": [
+    {
+      "stage": "rule_extraction",
+      "source_id": "ADBE-2025-Q3",
+      "issues": []
+    },
+    {
+      "stage": "rule_extraction",
+      "source_id": "ADBE-2025-Q4",
+      "issues": [
+        "no_unambiguous_annual_revenue_range"
+      ]
+    },
+    {
+      "stage": "deterministic_comparison",
+      "result": {
+        "status": "insufficient_evidence",
+        "reason": "missing_guidance",
+        "calculation": null
+      }
+    }
+  ],
+  "extractions": [
+    {
+      "metric": {
+        "source_id": "ADBE-2025-Q3",
+        "issuer": "ADBE",
+        "metric": "revenue",
+        "currency": "USD",
+        "unit": "billion",
+        "basis": "reported",
+        "horizon": "FY2025",
+        "calendar": "fiscal",
+        "definition": "total_revenue_as_reported",
+        "status": "provided",
+        "lower": "23.65",
+        "upper": "23.70",
+        "evidence": "Total revenue  | $23.65 billion to $23.70 billion",
+        "horizon_evidence": "The following updated table summarizes Adobe’s fiscal year 2025 targets, which assumes current macroeconomic conditions2:\n |  |  |  |  |  |  |  |\nTotal revenue  | $23.65 billion to $23.70 billion"
+      },
+      "validation": {
+        "literal_valid": true,
+        "semantic_screen": "pass",
+        "errors": [],
+        "human_semantic_review": "pending",
+        "observation_id": "91a1a1dd688bf8407dc9a6262258e1530f3c698fadf2067f0e411eaa6e72469c"
+      }
+    }
+  ],
+  "explanations": [
+    {
+      "source_id": "ADBE-2025-Q3",
+      "quote": "“Adobe is the leader in the AI creative applications category with AI-influenced ARR surpassing $5 billion and AI-first ARR already exceeding our $250 million year-end target,” said Shantanu Narayen, chair and CEO, Adobe. “Given our customer strategy, AI product innovation and strong go-to-market execution, we’re pleased to once again raise our FY25 total revenue and EPS targets.”",
+      "type": "management_statement_candidate",
+      "semantic_review": "pending"
+    },
+    {
+      "source_id": "ADBE-2025-Q3",
+      "quote": "“Adobe delivered record Q3 revenue, with strength in subscription revenue across both Digital Media and Digital Experience segments,” said Dan Durn, executive vice president and CFO, Adobe. “We’re raising our FY25 total revenue and EPS targets as we execute against our growth strategy to deliver category leading and AI-infused solutions to meet the diverse needs of our customers.”",
+      "type": "management_statement_candidate",
+      "semantic_review": "pending"
+    }
+  ],
+  "errors": [],
+  "calls": 0,
+  "tokens": null,
+  "label_status": "not_used_by_system",
+  "human_semantic_review": "pending",
+  "source_hashes": {
+    "ADBE-2025-Q3": "e504dd9473b01c3a3a8b7a5c481a4e54b5f0cd91bbee7ed9300d168f72b4fc2c",
+    "ADBE-2025-Q4": "c90dd78d82a4c845c6393021f0017e4738d63327710fab1b254ef8adc0a3e66b"
+  },
+  "input_hash": "2dc52bda8a181bf581594ec5cf1486091f277f75fc9b32b482013ad241c62856",
+  "model": null,
+  "execution_kind": "deterministic",
+  "context_characters": 53693,
+  "comparison": {
+    "status": "insufficient_evidence",
+    "reason": "missing_guidance",
+    "calculation": null
+  },
+  "explanation_conclusion": {
+    "status": "insufficient_evidence",
+    "reason": "semantic_review_required"
+  },
+  "conclusion": "insufficient_evidence",
+  "latency_ms": 1.507,
+  "conflicts": [],
+  "comparability": null,
+  "investigation_version": "earnings-investigation-v2",
+  "validation_failures": []
+}

@@ -1,0 +1,951 @@
+{
+  "schema": "eventlens-semantic-review-v1",
+  "bundle_hashes_sha256": "57690230401666d5a839cf865735c59d95774d263860f7d3891423ed5551b5b0",
+  "review_script_sha256": "1d23c258910492d88ee962f0ea11c0ee511d1b81532c33aab956550ee53caa5e",
+  "scorer_script_sha256": "a55f73f7897731d30e96906e1fb08892974802128a49319e71b679e060475b74",
+  "sample_size_per_method_and_kind": 8,
+  "sampling_policy": "First SHA-256 identities per method and kind among emitted natural originally-heldout candidates. This is a post-execution review sample on exposed data, not a preregistered test or all-case accuracy metric.",
+  "questions": {
+    "explanation": "Does this exact quotation explicitly explain the annual total-revenue guidance revision for the same horizon and basis? General optimism alone is insufficient.",
+    "conflict": "Do both cited statements make opposing claims about the same explanation, period, scope and basis? Differences in currency basis or fiscal year alone are not contradictions."
+  },
+  "allowed_decisions": [
+    "pending",
+    "supported",
+    "unsupported",
+    "uncertain"
+  ],
+  "population": [
+    {
+      "method": "A",
+      "kind": "explanation",
+      "eligible_candidates": 9,
+      "sampled_candidates": 8
+    },
+    {
+      "method": "A",
+      "kind": "conflict",
+      "eligible_candidates": 0,
+      "sampled_candidates": 0
+    },
+    {
+      "method": "B",
+      "kind": "explanation",
+      "eligible_candidates": 22,
+      "sampled_candidates": 8
+    },
+    {
+      "method": "B",
+      "kind": "conflict",
+      "eligible_candidates": 1,
+      "sampled_candidates": 1
+    },
+    {
+      "method": "C",
+      "kind": "explanation",
+      "eligible_candidates": 41,
+      "sampled_candidates": 8
+    },
+    {
+      "method": "C",
+      "kind": "conflict",
+      "eligible_candidates": 0,
+      "sampled_candidates": 0
+    },
+    {
+      "method": "D",
+      "kind": "explanation",
+      "eligible_candidates": 8,
+      "sampled_candidates": 8
+    },
+    {
+      "method": "D",
+      "kind": "conflict",
+      "eligible_candidates": 0,
+      "sampled_candidates": 0
+    }
+  ],
+  "reviews": {
+    "171163773618b29cc4d35d2c3e4b7eec10ff71eb918ee20c564298b1bdd7762b": {
+      "evidence": {
+        "case_id": "CRM-FY2024-Q1-Q2",
+        "method": "A",
+        "kind": "explanation",
+        "candidate": {
+          "source_id": "CRM-2024-Q2",
+          "quote": "“Our transformation drove our strong second quarter results, delivering revenue of $8.6 billion and record GAAP and non-GAAP operating margins,” said Marc Benioff, Chair and CEO of Salesforce. “Based on our performance and what we see in the back half of the year, we’re raising our fiscal year ‘24 revenue, operating margin, and operating cash flow growth guidance.",
+          "type": "management_statement_candidate",
+          "semantic_review": "pending"
+        },
+        "source_hashes": {
+          "CRM-2024-Q1": "ce3ef55515214a97a91294454551acca8e9a411e428c7458d1848a5d90e81ad3",
+          "CRM-2024-Q2": "5e6ac8f74d23e2ebef90b574e091cab1a323933bce89bb1299b6a0c7b05e5d73"
+        },
+        "horizon": "FY2024"
+      },
+      "decision": "pending",
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "human_attestation": false,
+      "notes": ""
+    },
+    "2903975f0aa98eea0e092fede4c1e63ff43d17757e80afbdc3cf2d0be52d96a8": {
+      "evidence": {
+        "case_id": "ADSK-FY2026-Q1-Q2",
+        "method": "A",
+        "kind": "explanation",
+        "candidate": {
+          "source_id": "ADSK-2026-Q2",
+          "quote": "\"While our full year  macroeconomic assumptions are unchanged, we have raised our full year guidance to reflect the underlying strength of the business in the first half of the year and additional foreign exchange tailwinds.\"",
+          "type": "management_statement_candidate",
+          "semantic_review": "pending"
+        },
+        "source_hashes": {
+          "ADSK-2026-Q1": "a5ad3c7b77962f06198c39e38ae47091a3ac9a95852518182ec346a96a50e8e2",
+          "ADSK-2026-Q2": "daecdbc0dcef88ccd8b0157d05f1968215c7173d0531f61b0f9f95e38325e6dc"
+        },
+        "horizon": "FY2026"
+      },
+      "decision": "pending",
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "human_attestation": false,
+      "notes": ""
+    },
+    "358932cc536cce10063c2fe9ec451e3d23b25a05d6d25ffb5740adafa7119e51": {
+      "evidence": {
+        "case_id": "CDNS-FY2025-Q2-Q3",
+        "method": "A",
+        "kind": "explanation",
+        "candidate": {
+          "source_id": "CDNS-2025-Q2",
+          "quote": "“I am pleased to report that Cadence delivered excellent results for Q2, with broad-based strength across all businesses, more than offsetting the impact of the temporary restrictions on exports to China imposed on May 23rd,” said John Wall, senior vice president and chief financial officer. “We are raising our 2025 revenue outlook to 13% growth year-over-year, and non-GAAP operating margin to 44%.”",
+          "type": "management_statement_candidate",
+          "semantic_review": "pending"
+        },
+        "source_hashes": {
+          "CDNS-2025-Q2": "6e6cb2197c3938ecfb9e8ffa2a3905bc02c99d9ebcee5c8fdf517b11744188c5",
+          "CDNS-2025-Q3": "8b57c1061440caaaca9e7a60da0027504fc8584fc927a2b88505b0280be71d7b"
+        },
+        "horizon": "FY2025"
+      },
+      "decision": "pending",
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "human_attestation": false,
+      "notes": ""
+    },
+    "5872bee7edb00264ffc5e4b0b85e207fcce16968d287dc70acf7878bdfd08ddb": {
+      "evidence": {
+        "case_id": "CRM-FY2024-Q2-Q3",
+        "method": "A",
+        "kind": "explanation",
+        "candidate": {
+          "source_id": "CRM-2024-Q2",
+          "quote": "“Our transformation drove our strong second quarter results, delivering revenue of $8.6 billion and record GAAP and non-GAAP operating margins,” said Marc Benioff, Chair and CEO of Salesforce. “Based on our performance and what we see in the back half of the year, we’re raising our fiscal year ‘24 revenue, operating margin, and operating cash flow growth guidance.",
+          "type": "management_statement_candidate",
+          "semantic_review": "pending"
+        },
+        "source_hashes": {
+          "CRM-2024-Q2": "5e6ac8f74d23e2ebef90b574e091cab1a323933bce89bb1299b6a0c7b05e5d73",
+          "CRM-2024-Q3": "111ff058ea32aaf374dafc072e505f15265e8e4c113f69dca84dc59364563356"
+        },
+        "horizon": "FY2024"
+      },
+      "decision": "pending",
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "human_attestation": false,
+      "notes": ""
+    },
+    "6bec9e56c2d0d72a76a658d49dffba50743cbf1db2e81c6605348eb7fe7dc0f8": {
+      "evidence": {
+        "case_id": "CDNS-FY2025-Q2-Q3",
+        "method": "A",
+        "kind": "explanation",
+        "candidate": {
+          "source_id": "CDNS-2025-Q3",
+          "quote": "“Cadence delivered excellent results for the third quarter of 2025. With a record backlog and ongoing broad-based strength of our business, we are raising our full year revenue outlook to ~14% growth year-over-year,” said Anirudh Devgan, president and chief executive officer. “With deepening strategic relationships across the AI ecosystem, Cadence is uniquely positioned to be the trusted partner to deliver AI-centric transformational solutions.”",
+          "type": "management_statement_candidate",
+          "semantic_review": "pending"
+        },
+        "source_hashes": {
+          "CDNS-2025-Q2": "6e6cb2197c3938ecfb9e8ffa2a3905bc02c99d9ebcee5c8fdf517b11744188c5",
+          "CDNS-2025-Q3": "8b57c1061440caaaca9e7a60da0027504fc8584fc927a2b88505b0280be71d7b"
+        },
+        "horizon": "FY2025"
+      },
+      "decision": "pending",
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "human_attestation": false,
+      "notes": ""
+    },
+    "9bec933783f1cdd0a1ded49aeb8509819ab2649566dd18c20654b610f78c884e": {
+      "evidence": {
+        "case_id": "ADSK-FY2026-Q2-Q3",
+        "method": "A",
+        "kind": "explanation",
+        "candidate": {
+          "source_id": "ADSK-2026-Q2-SEC",
+          "quote": "“While our full year macroeconomic assumptions are unchanged, we have raised our full year guidance to reflect the underlying strength of the business in the first half of the year and additional foreign exchange tailwinds.”",
+          "type": "management_statement_candidate",
+          "semantic_review": "pending"
+        },
+        "source_hashes": {
+          "ADSK-2026-Q2-SEC": "1f44d1398046f719c5e5a1f51b0e79e6975b7e875e8d5e015b26e706cbd12393",
+          "ADSK-2026-Q3": "591c728c010a23f60bdbe38c1f741c193b78ac812f1dd1bdb7c9d09c159d905d"
+        },
+        "horizon": "FY2026"
+      },
+      "decision": "pending",
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "human_attestation": false,
+      "notes": ""
+    },
+    "c5aafef84377e43c9d5344a4c3a9e91d4f7c4430e2ddb61ae697a68097fa3432": {
+      "evidence": {
+        "case_id": "CDNS-FY2025-priorQ4-Q1",
+        "method": "A",
+        "kind": "explanation",
+        "candidate": {
+          "source_id": "CDNS-2025-Q1",
+          "quote": "“Q1 was a strong quarter for Cadence, driven by broad-based strength across all our businesses,” said John Wall, senior vice president and chief financial officer. “I am pleased that we exceeded all key financial metrics for the quarter, and we are tracking ahead of our original forecast for 2025, allowing us to raise our full year outlook.”",
+          "type": "management_statement_candidate",
+          "semantic_review": "pending"
+        },
+        "source_hashes": {
+          "CDNS-2024-Q4": "7295b06325e479d1bd35864660765e06137a8d8b83e020612c9ed99ee0fddfc1",
+          "CDNS-2025-Q1": "968039bf45c150a41089b59ede0e04cca8801a8b0602f25964c2133cdaa73b0b"
+        },
+        "horizon": "FY2025"
+      },
+      "decision": "pending",
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "human_attestation": false,
+      "notes": ""
+    },
+    "c84d88d953674d2cd14a0e353f1b75f961b33e88d4c3a9752edd602fa9276bf2": {
+      "evidence": {
+        "case_id": "CDNS-FY2025-Q1-Q2",
+        "method": "A",
+        "kind": "explanation",
+        "candidate": {
+          "source_id": "CDNS-2025-Q1",
+          "quote": "“Q1 was a strong quarter for Cadence, driven by broad-based strength across all our businesses,” said John Wall, senior vice president and chief financial officer. “I am pleased that we exceeded all key financial metrics for the quarter, and we are tracking ahead of our original forecast for 2025, allowing us to raise our full year outlook.”",
+          "type": "management_statement_candidate",
+          "semantic_review": "pending"
+        },
+        "source_hashes": {
+          "CDNS-2025-Q1": "968039bf45c150a41089b59ede0e04cca8801a8b0602f25964c2133cdaa73b0b",
+          "CDNS-2025-Q2": "6e6cb2197c3938ecfb9e8ffa2a3905bc02c99d9ebcee5c8fdf517b11744188c5"
+        },
+        "horizon": "FY2025"
+      },
+      "decision": "pending",
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "human_attestation": false,
+      "notes": ""
+    },
+    "07b0815755d37ca773931d90e14c061a465957a25b864cf2c170139915f96873": {
+      "evidence": {
+        "case_id": "ZS-FY2025-Q1-Q2",
+        "method": "B",
+        "kind": "explanation",
+        "candidate": {
+          "evidence_id": "e_effad4b4dd7d4d6ec3bc8130",
+          "source_id": "ZS-2025-Q1",
+          "source_hash": "13fa3337ddd5be7fbeea9615914764e25f6616093af354c76029e18b684dfcc5",
+          "start": 748,
+          "end": 862,
+          "quote": "“Growing customer engagements and strong sales execution drove a solid Q1 with all metrics exceeding our guidance.",
+          "url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368324000143/zs-10312024_991.htm",
+          "origin": "disclosure",
+          "literal_valid": true,
+          "semantic_review": "pending"
+        },
+        "source_hashes": {
+          "ZS-2025-Q1": "13fa3337ddd5be7fbeea9615914764e25f6616093af354c76029e18b684dfcc5",
+          "ZS-2025-Q2": "a6655627998da3f5c0cbbc8c7275046adf4c10e72b0b35a9cc6b573643a2b203"
+        },
+        "horizon": "FY2025"
+      },
+      "decision": "pending",
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "human_attestation": false,
+      "notes": ""
+    },
+    "0bd9f7946e78fcdbc128ffe340c028b60f20cb5a811621d06d7ef855b1cf5282": {
+      "evidence": {
+        "case_id": "CRM-FY2024-Q1-Q2",
+        "method": "B",
+        "kind": "explanation",
+        "candidate": {
+          "evidence_id": "e_5d782d53d1383032bade7624",
+          "source_id": "CRM-2024-Q1",
+          "source_hash": "ce3ef55515214a97a91294454551acca8e9a411e428c7458d1848a5d90e81ad3",
+          "start": 4061,
+          "end": 4285,
+          "quote": "In addition, the guidance below is based on estimated GAAP tax rates that reflect the Company’s currently available information, and excludes forecasted discrete tax items such as the tax effects of stock-based compensation.",
+          "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852423000021/crm-q1fy24xexhibit991.htm",
+          "origin": "disclosure",
+          "literal_valid": true,
+          "semantic_review": "pending"
+        },
+        "source_hashes": {
+          "CRM-2024-Q1": "ce3ef55515214a97a91294454551acca8e9a411e428c7458d1848a5d90e81ad3",
+          "CRM-2024-Q2": "5e6ac8f74d23e2ebef90b574e091cab1a323933bce89bb1299b6a0c7b05e5d73"
+        },
+        "horizon": "FY2024"
+      },
+      "decision": "pending",
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "human_attestation": false,
+      "notes": ""
+    },
+    "20da0ac4e9743ffd9e5455876d0384bc5f872d05387cd39e26aa4016a5a3ac34": {
+      "evidence": {
+        "case_id": "ZS-FY2025-Q2-Q3",
+        "method": "B",
+        "kind": "explanation",
+        "candidate": {
+          "evidence_id": "e_f8e67cbf1e250c4102cc614e",
+          "source_id": "ZS-2025-Q2",
+          "source_hash": "a6655627998da3f5c0cbbc8c7275046adf4c10e72b0b35a9cc6b573643a2b203",
+          "start": 747,
+          "end": 924,
+          "quote": "“Growing adoption of Zero Trust and AI is driving strong demand for our platform, resulting in yet another strong quarter that exceeded our guidance on both top and bottom line.",
+          "url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000025/zs-01312025_991.htm",
+          "origin": "disclosure",
+          "literal_valid": true,
+          "semantic_review": "pending"
+        },
+        "source_hashes": {
+          "ZS-2025-Q2": "a6655627998da3f5c0cbbc8c7275046adf4c10e72b0b35a9cc6b573643a2b203",
+          "ZS-2025-Q3": "6560dc3845e05f1d545a743cf19122365f9682293ef957747f2972e44d6c647e"
+        },
+        "horizon": "FY2025"
+      },
+      "decision": "pending",
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "human_attestation": false,
+      "notes": ""
+    },
+    "21bacc93a670a3d0c7de6b4a7c2bddcaa2eaf76ba3351256207e1b8661ff7214": {
+      "evidence": {
+        "case_id": "CRM-FY2024-Q2-Q3",
+        "method": "B",
+        "kind": "explanation",
+        "candidate": {
+          "evidence_id": "e_3d870239536c823672fe1e12",
+          "source_id": "CRM-2024-Q3",
+          "source_hash": "111ff058ea32aaf374dafc072e505f15265e8e4c113f69dca84dc59364563356",
+          "start": 48871,
+          "end": 48966,
+          "quote": "Non-GAAP operating margin for Q1 FY25 reflects our operating priorities, not specific guidance.",
+          "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852423000046/crm-q3fy24xexhibit991.htm",
+          "origin": "disclosure",
+          "literal_valid": true,
+          "semantic_review": "pending"
+        },
+        "source_hashes": {
+          "CRM-2024-Q2": "5e6ac8f74d23e2ebef90b574e091cab1a323933bce89bb1299b6a0c7b05e5d73",
+          "CRM-2024-Q3": "111ff058ea32aaf374dafc072e505f15265e8e4c113f69dca84dc59364563356"
+        },
+        "horizon": "FY2024"
+      },
+      "decision": "pending",
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "human_attestation": false,
+      "notes": ""
+    },
+    "2b0bc5b8d7105c73721cae5965810252e205263d34db6c52b212c9251eb8a4f3": {
+      "evidence": {
+        "case_id": "ADSK-FY2026-Q1-Q2",
+        "method": "B",
+        "kind": "explanation",
+        "candidate": {
+          "evidence_id": "e_4c32493f8dc0b4125e4a6f9b",
+          "source_id": "ADSK-2026-Q2",
+          "source_hash": "daecdbc0dcef88ccd8b0157d05f1968215c7173d0531f61b0f9f95e38325e6dc",
+          "start": 1981,
+          "end": 2206,
+          "quote": "\"While our full year  macroeconomic assumptions are unchanged, we have raised our full year guidance to reflect the underlying strength of the business in the first half of the year and additional foreign exchange tailwinds.\"",
+          "url": "https://investors.autodesk.com/news-releases/news-release-details/autodesk-inc-announces-fiscal-2026-second-quarter-results",
+          "origin": "disclosure",
+          "literal_valid": true,
+          "semantic_review": "pending"
+        },
+        "source_hashes": {
+          "ADSK-2026-Q1": "a5ad3c7b77962f06198c39e38ae47091a3ac9a95852518182ec346a96a50e8e2",
+          "ADSK-2026-Q2": "daecdbc0dcef88ccd8b0157d05f1968215c7173d0531f61b0f9f95e38325e6dc"
+        },
+        "horizon": "FY2026"
+      },
+      "decision": "pending",
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "human_attestation": false,
+      "notes": ""
+    },
+    "320d5b266f1bd4be28e676c8655a7e2b3d31bddaa2114a08d2568b4b2fcd404b": {
+      "evidence": {
+        "case_id": "CRM-FY2024-Q2-Q3",
+        "method": "B",
+        "kind": "explanation",
+        "candidate": {
+          "evidence_id": "e_7fd4af557971cfbce867734a",
+          "source_id": "CRM-2024-Q2",
+          "source_hash": "5e6ac8f74d23e2ebef90b574e091cab1a323933bce89bb1299b6a0c7b05e5d73",
+          "start": 48253,
+          "end": 48348,
+          "quote": "Non-GAAP operating margin for Q1 FY25 reflects our operating priorities, not specific guidance.",
+          "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852423000037/crm-q2fy24xexhibit991.htm",
+          "origin": "disclosure",
+          "literal_valid": true,
+          "semantic_review": "pending"
+        },
+        "source_hashes": {
+          "CRM-2024-Q2": "5e6ac8f74d23e2ebef90b574e091cab1a323933bce89bb1299b6a0c7b05e5d73",
+          "CRM-2024-Q3": "111ff058ea32aaf374dafc072e505f15265e8e4c113f69dca84dc59364563356"
+        },
+        "horizon": "FY2024"
+      },
+      "decision": "pending",
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "human_attestation": false,
+      "notes": ""
+    },
+    "38779523780fe1f9482c41c65ff93b26996c3295f60cd6a42bdecf9b173ecab1": {
+      "evidence": {
+        "case_id": "ADSK-FY2026-Q1-Q2",
+        "method": "B",
+        "kind": "explanation",
+        "candidate": {
+          "evidence_id": "e_5a47ea05f87516d33ac8ed52",
+          "source_id": "ADSK-2026-Q1",
+          "source_hash": "a5ad3c7b77962f06198c39e38ae47091a3ac9a95852518182ec346a96a50e8e2",
+          "start": 1470,
+          "end": 1797,
+          "quote": "We have not seen changes in overall business momentum when compared to recent quarters,\" said Janesh Moorjani, Autodesk CFO. \"Our guidance for Q2 and the rest of the year now includes currency movements since February partly offset by additional caution in our growth assumptions to reflect greater macro economic uncertainty.\"",
+          "url": "https://investors.autodesk.com/index.php/news-releases/news-release-details/autodesk-inc-announces-fiscal-2026-first-quarter-results",
+          "origin": "disclosure",
+          "literal_valid": true,
+          "semantic_review": "pending"
+        },
+        "source_hashes": {
+          "ADSK-2026-Q1": "a5ad3c7b77962f06198c39e38ae47091a3ac9a95852518182ec346a96a50e8e2",
+          "ADSK-2026-Q2": "daecdbc0dcef88ccd8b0157d05f1968215c7173d0531f61b0f9f95e38325e6dc"
+        },
+        "horizon": "FY2026"
+      },
+      "decision": "pending",
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "human_attestation": false,
+      "notes": ""
+    },
+    "39e4ae0c21cdd7e363d02545b681077cc88eb0482de6f096611cf07f65e30864": {
+      "evidence": {
+        "case_id": "ADSK-FY2026-Q2-Q3",
+        "method": "B",
+        "kind": "explanation",
+        "candidate": {
+          "evidence_id": "e_b5c4c915d71c630b3b2952c7",
+          "source_id": "ADSK-2026-Q3",
+          "source_hash": "591c728c010a23f60bdbe38c1f741c193b78ac812f1dd1bdb7c9d09c159d905d",
+          "start": 1204,
+          "end": 1291,
+          "quote": "We are raising our full-year guidance to reflect the current momentum of the business.”",
+          "url": "https://www.sec.gov/Archives/edgar/data/769397/000076939725000126/q326pressrelease.htm",
+          "origin": "disclosure",
+          "literal_valid": true,
+          "semantic_review": "pending"
+        },
+        "source_hashes": {
+          "ADSK-2026-Q2-SEC": "1f44d1398046f719c5e5a1f51b0e79e6975b7e875e8d5e015b26e706cbd12393",
+          "ADSK-2026-Q3": "591c728c010a23f60bdbe38c1f741c193b78ac812f1dd1bdb7c9d09c159d905d"
+        },
+        "horizon": "FY2026"
+      },
+      "decision": "pending",
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "human_attestation": false,
+      "notes": ""
+    },
+    "6c63b6defb445af6a37ccda03f800555aef95d579b3e9062d186656c498023c8": {
+      "evidence": {
+        "case_id": "ZS-FY2025-priorQ4-Q1",
+        "method": "B",
+        "kind": "conflict",
+        "candidate": {
+          "topic": "FY2025 full-year total revenue guidance range (reported basis, USD, fiscal year)",
+          "reason": "Same issuer, same basis (reported), same currency (USD), same fiscal horizon (FY2025), same metric (total revenue). The FY2025 revenue guidance range was revised upward from approximately $2.60–$2.62 billion (Sept 3, 2024) to approximately $2.623–$2.643 billion (Dec 2, 2024). Per the rules, a numerical revision or direction change alone is not itself a conflict; this is recorded only as a guidance update for human review.",
+          "citations": [
+            {
+              "evidence_id": "e_6f1e6e7a4cf778ba01dc40bb",
+              "source_id": "ZS-2024-Q4",
+              "source_hash": "12b47c5f8cfc38298ee488a45109615c196225299531c8b766fceaf51d3dfd92",
+              "start": 6811,
+              "end": 6910,
+              "quote": "For the full year fiscal 2025, we expect:\n\n•Revenue of approximately $2.60 billion to $2.62 billion",
+              "url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368324000097/zs-07312024_991.htm",
+              "origin": "disclosure",
+              "literal_valid": true,
+              "semantic_review": "pending"
+            },
+            {
+              "evidence_id": "e_5b02d3d0d632e4486a607d45",
+              "source_id": "ZS-2025-Q1",
+              "source_hash": "13fa3337ddd5be7fbeea9615914764e25f6616093af354c76029e18b684dfcc5",
+              "start": 5511,
+              "end": 5615,
+              "quote": "For the full year of fiscal 2025, we expect:\n\n•Revenue of approximately $2.623 billion to $2.643 billion",
+              "url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368324000143/zs-10312024_991.htm",
+              "origin": "disclosure",
+              "literal_valid": true,
+              "semantic_review": "pending"
+            }
+          ],
+          "semantic_review": "pending",
+          "kind": "model_flagged_apparent_conflict"
+        },
+        "source_hashes": {
+          "ZS-2024-Q4": "12b47c5f8cfc38298ee488a45109615c196225299531c8b766fceaf51d3dfd92",
+          "ZS-2025-Q1": "13fa3337ddd5be7fbeea9615914764e25f6616093af354c76029e18b684dfcc5"
+        },
+        "horizon": "FY2025"
+      },
+      "decision": "pending",
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "human_attestation": false,
+      "notes": ""
+    },
+    "027107f73eb4452e9c6a7fbc84936e39a58e2a37da846dc7936bbc60fbba28ab": {
+      "evidence": {
+        "case_id": "ADSK-FY2026-Q1-Q2",
+        "method": "C",
+        "kind": "explanation",
+        "candidate": {
+          "evidence_id": "e_4c32493f8dc0b4125e4a6f9b",
+          "source_id": "ADSK-2026-Q2",
+          "source_hash": "daecdbc0dcef88ccd8b0157d05f1968215c7173d0531f61b0f9f95e38325e6dc",
+          "start": 1981,
+          "end": 2206,
+          "quote": "\"While our full year  macroeconomic assumptions are unchanged, we have raised our full year guidance to reflect the underlying strength of the business in the first half of the year and additional foreign exchange tailwinds.\"",
+          "url": "https://investors.autodesk.com/news-releases/news-release-details/autodesk-inc-announces-fiscal-2026-second-quarter-results",
+          "origin": "disclosure",
+          "literal_valid": true,
+          "semantic_review": "pending"
+        },
+        "source_hashes": {
+          "ADSK-2026-Q1": "a5ad3c7b77962f06198c39e38ae47091a3ac9a95852518182ec346a96a50e8e2",
+          "ADSK-2026-Q2": "daecdbc0dcef88ccd8b0157d05f1968215c7173d0531f61b0f9f95e38325e6dc"
+        },
+        "horizon": "FY2026"
+      },
+      "decision": "pending",
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "human_attestation": false,
+      "notes": ""
+    },
+    "1b60e1665185a3e763c46705e58947b3072d72ec2438a10cd3902546078873ea": {
+      "evidence": {
+        "case_id": "CRM-FY2024-Q1-Q2",
+        "method": "C",
+        "kind": "explanation",
+        "candidate": {
+          "evidence_id": "e_5ffb576c4af19423b4480686",
+          "source_id": "CRM-2024-Q1",
+          "source_hash": "ce3ef55515214a97a91294454551acca8e9a411e428c7458d1848a5d90e81ad3",
+          "start": 700,
+          "end": 2100,
+          "quote": " Quarter to Stockholders in the Form of Share Repurchases\n\n•Initiates Second Quarter FY24 Revenue Guidance of $8.51 Billion to $8.53 Billion, up ~10% Y/Y\n\n•Reiterates Full Year FY24 Revenue Guidance of $34.5 Billion to $34.7 Billion, up ~10% Y/Y\n•Raises Full Year FY24 GAAP Operating Margin Guidance to ~11.4% and Non-GAAP Operating Margin Guidance to ~28.0%\n“Salesforce significantly exceeded our non-GAAP margin target for the quarter — up 1,000 basis points year-over-year, and we are raising our FY24 non-GAAP operating margin guidance to a 550 basis point increase year-over-year,” said Marc Benioff, Chair and CEO of Salesforce. “At the same time, we are leading the next major revolution in CRM — infusing trusted, secure generative AI across our entire product portfolio.\nSalesforce's generative AI ecosystem wields Einstein GPT, Slack GPT, and Tableau GPT, delivering trusted power across our product portfolio. Our Salesforce GPT Trust Layer will shield customer data, enabling productive automation and intelligent enterprise enhancements securely.”\n\"Q1 represented another strong step forward as we accelerate our transformation and profitable growth strategy,” said Amy Weaver, President and CFO of Salesforce. “Our team delivered another double-digit growth quarter on the top and bottom line as we help customers increase productivity, drive efficiency, and become AI-first companies.\"",
+          "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852423000021/crm-q1fy24xexhibit991.htm",
+          "origin": "disclosure",
+          "literal_valid": true,
+          "semantic_review": "pending"
+        },
+        "source_hashes": {
+          "CRM-2024-Q1": "ce3ef55515214a97a91294454551acca8e9a411e428c7458d1848a5d90e81ad3",
+          "CRM-2024-Q2": "5e6ac8f74d23e2ebef90b574e091cab1a323933bce89bb1299b6a0c7b05e5d73"
+        },
+        "horizon": "FY2024"
+      },
+      "decision": "pending",
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "human_attestation": false,
+      "notes": ""
+    },
+    "1d6288d63db4f5d37b3ab2e34ba7d91d2a0748bbb8bee48b75ef646f9c9c1b45": {
+      "evidence": {
+        "case_id": "CDNS-FY2025-Q1-Q2",
+        "method": "C",
+        "kind": "explanation",
+        "candidate": {
+          "evidence_id": "e_81c20d263e60fcf602f71e12",
+          "source_id": "CDNS-2025-Q2",
+          "source_hash": "6e6cb2197c3938ecfb9e8ffa2a3905bc02c99d9ebcee5c8fdf517b11744188c5",
+          "start": 2100,
+          "end": 3500,
+          "quote": "rgin to 44%.”\n\nCFO Commentary\nCommentary on the second quarter of 2025 financial results by John Wall, senior vice president and chief financial officer, is available at www.cadence.com/cadence/investor_relations.\n\nBusiness Outlook\n\nFor fiscal year 2025, the company expects:\n\n•Revenue in the range of $5.21 billion to $5.27 billion\n\n•GAAP operating margin in the range of 28.5% to 29.5%\n\n•Non-GAAP operating margin in the range of 43.5% to 44.5%\n\n•GAAP diluted net income per share in the range of $3.97 to $4.07\n•Non-GAAP diluted net income per share in the range of $6.85 to $6.95\n\n•Operating cash flow in the range of $1.65 billion to $1.75 billion\nAt the midpoint, the $50 million increase in operating cash flow outlook is primarily driven by the $50 million increase in revenue outlook. Cadence anticipates a $140.6 million cash outflow relating to the DOJ and BIS settlements. In addition, Cadence expects to benefit from approximately $140 million in reduced cash tax payments due to the immediate expensing of U.S. R&D expenditures under the One Big Beautiful Bill Act.\nThe company utilizes a long-term projected non-GAAP tax rate, which reflects currently available information, as well as other factors and assumptions. The non-GAAP tax rate is subject to change for a variety of reasons, including the rapidly evolving global tax environment, significant changes in the company’s geograp",
+          "url": "https://www.sec.gov/Archives/edgar/data/813672/000081367225000108/cdns7282025ex9901.htm",
+          "origin": "disclosure",
+          "literal_valid": true,
+          "semantic_review": "pending"
+        },
+        "source_hashes": {
+          "CDNS-2025-Q1": "968039bf45c150a41089b59ede0e04cca8801a8b0602f25964c2133cdaa73b0b",
+          "CDNS-2025-Q2": "6e6cb2197c3938ecfb9e8ffa2a3905bc02c99d9ebcee5c8fdf517b11744188c5"
+        },
+        "horizon": "FY2025"
+      },
+      "decision": "pending",
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "human_attestation": false,
+      "notes": ""
+    },
+    "1eb3841de8eb8cde272da5c3f5841c76082fe8a31e623f7de7762038e83d722c": {
+      "evidence": {
+        "case_id": "CDNS-FY2025-Q2-Q3",
+        "method": "C",
+        "kind": "explanation",
+        "candidate": {
+          "evidence_id": "e_fc903fd59e48f15d4802834c",
+          "source_id": "CDNS-2025-Q2",
+          "source_hash": "6e6cb2197c3938ecfb9e8ffa2a3905bc02c99d9ebcee5c8fdf517b11744188c5",
+          "start": 1400,
+          "end": 2800,
+          "quote": "er relationships,” said Anirudh Devgan, president and chief executive officer.\n“The strength and breadth of our products are enabling us to lead through the accelerating waves of the AI Supercycle, from AI infrastructure build-out, to physical AI in autonomous systems, to the emerging frontier of science AI.”\n“I am pleased to report that Cadence delivered excellent results for Q2, with broad-based strength across all businesses, more than offsetting the impact of the temporary restrictions on exports to China imposed on May 23rd,” said John Wall, senior vice president and chief financial officer. “We are raising our 2025 revenue outlook to 13% growth year-over-year, and non-GAAP operating margin to 44%.”\n\nCFO Commentary\nCommentary on the second quarter of 2025 financial results by John Wall, senior vice president and chief financial officer, is available at www.cadence.com/cadence/investor_relations.\n\nBusiness Outlook\n\nFor fiscal year 2025, the company expects:\n\n•Revenue in the range of $5.21 billion to $5.27 billion\n\n•GAAP operating margin in the range of 28.5% to 29.5%\n\n•Non-GAAP operating margin in the range of 43.5% to 44.5%\n\n•GAAP diluted net income per share in the range of $3.97 to $4.07\n•Non-GAAP diluted net income per share in the range of $6.85 to $6.95\n\n•Operating cash flow in the range of $1.65 billion to $1.75 billion\nAt the midpoint, the $50 million increase in op",
+          "url": "https://www.sec.gov/Archives/edgar/data/813672/000081367225000108/cdns7282025ex9901.htm",
+          "origin": "disclosure",
+          "literal_valid": true,
+          "semantic_review": "pending"
+        },
+        "source_hashes": {
+          "CDNS-2025-Q2": "6e6cb2197c3938ecfb9e8ffa2a3905bc02c99d9ebcee5c8fdf517b11744188c5",
+          "CDNS-2025-Q3": "8b57c1061440caaaca9e7a60da0027504fc8584fc927a2b88505b0280be71d7b"
+        },
+        "horizon": "FY2025"
+      },
+      "decision": "pending",
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "human_attestation": false,
+      "notes": ""
+    },
+    "2ab2c60768efb093998faaf3a949ffafdbfa9f7d875aecbe15deade3dab687c0": {
+      "evidence": {
+        "case_id": "CDNS-FY2025-priorQ4-Q1",
+        "method": "C",
+        "kind": "explanation",
+        "candidate": {
+          "evidence_id": "e_56ed00e87baa6b6f582ff027",
+          "source_id": "CDNS-2025-Q1",
+          "source_hash": "968039bf45c150a41089b59ede0e04cca8801a8b0602f25964c2133cdaa73b0b",
+          "start": 1400,
+          "end": 2800,
+          "quote": ", and AI-driven product innovations, position us well in navigating today's dynamic macro environment.”\n“Q1 was a strong quarter for Cadence, driven by broad-based strength across all our businesses,” said John Wall, senior vice president and chief financial officer. “I am pleased that we exceeded all key financial metrics for the quarter, and we are tracking ahead of our original forecast for 2025, allowing us to raise our full year outlook.”\n\nCFO Commentary\nCommentary on the first quarter of 2025 financial results by John Wall, senior vice president and chief financial officer, is available at www.cadence.com/cadence/investor_relations.\n\nBusiness Outlook\n\nFor fiscal year 2025, the company expects:\n\n•Revenue in the range of $5.15 billion to $5.23 billion\n\n•GAAP operating margin in the range of 30.25% to 31.25%\n\n•Non-GAAP operating margin in the range of 43.25% to 44.25%\n\n•GAAP diluted net income per share in the range of $4.21 to $4.31\n•Non-GAAP diluted net income per share in the range of $6.73 to $6.83\nThe company utilizes a long-term projected non-GAAP tax rate, which reflects currently available information, as well as other factors and assumptions. The non-GAAP tax rate is subject to change for a variety of reasons, including the rapidly evolving global tax environment, significant changes in the company’s geographic earnings mix, or other changes to the company’s strateg",
+          "url": "https://www.sec.gov/Archives/edgar/data/813672/000081367225000046/cdns4282025ex9901.htm",
+          "origin": "disclosure",
+          "literal_valid": true,
+          "semantic_review": "pending"
+        },
+        "source_hashes": {
+          "CDNS-2024-Q4": "7295b06325e479d1bd35864660765e06137a8d8b83e020612c9ed99ee0fddfc1",
+          "CDNS-2025-Q1": "968039bf45c150a41089b59ede0e04cca8801a8b0602f25964c2133cdaa73b0b"
+        },
+        "horizon": "FY2025"
+      },
+      "decision": "pending",
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "human_attestation": false,
+      "notes": ""
+    },
+    "2fe92b2f5d358bb358b82eed19dfb52bc710ea3101196127a7e5e438ee5be9c5": {
+      "evidence": {
+        "case_id": "CRM-FY2024-priorQ4-Q1",
+        "method": "C",
+        "kind": "explanation",
+        "candidate": {
+          "evidence_id": "e_69d107e8faab6acbb38d4367",
+          "source_id": "CRM-2024-Q1",
+          "source_hash": "ce3ef55515214a97a91294454551acca8e9a411e428c7458d1848a5d90e81ad3",
+          "start": 855,
+          "end": 945,
+          "quote": "•Reiterates Full Year FY24 Revenue Guidance of $34.5 Billion to $34.7 Billion, up ~10% Y/Y",
+          "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852423000021/crm-q1fy24xexhibit991.htm",
+          "origin": "disclosure",
+          "literal_valid": true,
+          "semantic_review": "pending"
+        },
+        "source_hashes": {
+          "CRM-2023-Q4": "40ee65c6f64a5e8f2ace60abef5f843ddb9619499d38f0e381af45d26de23315",
+          "CRM-2024-Q1": "ce3ef55515214a97a91294454551acca8e9a411e428c7458d1848a5d90e81ad3"
+        },
+        "horizon": "FY2024"
+      },
+      "decision": "pending",
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "human_attestation": false,
+      "notes": ""
+    },
+    "306228d2ce4d882f3fee86a865b2d72bf1b9d0c8de023186d496dd95d16ae092": {
+      "evidence": {
+        "case_id": "ZS-FY2025-Q1-Q2",
+        "method": "C",
+        "kind": "explanation",
+        "candidate": {
+          "evidence_id": "e_f8e67cbf1e250c4102cc614e",
+          "source_id": "ZS-2025-Q2",
+          "source_hash": "a6655627998da3f5c0cbbc8c7275046adf4c10e72b0b35a9cc6b573643a2b203",
+          "start": 747,
+          "end": 924,
+          "quote": "“Growing adoption of Zero Trust and AI is driving strong demand for our platform, resulting in yet another strong quarter that exceeded our guidance on both top and bottom line.",
+          "url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000025/zs-01312025_991.htm",
+          "origin": "disclosure",
+          "literal_valid": true,
+          "semantic_review": "pending"
+        },
+        "source_hashes": {
+          "ZS-2025-Q1": "13fa3337ddd5be7fbeea9615914764e25f6616093af354c76029e18b684dfcc5",
+          "ZS-2025-Q2": "a6655627998da3f5c0cbbc8c7275046adf4c10e72b0b35a9cc6b573643a2b203"
+        },
+        "horizon": "FY2025"
+      },
+      "decision": "pending",
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "human_attestation": false,
+      "notes": ""
+    },
+    "4b31e8741a581103cfcbd8665b9b085346e1688e0db977dc1cb9d7271c0ee403": {
+      "evidence": {
+        "case_id": "ADSK-FY2026-Q2-Q3",
+        "method": "C",
+        "kind": "explanation",
+        "candidate": {
+          "evidence_id": "e_8d09a01768950f67ee063392",
+          "source_id": "ADSK-2026-Q3",
+          "source_hash": "591c728c010a23f60bdbe38c1f741c193b78ac812f1dd1bdb7c9d09c159d905d",
+          "start": 1100,
+          "end": 1320,
+          "quote": "y remains elevated, and we have so far successfully executed our sales and marketing optimization plan. We are raising our full-year guidance to reflect the current momentum of the business.”\n\nThird Quarter Fiscal 2026\n ",
+          "url": "https://www.sec.gov/Archives/edgar/data/769397/000076939725000126/q326pressrelease.htm",
+          "origin": "disclosure",
+          "literal_valid": true,
+          "semantic_review": "pending"
+        },
+        "source_hashes": {
+          "ADSK-2026-Q2-SEC": "1f44d1398046f719c5e5a1f51b0e79e6975b7e875e8d5e015b26e706cbd12393",
+          "ADSK-2026-Q3": "591c728c010a23f60bdbe38c1f741c193b78ac812f1dd1bdb7c9d09c159d905d"
+        },
+        "horizon": "FY2026"
+      },
+      "decision": "pending",
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "human_attestation": false,
+      "notes": ""
+    },
+    "06530574aae94a4fdc1373907970b95004e5f13991d51f4d1515794a0b92cce2": {
+      "evidence": {
+        "case_id": "CDNS-FY2025-Q1-Q2",
+        "method": "D",
+        "kind": "explanation",
+        "candidate": {
+          "source_id": "CDNS-2025-Q1",
+          "quote": "“Q1 was a strong quarter for Cadence, driven by broad-based strength across all our businesses,” said John Wall, senior vice president and chief financial officer. “I am pleased that we exceeded all key financial metrics for the quarter, and we are tracking ahead of our original forecast for 2025, allowing us to raise our full year outlook.”",
+          "type": "management_statement_candidate",
+          "semantic_review": "pending"
+        },
+        "source_hashes": {
+          "CDNS-2025-Q1": "968039bf45c150a41089b59ede0e04cca8801a8b0602f25964c2133cdaa73b0b",
+          "CDNS-2025-Q2": "6e6cb2197c3938ecfb9e8ffa2a3905bc02c99d9ebcee5c8fdf517b11744188c5"
+        },
+        "horizon": "FY2025"
+      },
+      "decision": "pending",
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "human_attestation": false,
+      "notes": ""
+    },
+    "18f2b111f70ee68007ce98109661fa521f6f46548f9605ccd1be8dc0981d7a27": {
+      "evidence": {
+        "case_id": "CRM-FY2024-Q1-Q2",
+        "method": "D",
+        "kind": "explanation",
+        "candidate": {
+          "source_id": "CRM-2024-Q2",
+          "quote": "“Our transformation drove our strong second quarter results, delivering revenue of $8.6 billion and record GAAP and non-GAAP operating margins,” said Marc Benioff, Chair and CEO of Salesforce. “Based on our performance and what we see in the back half of the year, we’re raising our fiscal year ‘24 revenue, operating margin, and operating cash flow growth guidance.",
+          "type": "management_statement_candidate",
+          "semantic_review": "pending"
+        },
+        "source_hashes": {
+          "CRM-2024-Q1": "ce3ef55515214a97a91294454551acca8e9a411e428c7458d1848a5d90e81ad3",
+          "CRM-2024-Q2": "5e6ac8f74d23e2ebef90b574e091cab1a323933bce89bb1299b6a0c7b05e5d73"
+        },
+        "horizon": "FY2024"
+      },
+      "decision": "pending",
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "human_attestation": false,
+      "notes": ""
+    },
+    "34e5c235bc2a006e649258df3b96d53b46616667df512663394f1098d13f6f94": {
+      "evidence": {
+        "case_id": "CDNS-FY2025-Q1-Q2",
+        "method": "D",
+        "kind": "explanation",
+        "candidate": {
+          "source_id": "CDNS-2025-Q2",
+          "quote": "“I am pleased to report that Cadence delivered excellent results for Q2, with broad-based strength across all businesses, more than offsetting the impact of the temporary restrictions on exports to China imposed on May 23rd,” said John Wall, senior vice president and chief financial officer. “We are raising our 2025 revenue outlook to 13% growth year-over-year, and non-GAAP operating margin to 44%.”",
+          "type": "management_statement_candidate",
+          "semantic_review": "pending"
+        },
+        "source_hashes": {
+          "CDNS-2025-Q1": "968039bf45c150a41089b59ede0e04cca8801a8b0602f25964c2133cdaa73b0b",
+          "CDNS-2025-Q2": "6e6cb2197c3938ecfb9e8ffa2a3905bc02c99d9ebcee5c8fdf517b11744188c5"
+        },
+        "horizon": "FY2025"
+      },
+      "decision": "pending",
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "human_attestation": false,
+      "notes": ""
+    },
+    "5c1d7014e432c594b942809b32d82ebf65dd02303ee47285e14c84ca14d91104": {
+      "evidence": {
+        "case_id": "CDNS-FY2025-priorQ4-Q1",
+        "method": "D",
+        "kind": "explanation",
+        "candidate": {
+          "source_id": "CDNS-2025-Q1",
+          "quote": "“Q1 was a strong quarter for Cadence, driven by broad-based strength across all our businesses,” said John Wall, senior vice president and chief financial officer. “I am pleased that we exceeded all key financial metrics for the quarter, and we are tracking ahead of our original forecast for 2025, allowing us to raise our full year outlook.”",
+          "type": "management_statement_candidate",
+          "semantic_review": "pending"
+        },
+        "source_hashes": {
+          "CDNS-2024-Q4": "7295b06325e479d1bd35864660765e06137a8d8b83e020612c9ed99ee0fddfc1",
+          "CDNS-2025-Q1": "968039bf45c150a41089b59ede0e04cca8801a8b0602f25964c2133cdaa73b0b"
+        },
+        "horizon": "FY2025"
+      },
+      "decision": "pending",
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "human_attestation": false,
+      "notes": ""
+    },
+    "5fb71cff85ee8d561f065112583ce4d0fac00ba59f0a165d4a90fdeda12b4512": {
+      "evidence": {
+        "case_id": "CDNS-FY2025-Q2-Q3",
+        "method": "D",
+        "kind": "explanation",
+        "candidate": {
+          "source_id": "CDNS-2025-Q3",
+          "quote": "“Cadence delivered excellent results for the third quarter of 2025. With a record backlog and ongoing broad-based strength of our business, we are raising our full year revenue outlook to ~14% growth year-over-year,” said Anirudh Devgan, president and chief executive officer. “With deepening strategic relationships across the AI ecosystem, Cadence is uniquely positioned to be the trusted partner to deliver AI-centric transformational solutions.”",
+          "type": "management_statement_candidate",
+          "semantic_review": "pending"
+        },
+        "source_hashes": {
+          "CDNS-2025-Q2": "6e6cb2197c3938ecfb9e8ffa2a3905bc02c99d9ebcee5c8fdf517b11744188c5",
+          "CDNS-2025-Q3": "8b57c1061440caaaca9e7a60da0027504fc8584fc927a2b88505b0280be71d7b"
+        },
+        "horizon": "FY2025"
+      },
+      "decision": "pending",
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "human_attestation": false,
+      "notes": ""
+    },
+    "9b6555c7673f7b53eaf1abd916ae969d2a651e9a975e2487a9abd6b434c7b9be": {
+      "evidence": {
+        "case_id": "CDNS-FY2025-Q2-Q3",
+        "method": "D",
+        "kind": "explanation",
+        "candidate": {
+          "source_id": "CDNS-2025-Q2",
+          "quote": "“I am pleased to report that Cadence delivered excellent results for Q2, with broad-based strength across all businesses, more than offsetting the impact of the temporary restrictions on exports to China imposed on May 23rd,” said John Wall, senior vice president and chief financial officer. “We are raising our 2025 revenue outlook to 13% growth year-over-year, and non-GAAP operating margin to 44%.”",
+          "type": "management_statement_candidate",
+          "semantic_review": "pending"
+        },
+        "source_hashes": {
+          "CDNS-2025-Q2": "6e6cb2197c3938ecfb9e8ffa2a3905bc02c99d9ebcee5c8fdf517b11744188c5",
+          "CDNS-2025-Q3": "8b57c1061440caaaca9e7a60da0027504fc8584fc927a2b88505b0280be71d7b"
+        },
+        "horizon": "FY2025"
+      },
+      "decision": "pending",
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "human_attestation": false,
+      "notes": ""
+    },
+    "e794e1b225e68bfbd7f0d8982b4c7bea96a2c420cdba1a6b993fc94f5a927686": {
+      "evidence": {
+        "case_id": "ADSK-FY2026-Q2-Q3",
+        "method": "D",
+        "kind": "explanation",
+        "candidate": {
+          "source_id": "ADSK-2026-Q2-SEC",
+          "quote": "“While our full year macroeconomic assumptions are unchanged, we have raised our full year guidance to reflect the underlying strength of the business in the first half of the year and additional foreign exchange tailwinds.”",
+          "type": "management_statement_candidate",
+          "semantic_review": "pending"
+        },
+        "source_hashes": {
+          "ADSK-2026-Q2-SEC": "1f44d1398046f719c5e5a1f51b0e79e6975b7e875e8d5e015b26e706cbd12393",
+          "ADSK-2026-Q3": "591c728c010a23f60bdbe38c1f741c193b78ac812f1dd1bdb7c9d09c159d905d"
+        },
+        "horizon": "FY2026"
+      },
+      "decision": "pending",
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "human_attestation": false,
+      "notes": ""
+    },
+    "fd78c2b6c8cf241b1a1bb5849ea6f5f37d825867b47c1bd0eb397686a27d5b41": {
+      "evidence": {
+        "case_id": "ADSK-FY2026-Q1-Q2",
+        "method": "D",
+        "kind": "explanation",
+        "candidate": {
+          "source_id": "ADSK-2026-Q2",
+          "quote": "\"While our full year  macroeconomic assumptions are unchanged, we have raised our full year guidance to reflect the underlying strength of the business in the first half of the year and additional foreign exchange tailwinds.\"",
+          "type": "management_statement_candidate",
+          "semantic_review": "pending"
+        },
+        "source_hashes": {
+          "ADSK-2026-Q1": "a5ad3c7b77962f06198c39e38ae47091a3ac9a95852518182ec346a96a50e8e2",
+          "ADSK-2026-Q2": "daecdbc0dcef88ccd8b0157d05f1968215c7173d0531f61b0f9f95e38325e6dc"
+        },
+        "horizon": "FY2026"
+      },
+      "decision": "pending",
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "human_attestation": false,
+      "notes": ""
+    }
+  }
+}

@@ -29,7 +29,7 @@ class RecordedAdapter:
         return deepcopy(record['raw_response'])
 
 
-def verify(bundle):
+def verify(bundle, allow_earnings_changes=False):
     original = json.loads((bundle/'run.json').read_text())
     job = json.loads((bundle/'job.json').read_text())
     records = json.loads((bundle/'sources.json').read_text())
@@ -47,10 +47,17 @@ def verify(bundle):
     if {s.source_id: s.content_hash for s in sources.values()} != original['source_hashes']:
         raise AssertionError('source inventory differs from the live run')
     package = Path(eventlens.__file__).parent.resolve()
+    unrelated_changes = []
+    earnings_files = {'cli.py', 'extraction.py', 'evaluation.py', 'pipeline.py'}
     for filename, expected in original['code_hashes'].items():
         path = (package/filename).resolve()
-        if not path.is_relative_to(package) or digest(path.read_bytes()) != expected:
-            raise AssertionError('package differs from the recorded run: '+filename)
+        if not path.is_relative_to(package):
+            raise AssertionError('recorded package path escapes package')
+        if digest(path.read_bytes()) != expected:
+            if allow_earnings_changes and filename in earnings_files:
+                unrelated_changes.append(filename)
+            else:
+                raise AssertionError('package differs from the recorded run: '+filename)
     request = job['request']
     adapter = RecordedAdapter(original)
     replay = run_brief(sources, request['case'], request['method'], request['config'], adapter,
@@ -63,6 +70,7 @@ def verify(bundle):
     if adapter.used != len(adapter.calls):
         raise AssertionError('replay did not consume all recorded responses')
     return {'success': True, 'execution_kind': adapter.kind, 'paid_model_calls': 0,
+            'unrelated_earnings_code_changes': unrelated_changes,
             'original_model': original['model'], 'original_execution_kind': original['execution_kind'],
             'source_count': len(sources), 'capture_count': captures,
             'recorded_model_responses': adapter.used, 'tool_calls': replay['tool_calls'],
@@ -75,8 +83,10 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('bundle', type=Path)
     parser.add_argument('--report', type=Path)
+    parser.add_argument('--allow-earnings-changes', action='store_true',
+                        help='Permit only four earnings-only modules to differ; macro/shared code stays hash-locked')
     args = parser.parse_args()
-    report = verify(args.bundle)
+    report = verify(args.bundle, args.allow_earnings_changes)
     content = json.dumps(report, indent=2)+'\n'
     if args.report:
         args.report.parent.mkdir(parents=True, exist_ok=True)

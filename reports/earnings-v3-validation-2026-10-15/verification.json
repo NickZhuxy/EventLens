@@ -1,0 +1,118 @@
+{
+  "verified_at": "2026-10-15T20:32:21.089422+00:00",
+  "tests_passed": 188,
+  "v4_tests": 8,
+  "v4_saved_response_regressions": 18,
+  "v3_paid_requests": 94,
+  "v3_conservative_token_cost_usd": "0.2376024",
+  "v4_paid_requests": 0,
+  "v4_approval_status": "pending",
+  "v4_freeze_sha256": "7d0b5e66f94450631b3f35abeb82a4b847b04c11cf94038faa10584866be548d",
+  "checks": {
+    "v2-replay.json": {
+      "replayed_runs": 440,
+      "recorded_requests": 342,
+      "paid_model_calls": 0,
+      "network_calls": 0,
+      "all_saved_requests_matched": true,
+      "all_evidence_and_results_matched": true,
+      "results_table_reproduced": true
+    },
+    "v2-parallel-hashes.json": {
+      "bundle": "earnings-v2-2026-10-13",
+      "verified_hashes": 791,
+      "all_hashes_match": true,
+      "network_calls": 0,
+      "paid_calls": 0
+    },
+    "v3-replay.json": {
+      "replayed_runs": 32,
+      "journalled_requests": 94,
+      "network_calls": 0,
+      "paid_calls": 0,
+      "all_requests_and_results_matched": true
+    },
+    "macro-replay.json": {
+      "success": true,
+      "execution_kind": "recorded_replay",
+      "paid_model_calls": 0,
+      "unrelated_earnings_code_changes": [
+        "cli.py",
+        "evaluation.py",
+        "pipeline.py"
+      ],
+      "original_model": "deepseek-flash",
+      "original_execution_kind": "live",
+      "source_count": 11,
+      "capture_count": 13,
+      "recorded_model_responses": 5,
+      "tool_calls": 3,
+      "validation_outcomes": [
+        false,
+        true
+      ],
+      "compared_fields": [
+        "case",
+        "source_hashes",
+        "eligible_source_ids",
+        "excluded_source_ids",
+        "calendar",
+        "brief",
+        "status",
+        "validation",
+        "calls",
+        "tool_calls",
+        "tokens",
+        "errors",
+        "input_hash",
+        "coverage"
+      ],
+      "scope": "Reproduces controller behavior from recorded responses; does not repeat model inference or assess claim meaning."
+    },
+    "documentation-check.json": {
+      "checked_files": 6,
+      "missing_relative_links": [],
+      "README_lines": 140,
+      "approved_public_origin_wording_applied": true,
+      "macro_secondary_section": true
+    },
+    "secret-scan.json": {
+      "files_scanned": 151,
+      "configured_credential_matches": 0,
+      "credential_values_recorded": false
+    },
+    "pricing-check.json": {
+      "checked_on": "2026-10-15",
+      "source": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "peak_input_cache_miss_usd_per_million": "0.30",
+      "peak_output_usd_per_million": "1.20",
+      "v3_completed_conservative_cost_usd": "0.2376024",
+      "v4_proposed_cap_usd": "3.00",
+      "combined_v3_cost_plus_v4_cap_usd": "3.2376024",
+      "original_v3_cap_usd": "6.00",
+      "v4_approval_status": "pending_new_explicit_approval"
+    }
+  },
+  "artifact_sha256": {
+    "tests.log": "badf4eb3a955d1d089defe1d492a069576aa79275da2319ff3761a35450592ba",
+    "v4-tests.log": "48bc830c039a92afabf48f477b71dc182cb280797ae8febbdc3da961e2a7f55c",
+    "v2-replay.json": "664163f5c44ce3cb7d70d1b0a0d4fe733c95b567e143b3907199cc292f98f646",
+    "v2-parallel-hashes.json": "4de1474107d6fc4cd21245546a337bfa28770cbf56a44689ab156bae77955e40",
+    "v3-replay.json": "42b744120d153ca2eacb335dcca2212d87770f437287be6aecd03c9c070e6c76",
+    "macro-replay.json": "2810f5bde71e764954930a78a71f99b4d0dbdad8d730b8bc6b640de6f5a588d4",
+    "documentation-check.json": "b834e3eef99a8de4aa9491bcd8e2f5bbb0fced23c5d5e66b7567383694227604",
+    "secret-scan.json": "9f65414b20281d0b3593cd0172dab0b68ed4d60291d6e86208a782997e468fc8",
+    "pricing-check.json": "71b5227d0450623e13c047ba2d71b677aeb71f4d929d9a00f51a02f538fe8f9f"
+  },
+  "analysis_sha256": {
+    "analysis.json": "122a0c8ff2a9d05649ebe19bf91b7ba92bfbcb99ebabf5a5e88d435b43c8f770",
+    "analysis.md": "82cebbd1f5f9f9eb979aea7605eeab0c2621c1864f5550d8fc1cca3e78e0ccd8"
+  },
+  "source_sha256": {
+    "src/eventlens/protocol_v4.py": "80febbfc900824d6ea27bbef41fc41ef65442bb6617347cb542ec692daef9bca",
+    "scripts/earnings_protocol_v4.py": "efa850b2f336ca47c1d67b9493b6fb10ac6a9731c2bc5b124ce555ae3d1f2da2",
+    "tests/test_protocol_v4.py": "7388fa8c7236403b75e57043ef30a594c56a26541f96587a6fbd71744b6c77d0"
+  },
+  "scope": "Executed v3 development evidence, offline v4 batch regression, and exact historical replay. Human accuracy remains unreviewed.",
+  "remote_ci": "not_run_no_push"
+}

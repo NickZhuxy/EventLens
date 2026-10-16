@@ -1,0 +1,102 @@
+{
+  "run_id": "a56ba2c0-e6de-4f93-94b0-24b21bf8e5d3",
+  "created_at": "2026-10-16T02:20:54.653360+00:00",
+  "case": {
+    "case_id": "ADSK-FY2026-Q2-Q3~v2-stale_disclosure",
+    "issuer": "ADSK",
+    "old": "ADSK-2026-Q2-SEC",
+    "new": "ADSK-2026-Q2-SEC",
+    "horizon": "FY2026",
+    "metric": "revenue",
+    "cutoff": "2025-11-26T00:00:00-05:00",
+    "split": "synthetic_heldout",
+    "synthetic": true,
+    "parent_case_id": "ADSK-FY2026-Q2-Q3",
+    "challenge": "stale_disclosure",
+    "expected_status": "insufficient_evidence",
+    "transformation": {
+      "description": "Substitute the old disclosure for the new one; fail eligibility before any model request."
+    }
+  },
+  "method": "C",
+  "config": {
+    "version": "earnings-v9-original-stress-regression",
+    "model": "deepseek-flash",
+    "base_url": "https://api.deepseek.com/beta",
+    "reasoning_effort": "none",
+    "max_calls": 8,
+    "max_tool_calls": 7,
+    "max_validation_repairs": 2,
+    "max_output_tokens_per_call": 6000,
+    "max_input_bytes": 128000,
+    "transport_retries": 0,
+    "selection": "Reuse 72 byte-identical v2 synthetic heldout cases and two original supplemental natural withdrawal/rollover cases. B/C use unchanged v8 code; all inputs are exposed regression. No new blind-test claim. Retain frozen uncertain charges and block identical wire requests.",
+    "methods": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "pricing": {
+      "currency": "USD",
+      "input_per_million": "0.30",
+      "output_per_million": "1.20",
+      "assumption": "Peak rates, all input charged as cache miss; ignore all discounts.",
+      "reference": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "checked_on": "2026-10-15"
+    },
+    "proposed_budget_usd": "1.75",
+    "approval_status": "allocation_under_recorded_continuing_authorization",
+    "planning_cost_per_BC_pair_usd": "0.01639565",
+    "budget_authorization": "reports/earnings-budget-2026-10-15/authorization.json",
+    "budget_authorization_sha256": "56b79a004195ffa2feb1e9ba73157b090290af79cdb3bd30c25aeda27b42849d",
+    "prior_paid_bundles": [
+      "reports/earnings-v3-preflight-2026-10-14",
+      "reports/earnings-v4-preflight-2026-10-15",
+      "reports/earnings-v5-preflight-2026-10-15",
+      "reports/earnings-v6-preflight-2026-10-15",
+      "reports/earnings-v7-2026-10-15",
+      "reports/earnings-v8-2026-10-15"
+    ],
+    "retained_uncertain_requests": {
+      "reports/earnings-v7-2026-10-15/requests/HUBS-FY2025-Q1-Q2_B.01.json": "0917fd175f3e454ed26ab508d0bb77cd3d6758f0c429e0be80377378ae941456"
+    },
+    "experiment": "v9-original-stress-regression"
+  },
+  "cutoff_mode": "disclosure",
+  "trace": [
+    {
+      "stage": "deterministic_comparison",
+      "result": {
+        "status": "insufficient_evidence",
+        "reason": "stale_or_reversed_disclosure_pair",
+        "calculation": null
+      }
+    }
+  ],
+  "extractions": [],
+  "explanations": [],
+  "conflicts": [],
+  "comparability": null,
+  "unresolved": "",
+  "errors": [
+    "stale_or_reversed_disclosure_pair"
+  ],
+  "validation_failures": [],
+  "calls": 0,
+  "tokens": null,
+  "human_semantic_review": "pending",
+  "label_status": "not_used_by_system",
+  "source_hashes": {
+    "ADSK-2026-Q2-SEC": "1f44d1398046f719c5e5a1f51b0e79e6975b7e875e8d5e015b26e706cbd12393"
+  },
+  "investigation_version": "earnings-point-target-v8",
+  "input_hash": "69a9eb2a13e0ca0cd14a597a0fe23a092de40ba3d041ca9145baf9fa5178e596",
+  "comparison": {
+    "status": "insufficient_evidence",
+    "reason": "stale_or_reversed_disclosure_pair",
+    "calculation": null
+  },
+  "conclusion": "insufficient_evidence",
+  "latency_ms": 0.047
+}

@@ -1,0 +1,227 @@
+{
+  "created_at": "2026-10-16T02:44:40.094335+00:00",
+  "checks": [
+    {
+      "command": [
+        "python",
+        "scripts/analyze_earnings_protocol_v6.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"replayed\": true, \"runs\": 8, \"cost_usd\": \"0.0570054\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "scripts/analyze_earnings_expansion_v7.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"all_results_reproduced\": true, \"runs\": 288, \"cost_usd\": \"1.0209237\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "scripts/analyze_earnings_expansion_v8.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"all_results_reproduced\": true, \"runs\": 288, \"cost_usd\": \"0.9273147\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "scripts/analyze_earnings_stress_v9.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"all_results_reproduced\": true, \"runs\": 296, \"cost_usd\": \"0.7021698\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "scripts/analyze_earnings_withdrawal_v10.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"replayed\": true, \"runs\": 4, \"cost_usd\": \"0.0232560\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "scripts/verify_earnings_withdrawal_regression_v10.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"unchanged_recorded_runs\": 290, \"paid_calls\": 0}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "scripts/prepare_earnings_review_v7.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"pairs\": 36, \"human_reviewed_pairs\": 0, \"pairs_with_two_unique_metric_drafts\": 24}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "scripts/prepare_earnings_review_v8.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"pairs\": 36, \"human_reviewed_pairs\": 0, \"pairs_with_two_unique_metric_drafts\": 26}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "scripts/review_earnings_explanations_v8.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"sampled\": 33, \"reviewed\": 0}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "scripts/earnings_evidence_index.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"evidence_reproduced\": true, \"budget\": \"3.2451786\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "scripts/earnings_evidence_index_v10.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"evidence_reproduced\": true, \"spent_or_reserved_usd\": \"3.2684346\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "scripts/verify_earnings_protocol_v8.py",
+        "reports/earnings-v8-2026-10-15",
+        "--out",
+        "reports/earnings-v8-validation-2026-10-15/scripted",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"kind\": \"Offline deterministic availability and scripted controller fixtures; no live model results.\",\n  \"scripted_runs\": 32,\n  \"scripted_model_calls\": 36,\n  \"network_calls\": 0,\n  \"paid_calls\": 0,\n  \"all_traces_replay_exactly\": true\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "scripts/verify_earnings_stress_v9.py",
+        "reports/earnings-v9-2026-10-15",
+        "--out",
+        "reports/earnings-v9-validation-2026-10-15/scripted",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"kind\": \"Offline deterministic availability and scripted controller fixtures; no live model results.\",\n  \"scripted_runs\": 148,\n  \"scripted_model_calls\": 148,\n  \"network_calls\": 0,\n  \"paid_calls\": 0,\n  \"all_traces_replay_exactly\": true\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "scripts/verify_earnings_withdrawal_v10.py",
+        "reports/earnings-v10-2026-10-15",
+        "--out",
+        "reports/earnings-v10-validation-2026-10-15/scripted",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"kind\": \"Offline deterministic availability and scripted controller fixtures; no live model results.\",\n  \"scripted_runs\": 4,\n  \"scripted_model_calls\": 6,\n  \"network_calls\": 0,\n  \"paid_calls\": 0,\n  \"all_traces_replay_exactly\": true\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "scripts/earnings_budget.py",
+        "--check",
+        "reports/earnings-budget-2026-10-15/checkpoint-v9.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"saved_checkpoint_verified\": true, \"spent_or_reserved_usd\": \"3.2451786\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "scripts/earnings_budget.py",
+        "--check",
+        "reports/earnings-budget-2026-10-15/checkpoint-v10.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"saved_checkpoint_verified\": true, \"spent_or_reserved_usd\": \"3.2684346\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "scripts/earnings_case_report.py",
+        "--bundle",
+        "reports/earnings-v5-preflight-2026-10-15",
+        "--case",
+        "BOX-FY2025-Q1-Q2",
+        "--out",
+        "reports/earnings-examples-2026-10-15/box-arithmetic.md",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"report\": \"reports/earnings-examples-2026-10-15/box-arithmetic.md\", \"offline\": true, \"human_reviewed\": false}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "scripts/earnings_case_report.py",
+        "--bundle",
+        "reports/earnings-v6-preflight-2026-10-15",
+        "--case",
+        "SNPS-FY2025-Q1-Q2~v3-contradictory_commentary",
+        "--out",
+        "reports/earnings-examples-2026-10-15/synopsys-synthetic-conflict.md",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"report\": \"reports/earnings-examples-2026-10-15/synopsys-synthetic-conflict.md\", \"offline\": true, \"human_reviewed\": false}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "scripts/earnings_case_report.py",
+        "--bundle",
+        "reports/earnings-v10-2026-10-15",
+        "--case",
+        "SNPS-FY2025-Q2-WITHDRAWAL",
+        "--out",
+        "reports/earnings-examples-2026-10-15/synopsys-withdrawal.md",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"report\": \"reports/earnings-examples-2026-10-15/synopsys-withdrawal.md\", \"offline\": true, \"human_reviewed\": false}\n",
+      "stderr": ""
+    }
+  ],
+  "all_passed": true,
+  "paid_calls": 0,
+  "network_calls": 0
+}

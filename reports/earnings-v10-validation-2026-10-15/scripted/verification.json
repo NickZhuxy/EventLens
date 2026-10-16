@@ -1,0 +1,58 @@
+{
+  "kind": "Offline deterministic availability and scripted controller fixtures; no live model results.",
+  "bundle": "reports/earnings-v10-2026-10-15",
+  "freeze_sha256": "0e47ab405e706c8eacf7330c01db4140d4168eaba6ecaad4c9ff5bbc7f7a76db",
+  "verifier_sha256": "26a3b78f73b5eb17b4e4038a93a251ef8672f73fe886ed3192ffbaa9b2804dfa",
+  "scripted_runs": 4,
+  "proposed_paid_runs": 4,
+  "regression_source_bundle": "reports/earnings-v2-2026-10-13",
+  "regression_freeze_sha256": "9c9475e7ba179bbdf91245c2d54b4f796d84b852d5494a3245ceb77e74a80fe3",
+  "scripted_model_calls": 6,
+  "network_calls": 0,
+  "paid_calls": 0,
+  "human_reviewed_labels": 0,
+  "all_traces_replay_exactly": true,
+  "availability": [
+    {
+      "case_id": "SNPS-FY2025-Q2-WITHDRAWAL",
+      "method": "B",
+      "candidate_counts": {
+        "SNPS-2025-Q2": 1,
+        "SNPS-2025-WITHDRAWAL": 1
+      },
+      "expected_conflict_statements_available": null
+    },
+    {
+      "case_id": "SNPS-FY2025-Q2-WITHDRAWAL",
+      "method": "C",
+      "candidate_counts": {
+        "SNPS-2025-Q2": 1,
+        "SNPS-2025-WITHDRAWAL": 1
+      },
+      "expected_conflict_statements_available": null
+    },
+    {
+      "case_id": "ADBE-FY2025-Q3-Q4-ROLLOVER",
+      "method": "B",
+      "candidate_counts": {
+        "ADBE-2025-Q3": 1,
+        "ADBE-2025-Q4": 0
+      },
+      "expected_conflict_statements_available": null
+    },
+    {
+      "case_id": "ADBE-FY2025-Q3-Q4-ROLLOVER",
+      "method": "C",
+      "candidate_counts": {
+        "ADBE-2025-Q3": 1,
+        "ADBE-2025-Q4": 0
+      },
+      "expected_conflict_statements_available": null
+    }
+  ],
+  "limits": [
+    "Candidate availability is parser coverage, not reviewed extraction accuracy.",
+    "Conflict selections are scripted using construction-known expectations, not LLM judgments.",
+    "Development cases are exposed; natural conflicts and unseen generalization remain unestablished."
+  ]
+}

@@ -15,8 +15,39 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - run: python -m pip install -c deploy/requirements.lock '.[service,test]'
       - run: python -m unittest discover -s tests -v
+      - run: python scripts/prepare_earnings_corpus.py --check
+      - run: python scripts/earnings_eval.py --replay reports/earnings-m1-m3-2026-10-13
+      - run: python scripts/earnings_benchmark.py --replay reports/earnings-v2-2026-10-13
+      - run: python scripts/analyze_earnings_benchmark.py reports/earnings-v2-2026-10-13 --out reports/earnings-v2-analysis-2026-10-13 --check
+      - run: python scripts/review_earnings_explanations.py reports/earnings-v2-2026-10-13 --out reports/earnings-v2-analysis-2026-10-13/semantic-review.template.json --check
+      - run: python scripts/verify_earnings_protocol_v3.py --out reports/earnings-v3-validation-2026-10-14/scripted-traces --check
+      - run: python scripts/earnings_protocol_v3.py --replay reports/earnings-v3-preflight-2026-10-14
+      - run: python scripts/analyze_earnings_protocol_v3.py reports/earnings-v3-preflight-2026-10-14 --out reports/earnings-v3-analysis-2026-10-15 --check
+      - run: python scripts/analyze_earnings_protocol_v4.py reports/earnings-v4-preflight-2026-10-15 --out reports/earnings-v4-analysis-2026-10-15 --check
+      - run: python scripts/verify_earnings_protocol_v5.py reports/earnings-v5-preflight-2026-10-15 --out reports/earnings-v5-validation-2026-10-15/scripted --check
+      - run: python scripts/analyze_earnings_protocol_v5.py reports/earnings-v5-preflight-2026-10-15 --out reports/earnings-v5-analysis-2026-10-15 --check
+      - run: python scripts/verify_earnings_protocol_v6.py reports/earnings-v6-preflight-2026-10-15 --out reports/earnings-v6-validation-2026-10-15/scripted --check
+      - run: python scripts/analyze_earnings_protocol_v6.py --check
+      - run: python scripts/analyze_earnings_expansion_v7.py --check
+      - run: python scripts/analyze_earnings_expansion_v8.py --check
+      - run: python scripts/analyze_earnings_stress_v9.py --check
+      - run: python scripts/verify_earnings_protocol_v8.py reports/earnings-v8-2026-10-15 --out reports/earnings-v8-validation-2026-10-15/scripted --check
+      - run: python scripts/verify_earnings_stress_v9.py reports/earnings-v9-2026-10-15 --out reports/earnings-v9-validation-2026-10-15/scripted --check
+      - run: python scripts/prepare_earnings_review_v7.py --check
+      - run: python scripts/prepare_earnings_review_v8.py --check
+      - run: python scripts/review_earnings_explanations_v8.py --check
+      - run: python scripts/earnings_budget.py --check reports/earnings-budget-2026-10-15/checkpoint-v9.json
+      - run: python scripts/earnings_evidence_index.py --check
+      - run: python scripts/earnings_case_report.py --bundle reports/earnings-v5-preflight-2026-10-15 --case BOX-FY2025-Q1-Q2 --out reports/earnings-examples-2026-10-15/box-arithmetic.md --check
+      - run: python scripts/earnings_case_report.py --bundle reports/earnings-v6-preflight-2026-10-15 --case SNPS-FY2025-Q1-Q2~v3-contradictory_commentary --out reports/earnings-examples-2026-10-15/synopsys-synthetic-conflict.md --check
+      - run: python scripts/analyze_earnings_withdrawal_v10.py --check
+      - run: python scripts/verify_earnings_withdrawal_v10.py reports/earnings-v10-2026-10-15 --out reports/earnings-v10-validation-2026-10-15/scripted --check
+      - run: python scripts/verify_earnings_withdrawal_regression_v10.py --check
+      - run: python scripts/earnings_evidence_index_v10.py --check
+      - run: python scripts/earnings_budget.py --check reports/earnings-budget-2026-10-15/checkpoint-v10.json
+      - run: python scripts/earnings_case_report.py --bundle reports/earnings-v10-2026-10-15 --case SNPS-FY2025-Q2-WITHDRAWAL --out reports/earnings-examples-2026-10-15/synopsys-withdrawal.md --check
       - run: python scripts/service_smoke.py
-      - run: python scripts/verify_live_run.py reports/deepseek-live-2026-10-08
+      - run: python scripts/verify_live_run.py reports/deepseek-live-2026-10-08 --allow-earnings-changes
   container:
     runs-on: ubuntu-24.04
     steps:

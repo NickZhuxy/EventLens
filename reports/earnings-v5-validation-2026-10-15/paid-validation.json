@@ -1,0 +1,179 @@
+{
+  "verified_at": "2026-10-15T21:37:02.337590+00:00",
+  "scope": "Completed approved v5 live pilot and offline analysis. Test count is the current suite after the separately versioned v6 fix.",
+  "approval": {
+    "approved": true,
+    "approved_by": "Nick",
+    "max_usd": "5.50",
+    "freeze_sha256": "3a7b0b0bc3d074e8fbd0de480b0c01bc964a30271cb805a6860623f1c55de55d",
+    "approval_recorded_at": "2026-10-15T21:26:51.543559+00:00",
+    "approval_text": "Approve up to $5.50 USD",
+    "approval_question": "Approve the frozen v5 table-and-conflict pilot with a $5.50 USD hard cap? It runs 32 B/C cases (four real development pairs plus stale, missing-evidence, and contradiction controls). Planning estimate: $0.51; conservative full-budget estimate: $5.06. Including the $0.341 already spent on v3/v4, the maximum remains below $6. Your per-run approval rule requires this new approval because the code and evidence format changed.",
+    "scope": "32 frozen v5 B/C runs, at most 108 requests, allocated from the unspent prior USD 6 budget. No changed follow-up experiment approved."
+  },
+  "summary": {
+    "completed_runs": 32,
+    "planned_runs": 32,
+    "metrics": [
+      {
+        "method": "B",
+        "challenge": "contradictory_commentary",
+        "cases": 4,
+        "completed_without_errors": 0,
+        "numeric_outputs": 0,
+        "valid_control_outcomes": 0,
+        "terminal_errors": 4,
+        "validation_failures": 4,
+        "recovered_runs": 0,
+        "calls": 4,
+        "human_reviewed_accuracy": null
+      },
+      {
+        "method": "B",
+        "challenge": "missing_numerical_evidence",
+        "cases": 4,
+        "completed_without_errors": 4,
+        "numeric_outputs": 0,
+        "valid_control_outcomes": 4,
+        "terminal_errors": 0,
+        "validation_failures": 0,
+        "recovered_runs": 0,
+        "calls": 4,
+        "human_reviewed_accuracy": null
+      },
+      {
+        "method": "B",
+        "challenge": "real",
+        "cases": 4,
+        "completed_without_errors": 4,
+        "numeric_outputs": 4,
+        "valid_control_outcomes": null,
+        "terminal_errors": 0,
+        "validation_failures": 0,
+        "recovered_runs": 0,
+        "calls": 4,
+        "human_reviewed_accuracy": null
+      },
+      {
+        "method": "B",
+        "challenge": "stale_disclosure",
+        "cases": 4,
+        "completed_without_errors": 0,
+        "numeric_outputs": 0,
+        "valid_control_outcomes": 4,
+        "terminal_errors": 4,
+        "validation_failures": 0,
+        "recovered_runs": 0,
+        "calls": 0,
+        "human_reviewed_accuracy": null
+      },
+      {
+        "method": "C",
+        "challenge": "contradictory_commentary",
+        "cases": 4,
+        "completed_without_errors": 0,
+        "numeric_outputs": 0,
+        "valid_control_outcomes": 0,
+        "terminal_errors": 4,
+        "validation_failures": 12,
+        "recovered_runs": 0,
+        "calls": 23,
+        "human_reviewed_accuracy": null
+      },
+      {
+        "method": "C",
+        "challenge": "missing_numerical_evidence",
+        "cases": 4,
+        "completed_without_errors": 4,
+        "numeric_outputs": 0,
+        "valid_control_outcomes": 4,
+        "terminal_errors": 0,
+        "validation_failures": 1,
+        "recovered_runs": 1,
+        "calls": 14,
+        "human_reviewed_accuracy": null
+      },
+      {
+        "method": "C",
+        "challenge": "real",
+        "cases": 4,
+        "completed_without_errors": 4,
+        "numeric_outputs": 4,
+        "valid_control_outcomes": null,
+        "terminal_errors": 0,
+        "validation_failures": 0,
+        "recovered_runs": 0,
+        "calls": 15,
+        "human_reviewed_accuracy": null
+      },
+      {
+        "method": "C",
+        "challenge": "stale_disclosure",
+        "cases": 4,
+        "completed_without_errors": 0,
+        "numeric_outputs": 0,
+        "valid_control_outcomes": 4,
+        "terminal_errors": 4,
+        "validation_failures": 0,
+        "recovered_runs": 0,
+        "calls": 0,
+        "human_reviewed_accuracy": null
+      }
+    ],
+    "request_attempts": 64,
+    "charged_upper_usd": "0.1967478",
+    "uncertain_requests": 0,
+    "scope": "V5 referenced-evidence diagnostic: same development inputs, B/C use the same candidate catalogs. Operational counts, not accuracy. Zero human-reviewed labels."
+  },
+  "replays": {
+    "v5": {
+      "replayed_runs": 32,
+      "journalled_requests": 64,
+      "network_calls": 0,
+      "paid_calls": 0,
+      "all_requests_and_results_matched": true
+    },
+    "v3": {
+      "replayed_runs": 32,
+      "journalled_requests": 94,
+      "network_calls": 0,
+      "paid_calls": 0,
+      "all_requests_and_results_matched": true
+    },
+    "v4": {
+      "replayed_runs": 8,
+      "journalled_requests": 43,
+      "network_calls": 0,
+      "paid_calls": 0,
+      "all_requests_and_results_matched": true
+    }
+  },
+  "combined_v3_v4_v5_conservative_cost_usd": "0.5377650",
+  "tests_passed": 220,
+  "test_command": "PYTHONPATH=src python -m unittest discover -s tests -v",
+  "analysis_command": "python scripts/analyze_earnings_protocol_v5.py reports/earnings-v5-preflight-2026-10-15 --out reports/earnings-v5-analysis-2026-10-15 --check",
+  "artifact_checks": {
+    "files_secret_scanned": 161,
+    "credential_values_found": 0,
+    "local_document_links_checked": 87,
+    "broken_links": 0,
+    "README_lines": 142,
+    "v6_approval_present": false,
+    "v6_paid_requests": 0
+  },
+  "git_diff_check": "passed",
+  "remote_CI": "not run; no push",
+  "resume_files_edited": false,
+  "artifact_sha256": {
+    "scripts/analyze_earnings_protocol_v5.py": "aceb3d9c9233edbdf072d9dd63fdcc9d1486420d0a77d486b0f976f38e114e78",
+    "reports/earnings-v5-analysis-2026-10-15/analysis.json": "2eed283562b795f3ed0e6a8628b1faa4f013bfef00a89a051840ee4c3e4658a3",
+    "reports/earnings-v5-analysis-2026-10-15/analysis.md": "f5d73bc4a9d7cd66d863816caf67422b841045f8e520c7a2a3d669e0c4157f63",
+    "reports/earnings-v5-analysis-2026-10-15/prose-arithmetic-note.json": "3841a76f0df7a417a050f169ceaf1d0609296578725cee1bf3e1b008aaf6b580",
+    "reports/earnings-v5-preflight-2026-10-15/bundle_hashes.json": "b9dd563783254f8dd59e474f94a78e645d0909b87a9d5329eadfd4de297c0762",
+    "reports/earnings-v5-preflight-2026-10-15/replay.json": "becbef315b773ae51d9c8a6eeddaaec13aa4c3e6b472a47f931b2b1fa8be97bc",
+    "scripts/verify_earnings_protocol_v6.py": "937151aa5e2ef99a72840b6772d60297a4ecd457a5c666c2cd7d685e5f871abd",
+    "tests/test_protocol_v6.py": "dc6b131b864bfc469dad5a9b210c67550925f9c8eff4f279b9dfb1f3686c7cc8",
+    "reports/earnings-v6-validation-2026-10-15/tests.log": "2a8445ea788b943dfc3db9cc7b9185251bf3dc00f17c9a2f2fd855eae9ebdd41",
+    "reports/earnings-v6-validation-2026-10-15/scripted/verification.json": "47424d0c355f524830383d3d26f0333fa68d50eaebda8e00656637f43e3ce942"
+  }
+}

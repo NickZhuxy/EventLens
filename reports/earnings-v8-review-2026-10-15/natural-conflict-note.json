@@ -1,0 +1,40 @@
+{
+  "kind": "Observed field/reason inconsistency; not a human semantic label",
+  "run": "reports/earnings-v8-2026-10-15/runs/ZS-FY2025-priorQ4-Q1_B.json",
+  "run_sha256": "643bf9ed7c2517f1c51ab13359bac69b76140e1535ba60d73e77d39672b9fba5",
+  "candidate": {
+    "topic": "FY2025 full-year total revenue guidance range (reported basis, USD, fiscal year)",
+    "reason": "Same issuer, same basis (reported), same currency (USD), same fiscal horizon (FY2025), same metric (total revenue). The FY2025 revenue guidance range was revised upward from approximately $2.60–$2.62 billion (Sept 3, 2024) to approximately $2.623–$2.643 billion (Dec 2, 2024). Per the rules, a numerical revision or direction change alone is not itself a conflict; this is recorded only as a guidance update for human review.",
+    "citations": [
+      {
+        "evidence_id": "e_6f1e6e7a4cf778ba01dc40bb",
+        "source_id": "ZS-2024-Q4",
+        "source_hash": "12b47c5f8cfc38298ee488a45109615c196225299531c8b766fceaf51d3dfd92",
+        "start": 6811,
+        "end": 6910,
+        "quote": "For the full year fiscal 2025, we expect:\n\n•Revenue of approximately $2.60 billion to $2.62 billion",
+        "url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368324000097/zs-07312024_991.htm",
+        "origin": "disclosure",
+        "literal_valid": true,
+        "semantic_review": "pending"
+      },
+      {
+        "evidence_id": "e_5b02d3d0d632e4486a607d45",
+        "source_id": "ZS-2025-Q1",
+        "source_hash": "13fa3337ddd5be7fbeea9615914764e25f6616093af354c76029e18b684dfcc5",
+        "start": 5511,
+        "end": 5615,
+        "quote": "For the full year of fiscal 2025, we expect:\n\n•Revenue of approximately $2.623 billion to $2.643 billion",
+        "url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368324000143/zs-10312024_991.htm",
+        "origin": "disclosure",
+        "literal_valid": true,
+        "semantic_review": "pending"
+      }
+    ],
+    "semantic_review": "pending",
+    "kind": "model_flagged_apparent_conflict"
+  },
+  "observation": "The output puts a numerical guidance revision in the conflict array while its own reason explicitly says that it is not itself a conflict and is only a guidance update. This record does not establish a natural management contradiction.",
+  "human_review": "pending",
+  "scope": "One saved natural B candidate. C emitted no natural conflict candidate on the original 24 heldout real pairs."
+}

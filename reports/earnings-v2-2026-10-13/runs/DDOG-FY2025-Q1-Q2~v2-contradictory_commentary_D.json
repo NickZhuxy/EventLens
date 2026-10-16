@@ -1,0 +1,574 @@
+{
+  "run_id": "fe780b3f-a465-4027-b0b2-5fd29947abf7",
+  "created_at": "2026-10-14T01:02:05.177378+00:00",
+  "case": {
+    "case_id": "DDOG-FY2025-Q1-Q2~v2-contradictory_commentary",
+    "issuer": "DDOG",
+    "old": "DDOG-2025-Q1",
+    "new": "DDOG-2025-Q2~v2-contradictory_commentary",
+    "horizon": "FY2025",
+    "metric": "revenue",
+    "cutoff": "2025-08-08T00:00:00-04:00",
+    "split": "synthetic_heldout",
+    "synthetic": true,
+    "parent_case_id": "DDOG-FY2025-Q1-Q2",
+    "challenge": "contradictory_commentary",
+    "expected_status": "conflicting",
+    "transformation": {
+      "description": "Append a synthetic opposing pair about the same annual guidance, driver and basis. Never attribute these sentences to management.",
+      "expected_conflict_quotes": [
+        "Demand caused the FY2025 total revenue guidance revision on a reported basis.",
+        "Demand did not cause the FY2025 total revenue guidance revision on a reported basis."
+      ]
+    },
+    "parent_source_hash": "4ca903ad2cb3a06eb395d6b4d8570f823b9fa4c91fd5d9b94aaadc8fcd90c39a",
+    "derived_source_hash": "7e361549cb2d4e38b04521a9f90ab66c37a22823916cce568c06b893264d7dd2"
+  },
+  "method": "D",
+  "config": {
+    "version": "earnings-investigation-v2",
+    "model": "deepseek-flash",
+    "provider": {
+      "base_url": "https://api.deepseek.com",
+      "reasoning_effort": "low"
+    },
+    "max_calls": 8,
+    "max_tool_calls": 7,
+    "max_output_tokens_per_call": 3200,
+    "max_input_characters": 180000,
+    "transport_retries": 0,
+    "pricing": {
+      "currency": "USD",
+      "input_per_million": "0.30",
+      "output_per_million": "1.20",
+      "assumption": "Peak rates; all input treated as cache miss. Discounts never required.",
+      "reference": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "checked_on": "2026-10-13"
+    },
+    "scope": {
+      "real_pairs": 36,
+      "heldout_stress_variants": 72,
+      "supplemental_natural_cases": 2,
+      "stress_types": [
+        "stale_disclosure",
+        "missing_table",
+        "contradictory_commentary"
+      ],
+      "methods": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    "proposed_budget_usd": "8.00",
+    "approval_status": "pending_concrete_budget_approval"
+  },
+  "cutoff_mode": "disclosure",
+  "trace": [
+    {
+      "stage": "document_diff",
+      "algorithm": "difflib.SequenceMatcher sentence-level; autojunk=False",
+      "sentence_counts": [
+        415,
+        443
+      ],
+      "changed_guidance_candidates": [
+        {
+          "operation": "replace",
+          "old_sentences": [
+            2,
+            21
+          ],
+          "new_sentences": [
+            2,
+            21
+          ],
+          "spans": [
+            {
+              "source_id": "DDOG-2025-Q1",
+              "sentence": 4,
+              "start": 134,
+              "end": 195,
+              "quote": "First quarter revenue grew 25% year-over-year to $762 million"
+            },
+            {
+              "source_id": "DDOG-2025-Q1",
+              "sentence": 8,
+              "start": 549,
+              "end": 761,
+              "quote": "\"Datadog executed solidly in the first quarter, with 25% year-over-year revenue growth, $272 million in operating cash flow, and $244 million in free cash flow,\" said Olivier Pomel, co-founder and CEO of Datadog."
+            },
+            {
+              "source_id": "DDOG-2025-Q1",
+              "sentence": 11,
+              "start": 999,
+              "end": 1060,
+              "quote": "•Revenue was $762 million, an increase of 25% year-over-year."
+            },
+            {
+              "source_id": "DDOG-2025-Q2~v2-contradictory_commentary",
+              "sentence": 4,
+              "start": 138,
+              "end": 200,
+              "quote": "Second quarter revenue grew 28% year-over-year to $827 million"
+            },
+            {
+              "source_id": "DDOG-2025-Q2~v2-contradictory_commentary",
+              "sentence": 8,
+              "start": 560,
+              "end": 762,
+              "quote": "\"Datadog had a strong second quarter, with 28% year-over-year revenue growth, $200 million in operating cash flow, and $165 million in free cash flow,\" said Olivier Pomel, co-founder and CEO of Datadog."
+            },
+            {
+              "source_id": "DDOG-2025-Q2~v2-contradictory_commentary",
+              "sentence": 11,
+              "start": 1038,
+              "end": 1099,
+              "quote": "•Revenue was $827 million, an increase of 28% year-over-year."
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            22,
+            36
+          ],
+          "new_sentences": [
+            22,
+            44
+          ],
+          "spans": [
+            {
+              "source_id": "DDOG-2025-Q1",
+              "sentence": 33,
+              "start": 3162,
+              "end": 3209,
+              "quote": "◦Revenue between $787 million and $791 million."
+            },
+            {
+              "source_id": "DDOG-2025-Q2~v2-contradictory_commentary",
+              "sentence": 41,
+              "start": 4776,
+              "end": 4823,
+              "quote": "◦Revenue between $847 million and $851 million."
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            37,
+            40
+          ],
+          "new_sentences": [
+            45,
+            48
+          ],
+          "spans": [
+            {
+              "source_id": "DDOG-2025-Q1",
+              "sentence": 37,
+              "start": 3441,
+              "end": 3492,
+              "quote": "◦Revenue between $3.215 billion and $3.235 billion."
+            },
+            {
+              "source_id": "DDOG-2025-Q2~v2-contradictory_commentary",
+              "sentence": 45,
+              "start": 5055,
+              "end": 5106,
+              "quote": "◦Revenue between $3.312 billion and $3.322 billion."
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            121,
+            154
+          ],
+          "new_sentences": [
+            134,
+            168
+          ],
+          "spans": [
+            {
+              "source_id": "DDOG-2025-Q1",
+              "sentence": 123,
+              "start": 16759,
+              "end": 16836,
+              "quote": "Revenue  |  | $  | 761,553   |  |  | $  | 611,253   |  |  |  |  |  |  |  |  |"
+            },
+            {
+              "source_id": "DDOG-2025-Q1",
+              "sentence": 124,
+              "start": 16837,
+              "end": 16922,
+              "quote": "Cost of revenue (1)(2)(3)  |  | 157,628   |  |  | 110,098   |  |  |  |  |  |  |  |  |"
+            },
+            {
+              "source_id": "DDOG-2025-Q1",
+              "sentence": 148,
+              "start": 18712,
+              "end": 18793,
+              "quote": "Cost of revenue  |  | $  | 6,651   |  |  | $  | 5,527   |  |  |  |  |  |  |  |  |"
+            },
+            {
+              "source_id": "DDOG-2025-Q2~v2-contradictory_commentary",
+              "sentence": 137,
+              "start": 19009,
+              "end": 19112,
+              "quote": "Revenue  |  | $  | 826,760   |  |  | $  | 645,279   |  |  | $  | 1,588,313   |  |  | $  | 1,256,532   |"
+            },
+            {
+              "source_id": "DDOG-2025-Q2~v2-contradictory_commentary",
+              "sentence": 138,
+              "start": 19113,
+              "end": 19210,
+              "quote": "Cost of revenue (1)(2)(3)  |  | 165,978   |  |  | 123,499   |  |  | 323,606   |  |  | 233,597   |"
+            },
+            {
+              "source_id": "DDOG-2025-Q2~v2-contradictory_commentary",
+              "sentence": 162,
+              "start": 21142,
+              "end": 21243,
+              "quote": "Cost of revenue  |  | $  | 6,783   |  |  | $  | 6,393   |  |  | $  | 13,434   |  |  | $  | 11,920   |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            155,
+            159
+          ],
+          "new_sentences": [
+            169,
+            173
+          ],
+          "spans": [
+            {
+              "source_id": "DDOG-2025-Q1",
+              "sentence": 155,
+              "start": 19281,
+              "end": 19360,
+              "quote": "Cost of revenue  |  | $  | 894   |  |  | $  | 2,027   |  |  |  |  |  |  |  |  |"
+            },
+            {
+              "source_id": "DDOG-2025-Q2~v2-contradictory_commentary",
+              "sentence": 169,
+              "start": 21809,
+              "end": 21920,
+              "quote": "Cost of revenue  |  | $  | 1,518   |  |  | $  | 1,281   |  |  | $  | 2,412   |  |  | $  | 3,308   |  |  |  |  |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            160,
+            169
+          ],
+          "new_sentences": [
+            174,
+            187
+          ],
+          "spans": [
+            {
+              "source_id": "DDOG-2025-Q1",
+              "sentence": 160,
+              "start": 19638,
+              "end": 19703,
+              "quote": "Cost of revenue  |  | $  | 186   |  |  | $  | 192   |  |  |  |  |"
+            },
+            {
+              "source_id": "DDOG-2025-Q2~v2-contradictory_commentary",
+              "sentence": 174,
+              "start": 22260,
+              "end": 22350,
+              "quote": "Cost of revenue  |  | $  | 165   |  |  | $  | 68   |  |  | $  | 351   |  |  | $  | 260   |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            195,
+            206
+          ],
+          "new_sentences": [
+            213,
+            224
+          ],
+          "spans": [
+            {
+              "source_id": "DDOG-2025-Q1",
+              "sentence": 199,
+              "start": 21757,
+              "end": 21818,
+              "quote": "Deferred revenue, current  |  | 949,135   |  |  | 961,853   |"
+            },
+            {
+              "source_id": "DDOG-2025-Q1",
+              "sentence": 203,
+              "start": 22041,
+              "end": 22104,
+              "quote": "Deferred revenue, non-current  |  | 21,560   |  |  | 22,693   |"
+            },
+            {
+              "source_id": "DDOG-2025-Q2~v2-contradictory_commentary",
+              "sentence": 217,
+              "start": 24905,
+              "end": 24966,
+              "quote": "Deferred revenue, current  |  | 966,442   |  |  | 961,853   |"
+            },
+            {
+              "source_id": "DDOG-2025-Q2~v2-contradictory_commentary",
+              "sentence": 221,
+              "start": 25189,
+              "end": 25252,
+              "quote": "Deferred revenue, non-current  |  | 29,866   |  |  | 22,693   |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            234,
+            242
+          ],
+          "new_sentences": [
+            253,
+            261
+          ],
+          "spans": [
+            {
+              "source_id": "DDOG-2025-Q1",
+              "sentence": 240,
+              "start": 24308,
+              "end": 24370,
+              "quote": "Deferred revenue  |  | (13,851)  |  |  | 6,720   |  |  |  |  |"
+            },
+            {
+              "source_id": "DDOG-2025-Q2~v2-contradictory_commentary",
+              "sentence": 259,
+              "start": 27841,
+              "end": 27924,
+              "quote": "Deferred revenue  |  | 21,086   |  |  | 21,946   |  |  | 7,235   |  |  | 28,666   |"
+            }
+          ]
+        },
+        {
+          "operation": "insert",
+          "old_sentences": [
+            415,
+            415
+          ],
+          "new_sentences": [
+            441,
+            443
+          ],
+          "spans": [
+            {
+              "source_id": "DDOG-2025-Q2~v2-contradictory_commentary",
+              "sentence": 441,
+              "start": 38800,
+              "end": 38877,
+              "quote": "Demand caused the FY2025 total revenue guidance revision on a reported basis."
+            },
+            {
+              "source_id": "DDOG-2025-Q2~v2-contradictory_commentary",
+              "sentence": 442,
+              "start": 38878,
+              "end": 38962,
+              "quote": "Demand did not cause the FY2025 total revenue guidance revision on a reported basis."
+            }
+          ]
+        }
+      ],
+      "annual_candidate_counts": [
+        1,
+        1
+      ],
+      "issues": [
+        "changed_guidance_pair"
+      ],
+      "selected_alignment": "replace",
+      "selected_sentence_indices": [
+        37,
+        45
+      ]
+    },
+    {
+      "stage": "deterministic_comparison",
+      "result": {
+        "status": "insufficient_evidence",
+        "reason": "missing_guidance",
+        "calculation": null
+      }
+    }
+  ],
+  "extractions": [
+    {
+      "metric": {
+        "source_id": "DDOG-2025-Q1",
+        "issuer": "DDOG",
+        "metric": "revenue",
+        "currency": "USD",
+        "unit": "billion",
+        "basis": "reported",
+        "horizon": "FY2025",
+        "calendar": "fiscal",
+        "definition": "total_revenue_as_reported",
+        "status": "provided",
+        "lower": "3.215",
+        "upper": "3.235",
+        "evidence": "◦Revenue between $3.215 billion and $3.235 billion.",
+        "horizon_evidence": "•Full Year 2025 Outlook:\n\n◦Revenue between $3.215 billion and $3.235 billion."
+      },
+      "validation": {
+        "literal_valid": true,
+        "semantic_screen": "fail",
+        "errors": [
+          "horizon_not_supported"
+        ],
+        "human_semantic_review": "pending",
+        "observation_id": "7dd6528edbc740c809148b66815ccce25750ec83b3e3162cb4b0dc4921831e61"
+      }
+    },
+    {
+      "metric": {
+        "source_id": "DDOG-2025-Q2~v2-contradictory_commentary",
+        "issuer": "DDOG",
+        "metric": "revenue",
+        "currency": "USD",
+        "unit": "billion",
+        "basis": "reported",
+        "horizon": "FY2025",
+        "calendar": "fiscal",
+        "definition": "total_revenue_as_reported",
+        "status": "provided",
+        "lower": "3.312",
+        "upper": "3.322",
+        "evidence": "◦Revenue between $3.312 billion and $3.322 billion.",
+        "horizon_evidence": "•Full Year 2025 Outlook:\n\n◦Revenue between $3.312 billion and $3.322 billion."
+      },
+      "validation": {
+        "literal_valid": true,
+        "semantic_screen": "fail",
+        "errors": [
+          "horizon_not_supported"
+        ],
+        "human_semantic_review": "pending",
+        "observation_id": "20965be556ca35621e78e1486ca059885908049b045f4392fbddbf06f3597efc"
+      }
+    }
+  ],
+  "explanations": [
+    {
+      "source_id": "DDOG-2025-Q2~v2-contradictory_commentary",
+      "quote": "Demand caused the FY2025 total revenue guidance revision on a reported basis.",
+      "type": "management_statement_candidate",
+      "semantic_review": "pending"
+    },
+    {
+      "source_id": "DDOG-2025-Q2~v2-contradictory_commentary",
+      "quote": "Demand did not cause the FY2025 total revenue guidance revision on a reported basis.",
+      "type": "management_statement_candidate",
+      "semantic_review": "pending"
+    }
+  ],
+  "errors": [],
+  "calls": 0,
+  "tokens": null,
+  "label_status": "not_used_by_system",
+  "human_semantic_review": "pending",
+  "source_hashes": {
+    "DDOG-2025-Q1": "5773f0b787af41045dc640a34930abc50622b1798dd01452bb97041c287f2a54",
+    "DDOG-2025-Q2~v2-contradictory_commentary": "7e361549cb2d4e38b04521a9f90ab66c37a22823916cce568c06b893264d7dd2"
+  },
+  "input_hash": "e3c2d40d2c3b688187013f8fca7fe35c4145255d15009573d2392c5198a0e4a3",
+  "model": null,
+  "execution_kind": "deterministic",
+  "context_characters": 71932,
+  "comparison": {
+    "status": "insufficient_evidence",
+    "reason": "missing_guidance",
+    "calculation": null
+  },
+  "explanation_conclusion": {
+    "status": "conflicting",
+    "reason": "two_cited_opposing_statements",
+    "conflicts": [
+      {
+        "topic": "demand",
+        "reason": "opposite_polarity_same_literal_proposition",
+        "citations": [
+          {
+            "source_id": "DDOG-2025-Q2~v2-contradictory_commentary",
+            "quote": "Demand caused the FY2025 total revenue guidance revision on a reported basis.",
+            "start": 38800,
+            "end": 38877,
+            "source_hash": "7e361549cb2d4e38b04521a9f90ab66c37a22823916cce568c06b893264d7dd2",
+            "url": "https://www.sec.gov/Archives/edgar/data/1561550/000156155025000216/ex-991x20250630x8k.htm",
+            "origin": "synthetic",
+            "literal_valid": true,
+            "semantic_review": "pending"
+          },
+          {
+            "source_id": "DDOG-2025-Q2~v2-contradictory_commentary",
+            "quote": "Demand did not cause the FY2025 total revenue guidance revision on a reported basis.",
+            "start": 38878,
+            "end": 38962,
+            "source_hash": "7e361549cb2d4e38b04521a9f90ab66c37a22823916cce568c06b893264d7dd2",
+            "url": "https://www.sec.gov/Archives/edgar/data/1561550/000156155025000216/ex-991x20250630x8k.htm",
+            "origin": "synthetic",
+            "literal_valid": true,
+            "semantic_review": "pending"
+          }
+        ],
+        "semantic_review": "pending",
+        "kind": "explicit_lexical_conflict"
+      }
+    ],
+    "semantic_review": "pending"
+  },
+  "conclusion": "conflicting",
+  "latency_ms": 17.055,
+  "conflicts": [
+    {
+      "topic": "demand",
+      "reason": "opposite_polarity_same_literal_proposition",
+      "citations": [
+        {
+          "source_id": "DDOG-2025-Q2~v2-contradictory_commentary",
+          "quote": "Demand caused the FY2025 total revenue guidance revision on a reported basis.",
+          "start": 38800,
+          "end": 38877,
+          "source_hash": "7e361549cb2d4e38b04521a9f90ab66c37a22823916cce568c06b893264d7dd2",
+          "url": "https://www.sec.gov/Archives/edgar/data/1561550/000156155025000216/ex-991x20250630x8k.htm",
+          "origin": "synthetic",
+          "literal_valid": true,
+          "semantic_review": "pending"
+        },
+        {
+          "source_id": "DDOG-2025-Q2~v2-contradictory_commentary",
+          "quote": "Demand did not cause the FY2025 total revenue guidance revision on a reported basis.",
+          "start": 38878,
+          "end": 38962,
+          "source_hash": "7e361549cb2d4e38b04521a9f90ab66c37a22823916cce568c06b893264d7dd2",
+          "url": "https://www.sec.gov/Archives/edgar/data/1561550/000156155025000216/ex-991x20250630x8k.htm",
+          "origin": "synthetic",
+          "literal_valid": true,
+          "semantic_review": "pending"
+        }
+      ],
+      "semantic_review": "pending",
+      "kind": "explicit_lexical_conflict"
+    }
+  ],
+  "comparability": null,
+  "investigation_version": "earnings-investigation-v2"
+}

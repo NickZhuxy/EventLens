@@ -13,9 +13,10 @@ root=Path(__file__).resolve().parents[1]
 work=root/'work';work.mkdir(exist_ok=True)
 folder=Path(tempfile.mkdtemp(prefix='fresh-check-',dir=work))
 project=folder/'project';project.mkdir()
-for name in ['src','tests','data','configs','fixtures','deploy']:
+for name in ['src','tests','data','configs','fixtures','deploy','scripts']:
     shutil.copytree(root/name,project/name,ignore=shutil.ignore_patterns('__pycache__','*.egg-info','reviews.jsonl'))
 shutil.copy2(root/'pyproject.toml',project/'pyproject.toml')
+shutil.copytree(root/'reports/deepseek-live-2026-10-08',project/'reports/deepseek-live-2026-10-08')
 venv=folder/'venv'
 log=[]
 env=os.environ.copy();env.pop('PYTHONPATH',None)
@@ -40,7 +41,7 @@ try:
     execute([python,'-m','unittest','discover','-s','tests','-v'])
     inventory=json.loads(execute([cli,'validate']))
     first=json.loads(execute([cli,'ingest']));second=json.loads(execute([cli,'ingest']))
-    assert first['added']==6 and second['added']==0 and second['total_sources']==6
+    assert first['added']==inventory['documents'] and second['added']==0 and second['total_sources']==inventory['documents']
     execute([cli,'demo']);execute([cli,'mock-demo'])
     execute([cli,'evaluate','--out','reports/fresh-offline'])
     baseline=root/'reports/offline-v2/runs';fresh=project/'reports/fresh-offline/runs'
@@ -79,6 +80,6 @@ finally:
             'python':sys.version,'commands':log,'replicated_run_files':locals().get('checked',[]),
             'replicated_macro_runs':locals().get('macro_checked',[]),
             'comparison_excludes':'run UUIDs, wall-clock timestamps and latency; compares all evidence and conclusions'}
-    (root/'reports/fresh_environment_macro.json').write_text(json.dumps(report,indent=2)+'\n')
+    (root/'reports/fresh_environment_m1_m3.json').write_text(json.dumps(report,indent=2)+'\n')
 print(json.dumps({'success':ok,'replicated_runs':len(checked),'replicated_macro_runs':len(macro_checked),
-                  'report':'reports/fresh_environment_macro.json'}))
+                  'report':'reports/fresh_environment_m1_m3.json'}))

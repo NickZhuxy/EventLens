@@ -1,0 +1,74 @@
+{
+  "run_id": "9df0ce60-7cc0-4d39-9759-b6c558b6a480",
+  "created_at": "2026-10-13T19:47:07.509025+00:00",
+  "case": {
+    "case_id": "ZM-FY2025-priorQ4-Q1",
+    "issuer": "ZM",
+    "old": "ZM-2024-Q4",
+    "new": "ZM-2025-Q1",
+    "horizon": "FY2025",
+    "metric": "revenue",
+    "cutoff": "2024-05-21T00:00:00-04:00",
+    "split": "heldout",
+    "synthetic": false
+  },
+  "method": "A",
+  "config": {
+    "model": "SET_MODEL_ID",
+    "max_calls": 6,
+    "max_tool_calls": 5,
+    "max_output_tokens_per_call": 1800,
+    "max_input_characters": 160000
+  },
+  "cutoff_mode": "disclosure",
+  "trace": [
+    {
+      "stage": "rule_extraction",
+      "source_id": "ZM-2024-Q4",
+      "issues": [
+        "no_unambiguous_annual_revenue_range"
+      ]
+    },
+    {
+      "stage": "rule_extraction",
+      "source_id": "ZM-2025-Q1",
+      "issues": [
+        "no_unambiguous_annual_revenue_range"
+      ]
+    },
+    {
+      "stage": "deterministic_comparison",
+      "result": {
+        "status": "insufficient_evidence",
+        "reason": "missing_guidance",
+        "calculation": null
+      }
+    }
+  ],
+  "extractions": [],
+  "explanations": [],
+  "errors": [],
+  "calls": 0,
+  "tokens": null,
+  "label_status": "not_used_by_system",
+  "human_semantic_review": "pending",
+  "source_hashes": {
+    "ZM-2024-Q4": "6dc1e5d20503d2ab38981bc4d822908329f3816fba0695271089254db3d3c9ba",
+    "ZM-2025-Q1": "98fab557b94f4eeaeb7350a3bef5882f239ccf765935912e8b3a611b776eb160"
+  },
+  "input_hash": "7aa712258b7eb5aed577e3052ea7f1b74c1f43b5340a8ca739ed599334fdafbd",
+  "model": null,
+  "execution_kind": "deterministic",
+  "context_characters": 67551,
+  "comparison": {
+    "status": "insufficient_evidence",
+    "reason": "missing_guidance",
+    "calculation": null
+  },
+  "explanation_conclusion": {
+    "status": "insufficient_evidence",
+    "reason": "no_explicit_explanation_found"
+  },
+  "conclusion": "insufficient_evidence",
+  "latency_ms": 2.689
+}

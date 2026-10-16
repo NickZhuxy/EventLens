@@ -1,0 +1,75 @@
+{
+  "run_id": "6b29b5d1-4d96-4b3d-af2e-26f28e2fee1a",
+  "created_at": "2026-10-13T19:47:07.257907+00:00",
+  "case": {
+    "case_id": "CRM-FY2024-priorQ4-Q1",
+    "issuer": "CRM",
+    "old": "CRM-2023-Q4",
+    "new": "CRM-2024-Q1",
+    "horizon": "FY2024",
+    "metric": "revenue",
+    "cutoff": "2023-06-01T00:00:00-04:00",
+    "split": "heldout",
+    "synthetic": false
+  },
+  "method": "A",
+  "config": {
+    "model": "SET_MODEL_ID",
+    "max_calls": 6,
+    "max_tool_calls": 5,
+    "max_output_tokens_per_call": 1800,
+    "max_input_characters": 160000
+  },
+  "cutoff_mode": "disclosure",
+  "trace": [
+    {
+      "stage": "rule_extraction",
+      "source_id": "CRM-2023-Q4",
+      "issues": [
+        "ambiguous_multi_column_revenue_row",
+        "no_unambiguous_annual_revenue_range"
+      ]
+    },
+    {
+      "stage": "rule_extraction",
+      "source_id": "CRM-2024-Q1",
+      "issues": [
+        "no_unambiguous_annual_revenue_range"
+      ]
+    },
+    {
+      "stage": "deterministic_comparison",
+      "result": {
+        "status": "insufficient_evidence",
+        "reason": "missing_guidance",
+        "calculation": null
+      }
+    }
+  ],
+  "extractions": [],
+  "explanations": [],
+  "errors": [],
+  "calls": 0,
+  "tokens": null,
+  "label_status": "not_used_by_system",
+  "human_semantic_review": "pending",
+  "source_hashes": {
+    "CRM-2023-Q4": "40ee65c6f64a5e8f2ace60abef5f843ddb9619499d38f0e381af45d26de23315",
+    "CRM-2024-Q1": "ce3ef55515214a97a91294454551acca8e9a411e428c7458d1848a5d90e81ad3"
+  },
+  "input_hash": "d28a026b2155c6e784a2df0bbc9796dad212967c8472dd3570c3e743d7da7722",
+  "model": null,
+  "execution_kind": "deterministic",
+  "context_characters": 105315,
+  "comparison": {
+    "status": "insufficient_evidence",
+    "reason": "missing_guidance",
+    "calculation": null
+  },
+  "explanation_conclusion": {
+    "status": "insufficient_evidence",
+    "reason": "no_explicit_explanation_found"
+  },
+  "conclusion": "insufficient_evidence",
+  "latency_ms": 2.32
+}

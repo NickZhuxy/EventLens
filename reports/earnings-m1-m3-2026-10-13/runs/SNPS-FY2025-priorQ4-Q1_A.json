@@ -1,0 +1,74 @@
+{
+  "run_id": "5a1b69fb-44d6-454e-ac34-eddaff0cd79f",
+  "created_at": "2026-10-13T19:47:07.356929+00:00",
+  "case": {
+    "case_id": "SNPS-FY2025-priorQ4-Q1",
+    "issuer": "SNPS",
+    "old": "SNPS-2024-Q4",
+    "new": "SNPS-2025-Q1",
+    "horizon": "FY2025",
+    "metric": "revenue",
+    "cutoff": "2025-02-27T00:00:00-05:00",
+    "split": "development",
+    "synthetic": false
+  },
+  "method": "A",
+  "config": {
+    "model": "SET_MODEL_ID",
+    "max_calls": 6,
+    "max_tool_calls": 5,
+    "max_output_tokens_per_call": 1800,
+    "max_input_characters": 160000
+  },
+  "cutoff_mode": "disclosure",
+  "trace": [
+    {
+      "stage": "rule_extraction",
+      "source_id": "SNPS-2024-Q4",
+      "issues": [
+        "no_unambiguous_annual_revenue_range"
+      ]
+    },
+    {
+      "stage": "rule_extraction",
+      "source_id": "SNPS-2025-Q1",
+      "issues": [
+        "no_unambiguous_annual_revenue_range"
+      ]
+    },
+    {
+      "stage": "deterministic_comparison",
+      "result": {
+        "status": "insufficient_evidence",
+        "reason": "missing_guidance",
+        "calculation": null
+      }
+    }
+  ],
+  "extractions": [],
+  "explanations": [],
+  "errors": [],
+  "calls": 0,
+  "tokens": null,
+  "label_status": "not_used_by_system",
+  "human_semantic_review": "pending",
+  "source_hashes": {
+    "SNPS-2024-Q4": "f808c521e4b3ebeaf6bdb827b22efe3e819283bb33eacbe1f8901d2a933b0597",
+    "SNPS-2025-Q1": "f719d2f5911e30c6a69eba8e39f5536cd2ff06ae7c9538db013e86c5a8bd7ebd"
+  },
+  "input_hash": "a991f15cbf2f22e2838c3e0ce164a0f1573a31a3529e415c5757abf72890eedc",
+  "model": null,
+  "execution_kind": "deterministic",
+  "context_characters": 100577,
+  "comparison": {
+    "status": "insufficient_evidence",
+    "reason": "missing_guidance",
+    "calculation": null
+  },
+  "explanation_conclusion": {
+    "status": "insufficient_evidence",
+    "reason": "no_explicit_explanation_found"
+  },
+  "conclusion": "insufficient_evidence",
+  "latency_ms": 3.353
+}

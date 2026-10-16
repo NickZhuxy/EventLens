@@ -1,6 +1,6 @@
 # Macro-event review
 
-The primary workflow's labels are in `data/macro/labels.draft.json`. Check each event against the cited next-meeting sentence and its publication date. These are draft calendar labels, not semantic-support labels. Review claim support through each macro run's `review_queue.json` and the `eventlens macro review` command. See [the ownership checklist](ownership_checklist.md).
+The macro-event extension's labels are in `data/macro/labels.draft.json`. Check each event against the cited next-meeting sentence and its publication date. These are draft calendar labels, not semantic-support labels. Review claim support through each macro run's `review_queue.json` and the `eventlens macro review` command. For the primary earnings workflow, use the [earnings review procedure](earnings_benchmark_v2.md#review-the-real-disclosures).
 
 The instructions below apply to the separate earnings experiment.
 

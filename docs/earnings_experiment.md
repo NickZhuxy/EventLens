@@ -1,18 +1,24 @@
 # Earnings-guidance experiment
 
-This supporting experiment predates the macro-event workflow. Its commands and saved results remain available. Start with the [main README](../README.md) for the current project.
+Latest checkpoint: [v6–v10 evidence](../reports/earnings-evidence-v10-2026-10-15/evidence.md) adds full-corpus regression, table-row deletion, complete synthetic stress checks, and explicit annual withdrawal handling. Every saved request/result replays. All 36 natural labels and 33 sampled semantic judgments remain pending. The sections below retain the original pilot and historical v2 results.
+
+The [v2 investigation checkpoint](earnings_benchmark_v2.md) now has 440 saved four-method runs and 342 recorded model requests, all replayed offline. Its conservative token-cost estimate is USD 1.3671111 under Nick's approved USD 8 cap. The [execution analysis](../reports/earnings-v2-analysis-2026-10-13/analysis.md) reports coverage, failures and synthetic stress outcomes; human labels remain pending.
+
+October 13, 2026 update: the [M1/M3 checkpoint](earnings_m1_m3.md) expands the corpus to 36 pairs across 12 issuers and adds method D with saved offline replay. The three-pair results below document the original pilot. The expanded live B/C results are linked above; human-reviewed accuracy remains pending.
+
+Earnings investigation is the primary workflow. The macro-event workflow remains a secondary extension. Start with the [main README](../README.md) for the current project. The later sections below retain the original earnings pilot and its reproduction commands.
 
 Owner and maintainer: **Xiangyi (Nick) Zhu**.
 
 EventLens compares corporate revenue guidance for the same fiscal year. Guidance is a company's forecast. A reported result and a forecast are different records. Two quarterly releases can forecast different periods. EventLens must check the period before it calculates a change.
 
-This is a personal research project. It is separate from the basic information-organizing agent that Nick developed during his Jinde internship. The framework and model used at Jinde are unconfirmed. This project is not an approved course submission.
+EventLens is a personal research implementation. It uses public sources and includes no employer code or documents. This project is not an approved course submission.
 
 ## Research question
 
 Can a large language model (LLM), with passage retrieval, extract guidance changes with better evidence than simpler methods?
 
-The offline workflow operates now. The LLM comparison remains unmeasured because no authorized API credential was available during the build. No claim of improved model performance is supported.
+At the original October 7 pilot checkpoint, the offline workflow operated and the LLM comparison was unmeasured. The later live benchmark is linked above. No claim of improved model performance is supported without the required human review.
 
 ## Architecture
 
@@ -245,4 +251,4 @@ The cutoff uses conservative publication dates. It does not prove that these exa
 
 All three real pairs are upward revisions. This small sample does not establish general performance. The extraction rules support a narrow annual revenue layout. Operating-margin arithmetic has unit tests; operating-margin extraction is not part of this experiment. No return prediction, investment performance, or causal effect is claimed.
 
-AI assistance produced the implementation and draft labels under Nick's direction. See [contributions](../docs/contributions.md), [design decisions](../docs/design_decisions.md), [interview walkthrough](../docs/interview_walkthrough.md), and [ownership checklist](../docs/ownership_checklist.md). Historical planning files remain in the local `docs/archive/` directory and are excluded from Git.
+AI assistance produced the implementation and draft labels under Nick's direction. See [contributions](contributions.md), [design decisions](design_decisions.md), and the [current review procedure](earnings_benchmark_v2.md#review-the-real-disclosures). Private planning and interview notes are excluded from this repository.

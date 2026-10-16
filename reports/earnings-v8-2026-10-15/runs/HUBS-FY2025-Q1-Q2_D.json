@@ -1,0 +1,468 @@
+{
+  "run_id": "c87fc100-3554-4dd4-bbbe-d3b95181a035",
+  "created_at": "2026-10-16T02:11:26.360009+00:00",
+  "case": {
+    "case_id": "HUBS-FY2025-Q1-Q2",
+    "issuer": "HUBS",
+    "old": "HUBS-2025-Q1",
+    "new": "HUBS-2025-Q2",
+    "horizon": "FY2025",
+    "metric": "revenue",
+    "cutoff": "2025-08-07T00:00:00-04:00",
+    "split": "heldout",
+    "synthetic": false
+  },
+  "method": "D",
+  "config": {
+    "version": "earnings-v8-point-target-regression",
+    "model": "deepseek-flash",
+    "base_url": "https://api.deepseek.com/beta",
+    "reasoning_effort": "none",
+    "max_calls": 8,
+    "max_tool_calls": 7,
+    "max_validation_repairs": 2,
+    "max_output_tokens_per_call": 6000,
+    "max_input_bytes": 128000,
+    "transport_retries": 0,
+    "selection": "Same 36 corpus pairs and 36 table-row derivatives as v7; frozen v8 point-target screen excludes monetary impacts/deltas discovered on Adobe development data. All previously exposed heldout results are regression only. No tuning on v7 heldout outputs. Retain the v7 uncertain request reservation and never resend an identical wire request; record a blocked outcome instead.",
+    "methods": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "pricing": {
+      "currency": "USD",
+      "input_per_million": "0.30",
+      "output_per_million": "1.20",
+      "assumption": "Peak rates, all input charged as cache miss; ignore all discounts.",
+      "reference": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "checked_on": "2026-10-15"
+    },
+    "proposed_budget_usd": "1.50",
+    "approval_status": "pending_new_experiment_approval",
+    "planning_cost_per_BC_pair_usd": "0.01639565",
+    "budget_authorization": "reports/earnings-budget-2026-10-15/authorization.json",
+    "budget_authorization_sha256": "56b79a004195ffa2feb1e9ba73157b090290af79cdb3bd30c25aeda27b42849d",
+    "prior_paid_bundles": [
+      "reports/earnings-v3-preflight-2026-10-14",
+      "reports/earnings-v4-preflight-2026-10-15",
+      "reports/earnings-v5-preflight-2026-10-15",
+      "reports/earnings-v6-preflight-2026-10-15",
+      "reports/earnings-v7-2026-10-15"
+    ],
+    "retained_uncertain_requests": {
+      "reports/earnings-v7-2026-10-15/requests/HUBS-FY2025-Q1-Q2_B.01.json": "0917fd175f3e454ed26ab508d0bb77cd3d6758f0c429e0be80377378ae941456"
+    }
+  },
+  "cutoff_mode": "disclosure",
+  "trace": [
+    {
+      "stage": "document_diff",
+      "algorithm": "difflib.SequenceMatcher sentence-level; autojunk=False",
+      "sentence_counts": [
+        424,
+        441
+      ],
+      "changed_guidance_candidates": [
+        {
+          "operation": "replace",
+          "old_sentences": [
+            8,
+            9
+          ],
+          "new_sentences": [
+            8,
+            9
+          ],
+          "spans": [
+            {
+              "source_id": "HUBS-2025-Q1",
+              "sentence": 8,
+              "start": 340,
+              "end": 452,
+              "quote": "Total revenue was $714.1 million, up 16% on an as-reported basis and 18% in constant currency compared to Q1'24."
+            },
+            {
+              "source_id": "HUBS-2025-Q2",
+              "sentence": 8,
+              "start": 343,
+              "end": 455,
+              "quote": "Total revenue was $760.9 million, up 19% on an as-reported basis and 18% in constant currency compared to Q2'24."
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            10,
+            11
+          ],
+          "new_sentences": [
+            10,
+            11
+          ],
+          "spans": [
+            {
+              "source_id": "HUBS-2025-Q1",
+              "sentence": 10,
+              "start": 456,
+              "end": 546,
+              "quote": "Subscription revenue was $698.7 million, up 16% on an as-reported basis compared to Q1'24."
+            },
+            {
+              "source_id": "HUBS-2025-Q2",
+              "sentence": 10,
+              "start": 459,
+              "end": 549,
+              "quote": "Subscription revenue was $744.5 million, up 19% on an as-reported basis compared to Q2'24."
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            12,
+            13
+          ],
+          "new_sentences": [
+            12,
+            13
+          ],
+          "spans": [
+            {
+              "source_id": "HUBS-2025-Q1",
+              "sentence": 12,
+              "start": 551,
+              "end": 659,
+              "quote": "Professional services and other revenue was $15.4 million, up 13% on an as-reported basis compared to Q1'24."
+            },
+            {
+              "source_id": "HUBS-2025-Q2",
+              "sentence": 12,
+              "start": 554,
+              "end": 662,
+              "quote": "Professional services and other revenue was $16.3 million, up 21% on an as-reported basis compared to Q2'24."
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            42,
+            43
+          ],
+          "new_sentences": [
+            45,
+            46
+          ],
+          "spans": [
+            {
+              "source_id": "HUBS-2025-Q1",
+              "sentence": 42,
+              "start": 2451,
+              "end": 2609,
+              "quote": "Average Subscription Revenue Per Customer was $11,038 during the first quarter of 2025, down 4% on an as-reported basis compared to the first quarter of 2024."
+            },
+            {
+              "source_id": "HUBS-2025-Q2",
+              "sentence": 45,
+              "start": 2627,
+              "end": 2785,
+              "quote": "Average Subscription Revenue Per Customer was $11,310 during the second quarter of 2025, up 1% on an as-reported basis compared to the second quarter of 2024."
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            47,
+            56
+          ],
+          "new_sentences": [
+            50,
+            55
+          ],
+          "spans": [
+            {
+              "source_id": "HUBS-2025-Q1",
+              "sentence": 47,
+              "start": 2784,
+              "end": 2925,
+              "quote": "“We had a solid start to 2025, with continued revenue growth and customer expansion,” said Yamini Rangan, Chief Executive Officer at HubSpot."
+            },
+            {
+              "source_id": "HUBS-2025-Q2",
+              "sentence": 50,
+              "start": 2959,
+              "end": 3097,
+              "quote": "“Q2 was another solid quarter of continued revenue growth and customer expansion,” said Yamini Rangan, Chief Executive Officer at HubSpot."
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            60,
+            61
+          ],
+          "new_sentences": [
+            59,
+            60
+          ],
+          "spans": [
+            {
+              "source_id": "HUBS-2025-Q1",
+              "sentence": 60,
+              "start": 4434,
+              "end": 4595,
+              "quote": "Total revenue is expected to be in the range of $738.0 million to $740.0 million, up 16% year over year in both on an as-reported basis and in constant currency."
+            },
+            {
+              "source_id": "HUBS-2025-Q2",
+              "sentence": 59,
+              "start": 3801,
+              "end": 3958,
+              "quote": "Total revenue is expected to be in the range of $785.0 million to $787.0 million, up 17% year over year on an as-reported basis and 16% in constant currency."
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            68,
+            69
+          ],
+          "new_sentences": [
+            67,
+            68
+          ],
+          "spans": [
+            {
+              "source_id": "HUBS-2025-Q1",
+              "sentence": 68,
+              "start": 4936,
+              "end": 5097,
+              "quote": "Total revenue is expected to be in the range of $3.036 billion to $3.044 billion, up 16% year over year in both on an as-reported basis and in constant currency."
+            },
+            {
+              "source_id": "HUBS-2025-Q2",
+              "sentence": 67,
+              "start": 4299,
+              "end": 4460,
+              "quote": "Total revenue is expected to be in the range of $3.080 billion to $3.088 billion, up 17% year over year in both on an as-reported basis and in constant currency."
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            125,
+            137
+          ],
+          "new_sentences": [
+            125,
+            137
+          ],
+          "spans": [
+            {
+              "source_id": "HUBS-2025-Q1",
+              "sentence": 131,
+              "start": 12440,
+              "end": 12506,
+              "quote": "Deferred revenue  |    |    | 836,296  |    |    |    | 784,253  |"
+            },
+            {
+              "source_id": "HUBS-2025-Q1",
+              "sentence": 134,
+              "start": 12689,
+              "end": 12775,
+              "quote": "Deferred revenue, net of current portion  |    |    | 4,581  |    |    |    | 3,969  |"
+            },
+            {
+              "source_id": "HUBS-2025-Q2",
+              "sentence": 131,
+              "start": 11752,
+              "end": 11818,
+              "quote": "Deferred revenue  |    |    | 888,297  |    |    |    | 784,253  |"
+            },
+            {
+              "source_id": "HUBS-2025-Q2",
+              "sentence": 134,
+              "start": 12001,
+              "end": 12087,
+              "quote": "Deferred revenue, net of current portion  |    |    | 5,993  |    |    |    | 3,969  |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            148,
+            177
+          ],
+          "new_sentences": [
+            149,
+            177
+          ],
+          "spans": [
+            {
+              "source_id": "HUBS-2025-Q1",
+              "sentence": 154,
+              "start": 13857,
+              "end": 13920,
+              "quote": "Total revenue  |    | 714,137  |    |    |    | 617,414  |    |"
+            },
+            {
+              "source_id": "HUBS-2025-Q2",
+              "sentence": 155,
+              "start": 13418,
+              "end": 13532,
+              "quote": "Total revenue  |    | 760,866  |    |    |    | 637,230  |    |    |    | 1,475,003  |    |    |    | 1,254,644  |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            191,
+            227
+          ],
+          "new_sentences": [
+            189,
+            228
+          ],
+          "spans": [
+            {
+              "source_id": "HUBS-2025-Q1",
+              "sentence": 208,
+              "start": 17361,
+              "end": 17425,
+              "quote": "Deferred revenue  |    | 39,422  |    |    |    | 31,213  |    |"
+            },
+            {
+              "source_id": "HUBS-2025-Q2",
+              "sentence": 206,
+              "start": 18615,
+              "end": 18724,
+              "quote": "Deferred revenue  |    | 24,466  |    |    |    | 13,078  |    |    |    | 63,888  |    |    |    | 44,291  |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            284,
+            285
+          ],
+          "new_sentences": [
+            283,
+            284
+          ],
+          "spans": [
+            {
+              "source_id": "HUBS-2025-Q1",
+              "sentence": 284,
+              "start": 23168,
+              "end": 23372,
+              "quote": "percentage of revenue  |    | 14.0  | %  |    | 2.1  | %  |    | 30.8  | %  |    | 45.7  | %  |    | 11.0  | %  |    |    | 13.1  | %  |    | 2.3  | %  |    | 28.4  | %  |    | 48.6  | %  |    | 11.2  | %"
+            },
+            {
+              "source_id": "HUBS-2025-Q2",
+              "sentence": 283,
+              "start": 26328,
+              "end": 26532,
+              "quote": "percentage of revenue  |    | 14.0  | %  |    | 2.0  | %  |    | 31.2  | %  |    | 44.7  | %  |    | 11.2  | %  |    |    | 12.8  | %  |    | 2.2  | %  |    | 31.1  | %  |    | 46.1  | %  |    | 11.4  | %"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            286,
+            287
+          ],
+          "new_sentences": [
+            285,
+            303
+          ],
+          "spans": [
+            {
+              "source_id": "HUBS-2025-Q1",
+              "sentence": 286,
+              "start": 23397,
+              "end": 23599,
+              "quote": "percentage of revenue  |    | 12.7  | %  |    | 1.9  | %  |    | 21.9  | %  |    | 41.2  | %  |    | 8.2  | %  |    |    | 12.0  | %  |    | 2.2  | %  |    | 20.1  | %  |    | 42.9  | %  |    | 7.9  | %"
+            },
+            {
+              "source_id": "HUBS-2025-Q2",
+              "sentence": 285,
+              "start": 26557,
+              "end": 26759,
+              "quote": "percentage of revenue  |    | 12.6  | %  |    | 1.9  | %  |    | 20.9  | %  |    | 39.8  | %  |    | 7.8  | %  |    |    | 11.7  | %  |    | 2.0  | %  |    | 20.8  | %  |    | 40.4  | %  |    | 8.0  | %"
+            },
+            {
+              "source_id": "HUBS-2025-Q2",
+              "sentence": 300,
+              "start": 28371,
+              "end": 28575,
+              "quote": "percentage of revenue  |    | 14.0  | %  |    | 2.1  | %  |    | 31.0  | %  |    | 45.2  | %  |    | 11.1  | %  |    |    | 12.9  | %  |    | 2.3  | %  |    | 29.8  | %  |    | 47.4  | %  |    | 11.3  | %"
+            },
+            {
+              "source_id": "HUBS-2025-Q2",
+              "sentence": 302,
+              "start": 28600,
+              "end": 28802,
+              "quote": "percentage of revenue  |    | 12.6  | %  |    | 1.9  | %  |    | 21.4  | %  |    | 40.5  | %  |    | 8.0  | %  |    |    | 11.8  | %  |    | 2.1  | %  |    | 20.5  | %  |    | 41.6  | %  |    | 8.0  | %"
+            }
+          ]
+        }
+      ],
+      "annual_candidate_counts": [
+        0,
+        0
+      ],
+      "issues": [
+        "missing_or_ambiguous_annual_guidance_pair"
+      ]
+    },
+    {
+      "stage": "deterministic_comparison",
+      "result": {
+        "status": "insufficient_evidence",
+        "reason": "missing_guidance",
+        "calculation": null
+      }
+    }
+  ],
+  "extractions": [],
+  "explanations": [],
+  "errors": [],
+  "calls": 0,
+  "tokens": null,
+  "label_status": "not_used_by_system",
+  "human_semantic_review": "pending",
+  "source_hashes": {
+    "HUBS-2025-Q1": "a7e35adf8fdc1bf871cb1c763accd00c60cacbd3f74cf35f8f7883061e8088cd",
+    "HUBS-2025-Q2": "939197911188469ed5ee8d80866b90c4e3e00ab0d0cad535129eaccb487e3973"
+  },
+  "input_hash": "97fadd0a083dcd7549491714216b2dd8f2157ef277f1091507d5029775b12611",
+  "model": null,
+  "execution_kind": "deterministic",
+  "context_characters": 83050,
+  "comparison": {
+    "status": "insufficient_evidence",
+    "reason": "missing_guidance",
+    "calculation": null
+  },
+  "explanation_conclusion": {
+    "status": "insufficient_evidence",
+    "reason": "no_explicit_explanation_found"
+  },
+  "conclusion": "insufficient_evidence",
+  "latency_ms": 5.504,
+  "conflicts": [],
+  "comparability": null,
+  "investigation_version": "earnings-investigation-v2",
+  "validation_failures": []
+}

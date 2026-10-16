@@ -1,0 +1,640 @@
+{
+  "run_id": "c795b73f-2654-4f82-84db-39dcde3ccb84",
+  "created_at": "2026-10-16T02:08:33.217950+00:00",
+  "case": {
+    "case_id": "BOX-FY2025-Q2-Q3",
+    "issuer": "BOX",
+    "old": "BOX-2025-Q2",
+    "new": "BOX-2025-Q3",
+    "horizon": "FY2025",
+    "metric": "revenue",
+    "cutoff": "2024-12-04T00:00:00-05:00",
+    "split": "development",
+    "synthetic": false
+  },
+  "method": "D",
+  "config": {
+    "version": "earnings-v8-point-target-regression",
+    "model": "deepseek-flash",
+    "base_url": "https://api.deepseek.com/beta",
+    "reasoning_effort": "none",
+    "max_calls": 8,
+    "max_tool_calls": 7,
+    "max_validation_repairs": 2,
+    "max_output_tokens_per_call": 6000,
+    "max_input_bytes": 128000,
+    "transport_retries": 0,
+    "selection": "Same 36 corpus pairs and 36 table-row derivatives as v7; frozen v8 point-target screen excludes monetary impacts/deltas discovered on Adobe development data. All previously exposed heldout results are regression only. No tuning on v7 heldout outputs. Retain the v7 uncertain request reservation and never resend an identical wire request; record a blocked outcome instead.",
+    "methods": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "pricing": {
+      "currency": "USD",
+      "input_per_million": "0.30",
+      "output_per_million": "1.20",
+      "assumption": "Peak rates, all input charged as cache miss; ignore all discounts.",
+      "reference": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "checked_on": "2026-10-15"
+    },
+    "proposed_budget_usd": "1.50",
+    "approval_status": "pending_new_experiment_approval",
+    "planning_cost_per_BC_pair_usd": "0.01639565",
+    "budget_authorization": "reports/earnings-budget-2026-10-15/authorization.json",
+    "budget_authorization_sha256": "56b79a004195ffa2feb1e9ba73157b090290af79cdb3bd30c25aeda27b42849d",
+    "prior_paid_bundles": [
+      "reports/earnings-v3-preflight-2026-10-14",
+      "reports/earnings-v4-preflight-2026-10-15",
+      "reports/earnings-v5-preflight-2026-10-15",
+      "reports/earnings-v6-preflight-2026-10-15",
+      "reports/earnings-v7-2026-10-15"
+    ],
+    "retained_uncertain_requests": {
+      "reports/earnings-v7-2026-10-15/requests/HUBS-FY2025-Q1-Q2_B.01.json": "0917fd175f3e454ed26ab508d0bb77cd3d6758f0c429e0be80377378ae941456"
+    }
+  },
+  "cutoff_mode": "disclosure",
+  "trace": [
+    {
+      "stage": "document_diff",
+      "algorithm": "difflib.SequenceMatcher sentence-level; autojunk=False",
+      "sentence_counts": [
+        446,
+        458
+      ],
+      "changed_guidance_candidates": [
+        {
+          "operation": "replace",
+          "old_sentences": [
+            2,
+            13
+          ],
+          "new_sentences": [
+            2,
+            14
+          ],
+          "spans": [
+            {
+              "source_id": "BOX-2025-Q2",
+              "sentence": 3,
+              "start": 116,
+              "end": 189,
+              "quote": "Revenue of $270 Million, up 3% Year-Over-Year, up 6% in Constant Currency"
+            },
+            {
+              "source_id": "BOX-2025-Q3",
+              "sentence": 3,
+              "start": 113,
+              "end": 186,
+              "quote": "Revenue of $276 Million, up 5% Year-Over-Year, up 6% in Constant Currency"
+            },
+            {
+              "source_id": "BOX-2025-Q3",
+              "sentence": 10,
+              "start": 1130,
+              "end": 1296,
+              "quote": "“Third quarter revenue growth of 5% year-over-year, or 6% in constant currency, came in at the high-end of our guidance,” said Dylan Smith, co-founder and CFO of Box."
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            14,
+            15
+          ],
+          "new_sentences": [
+            15,
+            16
+          ],
+          "spans": [
+            {
+              "source_id": "BOX-2025-Q2",
+              "sentence": 14,
+              "start": 1466,
+              "end": 1658,
+              "quote": "Revenue for the second quarter of fiscal 2025 was $270.0 million, a 3% increase from revenue for the second quarter of fiscal 2024 of $261.4 million, or 6% growth on a constant currency basis."
+            },
+            {
+              "source_id": "BOX-2025-Q3",
+              "sentence": 15,
+              "start": 1680,
+              "end": 1870,
+              "quote": "Revenue for the third quarter of fiscal 2025 was $275.9 million, a 5% increase from revenue for the third quarter of fiscal 2024 of $261.5 million, or 6% growth on a constant currency basis."
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            20,
+            22
+          ],
+          "new_sentences": [
+            22,
+            24
+          ],
+          "spans": [
+            {
+              "source_id": "BOX-2025-Q2",
+              "sentence": 20,
+              "start": 2057,
+              "end": 2162,
+              "quote": "GAAP gross profit for the second quarter of fiscal 2025 was a record $214.5 million, or 79.4% of revenue."
+            },
+            {
+              "source_id": "BOX-2025-Q2",
+              "sentence": 21,
+              "start": 2163,
+              "end": 2277,
+              "quote": "This compares to a GAAP gross profit of $194.4 million, or 74.4% of revenue, in the second quarter of fiscal 2024."
+            },
+            {
+              "source_id": "BOX-2025-Q3",
+              "sentence": 22,
+              "start": 2413,
+              "end": 2517,
+              "quote": "GAAP gross profit for the third quarter of fiscal 2025 was a record $220.4 million, or 79.9% of revenue."
+            },
+            {
+              "source_id": "BOX-2025-Q3",
+              "sentence": 23,
+              "start": 2518,
+              "end": 2631,
+              "quote": "This compares to a GAAP gross profit of $192.3 million, or 73.5% of revenue, in the third quarter of fiscal 2024."
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            23,
+            25
+          ],
+          "new_sentences": [
+            25,
+            27
+          ],
+          "spans": [
+            {
+              "source_id": "BOX-2025-Q2",
+              "sentence": 23,
+              "start": 2281,
+              "end": 2390,
+              "quote": "Non-GAAP gross profit for the second quarter of fiscal 2025 was a record $220.2 million, or 81.6% of revenue."
+            },
+            {
+              "source_id": "BOX-2025-Q2",
+              "sentence": 24,
+              "start": 2391,
+              "end": 2509,
+              "quote": "This compares to a non-GAAP gross profit of $201.1 million, or 76.9% of revenue, in the second quarter of fiscal 2024."
+            },
+            {
+              "source_id": "BOX-2025-Q3",
+              "sentence": 25,
+              "start": 2636,
+              "end": 2744,
+              "quote": "Non-GAAP gross profit for the third quarter of fiscal 2025 was a record $226.1 million, or 81.9% of revenue."
+            },
+            {
+              "source_id": "BOX-2025-Q3",
+              "sentence": 26,
+              "start": 2745,
+              "end": 2862,
+              "quote": "This compares to a non-GAAP gross profit of $199.6 million, or 76.3% of revenue, in the third quarter of fiscal 2024."
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            26,
+            28
+          ],
+          "new_sentences": [
+            28,
+            30
+          ],
+          "spans": [
+            {
+              "source_id": "BOX-2025-Q2",
+              "sentence": 26,
+              "start": 2514,
+              "end": 2611,
+              "quote": "GAAP operating income in the second quarter of fiscal 2025 was $20.3 million, or 7.5% of revenue."
+            },
+            {
+              "source_id": "BOX-2025-Q2",
+              "sentence": 27,
+              "start": 2612,
+              "end": 2727,
+              "quote": "This compares to a GAAP operating income of $9.9 million, or 3.8% of revenue, in the second quarter of fiscal 2024."
+            },
+            {
+              "source_id": "BOX-2025-Q3",
+              "sentence": 28,
+              "start": 2866,
+              "end": 2971,
+              "quote": "GAAP operating income in the third quarter of fiscal 2025 was a record $23.4 million, or 8.5% of revenue."
+            },
+            {
+              "source_id": "BOX-2025-Q3",
+              "sentence": 29,
+              "start": 2972,
+              "end": 3087,
+              "quote": "This compares to a GAAP operating income of $11.4 million, or 4.4% of revenue, in the third quarter of fiscal 2024."
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            29,
+            31
+          ],
+          "new_sentences": [
+            31,
+            33
+          ],
+          "spans": [
+            {
+              "source_id": "BOX-2025-Q2",
+              "sentence": 29,
+              "start": 2731,
+              "end": 2842,
+              "quote": "Non-GAAP operating income in the second quarter of fiscal 2025 was a record $76.7 million, or 28.4% of revenue."
+            },
+            {
+              "source_id": "BOX-2025-Q2",
+              "sentence": 30,
+              "start": 2843,
+              "end": 2964,
+              "quote": "This compares to a non-GAAP operating income of $64.7 million, or 24.8% of revenue, in the second quarter of fiscal 2024."
+            },
+            {
+              "source_id": "BOX-2025-Q3",
+              "sentence": 31,
+              "start": 3092,
+              "end": 3202,
+              "quote": "Non-GAAP operating income in the third quarter of fiscal 2025 was a record $80.2 million, or 29.1% of revenue."
+            },
+            {
+              "source_id": "BOX-2025-Q3",
+              "sentence": 32,
+              "start": 3203,
+              "end": 3323,
+              "quote": "This compares to a non-GAAP operating income of $64.6 million, or 24.7% of revenue, in the third quarter of fiscal 2024."
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            78,
+            79
+          ],
+          "new_sentences": [
+            81,
+            82
+          ],
+          "spans": [
+            {
+              "source_id": "BOX-2025-Q2",
+              "sentence": 78,
+              "start": 7775,
+              "end": 7911,
+              "quote": "As a reminder, approximately one third of Box’s revenue is generated outside of the U.S., of which approximately 60% is in Japanese Yen."
+            },
+            {
+              "source_id": "BOX-2025-Q3",
+              "sentence": 81,
+              "start": 8273,
+              "end": 8409,
+              "quote": "As a reminder, approximately one third of Box’s revenue is generated outside of the U.S., of which approximately 65% is in Japanese Yen."
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            85,
+            86
+          ],
+          "new_sentences": [
+            88,
+            105
+          ],
+          "spans": [
+            {
+              "source_id": "BOX-2025-Q2",
+              "sentence": 85,
+              "start": 8535,
+              "end": 8671,
+              "quote": "Revenue is expected to be in the range of $274 million to $276 million, up 5% year-over-year, or 6% growth on a constant currency basis."
+            },
+            {
+              "source_id": "BOX-2025-Q3",
+              "sentence": 88,
+              "start": 9034,
+              "end": 9152,
+              "quote": "Revenue is expected to be approximately $279 million, up 6% year-over-year, or 7% growth on a constant currency basis."
+            },
+            {
+              "source_id": "BOX-2025-Q3",
+              "sentence": 102,
+              "start": 9999,
+              "end": 10119,
+              "quote": "Revenue is expected to be approximately $1.090 billion, up 5% year-over-year, or 7% growth on a constant currency basis."
+            },
+            {
+              "source_id": "BOX-2025-Q3",
+              "sentence": 103,
+              "start": 10120,
+              "end": 10265,
+              "quote": "We now expect FX to be a 190 basis point headwind to full fiscal year 2025 revenue growth, 20 basis points higher than our previous expectations."
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            96,
+            113
+          ],
+          "new_sentences": [
+            115,
+            116
+          ],
+          "spans": [
+            {
+              "source_id": "BOX-2025-Q2",
+              "sentence": 99,
+              "start": 9542,
+              "end": 9681,
+              "quote": "Revenue is expected to be in the range of $1.086 billion to $1.09 billion, up 5% year-over-year, or 7% growth on a constant currency basis."
+            },
+            {
+              "source_id": "BOX-2025-Q2",
+              "sentence": 100,
+              "start": 9682,
+              "end": 9914,
+              "quote": "Due to the weakening of the U.S. dollar versus the Yen since we last provided guidance, we now expect FX to be a 170 basis point headwind to full fiscal year 2025 revenue growth, 80 basis points lower than our previous expectations."
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            131,
+            133
+          ],
+          "new_sentences": [
+            131,
+            133
+          ],
+          "spans": [
+            {
+              "source_id": "BOX-2025-Q2",
+              "sentence": 131,
+              "start": 13621,
+              "end": 15485,
+              "quote": "This press release contains forward-looking statements that involve risks, uncertainties, and assumptions, including statements regarding Box’s expectations regarding its growth and profitability, the size of its market opportunity, its investments in go-to-market programs, the demand for its products, the potential of AI and its impact on Box, the timing of recent and planned product introductions, enhancements and integrations, the short- and long-term success, market adoption and retention, capabilities, and benefits of such product introductions and enhancements, the success of strategic partnerships and acquisitions, the impact of macroeconomic conditions on its business, its ability to grow and scale its business and drive operating efficiencies, the impact of fluctuations in foreign currency exchange rates on its future results, its net retention rate, its ability to achieve revenue targets and billings expectations, its revenue and billings growth rates, its ability to expand operating margins, its revenue growth rate plus free cash flow margin in fiscal year 2025 and beyond, its long-term financial targets, its ability to maintain profitability on a quarterly or ongoing basis, its free cash flow, its ability to continue to grow unrecognized revenue and remaining performance obligations, its revenue, billings, GAAP and non-GAAP gross margins, GAAP and non-GAAP net income per share, GAAP and non-GAAP operating margins, the related components of GAAP and non-GAAP net income per share, weighted-average outstanding share count expectations for Box’s fiscal third quarter and full fiscal year 2025 in the section titled “Outlook” above, equity burn rate, any potential repurchase of its common stock, whether, when, in what amount and by what method any such repurchase would be consummated, and the share price of any such repurchase."
+            },
+            {
+              "source_id": "BOX-2025-Q3",
+              "sentence": 131,
+              "start": 13839,
+              "end": 15704,
+              "quote": "This press release contains forward-looking statements that involve risks, uncertainties, and assumptions, including statements regarding Box’s expectations regarding its growth and profitability, the size of its market opportunity, its investments in go-to-market programs, the demand for its products, the potential of AI and its impact on Box, the timing of recent and planned product introductions, enhancements and integrations, the short- and long-term success, market adoption and retention, capabilities, and benefits of such product introductions and enhancements, the success of strategic partnerships and acquisitions, the impact of macroeconomic conditions on its business, its ability to grow and scale its business and drive operating efficiencies, the impact of fluctuations in foreign currency exchange rates on its future results, its net retention rate, its ability to achieve revenue targets and billings expectations, its revenue and billings growth rates, its ability to expand operating margins, its revenue growth rate plus free cash flow margin in fiscal year 2025 and beyond, its long-term financial targets, its ability to maintain profitability on a quarterly or ongoing basis, its free cash flow, its ability to continue to grow unrecognized revenue and remaining performance obligations, its revenue, billings, GAAP and non-GAAP gross margins, GAAP and non-GAAP net income per share, GAAP and non-GAAP operating margins, the related components of GAAP and non-GAAP net income per share, weighted-average outstanding share count expectations for Box’s fiscal fourth quarter and full fiscal year 2025 in the section titled “Outlook” above, equity burn rate, any potential repurchase of its common stock, whether, when, in what amount and by what method any such repurchase would be consummated, and the share price of any such repurchase."
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            234,
+            244
+          ],
+          "new_sentences": [
+            233,
+            243
+          ],
+          "spans": [
+            {
+              "source_id": "BOX-2025-Q2",
+              "sentence": 237,
+              "start": 30168,
+              "end": 30234,
+              "quote": "Deferred revenue  |    |    | 483,987  |    |    |    | 562,859  |"
+            },
+            {
+              "source_id": "BOX-2025-Q3",
+              "sentence": 236,
+              "start": 30460,
+              "end": 30526,
+              "quote": "Deferred revenue  |    |    | 475,469  |    |    |    | 562,859  |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            260,
+            263
+          ],
+          "new_sentences": [
+            259,
+            262
+          ],
+          "spans": [
+            {
+              "source_id": "BOX-2025-Q2",
+              "sentence": 260,
+              "start": 31617,
+              "end": 31726,
+              "quote": "Revenue  |    | $  | 270,039  |    |    | $  | 261,428  |    |    | $  | 534,697  |    |    | $  | 513,326  |"
+            },
+            {
+              "source_id": "BOX-2025-Q2",
+              "sentence": 261,
+              "start": 31727,
+              "end": 31846,
+              "quote": "Cost of revenue (1)  |    |    | 55,513  |    |    |    | 67,013  |    |    |    | 113,765  |    |    |    | 128,664  |"
+            },
+            {
+              "source_id": "BOX-2025-Q3",
+              "sentence": 259,
+              "start": 31911,
+              "end": 32020,
+              "quote": "Revenue  |    | $  | 275,913  |    |    | $  | 261,537  |    |    | $  | 810,610  |    |    | $  | 774,863  |"
+            },
+            {
+              "source_id": "BOX-2025-Q3",
+              "sentence": 260,
+              "start": 32021,
+              "end": 32140,
+              "quote": "Cost of revenue (1)  |    |    | 55,556  |    |    |    | 69,227  |    |    |    | 169,321  |    |    |    | 197,891  |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            287,
+            292
+          ],
+          "new_sentences": [
+            286,
+            291
+          ],
+          "spans": [
+            {
+              "source_id": "BOX-2025-Q2",
+              "sentence": 287,
+              "start": 34665,
+              "end": 34774,
+              "quote": "Cost of revenue  |    | $  | 4,731  |    |    | $  | 5,230  |    |    | $  | 9,352  |    |    | $  | 9,715  |"
+            },
+            {
+              "source_id": "BOX-2025-Q3",
+              "sentence": 286,
+              "start": 34980,
+              "end": 35091,
+              "quote": "Cost of revenue  |    | $  | 4,640  |    |    | $  | 4,973  |    |    | $  | 13,992  |    |    | $  | 14,688  |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            309,
+            317
+          ],
+          "new_sentences": [
+            309,
+            317
+          ],
+          "spans": [
+            {
+              "source_id": "BOX-2025-Q2",
+              "sentence": 315,
+              "start": 37411,
+              "end": 37536,
+              "quote": "Deferred revenue  |    |    | (16,949  | )  |    |    | (24,305  | )  |    |    |    | (82,456  | )  |    |    | (79,006  | )"
+            },
+            {
+              "source_id": "BOX-2025-Q3",
+              "sentence": 315,
+              "start": 37848,
+              "end": 37971,
+              "quote": "Deferred revenue  |    |    | (8,730  | )  |    |    | (2,507  | )  |    |    |    | (91,186  | )  |    |    | (81,513  | )"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            407,
+            413
+          ],
+          "new_sentences": [
+            421,
+            427
+          ],
+          "spans": [
+            {
+              "source_id": "BOX-2025-Q2",
+              "sentence": 407,
+              "start": 48666,
+              "end": 48780,
+              "quote": "GAAP revenue  |    | $  | 270,039  |    |    | $  | 261,428  |    |    | $  | 534,697  |    |    | $  | 513,326  |"
+            },
+            {
+              "source_id": "BOX-2025-Q2",
+              "sentence": 408,
+              "start": 48781,
+              "end": 48914,
+              "quote": "Deferred revenue, end of period  |    |    | 502,104  |    |    |    | 479,293  |    |    |    | 502,104  |    |    |    | 479,293  |"
+            },
+            {
+              "source_id": "BOX-2025-Q2",
+              "sentence": 409,
+              "start": 48915,
+              "end": 49066,
+              "quote": "Less: deferred revenue, beginning of period  |    |    | (513,572  | )  |    |    | (507,385  | )  |    |    | (586,871  | )  |    |    | (566,630  | )"
+            },
+            {
+              "source_id": "BOX-2025-Q3",
+              "sentence": 421,
+              "start": 51132,
+              "end": 51246,
+              "quote": "GAAP revenue  |    | $  | 275,913  |    |    | $  | 261,537  |    |    | $  | 810,610  |    |    | $  | 774,863  |"
+            },
+            {
+              "source_id": "BOX-2025-Q3",
+              "sentence": 422,
+              "start": 51247,
+              "end": 51380,
+              "quote": "Deferred revenue, end of period  |    |    | 491,304  |    |    |    | 471,963  |    |    |    | 491,304  |    |    |    | 471,963  |"
+            },
+            {
+              "source_id": "BOX-2025-Q3",
+              "sentence": 423,
+              "start": 51381,
+              "end": 51532,
+              "quote": "Less: deferred revenue, beginning of period  |    |    | (502,104  | )  |    |    | (479,293  | )  |    |    | (586,871  | )  |    |    | (566,630  | )"
+            }
+          ]
+        }
+      ],
+      "annual_candidate_counts": [
+        0,
+        0
+      ],
+      "issues": [
+        "missing_or_ambiguous_annual_guidance_pair"
+      ]
+    },
+    {
+      "stage": "deterministic_comparison",
+      "result": {
+        "status": "insufficient_evidence",
+        "reason": "missing_guidance",
+        "calculation": null
+      }
+    }
+  ],
+  "extractions": [],
+  "explanations": [],
+  "errors": [],
+  "calls": 0,
+  "tokens": null,
+  "label_status": "not_used_by_system",
+  "human_semantic_review": "pending",
+  "source_hashes": {
+    "BOX-2025-Q2": "4c65bf9126479eac49b822ef51b115344823e5ab18f198ff7e0fadcf4424082a",
+    "BOX-2025-Q3": "54ea15377e28de4ee5abeea82a1fa156df9910a6b118762b1f742adfb2756180"
+  },
+  "input_hash": "e554c4196413ccb4807192e73f1af61f0f1fac3d5a9ac6ec179e674d19074a85",
+  "model": null,
+  "execution_kind": "deterministic",
+  "context_characters": 105474,
+  "comparison": {
+    "status": "insufficient_evidence",
+    "reason": "missing_guidance",
+    "calculation": null
+  },
+  "explanation_conclusion": {
+    "status": "insufficient_evidence",
+    "reason": "no_explicit_explanation_found"
+  },
+  "conclusion": "insufficient_evidence",
+  "latency_ms": 8.581,
+  "conflicts": [],
+  "comparability": null,
+  "investigation_version": "earnings-investigation-v2",
+  "validation_failures": []
+}

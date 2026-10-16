@@ -1,0 +1,750 @@
+{
+  "run_id": "494fa960-14be-4d94-ba71-59b758564705",
+  "created_at": "2026-10-14T01:02:04.501637+00:00",
+  "case": {
+    "case_id": "ADSK-FY2026-Q2-Q3~v2-contradictory_commentary",
+    "issuer": "ADSK",
+    "old": "ADSK-2026-Q2-SEC",
+    "new": "ADSK-2026-Q3~v2-contradictory_commentary",
+    "horizon": "FY2026",
+    "metric": "revenue",
+    "cutoff": "2025-11-26T00:00:00-05:00",
+    "split": "synthetic_heldout",
+    "synthetic": true,
+    "parent_case_id": "ADSK-FY2026-Q2-Q3",
+    "challenge": "contradictory_commentary",
+    "expected_status": "conflicting",
+    "transformation": {
+      "description": "Append a synthetic opposing pair about the same annual guidance, driver and basis. Never attribute these sentences to management.",
+      "expected_conflict_quotes": [
+        "Demand caused the FY2026 total revenue guidance revision on a reported basis.",
+        "Demand did not cause the FY2026 total revenue guidance revision on a reported basis."
+      ]
+    },
+    "parent_source_hash": "591c728c010a23f60bdbe38c1f741c193b78ac812f1dd1bdb7c9d09c159d905d",
+    "derived_source_hash": "1e6c9817453707ccbb2c41cf0be60bd02de26921dd47e4f08e303c696d61bf9f"
+  },
+  "method": "D",
+  "config": {
+    "version": "earnings-investigation-v2",
+    "model": "deepseek-flash",
+    "provider": {
+      "base_url": "https://api.deepseek.com",
+      "reasoning_effort": "low"
+    },
+    "max_calls": 8,
+    "max_tool_calls": 7,
+    "max_output_tokens_per_call": 3200,
+    "max_input_characters": 180000,
+    "transport_retries": 0,
+    "pricing": {
+      "currency": "USD",
+      "input_per_million": "0.30",
+      "output_per_million": "1.20",
+      "assumption": "Peak rates; all input treated as cache miss. Discounts never required.",
+      "reference": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "checked_on": "2026-10-13"
+    },
+    "scope": {
+      "real_pairs": 36,
+      "heldout_stress_variants": 72,
+      "supplemental_natural_cases": 2,
+      "stress_types": [
+        "stale_disclosure",
+        "missing_table",
+        "contradictory_commentary"
+      ],
+      "methods": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    "proposed_budget_usd": "8.00",
+    "approval_status": "pending_concrete_budget_approval"
+  },
+  "cutoff_mode": "disclosure",
+  "trace": [
+    {
+      "stage": "document_diff",
+      "algorithm": "difflib.SequenceMatcher sentence-level; autojunk=False",
+      "sentence_counts": [
+        531,
+        523
+      ],
+      "changed_guidance_candidates": [
+        {
+          "operation": "replace",
+          "old_sentences": [
+            2,
+            13
+          ],
+          "new_sentences": [
+            2,
+            11
+          ],
+          "spans": [
+            {
+              "source_id": "ADSK-2026-Q2-SEC",
+              "sentence": 3,
+              "start": 110,
+              "end": 213,
+              "quote": "- Second quarter revenue grew 17 percent, and 18 percent on a constant currency basis, to $1.76 billion"
+            },
+            {
+              "source_id": "ADSK-2026-Q3~v2-contradictory_commentary",
+              "sentence": 3,
+              "start": 109,
+              "end": 212,
+              "quote": "- Third quarter revenue grew 18 percent as reported, and on a constant currency basis, to $1.85 billion"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            14,
+            23
+          ],
+          "new_sentences": [
+            12,
+            21
+          ],
+          "spans": [
+            {
+              "source_id": "ADSK-2026-Q2-SEC",
+              "sentence": 16,
+              "start": 1860,
+              "end": 1915,
+              "quote": "Revenue  | $  | 1,763   |  |  |  | 17   | %  |  |  |  |"
+            },
+            {
+              "source_id": "ADSK-2026-Q3~v2-contradictory_commentary",
+              "sentence": 14,
+              "start": 1523,
+              "end": 1578,
+              "quote": "Revenue  | $  | 1,853   |  |  |  | 18   | %  |  |  |  |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            29,
+            33
+          ],
+          "new_sentences": [
+            27,
+            31
+          ],
+          "spans": [
+            {
+              "source_id": "ADSK-2026-Q2-SEC",
+              "sentence": 32,
+              "start": 2740,
+              "end": 2811,
+              "quote": "Total Net Revenue  | $  | 1,763   |  |  |  |  | 17   | %  |  | 18   | %"
+            },
+            {
+              "source_id": "ADSK-2026-Q3~v2-contradictory_commentary",
+              "sentence": 30,
+              "start": 2402,
+              "end": 2473,
+              "quote": "Total Net Revenue  | $  | 1,853   |  |  |  |  | 18   | %  |  | 18   | %"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            39,
+            43
+          ],
+          "new_sentences": [
+            37,
+            41
+          ],
+          "spans": [
+            {
+              "source_id": "ADSK-2026-Q2-SEC",
+              "sentence": 42,
+              "start": 3236,
+              "end": 3307,
+              "quote": "Total Net Revenue  | $  | 1,763   |  |  |  |  | 17   | %  |  | 18   | %"
+            },
+            {
+              "source_id": "ADSK-2026-Q3~v2-contradictory_commentary",
+              "sentence": 40,
+              "start": 2898,
+              "end": 2969,
+              "quote": "Total Net Revenue  | $  | 1,853   |  |  |  |  | 18   | %  |  | 18   | %"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            50,
+            56
+          ],
+          "new_sentences": [
+            48,
+            54
+          ],
+          "spans": [
+            {
+              "source_id": "ADSK-2026-Q2-SEC",
+              "sentence": 55,
+              "start": 4029,
+              "end": 4100,
+              "quote": "Total Net Revenue  | $  | 1,763   |  |  |  |  | 17   | %  |  | 18   | %"
+            },
+            {
+              "source_id": "ADSK-2026-Q3~v2-contradictory_commentary",
+              "sentence": 53,
+              "start": 3691,
+              "end": 3762,
+              "quote": "Total Net Revenue  | $  | 1,853   |  |  |  |  | 18   | %  |  | 18   | %"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            58,
+            63
+          ],
+          "new_sentences": [
+            56,
+            61
+          ],
+          "spans": [
+            {
+              "source_id": "ADSK-2026-Q2-SEC",
+              "sentence": 59,
+              "start": 4231,
+              "end": 4282,
+              "quote": "Deferred Revenue  | $  | 3,844   |  |  |  | 4   | %"
+            },
+            {
+              "source_id": "ADSK-2026-Q2-SEC",
+              "sentence": 60,
+              "start": 4283,
+              "end": 4339,
+              "quote": "Unbilled deferred revenue  | 3,453   |  |  |  | 59   | %"
+            },
+            {
+              "source_id": "ADSK-2026-Q3~v2-contradictory_commentary",
+              "sentence": 57,
+              "start": 3893,
+              "end": 3944,
+              "quote": "Deferred Revenue  | $  | 3,846   |  |  |  | 5   | %"
+            },
+            {
+              "source_id": "ADSK-2026-Q3~v2-contradictory_commentary",
+              "sentence": 58,
+              "start": 3945,
+              "end": 4001,
+              "quote": "Unbilled deferred revenue  | 3,515   |  |  |  | 43   | %"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            72,
+            77
+          ],
+          "new_sentences": [
+            70,
+            75
+          ],
+          "spans": [
+            {
+              "source_id": "ADSK-2026-Q2-SEC",
+              "sentence": 74,
+              "start": 5134,
+              "end": 5177,
+              "quote": "Revenue (in millions)  |  | $1,800 - $1,810"
+            },
+            {
+              "source_id": "ADSK-2026-Q3~v2-contradictory_commentary",
+              "sentence": 72,
+              "start": 4799,
+              "end": 4842,
+              "quote": "Revenue (in millions)  |  | $1,901 - $1,917"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            83,
+            90
+          ],
+          "new_sentences": [
+            81,
+            88
+          ],
+          "spans": [
+            {
+              "source_id": "ADSK-2026-Q2-SEC",
+              "sentence": 84,
+              "start": 5484,
+              "end": 5531,
+              "quote": "Revenue (in millions) (1)  |  | $7,025 - $7,075"
+            },
+            {
+              "source_id": "ADSK-2026-Q3~v2-contradictory_commentary",
+              "sentence": 82,
+              "start": 5149,
+              "end": 5196,
+              "quote": "Revenue (in millions) (1)  |  | $7,150 - $7,165"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            179,
+            181
+          ],
+          "new_sentences": [
+            169,
+            171
+          ],
+          "spans": [
+            {
+              "source_id": "ADSK-2026-Q2-SEC",
+              "sentence": 180,
+              "start": 15491,
+              "end": 15677,
+              "quote": "Under FASB Accounting Standards Codification (\"ASC\") Topic 606, unbilled deferred revenue is not included as a receivable or deferred revenue on our Condensed Consolidated Balance Sheet."
+            },
+            {
+              "source_id": "ADSK-2026-Q3~v2-contradictory_commentary",
+              "sentence": 170,
+              "start": 14252,
+              "end": 14428,
+              "quote": "Under FASB Accounting Standards Codification (\"ASC\") Topic 606, unbilled deferred revenue is not included as a receivable or deferred revenue on our Consolidated Balance Sheet."
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            217,
+            222
+          ],
+          "new_sentences": [
+            207,
+            212
+          ],
+          "spans": [
+            {
+              "source_id": "ADSK-2026-Q2-SEC",
+              "sentence": 219,
+              "start": 22556,
+              "end": 22659,
+              "quote": "Total subscription and maintenance revenue  | 1,667   |  |  | 1,419   |  |  | 3,207   |  |  | 2,760   |"
+            },
+            {
+              "source_id": "ADSK-2026-Q2-SEC",
+              "sentence": 221,
+              "start": 22717,
+              "end": 22795,
+              "quote": "Total net revenue  | 1,763   |  |  | 1,505   |  |  | 3,396   |  |  | 2,922   |"
+            },
+            {
+              "source_id": "ADSK-2026-Q3~v2-contradictory_commentary",
+              "sentence": 209,
+              "start": 21313,
+              "end": 21416,
+              "quote": "Total subscription and maintenance revenue  | 1,742   |  |  | 1,466   |  |  | 4,949   |  |  | 4,226   |"
+            },
+            {
+              "source_id": "ADSK-2026-Q3~v2-contradictory_commentary",
+              "sentence": 211,
+              "start": 21476,
+              "end": 21554,
+              "quote": "Total net revenue  | 1,853   |  |  | 1,570   |  |  | 5,249   |  |  | 4,492   |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            223,
+            228
+          ],
+          "new_sentences": [
+            213,
+            218
+          ],
+          "spans": [
+            {
+              "source_id": "ADSK-2026-Q2-SEC",
+              "sentence": 223,
+              "start": 22834,
+              "end": 22931,
+              "quote": "Cost of subscription and maintenance revenue  | 114   |  |  | 100   |  |  | 225   |  |  | 200   |"
+            },
+            {
+              "source_id": "ADSK-2026-Q2-SEC",
+              "sentence": 224,
+              "start": 22932,
+              "end": 23002,
+              "quote": "Cost of other revenue  | 22   |  |  | 18   |  |  | 46   |  |  | 38   |"
+            },
+            {
+              "source_id": "ADSK-2026-Q2-SEC",
+              "sentence": 226,
+              "start": 23091,
+              "end": 23165,
+              "quote": "Total cost of revenue  | 159   |  |  | 140   |  |  | 319   |  |  | 277   |"
+            },
+            {
+              "source_id": "ADSK-2026-Q3~v2-contradictory_commentary",
+              "sentence": 213,
+              "start": 21593,
+              "end": 21690,
+              "quote": "Cost of subscription and maintenance revenue  | 118   |  |  | 105   |  |  | 343   |  |  | 305   |"
+            },
+            {
+              "source_id": "ADSK-2026-Q3~v2-contradictory_commentary",
+              "sentence": 214,
+              "start": 21691,
+              "end": 21761,
+              "quote": "Cost of other revenue  | 22   |  |  | 19   |  |  | 68   |  |  | 57   |"
+            },
+            {
+              "source_id": "ADSK-2026-Q3~v2-contradictory_commentary",
+              "sentence": 216,
+              "start": 21850,
+              "end": 21924,
+              "quote": "Total cost of revenue  | 165   |  |  | 147   |  |  | 484   |  |  | 424   |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            271,
+            276
+          ],
+          "new_sentences": [
+            261,
+            266
+          ],
+          "spans": [
+            {
+              "source_id": "ADSK-2026-Q2-SEC",
+              "sentence": 274,
+              "start": 25869,
+              "end": 25914,
+              "quote": "Deferred revenue  | 3,550   |  |  | 3,787   |"
+            },
+            {
+              "source_id": "ADSK-2026-Q3~v2-contradictory_commentary",
+              "sentence": 264,
+              "start": 24650,
+              "end": 24695,
+              "quote": "Deferred revenue  | 3,577   |  |  | 3,787   |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            278,
+            286
+          ],
+          "new_sentences": [
+            268,
+            276
+          ],
+          "spans": [
+            {
+              "source_id": "ADSK-2026-Q2-SEC",
+              "sentence": 280,
+              "start": 26152,
+              "end": 26203,
+              "quote": "Long-term deferred revenue  | 294   |  |  | 341   |"
+            },
+            {
+              "source_id": "ADSK-2026-Q3~v2-contradictory_commentary",
+              "sentence": 270,
+              "start": 24933,
+              "end": 24984,
+              "quote": "Long-term deferred revenue  | 269   |  |  | 341   |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            315,
+            321
+          ],
+          "new_sentences": [
+            305,
+            311
+          ],
+          "spans": [
+            {
+              "source_id": "ADSK-2026-Q2-SEC",
+              "sentence": 318,
+              "start": 27880,
+              "end": 27923,
+              "quote": "Deferred revenue  | (287)  |  |  | (577)  |"
+            },
+            {
+              "source_id": "ADSK-2026-Q3~v2-contradictory_commentary",
+              "sentence": 308,
+              "start": 26664,
+              "end": 26707,
+              "quote": "Deferred revenue  | (286)  |  |  | (612)  |"
+            }
+          ]
+        },
+        {
+          "operation": "insert",
+          "old_sentences": [
+            531,
+            531
+          ],
+          "new_sentences": [
+            521,
+            523
+          ],
+          "spans": [
+            {
+              "source_id": "ADSK-2026-Q3~v2-contradictory_commentary",
+              "sentence": 521,
+              "start": 36451,
+              "end": 36528,
+              "quote": "Demand caused the FY2026 total revenue guidance revision on a reported basis."
+            },
+            {
+              "source_id": "ADSK-2026-Q3~v2-contradictory_commentary",
+              "sentence": 522,
+              "start": 36529,
+              "end": 36613,
+              "quote": "Demand did not cause the FY2026 total revenue guidance revision on a reported basis."
+            }
+          ]
+        }
+      ],
+      "annual_candidate_counts": [
+        1,
+        1
+      ],
+      "issues": [
+        "changed_guidance_pair"
+      ],
+      "selected_alignment": "replace",
+      "selected_sentence_indices": [
+        84,
+        82
+      ]
+    },
+    {
+      "stage": "deterministic_comparison",
+      "result": {
+        "status": "supported",
+        "reason": "raised",
+        "calculation": {
+          "old_lower": "7025000000",
+          "old_upper": "7075000000",
+          "new_lower": "7150000000",
+          "new_upper": "7165000000",
+          "old_midpoint": "7050000000",
+          "new_midpoint": "7157500000",
+          "midpoint_delta": "107500000",
+          "lower_delta": "125000000",
+          "upper_delta": "90000000",
+          "relative_midpoint_change_percent": "1.524822695035460992907801418",
+          "delta_unit": "USD",
+          "range_change": "raised"
+        }
+      }
+    }
+  ],
+  "extractions": [
+    {
+      "metric": {
+        "source_id": "ADSK-2026-Q2-SEC",
+        "issuer": "ADSK",
+        "metric": "revenue",
+        "currency": "USD",
+        "unit": "million",
+        "basis": "reported",
+        "horizon": "FY2026",
+        "calendar": "fiscal",
+        "definition": "total_revenue_as_reported",
+        "status": "provided",
+        "lower": "7025",
+        "upper": "7075",
+        "evidence": "Revenue (in millions) (1)  |  | $7,025 - $7,075",
+        "horizon_evidence": "FY26 Guidance Metrics  |  | FY26\n(ending January 31, 2026)\nBillings (in millions) (1)  |  | $7,355 - $7,445\nRevenue (in millions) (1)  |  | $7,025 - $7,075"
+      },
+      "validation": {
+        "literal_valid": true,
+        "semantic_screen": "pass",
+        "errors": [],
+        "human_semantic_review": "pending",
+        "observation_id": "b63f18ac09647a433b97fbbecfe70386ff29c2f5483875f84a1fa32a3f5d3a81"
+      }
+    },
+    {
+      "metric": {
+        "source_id": "ADSK-2026-Q3~v2-contradictory_commentary",
+        "issuer": "ADSK",
+        "metric": "revenue",
+        "currency": "USD",
+        "unit": "million",
+        "basis": "reported",
+        "horizon": "FY2026",
+        "calendar": "fiscal",
+        "definition": "total_revenue_as_reported",
+        "status": "provided",
+        "lower": "7150",
+        "upper": "7165",
+        "evidence": "Revenue (in millions) (1)  |  | $7,150 - $7,165",
+        "horizon_evidence": "FY26 Guidance Metrics  |  | FY26\n(ending January 31, 2026)\nBillings (in millions) (1)  |  | $7,465 - $7,525\nRevenue (in millions) (1)  |  | $7,150 - $7,165"
+      },
+      "validation": {
+        "literal_valid": true,
+        "semantic_screen": "pass",
+        "errors": [],
+        "human_semantic_review": "pending",
+        "observation_id": "d9f75acbf143d21f94620e1640703ef98c57da355ce5d1c53e1cb1788b177037"
+      }
+    }
+  ],
+  "explanations": [
+    {
+      "source_id": "ADSK-2026-Q2-SEC",
+      "quote": "“While our full year macroeconomic assumptions are unchanged, we have raised our full year guidance to reflect the underlying strength of the business in the first half of the year and additional foreign exchange tailwinds.”",
+      "type": "management_statement_candidate",
+      "semantic_review": "pending"
+    },
+    {
+      "source_id": "ADSK-2026-Q3~v2-contradictory_commentary",
+      "quote": "Demand caused the FY2026 total revenue guidance revision on a reported basis.",
+      "type": "management_statement_candidate",
+      "semantic_review": "pending"
+    },
+    {
+      "source_id": "ADSK-2026-Q3~v2-contradictory_commentary",
+      "quote": "Demand did not cause the FY2026 total revenue guidance revision on a reported basis.",
+      "type": "management_statement_candidate",
+      "semantic_review": "pending"
+    }
+  ],
+  "errors": [],
+  "calls": 0,
+  "tokens": null,
+  "label_status": "not_used_by_system",
+  "human_semantic_review": "pending",
+  "source_hashes": {
+    "ADSK-2026-Q2-SEC": "1f44d1398046f719c5e5a1f51b0e79e6975b7e875e8d5e015b26e706cbd12393",
+    "ADSK-2026-Q3~v2-contradictory_commentary": "1e6c9817453707ccbb2c41cf0be60bd02de26921dd47e4f08e303c696d61bf9f"
+  },
+  "input_hash": "82b220411e728f9053f436671c82b299b9d9fe6ae9e5bf92d952b2bd830f5c3d",
+  "model": null,
+  "execution_kind": "deterministic",
+  "context_characters": 74228,
+  "comparison": {
+    "status": "supported",
+    "reason": "raised",
+    "calculation": {
+      "old_lower": "7025000000",
+      "old_upper": "7075000000",
+      "new_lower": "7150000000",
+      "new_upper": "7165000000",
+      "old_midpoint": "7050000000",
+      "new_midpoint": "7157500000",
+      "midpoint_delta": "107500000",
+      "lower_delta": "125000000",
+      "upper_delta": "90000000",
+      "relative_midpoint_change_percent": "1.524822695035460992907801418",
+      "delta_unit": "USD",
+      "range_change": "raised"
+    }
+  },
+  "explanation_conclusion": {
+    "status": "conflicting",
+    "reason": "two_cited_opposing_statements",
+    "conflicts": [
+      {
+        "topic": "demand",
+        "reason": "opposite_polarity_same_literal_proposition",
+        "citations": [
+          {
+            "source_id": "ADSK-2026-Q3~v2-contradictory_commentary",
+            "quote": "Demand caused the FY2026 total revenue guidance revision on a reported basis.",
+            "start": 36451,
+            "end": 36528,
+            "source_hash": "1e6c9817453707ccbb2c41cf0be60bd02de26921dd47e4f08e303c696d61bf9f",
+            "url": "https://www.sec.gov/Archives/edgar/data/769397/000076939725000126/q326pressrelease.htm",
+            "origin": "synthetic",
+            "literal_valid": true,
+            "semantic_review": "pending"
+          },
+          {
+            "source_id": "ADSK-2026-Q3~v2-contradictory_commentary",
+            "quote": "Demand did not cause the FY2026 total revenue guidance revision on a reported basis.",
+            "start": 36529,
+            "end": 36613,
+            "source_hash": "1e6c9817453707ccbb2c41cf0be60bd02de26921dd47e4f08e303c696d61bf9f",
+            "url": "https://www.sec.gov/Archives/edgar/data/769397/000076939725000126/q326pressrelease.htm",
+            "origin": "synthetic",
+            "literal_valid": true,
+            "semantic_review": "pending"
+          }
+        ],
+        "semantic_review": "pending",
+        "kind": "explicit_lexical_conflict"
+      }
+    ],
+    "semantic_review": "pending"
+  },
+  "conclusion": "conflicting",
+  "latency_ms": 27.849,
+  "conflicts": [
+    {
+      "topic": "demand",
+      "reason": "opposite_polarity_same_literal_proposition",
+      "citations": [
+        {
+          "source_id": "ADSK-2026-Q3~v2-contradictory_commentary",
+          "quote": "Demand caused the FY2026 total revenue guidance revision on a reported basis.",
+          "start": 36451,
+          "end": 36528,
+          "source_hash": "1e6c9817453707ccbb2c41cf0be60bd02de26921dd47e4f08e303c696d61bf9f",
+          "url": "https://www.sec.gov/Archives/edgar/data/769397/000076939725000126/q326pressrelease.htm",
+          "origin": "synthetic",
+          "literal_valid": true,
+          "semantic_review": "pending"
+        },
+        {
+          "source_id": "ADSK-2026-Q3~v2-contradictory_commentary",
+          "quote": "Demand did not cause the FY2026 total revenue guidance revision on a reported basis.",
+          "start": 36529,
+          "end": 36613,
+          "source_hash": "1e6c9817453707ccbb2c41cf0be60bd02de26921dd47e4f08e303c696d61bf9f",
+          "url": "https://www.sec.gov/Archives/edgar/data/769397/000076939725000126/q326pressrelease.htm",
+          "origin": "synthetic",
+          "literal_valid": true,
+          "semantic_review": "pending"
+        }
+      ],
+      "semantic_review": "pending",
+      "kind": "explicit_lexical_conflict"
+    }
+  ],
+  "comparability": null,
+  "investigation_version": "earnings-investigation-v2"
+}

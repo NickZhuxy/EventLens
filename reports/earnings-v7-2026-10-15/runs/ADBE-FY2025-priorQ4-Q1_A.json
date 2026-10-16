@@ -1,0 +1,182 @@
+{
+  "run_id": "c016568b-7ec4-419c-90ac-f00f5f9b4f35",
+  "created_at": "2026-10-16T01:48:00.332316+00:00",
+  "case": {
+    "case_id": "ADBE-FY2025-priorQ4-Q1",
+    "issuer": "ADBE",
+    "old": "ADBE-2024-Q4",
+    "new": "ADBE-2025-Q1",
+    "horizon": "FY2025",
+    "metric": "revenue",
+    "cutoff": "2025-03-13T00:00:00-04:00",
+    "split": "development",
+    "synthetic": false
+  },
+  "method": "A",
+  "config": {
+    "version": "earnings-v7-corpus-regression-table-ablation",
+    "model": "deepseek-flash",
+    "base_url": "https://api.deepseek.com/beta",
+    "reasoning_effort": "none",
+    "max_calls": 8,
+    "max_tool_calls": 7,
+    "max_validation_repairs": 2,
+    "max_output_tokens_per_call": 6000,
+    "max_input_bytes": 128000,
+    "transport_retries": 0,
+    "selection": "All 36 existing pairs and all 36 pipe-table-row-only derivatives. Same v6 model/controller and v5 candidate parser, no tuning on new outputs. Previously exposed heldout is regression only. All failures retained.",
+    "methods": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "pricing": {
+      "currency": "USD",
+      "input_per_million": "0.30",
+      "output_per_million": "1.20",
+      "assumption": "Peak rates, all input charged as cache miss; ignore all discounts.",
+      "reference": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "checked_on": "2026-10-15"
+    },
+    "proposed_budget_usd": "3.25",
+    "approval_status": "pending_new_experiment_approval",
+    "planning_cost_per_BC_pair_usd": "0.01639565",
+    "budget_authorization": "reports/earnings-budget-2026-10-15/authorization.json",
+    "budget_authorization_sha256": "56b79a004195ffa2feb1e9ba73157b090290af79cdb3bd30c25aeda27b42849d",
+    "prior_paid_bundles": [
+      "reports/earnings-v3-preflight-2026-10-14",
+      "reports/earnings-v4-preflight-2026-10-15",
+      "reports/earnings-v5-preflight-2026-10-15",
+      "reports/earnings-v6-preflight-2026-10-15"
+    ]
+  },
+  "cutoff_mode": "disclosure",
+  "trace": [
+    {
+      "stage": "rule_extraction",
+      "source_id": "ADBE-2024-Q4",
+      "issues": []
+    },
+    {
+      "stage": "rule_extraction",
+      "source_id": "ADBE-2025-Q1",
+      "issues": []
+    },
+    {
+      "stage": "deterministic_comparison",
+      "result": {
+        "status": "supported",
+        "reason": "unchanged",
+        "calculation": {
+          "old_lower": "23300000000.00",
+          "old_upper": "23550000000.00",
+          "new_lower": "23300000000.00",
+          "new_upper": "23550000000.00",
+          "old_midpoint": "23425000000.00",
+          "new_midpoint": "23425000000.00",
+          "midpoint_delta": "0.00",
+          "lower_delta": "0.00",
+          "upper_delta": "0.00",
+          "relative_midpoint_change_percent": "0",
+          "delta_unit": "USD",
+          "range_change": "unchanged"
+        }
+      }
+    }
+  ],
+  "extractions": [
+    {
+      "metric": {
+        "source_id": "ADBE-2024-Q4",
+        "issuer": "ADBE",
+        "metric": "revenue",
+        "currency": "USD",
+        "unit": "billion",
+        "basis": "reported",
+        "horizon": "FY2025",
+        "calendar": "fiscal",
+        "definition": "total_revenue_as_reported",
+        "status": "provided",
+        "lower": "23.30",
+        "upper": "23.55",
+        "evidence": "Total revenue  | $23.30 billion to $23.55 billion",
+        "horizon_evidence": "The following table summarizes Adobe’s fiscal year 2025 targets1:\n\n |  |  |  |  |  |  |  |\nTotal revenue  | $23.30 billion to $23.55 billion"
+      },
+      "validation": {
+        "literal_valid": true,
+        "semantic_screen": "pass",
+        "errors": [],
+        "human_semantic_review": "pending",
+        "observation_id": "600ca0e8351b9b24fdc91fdd892e6ddfe8fba74f26b62a379c797be1a4914726"
+      }
+    },
+    {
+      "metric": {
+        "source_id": "ADBE-2025-Q1",
+        "issuer": "ADBE",
+        "metric": "revenue",
+        "currency": "USD",
+        "unit": "billion",
+        "basis": "reported",
+        "horizon": "FY2025",
+        "calendar": "fiscal",
+        "definition": "total_revenue_as_reported",
+        "status": "provided",
+        "lower": "23.30",
+        "upper": "23.55",
+        "evidence": "Total revenue  | $23.30 billion to $23.55 billion",
+        "horizon_evidence": "The following table summarizes Adobe’s fiscal year 2025 targets, which assumes current macroeconomic conditions2:\n |  |  |  |  |  |  |  |\nTotal revenue  | $23.30 billion to $23.55 billion"
+      },
+      "validation": {
+        "literal_valid": true,
+        "semantic_screen": "pass",
+        "errors": [],
+        "human_semantic_review": "pending",
+        "observation_id": "3498b50d7208996746ab5aee5f464d13ae77b21f2b4b5d54bec6db83adb7272f"
+      }
+    }
+  ],
+  "explanations": [],
+  "errors": [],
+  "calls": 0,
+  "tokens": null,
+  "label_status": "not_used_by_system",
+  "human_semantic_review": "pending",
+  "source_hashes": {
+    "ADBE-2024-Q4": "448af11ad62c48c74331e47651fd34b2d2e450c163047537c8027af8c5d76c50",
+    "ADBE-2025-Q1": "9e5181255eea8ef1ae56972e8fc1bdc02134dacb9715ece80ff7ec692e088d60"
+  },
+  "input_hash": "0769147414648ef1d39ed622cb0988df410908e846035505b531c1150ea20726",
+  "model": null,
+  "execution_kind": "deterministic",
+  "context_characters": 52098,
+  "comparison": {
+    "status": "supported",
+    "reason": "unchanged",
+    "calculation": {
+      "old_lower": "23300000000.00",
+      "old_upper": "23550000000.00",
+      "new_lower": "23300000000.00",
+      "new_upper": "23550000000.00",
+      "old_midpoint": "23425000000.00",
+      "new_midpoint": "23425000000.00",
+      "midpoint_delta": "0.00",
+      "lower_delta": "0.00",
+      "upper_delta": "0.00",
+      "relative_midpoint_change_percent": "0",
+      "delta_unit": "USD",
+      "range_change": "unchanged"
+    }
+  },
+  "explanation_conclusion": {
+    "status": "insufficient_evidence",
+    "reason": "no_explicit_explanation_found"
+  },
+  "conclusion": "supported",
+  "latency_ms": 1.675,
+  "conflicts": [],
+  "comparability": null,
+  "investigation_version": "earnings-investigation-v2",
+  "validation_failures": []
+}

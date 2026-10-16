@@ -1,0 +1,421 @@
+{
+  "run_id": "741cb292-e716-40cc-8530-70b9bebebb0e",
+  "created_at": "2026-10-16T01:51:20.539600+00:00",
+  "case": {
+    "case_id": "ZM-FY2025-priorQ4-Q1",
+    "issuer": "ZM",
+    "old": "ZM-2024-Q4",
+    "new": "ZM-2025-Q1",
+    "horizon": "FY2025",
+    "metric": "revenue",
+    "cutoff": "2024-05-21T00:00:00-04:00",
+    "split": "heldout",
+    "synthetic": false
+  },
+  "method": "D",
+  "config": {
+    "version": "earnings-v7-corpus-regression-table-ablation",
+    "model": "deepseek-flash",
+    "base_url": "https://api.deepseek.com/beta",
+    "reasoning_effort": "none",
+    "max_calls": 8,
+    "max_tool_calls": 7,
+    "max_validation_repairs": 2,
+    "max_output_tokens_per_call": 6000,
+    "max_input_bytes": 128000,
+    "transport_retries": 0,
+    "selection": "All 36 existing pairs and all 36 pipe-table-row-only derivatives. Same v6 model/controller and v5 candidate parser, no tuning on new outputs. Previously exposed heldout is regression only. All failures retained.",
+    "methods": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "pricing": {
+      "currency": "USD",
+      "input_per_million": "0.30",
+      "output_per_million": "1.20",
+      "assumption": "Peak rates, all input charged as cache miss; ignore all discounts.",
+      "reference": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "checked_on": "2026-10-15"
+    },
+    "proposed_budget_usd": "3.25",
+    "approval_status": "pending_new_experiment_approval",
+    "planning_cost_per_BC_pair_usd": "0.01639565",
+    "budget_authorization": "reports/earnings-budget-2026-10-15/authorization.json",
+    "budget_authorization_sha256": "56b79a004195ffa2feb1e9ba73157b090290af79cdb3bd30c25aeda27b42849d",
+    "prior_paid_bundles": [
+      "reports/earnings-v3-preflight-2026-10-14",
+      "reports/earnings-v4-preflight-2026-10-15",
+      "reports/earnings-v5-preflight-2026-10-15",
+      "reports/earnings-v6-preflight-2026-10-15"
+    ]
+  },
+  "cutoff_mode": "disclosure",
+  "trace": [
+    {
+      "stage": "document_diff",
+      "algorithm": "difflib.SequenceMatcher sentence-level; autojunk=False",
+      "sentence_counts": [
+        333,
+        330
+      ],
+      "changed_guidance_candidates": [
+        {
+          "operation": "replace",
+          "old_sentences": [
+            2,
+            27
+          ],
+          "new_sentences": [
+            2,
+            31
+          ],
+          "spans": [
+            {
+              "source_id": "ZM-2024-Q4",
+              "sentence": 3,
+              "start": 148,
+              "end": 381,
+              "quote": "•Fourth quarter total revenue of $1,146.5 million, up 2.6% year over year as reported and 2.7% in constant currency; full fiscal year total revenue of $4,527.2 million, up 3.1% year over year as reported and 3.8% in constant currency"
+            },
+            {
+              "source_id": "ZM-2024-Q4",
+              "sentence": 4,
+              "start": 382,
+              "end": 539,
+              "quote": "•Fourth quarter Enterprise revenue of $667.3 million, up 4.9% year over year; full fiscal year Enterprise revenue of $2,619.3 million, up 8.7% year over year"
+            },
+            {
+              "source_id": "ZM-2024-Q4",
+              "sentence": 14,
+              "start": 1948,
+              "end": 2040,
+              "quote": "•Revenue: Total revenue for the fourth quarter was $1,146.5 million, up 2.6% year over year."
+            },
+            {
+              "source_id": "ZM-2024-Q4",
+              "sentence": 15,
+              "start": 2041,
+              "end": 2160,
+              "quote": "After adjusting for foreign currency impact, revenue in constant currency was $1,147.9 million, up 2.7% year over year."
+            },
+            {
+              "source_id": "ZM-2024-Q4",
+              "sentence": 16,
+              "start": 2161,
+              "end": 2288,
+              "quote": "Enterprise revenue was $667.3 million, up 4.9% year over year, and Online revenue was $479.2 million, down 0.5% year over year."
+            },
+            {
+              "source_id": "ZM-2025-Q1",
+              "sentence": 3,
+              "start": 158,
+              "end": 272,
+              "quote": "•First quarter total revenue of $1,141.2 million, up 3.2% year over year as reported and 3.5% in constant currency"
+            },
+            {
+              "source_id": "ZM-2025-Q1",
+              "sentence": 4,
+              "start": 274,
+              "end": 349,
+              "quote": "•First quarter Enterprise revenue of $665.7 million, up 5.3% year over year"
+            },
+            {
+              "source_id": "ZM-2025-Q1",
+              "sentence": 13,
+              "start": 1372,
+              "end": 1463,
+              "quote": "•Revenue: Total revenue for the first quarter was $1,141.2 million, up 3.2% year over year."
+            },
+            {
+              "source_id": "ZM-2025-Q1",
+              "sentence": 14,
+              "start": 1464,
+              "end": 1577,
+              "quote": "Adjusting for foreign currency impact, revenue in constant currency was $1,143.6 million, up 3.5% year over year."
+            },
+            {
+              "source_id": "ZM-2025-Q1",
+              "sentence": 15,
+              "start": 1578,
+              "end": 1700,
+              "quote": "Enterprise revenue was $665.7 million, up 5.3% year over year, and Online revenue was $475.5 million, flat year over year."
+            },
+            {
+              "source_id": "ZM-2025-Q1",
+              "sentence": 28,
+              "start": 3748,
+              "end": 3889,
+              "quote": "•3,883 customers contributing more than $100,000 in trailing 12 months revenue, up approximately 8.5% from the same quarter last fiscal year."
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            28,
+            57
+          ],
+          "new_sentences": [
+            32,
+            46
+          ],
+          "spans": [
+            {
+              "source_id": "ZM-2024-Q4",
+              "sentence": 29,
+              "start": 4482,
+              "end": 4571,
+              "quote": "•Revenue: Total revenue for the fiscal year was $4,527.2 million, up 3.1% year over year."
+            },
+            {
+              "source_id": "ZM-2024-Q4",
+              "sentence": 30,
+              "start": 4572,
+              "end": 4691,
+              "quote": "After adjusting for foreign currency impact, revenue in constant currency was $4,561.3 million, up 3.8% year over year."
+            },
+            {
+              "source_id": "ZM-2024-Q4",
+              "sentence": 31,
+              "start": 4692,
+              "end": 4823,
+              "quote": "Enterprise revenue was $2,619.3 million, up 8.7% year over year, and Online revenue was $1,907.9 million, down 3.8% year over year."
+            },
+            {
+              "source_id": "ZM-2024-Q4",
+              "sentence": 45,
+              "start": 6983,
+              "end": 7124,
+              "quote": "•3,810 customers contributing more than $100,000 in trailing 12 months revenue, up approximately 9.8% from the same quarter last fiscal year."
+            },
+            {
+              "source_id": "ZM-2024-Q4",
+              "sentence": 49,
+              "start": 7568,
+              "end": 7742,
+              "quote": "•First Quarter Fiscal Year 2025: Total revenue is expected to be approximately $1.125 billion and revenue in constant currency is expected to be approximately $1.125 billion."
+            },
+            {
+              "source_id": "ZM-2024-Q4",
+              "sentence": 52,
+              "start": 7990,
+              "end": 8155,
+              "quote": "•Full Fiscal Year 2025: Total revenue is expected to be approximately $4.600 billion and revenue in constant currency is expected to be approximately $4.597 billion."
+            },
+            {
+              "source_id": "ZM-2025-Q1",
+              "sentence": 39,
+              "start": 5001,
+              "end": 5202,
+              "quote": "•Second Quarter Fiscal Year 2025: Total revenue is expected to be between $1.145 billion and $1.150 billion and revenue in constant currency is expected to be between $1.147 billion and $1.152 billion."
+            },
+            {
+              "source_id": "ZM-2025-Q1",
+              "sentence": 42,
+              "start": 5427,
+              "end": 5618,
+              "quote": "•Full Fiscal Year 2025: Total revenue is expected to be between $4.610 billion and $4.620 billion and revenue in constant currency is expected to be between $4.616 billion and $4.626 billion."
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            160,
+            168
+          ],
+          "new_sentences": [
+            147,
+            155
+          ],
+          "spans": [
+            {
+              "source_id": "ZM-2024-Q4",
+              "sentence": 162,
+              "start": 23180,
+              "end": 23245,
+              "quote": "Deferred revenue, current  |  | 1,251,848   |  |  | 1,266,514   |"
+            },
+            {
+              "source_id": "ZM-2024-Q4",
+              "sentence": 164,
+              "start": 23312,
+              "end": 23374,
+              "quote": "Deferred revenue, noncurrent  |  | 18,514   |  |  | 41,932   |"
+            },
+            {
+              "source_id": "ZM-2025-Q1",
+              "sentence": 149,
+              "start": 19868,
+              "end": 19933,
+              "quote": "Deferred revenue, current  |  | 1,335,787   |  |  | 1,251,848   |"
+            },
+            {
+              "source_id": "ZM-2025-Q1",
+              "sentence": 151,
+              "start": 20000,
+              "end": 20062,
+              "quote": "Deferred revenue, noncurrent  |  | 16,405   |  |  | 18,514   |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            184,
+            190
+          ],
+          "new_sentences": [
+            171,
+            177
+          ],
+          "spans": [
+            {
+              "source_id": "ZM-2024-Q4",
+              "sentence": 187,
+              "start": 24626,
+              "end": 24733,
+              "quote": "Revenue  |  | $  | 1,146,457   |  |  | $  | 1,117,803   |  |  | $  | 4,527,224   |  |  | $  | 4,392,960   |"
+            },
+            {
+              "source_id": "ZM-2024-Q4",
+              "sentence": 188,
+              "start": 24734,
+              "end": 24825,
+              "quote": "Cost of revenue  |  | 276,307   |  |  | 294,354   |  |  | 1,077,801   |  |  | 1,100,451   |"
+            },
+            {
+              "source_id": "ZM-2025-Q1",
+              "sentence": 174,
+              "start": 21259,
+              "end": 21328,
+              "quote": "Revenue  |  | $  | 1,141,234   |  |  | $  | 1,105,364   |  |  |  |  |"
+            },
+            {
+              "source_id": "ZM-2025-Q1",
+              "sentence": 175,
+              "start": 21329,
+              "end": 21392,
+              "quote": "Cost of revenue  |  | 273,302   |  |  | 263,947   |  |  |  |  |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            239,
+            246
+          ],
+          "new_sentences": [
+            227,
+            234
+          ],
+          "spans": [
+            {
+              "source_id": "ZM-2024-Q4",
+              "sentence": 244,
+              "start": 29229,
+              "end": 29317,
+              "quote": "Deferred revenue  |  | (48,637)  |  |  | (46,924)  |  |  | (46,719)  |  |  | 127,401   |"
+            },
+            {
+              "source_id": "ZM-2025-Q1",
+              "sentence": 232,
+              "start": 24615,
+              "end": 24677,
+              "quote": "Deferred revenue  |  | 77,964   |  |  | 53,340   |  |  |  |  |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            326,
+            333
+          ],
+          "new_sentences": [
+            323,
+            330
+          ],
+          "spans": [
+            {
+              "source_id": "ZM-2024-Q4",
+              "sentence": 330,
+              "start": 36708,
+              "end": 36802,
+              "quote": "GAAP revenue  |  | $  | 1,146,457   |  |  | 2.6   | %  |  | $  | 4,527,224   |  |  | 3.1   | %"
+            },
+            {
+              "source_id": "ZM-2024-Q4",
+              "sentence": 332,
+              "start": 36898,
+              "end": 37019,
+              "quote": "Revenue in constant currency (non-GAAP)  |  | $  | 1,147,930   |  |  | 2.7   | %  |  | $  | 4,561,288   |  |  | 3.8   | %"
+            },
+            {
+              "source_id": "ZM-2025-Q1",
+              "sentence": 327,
+              "start": 30303,
+              "end": 30368,
+              "quote": "GAAP revenue  |  | $  | 1,141,234   |  |  | 3.2   | %  |  |  |  |"
+            },
+            {
+              "source_id": "ZM-2025-Q1",
+              "sentence": 329,
+              "start": 30443,
+              "end": 30530,
+              "quote": "Revenue in constant currency (non-GAAP)  |  | 1,143,580   |  |  | 3.5   | %  |  |  |  |"
+            }
+          ]
+        }
+      ],
+      "annual_candidate_counts": [
+        0,
+        0
+      ],
+      "issues": [
+        "missing_or_ambiguous_annual_guidance_pair"
+      ]
+    },
+    {
+      "stage": "deterministic_comparison",
+      "result": {
+        "status": "insufficient_evidence",
+        "reason": "missing_guidance",
+        "calculation": null
+      }
+    }
+  ],
+  "extractions": [],
+  "explanations": [],
+  "errors": [],
+  "calls": 0,
+  "tokens": null,
+  "label_status": "not_used_by_system",
+  "human_semantic_review": "pending",
+  "source_hashes": {
+    "ZM-2024-Q4": "6dc1e5d20503d2ab38981bc4d822908329f3816fba0695271089254db3d3c9ba",
+    "ZM-2025-Q1": "98fab557b94f4eeaeb7350a3bef5882f239ccf765935912e8b3a611b776eb160"
+  },
+  "input_hash": "7aa712258b7eb5aed577e3052ea7f1b74c1f43b5340a8ca739ed599334fdafbd",
+  "model": null,
+  "execution_kind": "deterministic",
+  "context_characters": 67551,
+  "comparison": {
+    "status": "insufficient_evidence",
+    "reason": "missing_guidance",
+    "calculation": null
+  },
+  "explanation_conclusion": {
+    "status": "insufficient_evidence",
+    "reason": "no_explicit_explanation_found"
+  },
+  "conclusion": "insufficient_evidence",
+  "latency_ms": 5.427,
+  "conflicts": [],
+  "comparability": null,
+  "investigation_version": "earnings-investigation-v2",
+  "validation_failures": []
+}

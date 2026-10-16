@@ -1,0 +1,717 @@
+{
+  "run_id": "d2f8d3af-fdad-476c-95f3-2d033f35f2a5",
+  "created_at": "2026-10-14T01:02:04.635904+00:00",
+  "case": {
+    "case_id": "CDNS-FY2025-Q1-Q2~v2-contradictory_commentary",
+    "issuer": "CDNS",
+    "old": "CDNS-2025-Q1",
+    "new": "CDNS-2025-Q2~v2-contradictory_commentary",
+    "horizon": "FY2025",
+    "metric": "revenue",
+    "cutoff": "2025-07-29T00:00:00-04:00",
+    "split": "synthetic_heldout",
+    "synthetic": true,
+    "parent_case_id": "CDNS-FY2025-Q1-Q2",
+    "challenge": "contradictory_commentary",
+    "expected_status": "conflicting",
+    "transformation": {
+      "description": "Append a synthetic opposing pair about the same annual guidance, driver and basis. Never attribute these sentences to management.",
+      "expected_conflict_quotes": [
+        "Demand caused the FY2025 total revenue guidance revision on a reported basis.",
+        "Demand did not cause the FY2025 total revenue guidance revision on a reported basis."
+      ]
+    },
+    "parent_source_hash": "6e6cb2197c3938ecfb9e8ffa2a3905bc02c99d9ebcee5c8fdf517b11744188c5",
+    "derived_source_hash": "73e013af7b62b0b9a00969c0f77bb4076e570241bbb4a06af1422694df0d6531"
+  },
+  "method": "D",
+  "config": {
+    "version": "earnings-investigation-v2",
+    "model": "deepseek-flash",
+    "provider": {
+      "base_url": "https://api.deepseek.com",
+      "reasoning_effort": "low"
+    },
+    "max_calls": 8,
+    "max_tool_calls": 7,
+    "max_output_tokens_per_call": 3200,
+    "max_input_characters": 180000,
+    "transport_retries": 0,
+    "pricing": {
+      "currency": "USD",
+      "input_per_million": "0.30",
+      "output_per_million": "1.20",
+      "assumption": "Peak rates; all input treated as cache miss. Discounts never required.",
+      "reference": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "checked_on": "2026-10-13"
+    },
+    "scope": {
+      "real_pairs": 36,
+      "heldout_stress_variants": 72,
+      "supplemental_natural_cases": 2,
+      "stress_types": [
+        "stale_disclosure",
+        "missing_table",
+        "contradictory_commentary"
+      ],
+      "methods": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    "proposed_budget_usd": "8.00",
+    "approval_status": "pending_concrete_budget_approval"
+  },
+  "cutoff_mode": "disclosure",
+  "trace": [
+    {
+      "stage": "document_diff",
+      "algorithm": "difflib.SequenceMatcher sentence-level; autojunk=False",
+      "sentence_counts": [
+        324,
+        349
+      ],
+      "changed_guidance_candidates": [
+        {
+          "operation": "replace",
+          "old_sentences": [
+            2,
+            19
+          ],
+          "new_sentences": [
+            2,
+            21
+          ],
+          "spans": [
+            {
+              "source_id": "CDNS-2025-Q1",
+              "sentence": 4,
+              "start": 168,
+              "end": 211,
+              "quote": "Q1 Revenue Up 23% & Non-GAAP EPS Up 34% YoY"
+            },
+            {
+              "source_id": "CDNS-2025-Q1",
+              "sentence": 5,
+              "start": 213,
+              "end": 249,
+              "quote": "Raising 2025 Revenue and EPS Outlook"
+            },
+            {
+              "source_id": "CDNS-2025-Q1",
+              "sentence": 8,
+              "start": 404,
+              "end": 480,
+              "quote": "•Revenue of $1.242 billion, compared to revenue of $1.009 billion in Q1 2024"
+            },
+            {
+              "source_id": "CDNS-2025-Q1",
+              "sentence": 13,
+              "start": 765,
+              "end": 952,
+              "quote": "•Quarter-end backlog was $6.4 billion and current remaining performance obligations (\"cRPO\"), contract revenue expected to be recognized as revenue in the next 12 months, was $3.2 billion"
+            },
+            {
+              "source_id": "CDNS-2025-Q1",
+              "sentence": 14,
+              "start": 953,
+              "end": 1219,
+              "quote": "“Cadence delivered excellent results for the first quarter of 2025 with robust ongoing customer demand for our innovative technologies driving 23% revenue growth and 34% non-GAAP EPS growth year-over-year,” said Anirudh Devgan, president and chief executive officer."
+            },
+            {
+              "source_id": "CDNS-2025-Q2~v2-contradictory_commentary",
+              "sentence": 3,
+              "start": 127,
+              "end": 174,
+              "quote": "Exceeded Q2 Guidance for Revenue & Non-GAAP EPS"
+            },
+            {
+              "source_id": "CDNS-2025-Q2~v2-contradictory_commentary",
+              "sentence": 4,
+              "start": 176,
+              "end": 230,
+              "quote": "Raising 2025 Revenue, Non-GAAP EPS & Cash Flow Outlook"
+            },
+            {
+              "source_id": "CDNS-2025-Q2~v2-contradictory_commentary",
+              "sentence": 7,
+              "start": 386,
+              "end": 462,
+              "quote": "•Revenue of $1.275 billion, compared to revenue of $1.061 billion in Q2 2024"
+            },
+            {
+              "source_id": "CDNS-2025-Q2~v2-contradictory_commentary",
+              "sentence": 12,
+              "start": 747,
+              "end": 934,
+              "quote": "•Quarter-end backlog was $6.4 billion and current remaining performance obligations (“cRPO”), contract revenue expected to be recognized as revenue in the next 12 months, was $3.1 billion"
+            },
+            {
+              "source_id": "CDNS-2025-Q2~v2-contradictory_commentary",
+              "sentence": 16,
+              "start": 1191,
+              "end": 1304,
+              "quote": "“Cadence delivered an exceptional Q2, with 20% year-over-year revenue growth and stronger than expected bookings."
+            },
+            {
+              "source_id": "CDNS-2025-Q2~v2-contradictory_commentary",
+              "sentence": 20,
+              "start": 2004,
+              "end": 2113,
+              "quote": "“We are raising our 2025 revenue outlook to 13% growth year-over-year, and non-GAAP operating margin to 44%.”"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            23,
+            28
+          ],
+          "new_sentences": [
+            25,
+            35
+          ],
+          "spans": [
+            {
+              "source_id": "CDNS-2025-Q1",
+              "sentence": 23,
+              "start": 2110,
+              "end": 2165,
+              "quote": "•Revenue in the range of $5.15 billion to $5.23 billion"
+            },
+            {
+              "source_id": "CDNS-2025-Q2~v2-contradictory_commentary",
+              "sentence": 25,
+              "start": 2377,
+              "end": 2432,
+              "quote": "•Revenue in the range of $5.21 billion to $5.27 billion"
+            },
+            {
+              "source_id": "CDNS-2025-Q2~v2-contradictory_commentary",
+              "sentence": 31,
+              "start": 2753,
+              "end": 2893,
+              "quote": "At the midpoint, the $50 million increase in operating cash flow outlook is primarily driven by the $50 million increase in revenue outlook."
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            34,
+            40
+          ],
+          "new_sentences": [
+            42,
+            47
+          ],
+          "spans": [
+            {
+              "source_id": "CDNS-2025-Q1",
+              "sentence": 34,
+              "start": 3340,
+              "end": 3524,
+              "quote": "•Semiconductor IP revenue grew 40% year-over-year in Q1 as it continued to benefit from market opportunities offered by AI, chiplet-based architectures, and foundry ecosystem buildout."
+            },
+            {
+              "source_id": "CDNS-2025-Q1",
+              "sentence": 35,
+              "start": 3525,
+              "end": 3573,
+              "quote": "•Core EDA revenue grew 16% year-over-year in Q1."
+            },
+            {
+              "source_id": "CDNS-2025-Q1",
+              "sentence": 39,
+              "start": 4096,
+              "end": 4354,
+              "quote": "•System Design and Analysis delivered over 50% year-over-year revenue growth in Q1, as Cadence’s AI-driven design optimization platforms integrated with its physics-based simulation solutions continued delivering superior results across multiple end-markets."
+            },
+            {
+              "source_id": "CDNS-2025-Q2~v2-contradictory_commentary",
+              "sentence": 44,
+              "start": 4438,
+              "end": 4629,
+              "quote": "•Core EDA, comprised of Cadence’s digital, custom / analog and verification businesses, delivered 16% year-over-year revenue growth, driven by further proliferation of Cadence's AI portfolio."
+            },
+            {
+              "source_id": "CDNS-2025-Q2~v2-contradictory_commentary",
+              "sentence": 45,
+              "start": 4631,
+              "end": 4771,
+              "quote": "•IP business delivered more than 25% year-over-year revenue growth, driven by product strength and a broadening silicon solutions portfolio."
+            },
+            {
+              "source_id": "CDNS-2025-Q2~v2-contradictory_commentary",
+              "sentence": 46,
+              "start": 4772,
+              "end": 4963,
+              "quote": "•System Design & Analysis business achieved 35% year-over-year revenue growth driven by Cadence’s multi-physics analysis platform and AI-driven optimization, which delivered superior results."
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            75,
+            76
+          ],
+          "new_sentences": [
+            84,
+            85
+          ],
+          "spans": [
+            {
+              "source_id": "CDNS-2025-Q1",
+              "sentence": 75,
+              "start": 12012,
+              "end": 12087,
+              "quote": "GAAP operating margin as a percent of total revenue  |  | 29.1%  |  | 24.8%"
+            },
+            {
+              "source_id": "CDNS-2025-Q2~v2-contradictory_commentary",
+              "sentence": 84,
+              "start": 13271,
+              "end": 13346,
+              "quote": "GAAP operating margin as a percent of total revenue  |  | 19.0%  |  | 27.7%"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            81,
+            84
+          ],
+          "new_sentences": [
+            90,
+            94
+          ],
+          "spans": [
+            {
+              "source_id": "CDNS-2025-Q1",
+              "sentence": 83,
+              "start": 12509,
+              "end": 12588,
+              "quote": "Non-GAAP operating margin as a percent of total revenue  |  | 41.7%  |  | 37.8%"
+            },
+            {
+              "source_id": "CDNS-2025-Q2~v2-contradictory_commentary",
+              "sentence": 93,
+              "start": 13817,
+              "end": 13896,
+              "quote": "Non-GAAP operating margin as a percent of total revenue  |  | 42.8%  |  | 40.1%"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            147,
+            150
+          ],
+          "new_sentences": [
+            163,
+            166
+          ],
+          "spans": [
+            {
+              "source_id": "CDNS-2025-Q1",
+              "sentence": 148,
+              "start": 15831,
+              "end": 15902,
+              "quote": "Current portion of deferred revenue  |  | 730,570   |  |  | 737,413   |"
+            },
+            {
+              "source_id": "CDNS-2025-Q2~v2-contradictory_commentary",
+              "sentence": 164,
+              "start": 17547,
+              "end": 17618,
+              "quote": "Current portion of deferred revenue  |  | 729,929   |  |  | 737,413   |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            151,
+            157
+          ],
+          "new_sentences": [
+            167,
+            173
+          ],
+          "spans": [
+            {
+              "source_id": "CDNS-2025-Q1",
+              "sentence": 151,
+              "start": 16004,
+              "end": 16077,
+              "quote": "Long-term portion of deferred revenue  |  | 110,702   |  |  | 115,168   |"
+            },
+            {
+              "source_id": "CDNS-2025-Q2~v2-contradictory_commentary",
+              "sentence": 167,
+              "start": 17720,
+              "end": 17793,
+              "quote": "Long-term portion of deferred revenue  |  | 154,448   |  |  | 115,168   |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            167,
+            170
+          ],
+          "new_sentences": [
+            183,
+            186
+          ],
+          "spans": [
+            {
+              "source_id": "CDNS-2025-Q1",
+              "sentence": 169,
+              "start": 16931,
+              "end": 16996,
+              "quote": "Total revenue  |  | 1,242,366   |  |  | 1,009,103   |  |  |  |  |"
+            },
+            {
+              "source_id": "CDNS-2025-Q2~v2-contradictory_commentary",
+              "sentence": 185,
+              "start": 18783,
+              "end": 18876,
+              "quote": "Total revenue  |  | 1,275,441   |  |  | 1,060,681   |  |  | 2,517,807   |  |  | 2,069,784   |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            211,
+            219
+          ],
+          "new_sentences": [
+            228,
+            236
+          ],
+          "spans": [
+            {
+              "source_id": "CDNS-2025-Q1",
+              "sentence": 216,
+              "start": 19717,
+              "end": 19766,
+              "quote": "Deferred revenue  | (14,377)  |  |  | (23,941)  |"
+            },
+            {
+              "source_id": "CDNS-2025-Q2~v2-contradictory_commentary",
+              "sentence": 233,
+              "start": 22130,
+              "end": 22178,
+              "quote": "Deferred revenue  | 21,824   |  |  | (18,599)  |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            272,
+            273
+          ],
+          "new_sentences": [
+            289,
+            290
+          ],
+          "spans": [
+            {
+              "source_id": "CDNS-2025-Q1",
+              "sentence": 272,
+              "start": 23283,
+              "end": 23382,
+              "quote": "GAAP operating margin as a percent of total revenue  |  | 27.5% - 28.5%  |  | 30.25% - 31.25%  |  |"
+            },
+            {
+              "source_id": "CDNS-2025-Q2~v2-contradictory_commentary",
+              "sentence": 289,
+              "start": 25940,
+              "end": 26033,
+              "quote": "GAAP operating margin as a percent of total revenue  |  | 32% - 33%  |  | 28.5% - 29.5%  |  |"
+            }
+          ]
+        },
+        {
+          "operation": "replace",
+          "old_sentences": [
+            280,
+            281
+          ],
+          "new_sentences": [
+            297,
+            299
+          ],
+          "spans": [
+            {
+              "source_id": "CDNS-2025-Q1",
+              "sentence": 280,
+              "start": 23718,
+              "end": 23822,
+              "quote": "Non-GAAP operating margin as a percent of total revenue†  |  | 41.5% - 42.5%  |  | 43.25% - 44.25%  |  |"
+            },
+            {
+              "source_id": "CDNS-2025-Q2~v2-contradictory_commentary",
+              "sentence": 298,
+              "start": 26430,
+              "end": 26528,
+              "quote": "Non-GAAP operating margin as a percent of total revenue†  |  | 45% - 46%  |  | 43.5% - 44.5%  |  |"
+            }
+          ]
+        },
+        {
+          "operation": "insert",
+          "old_sentences": [
+            324,
+            324
+          ],
+          "new_sentences": [
+            347,
+            349
+          ],
+          "spans": [
+            {
+              "source_id": "CDNS-2025-Q2~v2-contradictory_commentary",
+              "sentence": 347,
+              "start": 29540,
+              "end": 29617,
+              "quote": "Demand caused the FY2025 total revenue guidance revision on a reported basis."
+            },
+            {
+              "source_id": "CDNS-2025-Q2~v2-contradictory_commentary",
+              "sentence": 348,
+              "start": 29618,
+              "end": 29702,
+              "quote": "Demand did not cause the FY2025 total revenue guidance revision on a reported basis."
+            }
+          ]
+        }
+      ],
+      "annual_candidate_counts": [
+        1,
+        1
+      ],
+      "issues": [
+        "changed_guidance_pair"
+      ],
+      "selected_alignment": "replace",
+      "selected_sentence_indices": [
+        23,
+        25
+      ]
+    },
+    {
+      "stage": "deterministic_comparison",
+      "result": {
+        "status": "supported",
+        "reason": "raised",
+        "calculation": {
+          "old_lower": "5150000000.00",
+          "old_upper": "5230000000.00",
+          "new_lower": "5210000000.00",
+          "new_upper": "5270000000.00",
+          "old_midpoint": "5190000000.00",
+          "new_midpoint": "5240000000.00",
+          "midpoint_delta": "50000000.00",
+          "lower_delta": "60000000.00",
+          "upper_delta": "40000000.00",
+          "relative_midpoint_change_percent": "0.9633911368015414258188824663",
+          "delta_unit": "USD",
+          "range_change": "raised"
+        }
+      }
+    }
+  ],
+  "extractions": [
+    {
+      "metric": {
+        "source_id": "CDNS-2025-Q1",
+        "issuer": "CDNS",
+        "metric": "revenue",
+        "currency": "USD",
+        "unit": "billion",
+        "basis": "reported",
+        "horizon": "FY2025",
+        "calendar": "fiscal",
+        "definition": "total_revenue_as_reported",
+        "status": "provided",
+        "lower": "5.15",
+        "upper": "5.23",
+        "evidence": "•Revenue in the range of $5.15 billion to $5.23 billion",
+        "horizon_evidence": "For fiscal year 2025, the company expects:\n\n•Revenue in the range of $5.15 billion to $5.23 billion"
+      },
+      "validation": {
+        "literal_valid": true,
+        "semantic_screen": "pass",
+        "errors": [],
+        "human_semantic_review": "pending",
+        "observation_id": "62ee34d9f08691e32e9b2807c8aa4c3d3f0e5f638682ebf91d7b1c97e45fde85"
+      }
+    },
+    {
+      "metric": {
+        "source_id": "CDNS-2025-Q2~v2-contradictory_commentary",
+        "issuer": "CDNS",
+        "metric": "revenue",
+        "currency": "USD",
+        "unit": "billion",
+        "basis": "reported",
+        "horizon": "FY2025",
+        "calendar": "fiscal",
+        "definition": "total_revenue_as_reported",
+        "status": "provided",
+        "lower": "5.21",
+        "upper": "5.27",
+        "evidence": "•Revenue in the range of $5.21 billion to $5.27 billion",
+        "horizon_evidence": "For fiscal year 2025, the company expects:\n\n•Revenue in the range of $5.21 billion to $5.27 billion"
+      },
+      "validation": {
+        "literal_valid": true,
+        "semantic_screen": "pass",
+        "errors": [],
+        "human_semantic_review": "pending",
+        "observation_id": "652e5705599f1c66acf5c942b110a11b532b358947b80bcb3e62610faf5e87af"
+      }
+    }
+  ],
+  "explanations": [
+    {
+      "source_id": "CDNS-2025-Q1",
+      "quote": "“Q1 was a strong quarter for Cadence, driven by broad-based strength across all our businesses,” said John Wall, senior vice president and chief financial officer. “I am pleased that we exceeded all key financial metrics for the quarter, and we are tracking ahead of our original forecast for 2025, allowing us to raise our full year outlook.”",
+      "type": "management_statement_candidate",
+      "semantic_review": "pending"
+    },
+    {
+      "source_id": "CDNS-2025-Q2~v2-contradictory_commentary",
+      "quote": "“I am pleased to report that Cadence delivered excellent results for Q2, with broad-based strength across all businesses, more than offsetting the impact of the temporary restrictions on exports to China imposed on May 23rd,” said John Wall, senior vice president and chief financial officer. “We are raising our 2025 revenue outlook to 13% growth year-over-year, and non-GAAP operating margin to 44%.”",
+      "type": "management_statement_candidate",
+      "semantic_review": "pending"
+    },
+    {
+      "source_id": "CDNS-2025-Q2~v2-contradictory_commentary",
+      "quote": "Demand caused the FY2025 total revenue guidance revision on a reported basis.",
+      "type": "management_statement_candidate",
+      "semantic_review": "pending"
+    },
+    {
+      "source_id": "CDNS-2025-Q2~v2-contradictory_commentary",
+      "quote": "Demand did not cause the FY2025 total revenue guidance revision on a reported basis.",
+      "type": "management_statement_candidate",
+      "semantic_review": "pending"
+    }
+  ],
+  "errors": [],
+  "calls": 0,
+  "tokens": null,
+  "label_status": "not_used_by_system",
+  "human_semantic_review": "pending",
+  "source_hashes": {
+    "CDNS-2025-Q1": "968039bf45c150a41089b59ede0e04cca8801a8b0602f25964c2133cdaa73b0b",
+    "CDNS-2025-Q2~v2-contradictory_commentary": "73e013af7b62b0b9a00969c0f77bb4076e570241bbb4a06af1422694df0d6531"
+  },
+  "input_hash": "b6bafa89ee82bfe604d8aa1e1ac7d74c304d235fbe87b20cd42d005dd6126b41",
+  "model": null,
+  "execution_kind": "deterministic",
+  "context_characters": 56129,
+  "comparison": {
+    "status": "supported",
+    "reason": "raised",
+    "calculation": {
+      "old_lower": "5150000000.00",
+      "old_upper": "5230000000.00",
+      "new_lower": "5210000000.00",
+      "new_upper": "5270000000.00",
+      "old_midpoint": "5190000000.00",
+      "new_midpoint": "5240000000.00",
+      "midpoint_delta": "50000000.00",
+      "lower_delta": "60000000.00",
+      "upper_delta": "40000000.00",
+      "relative_midpoint_change_percent": "0.9633911368015414258188824663",
+      "delta_unit": "USD",
+      "range_change": "raised"
+    }
+  },
+  "explanation_conclusion": {
+    "status": "conflicting",
+    "reason": "two_cited_opposing_statements",
+    "conflicts": [
+      {
+        "topic": "demand",
+        "reason": "opposite_polarity_same_literal_proposition",
+        "citations": [
+          {
+            "source_id": "CDNS-2025-Q2~v2-contradictory_commentary",
+            "quote": "Demand caused the FY2025 total revenue guidance revision on a reported basis.",
+            "start": 29540,
+            "end": 29617,
+            "source_hash": "73e013af7b62b0b9a00969c0f77bb4076e570241bbb4a06af1422694df0d6531",
+            "url": "https://www.sec.gov/Archives/edgar/data/813672/000081367225000108/cdns7282025ex9901.htm",
+            "origin": "synthetic",
+            "literal_valid": true,
+            "semantic_review": "pending"
+          },
+          {
+            "source_id": "CDNS-2025-Q2~v2-contradictory_commentary",
+            "quote": "Demand did not cause the FY2025 total revenue guidance revision on a reported basis.",
+            "start": 29618,
+            "end": 29702,
+            "source_hash": "73e013af7b62b0b9a00969c0f77bb4076e570241bbb4a06af1422694df0d6531",
+            "url": "https://www.sec.gov/Archives/edgar/data/813672/000081367225000108/cdns7282025ex9901.htm",
+            "origin": "synthetic",
+            "literal_valid": true,
+            "semantic_review": "pending"
+          }
+        ],
+        "semantic_review": "pending",
+        "kind": "explicit_lexical_conflict"
+      }
+    ],
+    "semantic_review": "pending"
+  },
+  "conclusion": "conflicting",
+  "latency_ms": 18.654,
+  "conflicts": [
+    {
+      "topic": "demand",
+      "reason": "opposite_polarity_same_literal_proposition",
+      "citations": [
+        {
+          "source_id": "CDNS-2025-Q2~v2-contradictory_commentary",
+          "quote": "Demand caused the FY2025 total revenue guidance revision on a reported basis.",
+          "start": 29540,
+          "end": 29617,
+          "source_hash": "73e013af7b62b0b9a00969c0f77bb4076e570241bbb4a06af1422694df0d6531",
+          "url": "https://www.sec.gov/Archives/edgar/data/813672/000081367225000108/cdns7282025ex9901.htm",
+          "origin": "synthetic",
+          "literal_valid": true,
+          "semantic_review": "pending"
+        },
+        {
+          "source_id": "CDNS-2025-Q2~v2-contradictory_commentary",
+          "quote": "Demand did not cause the FY2025 total revenue guidance revision on a reported basis.",
+          "start": 29618,
+          "end": 29702,
+          "source_hash": "73e013af7b62b0b9a00969c0f77bb4076e570241bbb4a06af1422694df0d6531",
+          "url": "https://www.sec.gov/Archives/edgar/data/813672/000081367225000108/cdns7282025ex9901.htm",
+          "origin": "synthetic",
+          "literal_valid": true,
+          "semantic_review": "pending"
+        }
+      ],
+      "semantic_review": "pending",
+      "kind": "explicit_lexical_conflict"
+    }
+  ],
+  "comparability": null,
+  "investigation_version": "earnings-investigation-v2"
+}
